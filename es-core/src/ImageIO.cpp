@@ -11,6 +11,7 @@
 #include <mutex>
 #include "renderers/Renderer.h"
 #include "Paths.h"
+#include "nanosvg/nanosvg.h"
 
 unsigned char* ImageIO::loadFromMemoryRGBA32(const unsigned char * data, const size_t size, size_t & width, size_t & height, MaxSizeInfo* maxSize, Vector2i* baseSize, Vector2i* packedSize, int subImageIndex)
 {
@@ -423,9 +424,9 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 	LOG(LogDebug) << "ImageIO::loadImageSize " << fn;
 
 	auto ext = Utils::String::toLower(Utils::FileSystem::getExtension(fn));
-	if (ext != ".jpg" && ext != ".png" && ext != ".jpeg" && ext != ".gif")
+	if (ext != ".jpg" && ext != ".png" && ext != ".jpeg" && ext != ".gif" && ext != ".svg")
 	{
-		LOG(LogWarning) << "ImageIO::loadImageSize\tUnknown file type";
+		LOG(LogWarning) << "ImageIO::loadImageSize\tUnknown file type: " << fn;
 		return false;
 	}
 
@@ -437,12 +438,29 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 	FILE *f = fopen(fn.c_str(), "rb");
 #endif
 
-	if (f == 0)
+	if (f == nullptr)
 	{
-		LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to open file";
+		LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to open file: " << fn;
 		updateImageCache(fn, -1, -1, -1);
 		return false;
 	}
+
+    if (ext == ".svg"){
+        fclose(f);
+
+        NSVGimage* image = nsvgParseFromFile(fn.c_str(), "px", 96.0f);
+        if (image == nullptr) {
+            LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to parse SVG file: " << fn;
+            updateImageCache(fn, -1, -1, -1);
+            return false;
+        }
+
+        *x = (int)roundf(image->width);
+        *y = (int)roundf(image->height);
+
+        updateImageCache(fn, size, *x, *y);
+        return true;
+    }
 
 	// Strategy:
 	// reading GIF dimensions requires the first 10 bytes of the file
@@ -453,6 +471,7 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 	if (fread(buf, 1, 24, f) != 24)
 	{
 		updateImageCache(fn, -1, -1, -1);
+        fclose(f);
 		return false;
 	}
 
