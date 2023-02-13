@@ -2,6 +2,8 @@
 #include "ThemeData.h"
 #include "Window.h"
 #include "resources/TextureResource.h"
+#include "SystemConf.h"
+#include "platform.h"
 
 #include <algorithm>
 #include <SDL_events.h>
@@ -36,6 +38,25 @@ Splash::Splash(Window* window, const std::string image, bool fullScreenBackGroun
 	if (Utils::FileSystem::exists(themeFilePath))
 	{
 		std::map<std::string, std::string> sysData;
+        // Global variables
+        sysData["global.help"] = Settings::getInstance()->getBool("ShowHelpPrompts") ? "true" : "false";
+        sysData["global.clock"] = Settings::DrawClock() ? "true" : "false";
+        sysData["global.architecture"] = getArchString();
+
+        sysData["global.cheevos"] = SystemConf::getInstance()->getBool("global.retroachievements") ? "true" : "false";
+        sysData["global.cheevos.username"] = SystemConf::getInstance()->getBool("global.retroachievements") ? SystemConf::getInstance()->get("global.retroachievements.username") : "";
+
+        sysData["global.netplay"] = SystemConf::getInstance()->getBool("global.netplay") ? "true" : "false";
+        sysData["global.netplay.username"] = SystemConf::getInstance()->getBool("global.netplay") ? SystemConf::getInstance()->get("global.netplay.nickname") : "";
+
+        // Screen
+        sysData["screen.width"] = std::to_string(Renderer::getScreenWidth());
+        sysData["screen.height"] = std::to_string(Renderer::getScreenHeight());
+        sysData["screen.ratio"] = Renderer::getAspectRatio();
+        sysData["screen.vertical"] = Renderer::isVerticalScreen() ? "true" : "false";
+
+        // Retrocompatibility
+        sysData["cheevos.username"] = SystemConf::getInstance()->getBool("global.retroachievements") ? SystemConf::getInstance()->get("global.retroachievements.username") : "";
 
 		try { theme->loadFile("splash", sysData, themeFilePath); }
 		catch(...) { }
