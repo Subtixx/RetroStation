@@ -1399,6 +1399,9 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 
 	switch (script)
 	{
+    case ApiSystem::DECORATIONS:
+    case ApiSystem::GAMESETTINGS:
+    case ApiSystem::SHADERS:
 	case ApiSystem::THEMESDOWNLOADER:
 		return true;
 	case ApiSystem::RETROACHIVEMENTS:
@@ -1406,6 +1409,7 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 		return true;
 #endif
 		break;
+
 	case ApiSystem::KODI:
 		executables.push_back("kodi");
 		break;
@@ -1472,16 +1476,16 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 	case ApiSystem::VERSIONINFO:
 		executables.push_back("batocera-version");
 		break;
-	}
+    }
 
-	if (executables.size() == 0)
+	if (executables.empty())
 		return true;
 
-	for (auto executable : executables)
-		if (!Utils::FileSystem::exists("/usr/bin/" + executable))
-			return false;
-
-	return true;
+    return std::any_of(executables.begin(), executables.end(), [](const std::string& executable) {
+        // Check also current working directory for scripts
+        return !Utils::FileSystem::exists("/usr/bin/" + executable) && !Utils::FileSystem::exists("/usr/local/bin/" + executable) &&
+            !Utils::FileSystem::exists(Utils::FileSystem::getCWDPath() + "/scripts/" + executable);
+    });
 }
 
 bool ApiSystem::downloadFile(const std::string url, const std::string fileName, const std::string label, const std::function<void(const std::string)>& func)
