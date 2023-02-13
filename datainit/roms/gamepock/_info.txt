@@ -1,0 +1,7 @@
+## SYSTEM GAME POCKET COMPUTER ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .zip .7z"
+
+Requires MAME BIOS file gamepock.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .zip .7z"

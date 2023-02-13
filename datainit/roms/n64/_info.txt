@@ -1,0 +1,10 @@
+## SYSTEM NINTENDO 64 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".z64 .n64 .v64 .zip .7z"
+
+If Mupen64Plus standalone cannot load your zipped ROMs (black screen, then return to menu), try unzipping your ROMs.
+For more info: https://wiki.batocera.org/systems:n64
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".z64 .n64 .v64 .zip .7z"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:n64

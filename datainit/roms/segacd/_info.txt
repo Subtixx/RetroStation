@@ -1,0 +1,5 @@
+## SYSTEM SEGA CD ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cue .iso .chd .m3u"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cue .iso .chd .m3u"

@@ -1,0 +1,9 @@
+## SYSTEM GAME BOY COLOR (2 PLAYERS) ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".gbc .gb2 .gbc2 .zip .7z"
+
+For more info: https://wiki.batocera.org/systems:gbc2players
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".gbc .gb2 .gbc2 .zip .7z"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:gbc2players

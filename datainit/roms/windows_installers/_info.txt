@@ -1,0 +1,9 @@
+## SYSTEM INSTALL A NEW WINDOWS GAME ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".exe .iso"
+
+For more info: https://wiki.batocera.org/systems:windows
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".exe .iso"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:windows

@@ -1,0 +1,9 @@
+## SYSTEM PLAYSTATION PORTABLE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".iso .cso .pbp"
+
+For more info: https://wiki.batocera.org/systems:psp
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".iso .cso .pbp"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:psp

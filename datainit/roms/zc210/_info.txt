@@ -1,0 +1,5 @@
+## SYSTEM ZELDA CLASSIC ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".qst"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".qst"

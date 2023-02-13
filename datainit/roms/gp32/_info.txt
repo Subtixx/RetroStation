@@ -1,0 +1,7 @@
+## SYSTEM GP32 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".smc .zip .7z"
+
+Requires MAME BIOS file gp32.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".smc .zip .7z"

@@ -1,0 +1,9 @@
+## SYSTEM GAME BOY (2 PLAYERS) ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".gb .gb2 .gbc2 .zip .7z"
+
+For more info: https://wiki.batocera.org/systems:gb2players
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".gb .gb2 .gbc2 .zip .7z"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:gb2players

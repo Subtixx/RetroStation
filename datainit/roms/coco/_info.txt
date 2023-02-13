@@ -1,0 +1,7 @@
+## SYSTEM COLOR COMPUTER ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wav .cas .ccc .rom .zip .7z"
+
+Requires MAME BIOS file coco.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wav .cas .ccc .rom .zip .7z"

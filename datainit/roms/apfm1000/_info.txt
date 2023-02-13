@@ -1,0 +1,7 @@
+## SYSTEM M-1000 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .zip .7z"
+
+Requires MAME BIOS file apfm1000.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .zip .7z"

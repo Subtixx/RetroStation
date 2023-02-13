@@ -1,0 +1,8 @@
+## SYSTEM LASER 310 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".vz .wav .cas .zip .7z"
+
+Requires MAME BIOS file laser310.zip
+Using snapshot (.vz) files is recommended.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".vz .wav .cas .zip .7z"

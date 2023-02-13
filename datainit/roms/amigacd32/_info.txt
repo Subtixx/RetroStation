@@ -1,0 +1,5 @@
+## SYSTEM AMIGA CD32 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .cue .iso .chd"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .cue .iso .chd"

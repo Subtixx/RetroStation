@@ -1,0 +1,5 @@
+## SYSTEM NEO-GEO POCKET ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".ngp .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".ngp .zip .7z"

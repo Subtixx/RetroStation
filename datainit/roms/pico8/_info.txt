@@ -1,0 +1,9 @@
+## SYSTEM PICO-8 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".p8 .png .m3u"
+
+For more info: https://wiki.batocera.org/systems:pico-8
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".p8 .png .m3u"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:pico-8

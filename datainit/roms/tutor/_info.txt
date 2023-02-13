@@ -1,0 +1,8 @@
+## SYSTEM TUTOR ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .wav .zip .7z"
+
+Requires MAME BIOS file tutor.zip
+To get through the loading menu, R1 will move down and A/East will select.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .wav .zip .7z"

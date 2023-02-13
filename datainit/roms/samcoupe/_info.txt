@@ -1,0 +1,5 @@
+## SYSTEM SAM COUPÉ ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cpm .dsk .sad .mgt .sdf .td0 .sbt .zip"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cpm .dsk .sad .mgt .sdf .td0 .sbt .zip"

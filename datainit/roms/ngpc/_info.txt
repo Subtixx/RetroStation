@@ -1,0 +1,5 @@
+## SYSTEM NEO-GEO POCKET COLOR ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".ngc .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".ngc .zip .7z"

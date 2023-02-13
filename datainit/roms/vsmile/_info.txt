@@ -1,0 +1,7 @@
+## SYSTEM V.SMILE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".u1 .u3 .bin .zip .7z"
+
+Requires MAME BIOS file vsmile.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".u1 .u3 .bin .zip .7z"

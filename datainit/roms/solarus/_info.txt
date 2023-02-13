@@ -1,0 +1,5 @@
+## SYSTEM SOLARUS ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".zip .solarus"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".zip .solarus"

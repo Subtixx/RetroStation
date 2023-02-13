@@ -1,0 +1,9 @@
+## SYSTEM XBOX ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".iso .squashfs"
+
+For more info: https://wiki.batocera.org/systems:xbox
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".iso .squashfs"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:xbox

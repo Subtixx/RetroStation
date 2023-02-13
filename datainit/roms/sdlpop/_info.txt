@@ -1,0 +1,9 @@
+## SYSTEM SDLPOP ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".sdlpop"
+
+An open-source port of Prince of Persia, based on the disassembly of the DOS version.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".sdlpop"
+
+Un port open-source de Prince of Persia basé sur la version DOS.

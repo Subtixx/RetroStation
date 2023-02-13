@@ -1,0 +1,9 @@
+## SYSTEM WINDOWS ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".pc .exe .wine .wsquashfs .wtgz"
+
+For more info: https://wiki.batocera.org/systems:windows
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".pc .exe .wine .wsquashfs .wtgz"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:windows

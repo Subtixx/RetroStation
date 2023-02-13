@@ -1,0 +1,9 @@
+## SYSTEM MOONLIGHT EMBEDDED ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".moonlight"
+
+For more info: https://wiki.batocera.org/systems:moonlight
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".moonlight"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:moonlight

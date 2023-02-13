@@ -1,0 +1,5 @@
+## SYSTEM PC ENGINE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".pce .bin .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".pce .bin .zip .7z"

@@ -1,0 +1,9 @@
+## SYSTEM GAMECUBE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".gcm .iso .gcz .ciso .wbfs .rvz .elf .dol .m3u .json"
+
+For more info: https://wiki.batocera.org/systems:gamecube
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".gcm .iso .gcz .ciso .wbfs .rvz .elf .dol .m3u .json"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:gamecube

@@ -1,0 +1,5 @@
+## SYSTEM SUPER GAME BOY ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".gb .gbc .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".gb .gbc .zip .7z"

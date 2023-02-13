@@ -1,0 +1,7 @@
+## SYSTEM GAME MASTER ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .zip .7z"
+
+Requires MAME BIOS file gmaster.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .zip .7z"

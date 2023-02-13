@@ -1,0 +1,5 @@
+## SYSTEM 3DS ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".3ds .3dsx .cxi .axf .elf"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".3ds .3dsx .cxi .axf .elf"

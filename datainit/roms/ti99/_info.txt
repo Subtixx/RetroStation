@@ -1,0 +1,8 @@
+## SYSTEM TI-99 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".rpk .wav .zip .7z"
+
+Requires MAME BIOS file ti99_4a.zip
+Cartridges need to be in .rpk format and unzipped if not using software lists.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".rpk .wav .zip .7z"

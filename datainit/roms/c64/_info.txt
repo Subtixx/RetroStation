@@ -1,0 +1,5 @@
+## SYSTEM COMMODORE 64 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".d64 .d81 .crt .prg .tap .t64 .m3u .zip .7z .nib"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".d64 .d81 .crt .prg .tap .t64 .m3u .zip .7z .nib"

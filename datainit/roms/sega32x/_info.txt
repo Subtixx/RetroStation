@@ -1,0 +1,5 @@
+## SYSTEM 32X ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".32x .smd .bin .md .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".32x .smd .bin .md .zip .7z"

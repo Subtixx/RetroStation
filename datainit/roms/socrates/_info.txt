@@ -1,0 +1,8 @@
+## SYSTEM SOCRATES ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .zip .7z"
+
+Requires MAME BIOS file socrates.zip
+Software list mode recommended
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .zip .7z"

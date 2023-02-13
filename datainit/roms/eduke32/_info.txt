@@ -1,0 +1,41 @@
+## SYSTEM EDUKE32 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".eduke32"
+
+EDuke32 is a Build Engine source port for playing games like Duke Nukem 3D.
+
+The following games are officially supported, and should be placed in the designated directory with their required
+files:
+  * duke:   Duke Nukem 3D (DUKE3D.GRP)
+  * duke:   Duke Nukem 3D: Duke It Out in D.C. (DUKEDC.GRP)
+  * duke:   Duke Nukem 3D: Duke Caribbean: Life's a Beach (VACATION.GRP)
+  * duke:   Duke Nukem 3D: Duke: Nuclear Winter (NWINTER.GRP)
+  * nam:    NAM (NAM.GRP, NAM.CON)
+  * ww2gi:  World War II GI (WW2GI.GRP)
+  * ww2gi:  World War II GI: Platoon Leader (PLATOONL.DAT, PLATOONL.DEF)
+
+Note: If you want to play Ion Fury, check out the fury roms directory as it uses a slightly different binary.
+
+Each game needs an .eduke32 file. The purpose of this file is to tell EDuke32 how to launch the game. This is simple
+for most cases but can be more complicated if you are installing mods. It is recommended to underscore the name so
+the scraper has an easier time getting a match e.g. Duke_Nukem_3D.eduke32.
+
+For each Duke Nukem 3D game, create an .eduke32 file with the following text:
+  FILE  = /duke/DUKE3D.GRP
+  FILE+ = /duke/DUKEDC.GRP  <-- Note: Omit this line for the base game, update filename for each expansion
+
+For Nam, create an .eduke32 file with the following text:
+  FILE = /nam/NAM.GRP
+  CON  = /nam/NAM.CON
+
+For World War II GI, create an .eduke32 file with the following text:
+  FILE = /ww2gi/WW2GI.GRP
+
+For the World War II GI: Platoon Leader expansion, create an .eduke32 file with the following text:
+  FILE  = /ww2gi/WW2GI.GRP
+  FILE+ = /ww2gi/PLATOONL.DAT
+  CON   = /ww2gi/PLATOONL.DEF
+
+For mod support and troubleshooting, please visit the wiki for more information.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".eduke32"

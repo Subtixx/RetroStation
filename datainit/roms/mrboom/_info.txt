@@ -1,0 +1,9 @@
+## SYSTEM MRBOOM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".libretro"
+
+For more info: https://wiki.batocera.org/systems:mrboom
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".libretro"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:mrboom

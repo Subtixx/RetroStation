@@ -42,7 +42,7 @@ do_getPer() {
 	done
 	while [ -f "$TARFILE" ]; do
 		CURVAL=$(stat "$TARFILE" | grep -E '^[ ]*Size:' | sed -e s+'^[ ]*Size: \([0-9][0-9]*\) .*$'+'\1'+)
-		PER=$(expr ${CURVAL} '*' 100 / ${TARVAL})
+		PER=$(expr "${CURVAL}" '*' 100 / "${TARVAL}")
 		echo "[${USER_INFO_DLSIZE}] - '${NAME}' >>>${PER}"
 		sleep 0.5
 		kill -0 $PID 2>/dev/null || break
@@ -89,7 +89,7 @@ case "${ACTION}" in
 		USER_INFO_INSIZE=$(pacman -Si "${PKG}" | grep "Installed Size" | awk '{print $4$5}')
 
 		# Download package now, send pacman in background and silence
-		pacman --noconfirm -Sw "${PKG}" --overwrite 'userdata/*' 2>&1 >/dev/null &
+		pacman --noconfirm -Sw "${PKG}" --overwrite 'userdata/*' >/dev/null 2>&1 &
 		PID=$!
 		# The .part is needed, check if file is already present
 		# Download loop with real size
@@ -99,7 +99,7 @@ case "${ACTION}" in
 		RET=$?
 		if [ ${RET} -eq 0 ]; then
 			# Install package directly (without Sync)
-			pacman --noconfirm -S "${PKG}" --overwrite 'userdata/*' 2>&1 >/dev/null &
+			pacman --noconfirm -S "${PKG}" --overwrite 'userdata/*' >/dev/null 2>&1 &
 			PID=$!; RET=$?
 			# Loop with a indicator for working state
 			do_bepatient

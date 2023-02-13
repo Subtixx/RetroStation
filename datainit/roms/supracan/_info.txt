@@ -1,0 +1,7 @@
+## SYSTEM SUPER A'CAN ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .zip .7z"
+
+Sound support is preliminary
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .zip .7z"

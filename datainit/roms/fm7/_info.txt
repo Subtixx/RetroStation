@@ -1,0 +1,7 @@
+## SYSTEM FM-7 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wav .t77 .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .zip .7z"
+
+Requires MAME BIOS file fm7.zip, and optionally fm77av.zip for FM-77AV support.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wav .t77 .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .zip .7z"

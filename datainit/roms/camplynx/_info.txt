@@ -1,0 +1,8 @@
+## SYSTEM CAMPUTERS LYNX ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wav .tap .zip .7z"
+
+Requires MAME BIOS files lynx128k.zip, lynx96k.zip, lynx48k.zip
+Using software list mode is recommended.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wav .tap .zip .7z"

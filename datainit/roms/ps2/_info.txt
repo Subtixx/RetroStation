@@ -1,0 +1,9 @@
+## SYSTEM PLAYSTATION 2 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".iso .mdf .nrg .bin .img .dump .gz .cso .chd"
+
+For more info: https://wiki.batocera.org/systems:ps2
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".iso .mdf .nrg .bin .img .dump .gz .cso .chd"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:ps2

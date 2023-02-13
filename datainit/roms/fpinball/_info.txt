@@ -1,0 +1,9 @@
+## SYSTEM FUTURE PINBALL ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".fpt"
+
+For more info: https://wiki.batocera.org/systems:windows
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".fpt"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:windows

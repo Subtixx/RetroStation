@@ -1,0 +1,7 @@
+## SYSTEM CREATIVISION ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .rom .zip .7z"
+
+Requires MAME BIOS file crvision.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .rom .zip .7z"

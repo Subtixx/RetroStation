@@ -1,0 +1,7 @@
+## SYSTEM CD-I ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".chd .cue .toc .nrg .gdi .iso .cdr"
+
+Requires MAME BIOS file cdimono1.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".chd .cue .toc .nrg .gdi .iso .cdr"

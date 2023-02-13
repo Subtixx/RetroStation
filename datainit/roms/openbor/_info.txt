@@ -1,0 +1,9 @@
+## SYSTEM OPENBOR ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".pak"
+
+For more info: https://wiki.batocera.org/systems:openbor
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".pak"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:openbor

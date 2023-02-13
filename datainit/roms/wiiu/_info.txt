@@ -1,0 +1,9 @@
+## SYSTEM WII U ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wua .wup .wud .wux .rpx .squashfs"
+
+For more info: https://wiki.batocera.org/systems:wiiu
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wua .wup .wud .wux .rpx .squashfs"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:wiiu

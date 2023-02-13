@@ -1,0 +1,5 @@
+## SYSTEM CHANNEL-F ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".zip .rom .bin .chf"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".zip .rom .bin .chf"

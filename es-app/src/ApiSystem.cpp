@@ -350,13 +350,13 @@ std::pair<std::string, int> ApiSystem::scrape(BusyComponent* ui)
 bool ApiSystem::ping() 
 {
 	// ping Google, if it fails then move on, if succeeds exit loop and return "true"
-	if (!executeScript("timeout 1 ping -c 1 -t 1000 google.com"))
+	if (!executeScript("timeout 1 ping -c 1 -W 1 google.com"))
 	{
 		// ping Google DNS
-		if (!executeScript("timeout 1 ping -c 1 -t 1000 8.8.8.8"))
+		if (!executeScript("timeout 1 ping -c 1 -W 1 8.8.8.8"))
 		{
 			// ping Google secondary DNS & give 2 seconds, return this one's status
-			return executeScript("timeout 2 ping -c 1 -t 2000 8.8.4.4");
+			return executeScript("timeout 2 ping -c 1 -W 2 8.8.4.4");
 		}
 	}
 
@@ -1411,70 +1411,70 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 		break;
 
 	case ApiSystem::KODI:
-		executables.push_back("kodi");
+		executables.emplace_back("kodi");
 		break;
 	case ApiSystem::WIFI:
-		executables.push_back("batocera-wifi");
+		executables.emplace_back("batocera-wifi");
 		break;
 	case ApiSystem::BLUETOOTH:
-		executables.push_back("batocera-bluetooth");
+		executables.emplace_back("batocera-bluetooth");
 		break;
 	case ApiSystem::RESOLUTION:
-		executables.push_back("batocera-resolution");
+		executables.emplace_back("batocera-resolution");
 		break;
 	case ApiSystem::BIOSINFORMATION:
-		executables.push_back("batocera-systems");
+		executables.emplace_back("batocera-systems");
 		break;
 	case ApiSystem::DISKFORMAT:
-		executables.push_back("batocera-format");
+		executables.emplace_back("batocera-format");
 		break;
 	case ApiSystem::OVERCLOCK:
-		executables.push_back("batocera-overclock");
+		executables.emplace_back("batocera-overclock");
 		break;
 	case ApiSystem::NETPLAY:
-		executables.push_back("7zr");
+		executables.emplace_back("7zr");
 		break;
 	case ApiSystem::PDFEXTRACTION:
-		executables.push_back("pdftoppm");
-		executables.push_back("pdfinfo");
+		executables.emplace_back("pdftoppm");
+		executables.emplace_back("pdfinfo");
 		break;
 	case ApiSystem::BATOCERASTORE:
-		executables.push_back("batocera-store");
+		executables.emplace_back("batocera-store");
 		break;
 	case ApiSystem::THEBEZELPROJECT:
-		executables.push_back("batocera-es-thebezelproject");
+		executables.emplace_back("batocera-es-thebezelproject");
 		break;		
 	case ApiSystem::PADSINFO:
-		executables.push_back("batocera-padsinfo");
+		executables.emplace_back("batocera-padsinfo");
 		break;
 	case ApiSystem::EVMAPY:
-		executables.push_back("evmapy");
+		executables.emplace_back("evmapy");
 		break;
 	case ApiSystem::BATOCERAPREGAMELISTSHOOK:
-		executables.push_back("batocera-preupdate-gamelists-hook");
+		executables.emplace_back("batocera-preupdate-gamelists-hook");
 		break;
 	case ApiSystem::TIMEZONES:
-		executables.push_back("batocera-timezone");
+		executables.emplace_back("batocera-timezone");
 		break;
 	case ApiSystem::AUDIODEVICE:
-		executables.push_back("batocera-audio");
+		executables.emplace_back("batocera-audio");
 		break;		
 	case ApiSystem::BACKUP:
-		executables.push_back("batocera-sync");
+		executables.emplace_back("batocera-sync");
 		break;
 	case ApiSystem::INSTALL:
-		executables.push_back("batocera-install");
+		executables.emplace_back("batocera-install");
 		break;	
 	case ApiSystem::SUPPORTFILE:
-		executables.push_back("batocera-support");
+		executables.emplace_back("batocera-support");
 		break;
 	case ApiSystem::UPGRADE:
-		executables.push_back("batocera-upgrade");
+		executables.emplace_back("batocera-upgrade");
 		break;
 	case ApiSystem::SUSPEND:
 		return Utils::FileSystem::exists("/usr/sbin/pm-suspend");
 	case ApiSystem::VERSIONINFO:
-		executables.push_back("batocera-version");
+		executables.emplace_back("batocera-version");
 		break;
     }
 
@@ -1483,8 +1483,13 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 
     return std::any_of(executables.begin(), executables.end(), [](const std::string& executable) {
         // Check also current working directory for scripts
-        return !Utils::FileSystem::exists("/usr/bin/" + executable) && !Utils::FileSystem::exists("/usr/local/bin/" + executable) &&
-            !Utils::FileSystem::exists(Utils::FileSystem::getCWDPath() + "/scripts/" + executable);
+        if (!Utils::FileSystem::exists("/usr/bin/" + executable) && !Utils::FileSystem::exists("/usr/local/bin/" + executable) &&
+            !Utils::FileSystem::exists(Utils::FileSystem::getCWDPath() + "/scripts/" + executable)){
+            LOG(LogWarning) << "Script " << executable << " not found";
+            LOG(LogDebug) << "Tried " << Utils::FileSystem::getCWDPath();
+            return false;
+        }
+        return true;
     });
 }
 

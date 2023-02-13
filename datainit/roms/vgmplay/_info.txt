@@ -1,0 +1,8 @@
+## SYSTEM VIDEO GAME MUSIC PLAYER ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".vgm .vgz .zip .7z"
+
+Software lists recommended. QSound can be CPU-intensive.
+Use the File Manager in the MAME menu to change tracks.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".vgm .vgz .zip .7z"

@@ -1,0 +1,11 @@
+## SYSTEM GZDOOM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wad .iwad .pwad .gz"
+
+Put your WAD files in this directory.
+The gz extension allow you to add customer mods - blah blah (tbd)
+i.e. Aliens Eradication.gz = -iwad DOOM2.wad -file ALIENS_ERADICATION_TC_2_0.pk3 ERADICATION_MAPSET_2_0.wad
+
+Additional music can be added to /userdata/system/configs/gzdoom in fm_banks & soundfonts respectively
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wad .iwad .pwad .gz"

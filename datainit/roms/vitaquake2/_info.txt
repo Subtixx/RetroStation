@@ -1,0 +1,5 @@
+## SYSTEM QUAKE II ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".pak .zip .7zip"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".pak .zip .7zip"

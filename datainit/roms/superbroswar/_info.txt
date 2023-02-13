@@ -1,0 +1,9 @@
+## SYSTEM SUPER MARIO WAR ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".game"
+
+Super Mario War - smash opponents by stomping on them, in a fun multiplayer game.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".game"
+
+Super Mario War - écrasez vos adversaires dans ce jeu multijoueurs compétitif.

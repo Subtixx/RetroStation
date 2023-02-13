@@ -1,0 +1,5 @@
+## SYSTEM FLASH PLAYER ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".swf"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".swf"

@@ -1,0 +1,9 @@
+## SYSTEM DREAMCAST ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cdi .cue .gdi .chd .m3u"
+
+For more info: https://wiki.batocera.org/systems:dreamcast
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cdi .cue .gdi .chd .m3u"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:dreamcast

@@ -1,0 +1,5 @@
+## SYSTEM ARDUBOY ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".hex .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".hex .zip .7z"

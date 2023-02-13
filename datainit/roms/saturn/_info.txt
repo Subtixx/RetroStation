@@ -1,0 +1,5 @@
+## SYSTEM SATURN ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cue .ccd .m3u .chd .iso .zip"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cue .ccd .m3u .chd .iso .zip"

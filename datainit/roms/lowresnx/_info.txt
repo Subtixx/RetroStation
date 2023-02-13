@@ -1,0 +1,5 @@
+## SYSTEM LOWRES NX ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".nx .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".nx .zip .7z"

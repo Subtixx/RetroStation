@@ -1,0 +1,8 @@
+## SYSTEM ATARI XE GAME SYSTEM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".atr .dsk .xfd .bin .rom .car .zip .7z"
+
+Requires MAME BIOS file xegs.zip
+Software list mode recommended
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".atr .dsk .xfd .bin .rom .car .zip .7z"

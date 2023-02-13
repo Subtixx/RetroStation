@@ -1,0 +1,9 @@
+## SYSTEM MEGA DRIVE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .gen .md .sg .smd .zip .7z"
+
+For more info: https://wiki.batocera.org/systems:megadrive
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .gen .md .sg .smd .zip .7z"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:megadrive

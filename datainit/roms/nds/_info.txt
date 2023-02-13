@@ -1,0 +1,5 @@
+## SYSTEM NINTENDO DS ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".nds .bin .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".nds .bin .zip .7z"

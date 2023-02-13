@@ -1,0 +1,5 @@
+## SYSTEM COMMODORE 128 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".d64 .d81 .prg .lnx .m3u .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".d64 .d81 .prg .lnx .m3u .zip .7z"

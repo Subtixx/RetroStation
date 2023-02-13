@@ -1,0 +1,5 @@
+## SYSTEM SUPER CASSETTE VISION ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .0"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .0"

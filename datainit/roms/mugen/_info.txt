@@ -1,0 +1,5 @@
+## SYSTEM MUGEN ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".pc .squashfs"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".pc .squashfs"

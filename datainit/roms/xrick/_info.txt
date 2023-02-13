@@ -1,0 +1,9 @@
+## SYSTEM XRICK ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".zip"
+
+Put the data.zip in this directory.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".zip"
+
+Placez ici vos fichiers data.zip pour xrick.

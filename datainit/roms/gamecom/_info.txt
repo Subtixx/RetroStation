@@ -1,0 +1,7 @@
+## SYSTEM GAME.COM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".bin .tgc .zip .7z"
+
+Requires MAME BIOS file gamecom.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".bin .tgc .zip .7z"

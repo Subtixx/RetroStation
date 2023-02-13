@@ -1,0 +1,9 @@
+## SYSTEM PLAYSTATION ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cue .img .mdf .pbp .toc .cbn .m3u .ccd .chd .iso"
+
+For more info: https://wiki.batocera.org/systems:psx
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cue .img .mdf .pbp .toc .cbn .m3u .ccd .chd .iso"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:psx

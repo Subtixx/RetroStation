@@ -1,0 +1,12 @@
+## SYSTEM TRIFORCE ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".gcm .iso .gcz .ciso .wbfs .elf .dol .m3u"
+
+Triforce is an arcade machine based on the GameCube's hardware. This build only supports certain games.
+Playable - Mario Kart GP 1, Mario Kart GP 2 (after loading save state).
+Intro - F-Zero AX, Virtua Striker 2002.
+Nothing - All other Triforce games.
+
+For the most up-to-date information and questions about manual save state download, visit https://wiki.batocera.org/systems:triforce
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".gcm .iso .gcz .ciso .wbfs .elf .dol .m3u"

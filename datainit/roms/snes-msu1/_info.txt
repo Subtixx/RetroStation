@@ -1,0 +1,5 @@
+## SYSTEM SUPER DISC SYSTEM (MSU1) ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".smc .sfc"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".smc .sfc"

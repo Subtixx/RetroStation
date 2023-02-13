@@ -1,0 +1,5 @@
+## SYSTEM NEO-GEO CD ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".cue .iso .chd"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".cue .iso .chd"

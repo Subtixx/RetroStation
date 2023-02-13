@@ -1,0 +1,9 @@
+## SYSTEM TIC-80 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".tic"
+
+For more info: https://wiki.batocera.org/systems:tic-80
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".tic"
+
+Trouvez la documentation ici: https://wiki.batocera.org/systems:tic-80

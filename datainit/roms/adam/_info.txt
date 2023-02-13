@@ -1,0 +1,8 @@
+## SYSTEM ADAM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wav .ddp .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .rom .col .bin .zip .7z"
+
+Requires the following MAME BIOS files:
+adam.zip, adam_ddp.zip, adam_fdc.zip, adam_kb.zip, & adam_prn.zip
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wav .ddp .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .rom .col .bin .zip .7z"

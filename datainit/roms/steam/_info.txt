@@ -1,0 +1,8 @@
+## SYSTEM STEAM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".steam"
+
+Play Steam.
+Run batocera-steam-update to update the roms directory according to your installed games.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".steam"

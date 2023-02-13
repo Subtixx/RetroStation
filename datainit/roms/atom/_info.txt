@@ -1,0 +1,9 @@
+## SYSTEM ATOM ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".wav .tap .csw .uef .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .40t .atm .bin .rom .zip .7z"
+
+Requires MAME BIOS file atom.zip
+Using software list mode is recommended. Software list cassettes don't work but floppies do.
+Disks will automatically show contents, if the program isn't auto-launched, type the program name followed by a double quote (mapped to shift-2) and hit enter to run.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".wav .tap .csw .uef .mfi .dfi .hfe .mfm .td0 .imd .d77 .d88 .1dd .cqm .cqi .dsk .40t .atm .bin .rom .zip .7z"

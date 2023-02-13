@@ -1,0 +1,7 @@
+## SYSTEM EASYRPG ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".easyrpg .squashfs .zip"
+
+The EasyRPG engine supports RPG Maker 2000 and 2003 games, you have to put the game's entire folder inside, and add .easyrpg to it's name the game folder is the one containing the RPG_RT.ldb file.
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".easyrpg .squashfs .zip"

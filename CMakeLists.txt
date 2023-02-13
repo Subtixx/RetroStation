@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
 option(GLES "Set to ON if targeting Embedded OpenGL" ${GLES})
 option(GLES2 "Set to ON if targeting OpenGL ES 2.0" ${GLES2})
@@ -15,7 +15,7 @@ option(DISABLE_KODI "Set to ON to disable kodi in menu" OFF)
 option(ENABLE_PULSE "Set to ON to enable pulse audio (versus alsa)" OFF)
 option(ENABLE_TTS "Set to ON to enable text to speech" OFF)
 
-project(emulationstation-all)
+project(emulationstation-all VERSION 1.0.0)
 
 #-------------------------------------------------------------------------------
 #add local find scripts to CMAKE path
@@ -411,12 +411,20 @@ endif()
 #-------------------------------------------------------------------------------
 # set up build directories
 set(dir ${CMAKE_CURRENT_SOURCE_DIR})
-set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
-set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
-
+set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory")
+set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${dir} CACHE PATH "Build directory")
 
 #-------------------------------------------------------------------------------
 # add each component
+
+
+# Load env variables
+add_definitions(
+        -DSCREENSCRAPER_DEV_LOGIN="devid=batoceralinux&devpassword=omvIrirRPuY"
+        -DGAMESDB_APIKEY="b699c2e6f9f85730fc2e4aa831b24172e68701352310f4e4d301d9342ae39636"
+        -DCHEEVOS_DEV_LOGIN="z=BatoceraLinux&y=u6LQHAtl0360ezfXLPuCbYRZfKeVkWas"
+)
 
 add_subdirectory("external")
 add_subdirectory("es-core")
@@ -425,4 +433,3 @@ add_subdirectory("es-app")
 if(MSGFMT_EXECUTABLE AND MSGMERGE_EXECUTABLE AND XGETTEXT_EXECUTABLE AND Intl_FOUND)
   add_subdirectory (locale)
 endif()
-

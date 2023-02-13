@@ -251,3 +251,15 @@ endif()
 include_directories(${COMMON_INCLUDE_DIRS})
 add_library(es-core STATIC ${CORE_SOURCES} ${CORE_HEADERS})
 target_link_libraries(es-core ${COMMON_LIBRARIES})
+
+
+# Copy resources/ to bin/resources
+add_custom_command(TARGET es-core POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/resources
+		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/resources)
+
+add_custom_command(TARGET es-core POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/scripts
+		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/scripts)

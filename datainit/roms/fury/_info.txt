@@ -1,0 +1,11 @@
+## SYSTEM ION FURY ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".grp"
+
+Ion Fury is a new Build Engine game from the creators of the EDuke32 source port.
+
+Place the following files in this directory:
+  * fury.grp
+  * fury.grpinfo
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".grp"

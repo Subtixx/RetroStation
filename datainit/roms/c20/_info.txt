@@ -1,0 +1,5 @@
+## SYSTEM COMMODORE VIC-20 ##
+-------------------------------------------------------------------------------
+ROM files extensions accepted: ".a0 .b0 .crt .d64 .d81 .prg .tap .t64 .m3u .zip .7z"
+-------------------------------------------------------------------------------
+Extensions des fichiers ROMs permises: ".a0 .b0 .crt .d64 .d81 .prg .tap .t64 .m3u .zip .7z"
