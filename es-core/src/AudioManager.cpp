@@ -11,6 +11,7 @@
 #include "id3v2lib/include/id3v2lib.h"
 #include "ThemeData.h"
 #include "Paths.h"
+#include "id3v2lib.compat.h"
 
 #ifdef WIN32
 #include <time.h>

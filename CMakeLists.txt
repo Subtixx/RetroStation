@@ -1,4 +1,62 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.24.2)
+
+# link_directories() treats paths relative to the source dir.
+cmake_policy(SET CMP0015 NEW)
+
+# Avoid warnings in CMake 3.0.2:
+cmake_policy(SET CMP0042 NEW)
+cmake_policy(SET CMP0043 NEW)
+
+# allow VERSION argument in project()
+cmake_policy(SET CMP0048 NEW)
+
+if (POLICY CMP0054)
+    # do not interpret if() arguments as variables!
+    cmake_policy(SET CMP0054 NEW)
+endif()
+
+if (POLICY CMP0091)
+    # Allow selecting MSVC runtime library using CMAKE_MSVC_RUNTIME_LIBRARY.
+    cmake_policy(SET CMP0091 NEW)
+endif()
+
+# Avoid warning about DOWNLOAD_EXTRACT_TIMESTAMP in CMake 3.24:
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
+    cmake_policy(SET CMP0135 NEW)
+endif()
+
+include(FetchContent)
+FetchContent_Declare(_project_options URL https://github.com/aminya/project_options/archive/refs/tags/v0.26.3.zip)
+FetchContent_MakeAvailable(_project_options)
+include(${_project_options_SOURCE_DIR}/Index.cmake)
+
+run_vcpkg()
+
+project(emulationstation-all VERSION 1.0.0 LANGUAGES C CXX)
+
+project_options(
+        ENABLE_CACHE
+        ${ENABLE_CPPCHECK}
+        ${ENABLE_CLANG_TIDY}
+        ENABLE_VS_ANALYSIS
+        # ENABLE_CONAN
+        # ENABLE_INTERPROCEDURAL_OPTIMIZATION
+        # ENABLE_NATIVE_OPTIMIZATION
+        ${ENABLE_DOXYGEN}
+        ${ENABLE_COVERAGE}
+        ${ENABLE_SANITIZER_ADDRESS}
+        ${ENABLE_SANITIZER_UNDEFINED_BEHAVIOR}
+        # ENABLE_SANITIZER_THREAD
+        # ENABLE_SANITIZER_MEMORY
+        # ENABLE_PCH
+        # PCH_HEADERS
+        # WARNINGS_AS_ERRORS
+        ENABLE_INCLUDE_WHAT_YOU_USE
+        # ENABLE_BUILD_WITH_TIME_TRACE
+        # ENABLE_UNITY
+        # LINKER "lld"
+        # CONAN_PROFILE ${profile_path}  # passes a profile to conan: see https://docs.conan.io/en/latest/reference/profiles.html
+)
 
 option(GLES "Set to ON if targeting Embedded OpenGL" ${GLES})
 option(GLES2 "Set to ON if targeting OpenGL ES 2.0" ${GLES2})
@@ -14,8 +72,6 @@ option(ENABLE_FILEMANAGER "Set to ON to enable f1 shortcut for filesystem" OFF)
 option(DISABLE_KODI "Set to ON to disable kodi in menu" OFF)
 option(ENABLE_PULSE "Set to ON to enable pulse audio (versus alsa)" OFF)
 option(ENABLE_TTS "Set to ON to enable text to speech" OFF)
-
-project(emulationstation-all VERSION 1.0.0)
 
 #-------------------------------------------------------------------------------
 #add local find scripts to CMAKE path
@@ -233,8 +289,9 @@ set(COMMON_INCLUDE_DIRS
     ${CURL_INCLUDE_DIR}
     ${VLC_INCLUDE_DIR}
     ${RAPIDJSON_INCLUDE_DIRS}
-    ${CMAKE_CURRENT_SOURCE_DIR}/external
-    ${CMAKE_CURRENT_SOURCE_DIR}/es-core/src
+    ${CMAKE_SOURCE_DIR}/external/id3v2lib/include
+    ${CMAKE_SOURCE_DIR}/external
+    ${CMAKE_SOURCE_DIR}/es-core/src
 )
 
 if(ENABLE_PULSE)
@@ -299,6 +356,8 @@ elseif(DEFINED VERO4K)
         "${CMAKE_FIND_ROOT_PATH}/opt/vero3/lib"
     )
 endif()
+find_package(flac CONFIG REQUIRED)
+find_package(ZLIB REQUIRED)
 
 set(COMMON_LIBRARIES
     ${FREETYPE_LIBRARIES}
@@ -311,8 +370,11 @@ set(COMMON_LIBRARIES
     ${VLC_LIBRARIES}
     pugixml
     nanosvg
-    id3v2
-	libcheevos	
+    id3v2lib
+	libcheevos
+    z
+    FLAC::FLAC FLAC::FLAC++
+    ZLIB::ZLIB
 )
 
 if(UDEV_FOUND)
@@ -411,9 +473,9 @@ endif()
 #-------------------------------------------------------------------------------
 # set up build directories
 set(dir ${CMAKE_CURRENT_SOURCE_DIR})
-set(EXECUTABLE_OUTPUT_PATH ${dir} CACHE PATH "Build directory")
-set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${dir} CACHE PATH "Build directory")
+set(EXECUTABLE_OUTPUT_PATH ${dir}/bin/ CACHE PATH "Build directory")
+set(LIBRARY_OUTPUT_PATH ${dir}/bin/ CACHE PATH "Build directory")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${dir}/bin/ CACHE PATH "Build directory")
 
 #-------------------------------------------------------------------------------
 # add each component
