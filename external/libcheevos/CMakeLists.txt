@@ -1,4 +1,16 @@
-project("libcheevos")
+project("libcheevos" C CXX)
+
+#find_package(7zip CONFIG REQUIRED) # Since vcpkg is so stupid, we have to use the old way of finding 7zip
+find_package(flac CONFIG REQUIRED)
+find_package(ZLIB REQUIRED)
+
+# Use 7zip/C
+set(7ZIP_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/7zip/C)
+FILE(GLOB_RECURSE 7ZIP_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/7zip/C/*.c)
+FILE(GLOB_RECURSE 7ZIP_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/7zip/C/*.h)
+# Remove Util/LzmaLib/*
+FILE(GLOB_RECURSE 7ZIP_SPAM ${CMAKE_CURRENT_SOURCE_DIR}/7zip/C/Util/*.c)
+LIST(REMOVE_ITEM 7ZIP_SOURCES ${7ZIP_SPAM})
 
 set(CHEEVOS_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/cheevos.h
@@ -92,105 +104,53 @@ set(LIBRETRO_COMMON_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include/vfs/vfs_implementation_cdrom.h	
 	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include/compat/msvc.h		
 	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include/encodings/crc32.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include/encodings/utf.h	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/LzmaDec.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/LzmaEnc.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7z.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zTypes.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zFile.h	
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include/encodings/utf.h
+
+	${7ZIP_HEADERS}
 )
 
 set(LIBRETRO_COMMON_SOURCES
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/file/file_path.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/file/file_path_io.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/file/retro_dirent.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/compat/compat_strl.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/compat/compat_strcasestr.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/compat/compat_posix_string.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/compat/fopen_utf8.c		
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/memmap/memalign.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/memmap/memmap.c		
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/cdfs/cdfs.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_bitstream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_cdrom.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_chd.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_huffman.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_lzma.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_zlib.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_flac.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/libchdr/libchdr_flac_codec.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/formats/m3u/m3u_file.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/chd_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/file_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/file_stream_transforms.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/interface_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/memory_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/rzip_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/stdin_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/trans_stream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/trans_stream_pipe.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/streams/trans_stream_zlib.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/string/stdstring.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/utils/md5.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/vfs/vfs_implementation.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/vfs/vfs_implementation_cdrom.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/lists/dir_list.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/lists/string_list.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/time/rtime.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/cdrom/cdrom.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/encodings/encoding_crc32.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/encodings/encoding_utf.c
-	                           
-	# 7zip                     
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/LzmaDec.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/LzmaEnc.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zBuf.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zCrc.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zDec.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zFile.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zIn.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/7zStream.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/Bcj2.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/Bra.c	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/LzFind.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/7zip/Lzma2Dec.c
-                                
-	# zip                      
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/adler32.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/compress.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/deflate.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/gzclose.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/gzlib.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/gzread.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/gzwrite.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/inffast.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/inflate.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/inftrees.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/libz-crc32.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/trees.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/uncompr.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libz/zutil.c
-	                            
-	# flac                     
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/bitmath.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/bitreader.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/cpu.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/crc.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/fixed.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/float.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/format.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/lpc.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/md5.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/memory.c
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/stream_decoder.c	
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/file/file_path.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/file/file_path_io.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/file/retro_dirent.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/compat/compat_strl.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/compat/compat_strcasestr.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/compat/compat_posix_string.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/compat/fopen_utf8.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/memmap/memalign.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/memmap/memmap.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/cdfs/cdfs.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_bitstream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_cdrom.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_chd.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_huffman.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_lzma.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_zlib.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_flac.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/libchdr/libchdr_flac_codec.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/formats/m3u/m3u_file.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/chd_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/file_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/file_stream_transforms.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/interface_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/memory_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/rzip_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/stdin_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/trans_stream.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/trans_stream_pipe.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/streams/trans_stream_zlib.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/string/stdstring.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/utils/md5.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/vfs/vfs_implementation.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/vfs/vfs_implementation_cdrom.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/lists/dir_list.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/lists/string_list.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/time/rtime.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/cdrom/cdrom.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/encodings/encoding_crc32.c
+	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/encodings/encoding_utf.c
 
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/assert.h	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/callback.h	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/export.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/format.h	
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/metadata.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/ordinals.h
-	${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/src/libFLAC/include/FLAC/stream_decoder.h
+	${7ZIP_SOURCES}
 )
 
 # Keep Directory structure in Visual Studio
@@ -205,17 +165,17 @@ if(MSVC)
 		string(REPLACE "/" "\\" source_path_msvc "${source_path}")
 		string(REPLACE "src" "" source_path_final "${source_path_msvc}")
 		source_group("${source_path_final}" FILES "${source}")
-	endforeach()  	
+	endforeach()
 endif()
-
 
 add_definitions("-DRC_DISABLE_LUA")
 add_definitions("-DHAVE_CDROM -DHAVE_CHD -DWANT_SUBCODE -DWANT_RAW_DATA_SECTOR -DHAVE_ZLIB -DHAVE_7ZIP -DHAVE_FLAC -DFLAC__NO_DLL -DFLAC__HAS_OGG=0")
+#add_definitions("-D")
 
 if(NOT DEFINED MSVC)
 	add_definitions("-DHAVE_LROUND")
 endif()
 
 include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/rcheevos/include)
-include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include)
+include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/libretro-common/include ${7ZIP_INCLUDE_DIRS})
 add_library(libcheevos STATIC ${CHEEVOS_SOURCES} ${CHEEVOS_HEADERS} ${LIBRETRO_COMMON_HEADERS} ${LIBRETRO_COMMON_SOURCES})

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "emulationstation",
+  "version-string": "0.1.0",
+  "builtin-baseline": "a3df696929b28195b0d7a477ba6cd16dba48fa52",
+  "dependencies": [
+    "7zip",
+    "zlib",
+    "libflac",
+    "ms-gsl"
+  ],
+  "features": {
+  }
+}
