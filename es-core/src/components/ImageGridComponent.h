@@ -2,7 +2,7 @@
 #ifndef ES_CORE_COMPONENTS_IMAGE_GRID_COMPONENT_H
 #define ES_CORE_COMPONENTS_IMAGE_GRID_COMPONENT_H
 
-#include "Log.h"
+#include <loguru.hpp>
 #include "components/IList.h"
 #include "resources/TextureResource.h"
 #include "GridTileComponent.h"
@@ -877,7 +877,7 @@ void ImageGridComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, 
 			std::string path = elem->get<std::string>("gameImage");
 
 			if (!ResourceManager::getInstance()->fileExists(path))
-				LOG(LogWarning) << "Could not replace default game image, check path: " << path;
+				LOG_S(WARNING) << "Could not replace default game image, check path: " << path;
 			else
 			{
 				std::string oldDefaultGameTexture = mDefaultGameTexture;
@@ -898,7 +898,7 @@ void ImageGridComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, 
 			std::string path = elem->get<std::string>("folderImage");
 
 			if (!ResourceManager::getInstance()->fileExists(path))
-				LOG(LogWarning) << "Could not replace default folder image, check path: " << path;
+				LOG_S(WARNING) << "Could not replace default folder image, check path: " << path;
 			else
 			{
 				std::string oldDefaultFolderTexture = mDefaultFolderTexture;
@@ -919,7 +919,7 @@ void ImageGridComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, 
 			std::string path = elem->get<std::string>("logoBackgroundImage");
 
 			if (!ResourceManager::getInstance()->fileExists(path))
-				LOG(LogWarning) << "Could not replace default folder image, check path: " << path;
+				LOG_S(WARNING) << "Could not replace default folder image, check path: " << path;
 			else
 			{
 				std::string oldDefaultFolderTexture = mDefaultLogoBackgroundTexture;
@@ -1316,9 +1316,9 @@ void ImageGridComponent<T>::calcGridDimension()
 
 	// Grid dimension validation
 	if (mGridDimension.x() < 1)
-		LOG(LogError) << "Theme defined grid X dimension below 1";
+		LOG_S(ERROR) << "Theme defined grid X dimension below 1";
 	if (mGridDimension.y() < 1)
-		LOG(LogError) << "Theme defined grid Y dimension below 1";
+		LOG_S(ERROR) << "Theme defined grid Y dimension below 1";
 
 	// Add extra tiles to both sides : Add EXTRAITEMS before, EXTRAITEMS after
 	if (isVertical())

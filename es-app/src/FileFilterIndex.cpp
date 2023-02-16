@@ -3,7 +3,7 @@
 #include "utils/StringUtil.h"
 #include "views/UIModeController.h"
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "LocaleES.h"
 
@@ -924,7 +924,7 @@ void FileFilterIndex::manageIndexEntry(std::map<std::string, int>* index, const 
 		if (index->find(key) == index->cend())
 		{
 			// this shouldn't happen
-			LOG(LogInfo) << "Couldn't find entry in index! " << key;
+			LOG_S(INFO) << "Couldn't find entry in index! " << key;
 		}
 		else
 		{
@@ -997,8 +997,8 @@ bool CollectionFilter::load(const std::string file)
 
 	if (!res)
 	{
-		LOG(LogError) << "Could not parse filter collection !";
-		LOG(LogError) << res.description();
+		LOG_S(ERROR) << "Could not parse filter collection !";
+		LOG_S(ERROR) << res.description();
 		return false;
 	}
 
@@ -1006,7 +1006,7 @@ bool CollectionFilter::load(const std::string file)
 	pugi::xml_node root = doc.child("filter");
 	if (!root)
 	{
-		LOG(LogError) << "filter collection is missing the <filter> tag!";
+		LOG_S(ERROR) << "filter collection is missing the <filter> tag!";
 		return false;
 	}
 
@@ -1131,7 +1131,7 @@ bool CollectionFilter::save()
 		
 	if (!doc.save_file(mPath.c_str()))
 	{
-		LOG(LogError) << "Error saving CollectionFilter to \"" << mPath << "\" !";
+		LOG_S(ERROR) << "Error saving CollectionFilter to \"" << mPath << "\" !";
 		return false;
 	}
 

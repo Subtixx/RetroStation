@@ -428,7 +428,7 @@ void ControllerActivityComponent::applyTheme(const std::shared_ptr<ThemeData>& t
 
 void ControllerActivityComponent::updateNetworkInfo()
 {
-	mNetworkConnected = Settings::ShowNetworkIndicator() && !queryIPAdress().empty();
+	mNetworkConnected = Settings::ShowNetworkIndicator() && !QueryIpAddress().empty();
 }
 
 void ControllerActivityComponent::updateBatteryInfo()

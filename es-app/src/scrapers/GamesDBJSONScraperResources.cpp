@@ -6,7 +6,7 @@
 #include "utils/FileSystemUtil.h"
 #include <rapidjson/document.h>
 #include <rapidjson/error/en.h>
-#include "Log.h"
+#include <loguru.hpp>
 #include "Paths.h"
 
 #ifdef GAMESDB_APIKEY
@@ -108,7 +108,7 @@ void TheGamesDBJSONRequestResources::ensureResources()
 		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(POLL_TIME_MS));
 	}
-	LOG(LogError) << "Timed out while waiting for resources\n";
+	LOG_S(ERROR) << "Timed out while waiting for resources\n";
 }
 
 bool TheGamesDBJSONRequestResources::checkLoaded()
@@ -122,7 +122,7 @@ bool TheGamesDBJSONRequestResources::saveResource(HttpReq* req, std::unordered_m
 
 	if (req == nullptr)
 	{
-		LOG(LogError) << "Http request pointer was null\n";
+		LOG_S(ERROR) << "Http request pointer was null\n";
 		return true;
 	}
 	if (req->status() == HttpReq::REQ_IN_PROGRESS)
@@ -131,7 +131,7 @@ bool TheGamesDBJSONRequestResources::saveResource(HttpReq* req, std::unordered_m
 	}
 	if (req->status() != HttpReq::REQ_SUCCESS)
 	{
-		LOG(LogError) << "Resource request for " << file_name << " failed:\n\t" << req->getErrorMsg();
+		LOG_S(ERROR) << "Resource request for " << file_name << " failed:\n\t" << req->getErrorMsg();
 		return true; // Request failed, resetting request.
 	}
 
@@ -173,7 +173,7 @@ int TheGamesDBJSONRequestResources::loadResource(
 	{
 		std::string err = std::string("TheGamesDBJSONRequest - Error parsing JSON for resource file ") + file_name +
 						  ":\n\t" + GetParseError_En(doc.GetParseError());
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return 1;
 	}
 
@@ -181,7 +181,7 @@ int TheGamesDBJSONRequestResources::loadResource(
 		!doc["data"][resource_name.c_str()].IsObject())
 	{
 		std::string err = "TheGamesDBJSONRequest - Response had no resource data.\n";
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return 1;
 	}
 	auto& data = doc["data"][resource_name.c_str()];

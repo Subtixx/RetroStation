@@ -1,7 +1,7 @@
 #include "guis/GuiTextEditPopupKeyboard.h"
 #include "components/MenuComponent.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "LocaleES.h"
 #include "SystemConf.h"
 

@@ -2,7 +2,7 @@
 
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <pugixml/src/pugixml.hpp>
 #include "SystemData.h"
 #include "LocaleES.h"

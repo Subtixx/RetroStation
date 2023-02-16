@@ -1,6 +1,6 @@
 #include "ApiSystem.h"
 #include "Settings.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "HttpReq.h"
 #include "AudioManager.h"
 #include "VolumeControl.h"
@@ -94,7 +94,7 @@ ApiSystem *ApiSystem::getInstance()
 
 unsigned long ApiSystem::getFreeSpaceGB(std::string mountpoint) 
 {
-	LOG(LogDebug) << "ApiSystem::getFreeSpaceGB";
+	LOG_S(1) << "ApiSystem::getFreeSpaceGB";
 
 	int free = 0;
 
@@ -119,7 +119,7 @@ std::string ApiSystem::getFreeSpaceSystemInfo()
 
 std::string ApiSystem::getFreeSpaceInfo(const std::string mountpoint)
 {
-	LOG(LogDebug) << "ApiSystem::getFreeSpaceInfo";
+	LOG_S(1) << "ApiSystem::getFreeSpaceInfo";
 
 	std::ostringstream oss;
 
@@ -152,7 +152,7 @@ bool ApiSystem::isFreeSpaceLimit()
 
 std::string ApiSystem::getVersion(bool extra)
 {
-	LOG(LogDebug) << "ApiSystem::getVersion";
+	LOG_S(1) << "ApiSystem::getVersion";
 
 	if (isScriptingSupported(VERSIONINFO)) 
 	{
@@ -228,7 +228,7 @@ bool ApiSystem::setOverclock(std::string mode)
 // BusyComponent* ui
 std::pair<std::string, int> ApiSystem::updateSystem(const std::function<void(const std::string)>& func)
 {
-	LOG(LogDebug) << "ApiSystem::updateSystem";
+	LOG_S(1) << "ApiSystem::updateSystem";
 
 	std::string updatecommand = "batocera-upgrade";
 
@@ -261,7 +261,7 @@ std::pair<std::string, int> ApiSystem::updateSystem(const std::function<void(con
 
 std::pair<std::string, int> ApiSystem::backupSystem(BusyComponent* ui, std::string device) 
 {
-	LOG(LogDebug) << "ApiSystem::backupSystem";
+	LOG_S(1) << "ApiSystem::backupSystem";
 
 	std::string updatecommand = "batocera-sync sync " + device;
 	FILE* pipe = popen(updatecommand.c_str(), "r");
@@ -290,7 +290,7 @@ std::pair<std::string, int> ApiSystem::backupSystem(BusyComponent* ui, std::stri
 
 std::pair<std::string, int> ApiSystem::installSystem(BusyComponent* ui, std::string device, std::string architecture) 
 {
-	LOG(LogDebug) << "ApiSystem::installSystem";
+	LOG_S(1) << "ApiSystem::installSystem";
 
 	std::string updatecommand = "batocera-install install " + device + " " + architecture;
 	FILE *pipe = popen(updatecommand.c_str(), "r");
@@ -320,7 +320,7 @@ std::pair<std::string, int> ApiSystem::installSystem(BusyComponent* ui, std::str
 
 std::pair<std::string, int> ApiSystem::scrape(BusyComponent* ui) 
 {
-	LOG(LogDebug) << "ApiSystem::scrape";
+	LOG_S(1) << "ApiSystem::scrape";
 
 	FILE* pipe = popen("batocera-scraper", "r");
 	if (pipe == nullptr)
@@ -365,7 +365,7 @@ bool ApiSystem::ping()
 
 bool ApiSystem::canUpdate(std::vector<std::string>& output) 
 {
-	LOG(LogDebug) << "ApiSystem::canUpdate";
+	LOG_S(1) << "ApiSystem::canUpdate";
 
 	FILE *pipe = popen("batocera-config canupdate", "r");
 	if (pipe == NULL)
@@ -381,28 +381,28 @@ bool ApiSystem::canUpdate(std::vector<std::string>& output)
 	int res = WEXITSTATUS(pclose(pipe));
 	if (res == 0) 
 	{
-		LOG(LogInfo) << "Can update ";
+		LOG_S(INFO) << "Can update ";
 		return true;
 	}
 
-	LOG(LogInfo) << "Cannot update ";
+	LOG_S(INFO) << "Cannot update ";
 	return false;
 }
 
 void ApiSystem::launchExternalWindow_before(Window *window) 
 {
-	LOG(LogDebug) << "ApiSystem::launchExternalWindow_before";
+	LOG_S(1) << "ApiSystem::launchExternalWindow_before";
 
 	AudioManager::getInstance()->deinit();
 	VolumeControl::getInstance()->deinit();
 	window->deinit();
 
-	LOG(LogDebug) << "ApiSystem::launchExternalWindow_before OK";
+	LOG_S(1) << "ApiSystem::launchExternalWindow_before OK";
 }
 
 void ApiSystem::launchExternalWindow_after(Window *window) 
 {
-	LOG(LogDebug) << "ApiSystem::launchExternalWindow_after";
+	LOG_S(1) << "ApiSystem::launchExternalWindow_after";
 
 	window->init();
 	VolumeControl::getInstance()->init();
@@ -412,12 +412,12 @@ void ApiSystem::launchExternalWindow_after(Window *window)
 
 	AudioManager::getInstance()->playRandomMusic();
 
-	LOG(LogDebug) << "ApiSystem::launchExternalWindow_after OK";
+	LOG_S(1) << "ApiSystem::launchExternalWindow_after OK";
 }
 
 bool ApiSystem::launchKodi(Window *window) 
 {
-	LOG(LogDebug) << "ApiSystem::launchKodi";
+	LOG_S(1) << "ApiSystem::launchKodi";
 
 	std::string commandline = InputManager::getInstance()->configureEmulators();
 	std::string command = "batocera-kodi " + commandline;
@@ -450,7 +450,7 @@ bool ApiSystem::launchKodi(Window *window)
 
 bool ApiSystem::launchFileManager(Window *window) 
 {
-	LOG(LogDebug) << "ApiSystem::launchFileManager";
+	LOG_S(1) << "ApiSystem::launchFileManager";
 
 	std::string command = "filemanagerlauncher";
 
@@ -477,9 +477,9 @@ bool ApiSystem::disableWifi()
 
 std::string ApiSystem::getIpAdress() 
 {
-	LOG(LogDebug) << "ApiSystem::getIpAdress";
+	LOG_S(1) << "ApiSystem::getIpAdress";
 	
-	std::string result = queryIPAdress(); // platform.h
+	std::string result = QueryIpAddress(); // platform.h
 	if (result.empty())
 		return "NOT CONNECTED";
 
@@ -610,7 +610,7 @@ bool ApiSystem::generateSupportFile()
 
 std::string ApiSystem::getCurrentStorage() 
 {
-	LOG(LogDebug) << "ApiSystem::getCurrentStorage";
+	LOG_S(1) << "ApiSystem::getCurrentStorage";
 
 #if WIN32
 	return "DEFAULT";
@@ -654,7 +654,7 @@ bool ApiSystem::forgetBluetoothControllers()
 
 std::string ApiSystem::getRootPassword() 
 {
-	LOG(LogDebug) << "ApiSystem::getRootPassword";
+	LOG_S(1) << "ApiSystem::getRootPassword";
 
 	std::ostringstream oss;
 	oss << "batocera-config getRootPassword";
@@ -695,7 +695,7 @@ std::string ApiSystem::getCurrentAudioOutputDevice()
 	return "auto";
 #endif
 
-	LOG(LogDebug) << "ApiSystem::getCurrentAudioOutputDevice";
+	LOG_S(1) << "ApiSystem::getCurrentAudioOutputDevice";
 
 	std::ostringstream oss;
 	oss << "batocera-audio get";
@@ -717,7 +717,7 @@ std::string ApiSystem::getCurrentAudioOutputDevice()
 
 bool ApiSystem::setAudioOutputDevice(std::string selected) 
 {
-	LOG(LogDebug) << "ApiSystem::setAudioOutputDevice";
+	LOG_S(1) << "ApiSystem::setAudioOutputDevice";
 
 	std::ostringstream oss;
 
@@ -746,7 +746,7 @@ std::string ApiSystem::getCurrentAudioOutputProfile()
 	return "auto";
 #endif
 
-	LOG(LogDebug) << "ApiSystem::getCurrentAudioOutputProfile";
+	LOG_S(1) << "ApiSystem::getCurrentAudioOutputProfile";
 
 	std::ostringstream oss;
 	oss << "batocera-audio get-profile";
@@ -768,7 +768,7 @@ std::string ApiSystem::getCurrentAudioOutputProfile()
 
 bool ApiSystem::setAudioOutputProfile(std::string selected) 
 {
-	LOG(LogDebug) << "ApiSystem::setAudioOutputProfile";
+	LOG_S(1) << "ApiSystem::setAudioOutputProfile";
 
 	std::ostringstream oss;
 
@@ -918,7 +918,7 @@ extern int jsonInt(const rapidjson::Value& val, const std::string name);
 
 std::vector<BatoceraTheme> ApiSystem::getBatoceraThemesList()
 {
-	LOG(LogDebug) << "ApiSystem::getBatoceraThemesList";
+	LOG_S(1) << "ApiSystem::getBatoceraThemesList";
 
 	std::vector<BatoceraTheme> res;
 
@@ -1045,7 +1045,7 @@ std::pair<std::string, int> ApiSystem::uninstallBatoceraTheme(std::string thname
 
 std::vector<BatoceraBezel> ApiSystem::getBatoceraBezelsList()
 {
-	LOG(LogInfo) << "ApiSystem::getBatoceraBezelsList";
+	LOG_S(INFO) << "ApiSystem::getBatoceraBezelsList";
 
 	std::vector<BatoceraBezel> res;
 
@@ -1084,7 +1084,7 @@ std::pair<std::string, int> ApiSystem::uninstallBatoceraBezel(std::string bezels
 
 std::string ApiSystem::getMD5(const std::string fileName, bool fromZipContents)
 {
-	LOG(LogDebug) << "getMD5 >> " << fileName;
+	LOG_S(1) << "getMD5 >> " << fileName;
 
 	// 7za x -so test.7z | md5sum
 	std::string ext = Utils::String::toLower(Utils::FileSystem::getExtension(fileName));
@@ -1152,20 +1152,20 @@ std::string ApiSystem::getMD5(const std::string fileName, bool fromZipContents)
 	if (!tmpZipDirectory.empty())
 		Utils::FileSystem::deleteDirectoryFiles(tmpZipDirectory, true);
 
-	LOG(LogDebug) << "getMD5 << " << ret;
+	LOG_S(1) << "getMD5 << " << ret;
 
 	return ret;
 }
 
 std::string ApiSystem::getCRC32(std::string fileName, bool fromZipContents)
 {
-	LOG(LogDebug) << "getCRC32 >> " << fileName;
+	LOG_S(1) << "getCRC32 >> " << fileName;
 
 	std::string ext = Utils::String::toLower(Utils::FileSystem::getExtension(fileName));
 
 	if (ext == ".7z" && fromZipContents)
 	{
-		LOG(LogDebug) << "getCRC32 is using 7z";
+		LOG_S(1) << "getCRC32 is using 7z";
 
 		std::string fn = Utils::FileSystem::getFileName(fileName);
 		auto cmd = getSevenZipCommand() + " l -slt \"" + fileName + "\"";
@@ -1181,7 +1181,7 @@ std::string ApiSystem::getCRC32(std::string fileName, bool fromZipContents)
 	}
 	else if (ext == ".zip" && fromZipContents)
 	{
-		LOG(LogDebug) << "getCRC32 is using ZipFile";
+		LOG_S(1) << "getCRC32 is using ZipFile";
 
 		Utils::Zip::ZipFile file;
 		if (file.load(fileName))
@@ -1207,20 +1207,20 @@ std::string ApiSystem::getCRC32(std::string fileName, bool fromZipContents)
 		}
 	}
 
-	LOG(LogDebug) << "getCRC32 is using fileBuffer";
+	LOG_S(1) << "getCRC32 is using fileBuffer";
 	return Utils::FileSystem::getFileCrc32(fileName);
 }
 
 bool ApiSystem::unzipFile(const std::string fileName, const std::string destFolder, const std::function<bool(const std::string)>& shouldExtract)
 {
-	LOG(LogDebug) << "unzipFile >> " << fileName << " to " << destFolder;
+	LOG_S(1) << "unzipFile >> " << fileName << " to " << destFolder;
 
 	if (!Utils::FileSystem::exists(destFolder))
 		Utils::FileSystem::createDirectory(destFolder);
 		
 	if (Utils::String::toLower(Utils::FileSystem::getExtension(fileName)) == ".zip")
 	{
-		LOG(LogDebug) << "unzipFile is using ZipFile";
+		LOG_S(1) << "unzipFile is using ZipFile";
 
 		Utils::Zip::ZipFile file;
 		if (file.load(fileName))
@@ -1239,19 +1239,19 @@ bool ApiSystem::unzipFile(const std::string fileName, const std::string destFold
 				file.extract(name, destFolder);
 			}
 
-			LOG(LogDebug) << "unzipFile << OK";
+			LOG_S(1) << "unzipFile << OK";
 			return true;
 		}
 
-		LOG(LogDebug) << "unzipFile << KO Bad format ?" << fileName;
+		LOG_S(1) << "unzipFile << KO Bad format ?" << fileName;
 		return false;
 	}
 	
-	LOG(LogDebug) << "unzipFile is using 7z";
+	LOG_S(1) << "unzipFile is using 7z";
 
 	std::string cmd = getSevenZipCommand() + " x \"" + Utils::FileSystem::getPreferredPath(fileName) + "\" -y -o\"" + Utils::FileSystem::getPreferredPath(destFolder) + "\"";
 	bool ret = executeScript(cmd);
-	LOG(LogDebug) << "unzipFile <<";
+	LOG_S(1) << "unzipFile <<";
 	return ret;
 }
 
@@ -1279,7 +1279,7 @@ bool ApiSystem::getBrightness(int& value)
 				BACKLIGHT_BRIGHTNESS_NAME = brightnessPath;
 				BACKLIGHT_BRIGHTNESS_MAX_NAME = maxBrightnessPath;
 
-				LOG(LogInfo) << "ApiSystem::getBrightness > brightness path resolved to " << file;
+				LOG_S(INFO) << "ApiSystem::getBrightness > brightness path resolved to " << file;
 				break;
 			}
 		}
@@ -1287,7 +1287,7 @@ bool ApiSystem::getBrightness(int& value)
 
 	if (BACKLIGHT_BRIGHTNESS_NAME.empty() || BACKLIGHT_BRIGHTNESS_MAX_NAME.empty())
 	{
-		LOG(LogInfo) << "ApiSystem::getBrightness > brightness path is not resolved";
+		LOG_S(INFO) << "ApiSystem::getBrightness > brightness path is not resolved";
 
 		BACKLIGHT_BRIGHTNESS_NAME = "notfound";
 		return false;
@@ -1338,7 +1338,7 @@ std::vector<std::string> ApiSystem::getWifiNetworks(bool scan)
 
 std::vector<std::string> ApiSystem::executeEnumerationScript(const std::string command)
 {
-	LOG(LogDebug) << "ApiSystem::executeEnumerationScript -> " << command;
+	LOG_S(1) << "ApiSystem::executeEnumerationScript -> " << command;
 
 	std::vector<std::string> res;
 
@@ -1360,12 +1360,12 @@ std::vector<std::string> ApiSystem::executeEnumerationScript(const std::string c
 
 std::pair<std::string, int> ApiSystem::executeScript(const std::string command, const std::function<void(const std::string)>& func)
 {
-	LOG(LogInfo) << "ApiSystem::executeScript -> " << command;
+	LOG_S(INFO) << "ApiSystem::executeScript -> " << command;
 
 	FILE *pipe = popen(command.c_str(), "r");
 	if (pipe == NULL)
 	{
-		LOG(LogError) << "Error executing " << command;
+		LOG_S(ERROR) << "Error executing " << command;
 		return std::pair<std::string, int>("Error starting command : " + command, -1);
 	}
 
@@ -1384,12 +1384,12 @@ std::pair<std::string, int> ApiSystem::executeScript(const std::string command, 
 
 bool ApiSystem::executeScript(const std::string command)
 {	
-	LOG(LogInfo) << "Running " << command;
+	LOG_S(INFO) << "Running " << command;
 
 	if (system(command.c_str()) == 0)
 		return true;
 	
-	LOG(LogError) << "Error executing " << command;
+	LOG_S(ERROR) << "Error executing " << command;
 	return false;
 }
 
@@ -1485,8 +1485,8 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
         // Check also current working directory for scripts
         if (!Utils::FileSystem::exists("/usr/bin/" + executable) && !Utils::FileSystem::exists("/usr/local/bin/" + executable) &&
             !Utils::FileSystem::exists(Utils::FileSystem::getCWDPath() + "/scripts/" + executable)){
-            LOG(LogWarning) << "Script " << executable << " not found";
-            LOG(LogDebug) << "Tried " << Utils::FileSystem::getCWDPath();
+            LOG_S(WARNING) << "Script " << executable << " not found";
+            LOG_S(1) << "Tried " << Utils::FileSystem::getCWDPath();
             return false;
         }
         return true;
@@ -1671,13 +1671,13 @@ std::vector<PacmanPackage> ApiSystem::getBatoceraStorePackages()
 {
 	std::vector<PacmanPackage> packages;
 
-	LOG(LogDebug) << "ApiSystem::getBatoceraStorePackages";
+	LOG_S(1) << "ApiSystem::getBatoceraStorePackages";
 
 	auto res = executeEnumerationScript("batocera-store list");
 	std::string data = Utils::String::join(res, "\n");
 	if (data.empty())
 	{
-		LOG(LogError) << "Package list is empty";
+		LOG_S(ERROR) << "Package list is empty";
 		return packages;
 	}
 
@@ -1685,14 +1685,14 @@ std::vector<PacmanPackage> ApiSystem::getBatoceraStorePackages()
 	pugi::xml_parse_result result = doc.load_string(data.c_str());
 	if (!result)
 	{
-		LOG(LogError) << "Unable to parse packages";
+		LOG_S(ERROR) << "Unable to parse packages";
 		return packages;
 	}
 
 	pugi::xml_node root = doc.child("packages");
 	if (!root)
 	{
-		LOG(LogError) << "Could not find <packages> node";
+		LOG_S(ERROR) << "Could not find <packages> node";
 		return packages;
 	}
 
@@ -1797,7 +1797,7 @@ std::vector<std::string> ApiSystem::getRetroachievementsSoundsList()
 
 	std::vector<std::string> ret;
 
-	LOG(LogDebug) << "ApiSystem::getRetroAchievementsSoundsList";
+	LOG_S(1) << "ApiSystem::getRetroAchievementsSoundsList";
 
 	for (auto folder : { Paths::getUserRetroachivementSounds(), Paths::getRetroachivementSounds() })
 	{
@@ -1820,7 +1820,7 @@ std::vector<std::string> ApiSystem::getTimezones()
 {
 	std::vector<std::string> ret;
 
-	LOG(LogDebug) << "ApiSystem::getTimezones";
+	LOG_S(1) << "ApiSystem::getTimezones";
 
 	auto folder = Paths::getTimeZonesPath();
 	if (Utils::FileSystem::isDirectory(folder))
@@ -1850,7 +1850,7 @@ std::vector<std::string> ApiSystem::getTimezones()
 
 std::string ApiSystem::getCurrentTimezone()
 {
-	LOG(LogInfo) << "ApiSystem::getCurrentTimezone";
+	LOG_S(INFO) << "ApiSystem::getCurrentTimezone";
 	auto cmd = executeEnumerationScript("batocera-timezone get");
 	std::string tz = Utils::String::join(cmd, "");
 	remove_if(tz.begin(), tz.end(), isspace);
@@ -1870,7 +1870,7 @@ bool ApiSystem::setTimezone(std::string tz)
 
 std::vector<PadInfo> ApiSystem::getPadsInfo()
 {
-	LOG(LogInfo) << "ApiSystem::getPadsInfo";
+	LOG_S(INFO) << "ApiSystem::getPadsInfo";
 
 	std::vector<PadInfo> ret;
 
@@ -1878,7 +1878,7 @@ std::vector<PadInfo> ApiSystem::getPadsInfo()
 	std::string data = Utils::String::join(res, "\n");
 	if (data.empty())
 	{
-		LOG(LogError) << "Package list is empty";
+		LOG_S(ERROR) << "Package list is empty";
 		return ret;
 	}
 
@@ -1886,14 +1886,14 @@ std::vector<PadInfo> ApiSystem::getPadsInfo()
 	pugi::xml_parse_result result = doc.load_string(data.c_str());
 	if (!result)
 	{
-		LOG(LogError) << "Unable to parse packages";
+		LOG_S(ERROR) << "Unable to parse packages";
 		return ret;
 	}
 
 	pugi::xml_node root = doc.child("pads");
 	if (!root)
 	{
-		LOG(LogError) << "Could not find <pads> node";
+		LOG_S(ERROR) << "Could not find <pads> node";
 		return ret;
 	}
 
@@ -1945,23 +1945,23 @@ std::string ApiSystem::getHostsName()
 
 bool ApiSystem::emuKill()
 {
-	LOG(LogDebug) << "ApiSystem::emuKill";
+	LOG_S(1) << "ApiSystem::emuKill";
 
 	return executeScript("batocera-es-swissknife --emukill");
 }
 
 void ApiSystem::suspend()
 {
-	LOG(LogDebug) << "ApiSystem::suspend";
+	LOG_S(1) << "ApiSystem::suspend";
 	executeScript("/usr/sbin/pm-suspend");
 }
 
 void ApiSystem::replugControllers_sindenguns() {
-  LOG(LogDebug) << "ApiSystem::replugControllers_sindenguns";
+  LOG_S(1) << "ApiSystem::replugControllers_sindenguns";
   executeScript("/usr/bin/virtual-sindenlightgun-remap");
 }
 
 void ApiSystem::replugControllers_wiimotes() {
-  LOG(LogDebug) << "ApiSystem::replugControllers_wiimotes";
+  LOG_S(1) << "ApiSystem::replugControllers_wiimotes";
   executeScript("/usr/bin/virtual-wii-mouse-bar-remap");
 }

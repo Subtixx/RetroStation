@@ -1,7 +1,7 @@
 #include "GuiNetPlay.h"
 #include "Window.h"
 #include <string>
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "SystemConf.h"
 #include "LocaleES.h"
@@ -493,7 +493,7 @@ bool GuiNetPlay::populateFromJson(const std::string json)
 	if (doc.HasParseError())
 	{
 		std::string err = std::string("GuiNetPlay - Error parsing JSON. \n\t");		
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return false;
 	}
 

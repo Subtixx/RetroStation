@@ -1,7 +1,7 @@
 #include "KeyboardMapping.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/pointer.h>
 #include <rapidjson/prettywriter.h>
@@ -229,7 +229,7 @@ KeyMappingFile KeyMappingFile::load(const std::string& fileName)
 
 	if (doc.HasParseError())
 	{
-		LOG(LogError) << "KeyMappingFile - Error parsing JSON.";
+		LOG_S(ERROR) << "KeyMappingFile - Error parsing JSON.";
 		return ret;
 	}
 

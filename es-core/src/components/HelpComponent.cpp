@@ -5,7 +5,7 @@
 #include "components/TextComponent.h"
 #include "resources/TextureResource.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "InputConfig.h"
 
@@ -163,13 +163,13 @@ std::shared_ptr<TextureResource> HelpComponent::getIconTexture(const char* name)
 	auto pathLookup = ICON_PATH_MAP.find(name);
 	if (pathLookup == ICON_PATH_MAP.cend())
 	{
-		LOG(LogError) << "Unknown help icon \"" << name << "\"!";
+		LOG_S(ERROR) << "Unknown help icon \"" << name << "\"!";
 		return nullptr;
 	}
 
 	if (!ResourceManager::getInstance()->fileExists(pathLookup->second))
 	{
-		LOG(LogError) << "Help icon \"" << name << "\" - corresponding image file \"" << pathLookup->second << "\" misisng!";
+		LOG_S(ERROR) << "Help icon \"" << name << "\" - corresponding image file \"" << pathLookup->second << "\" misisng!";
 		return nullptr;
 	}
 

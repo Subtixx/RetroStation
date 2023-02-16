@@ -2,7 +2,7 @@
 
 #include "utils/StringUtil.h"
 #include "views/ViewController.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Window.h"
 
 #define fake_gettext_full _("Full")
@@ -97,7 +97,7 @@ bool UIModeController::inputIsMatch(InputConfig * config, Input input)
 // When we have reached the end of the list, trigger UI_mode unlock
 void UIModeController::unlockUIMode()
 {
-	LOG(LogDebug) << " UIModeController::listen(): Passkey sequence completed, switching UIMode to full";
+	LOG_S(1) << " UIModeController::listen(): Passkey sequence completed, switching UIMode to full";
 
 	Settings::getInstance()->setString("UIMode", "Full");
 	Settings::getInstance()->saveFile();
@@ -179,7 +179,7 @@ void UIModeController::logInput(InputConfig * config, Input input)
 		mapname += mn;
 		mapname += ", ";
 	}
-	LOG(LogDebug) << "UIModeController::logInput( " << config->getDeviceName() <<" ):" << input.string() << ", isMappedTo= " << mapname << ", value=" << input.value;
+	LOG_S(1) << "UIModeController::logInput( " << config->getDeviceName() <<" ):" << input.string() << ", isMappedTo= " << mapname << ", value=" << input.value;
 }
 
 bool UIModeController::isValidInput(InputConfig * config, Input input)

@@ -12,7 +12,7 @@
 #include "resources/Font.h"
 #include "utils/StringUtil.h"
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Window.h"
 #include "LocaleES.h"
 #include "components/MultiLineMenuEntry.h"
@@ -390,7 +390,7 @@ void ScraperSearchComponent::onSearchDone()
 
 void ScraperSearchComponent::onSearchError(const std::string& error)
 {
-	LOG(LogInfo) << "ScraperSearchComponent search error: " << error;
+	LOG_S(INFO) << "ScraperSearchComponent search error: " << error;
 
 	mWindow->pushGui(new GuiMsgBox(mWindow, _("AN ERROR OCCURED") + ":\n" + Utils::String::toUpper(error),
 		_("RETRY"), std::bind(&ScraperSearchComponent::search, this, mInitialSearch),

@@ -6,7 +6,7 @@
 #include "components/VideoVlcComponent.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "platform.h"
 #include "Settings.h"
 #include "SystemConf.h"
@@ -883,13 +883,13 @@ void ThemeData::parseInclude(const pugi::xml_node& node)
 			}
 			else
 			{
-				LOG(LogWarning) << "Included file \"" << relPath << "\" not found! (resolved to \"" << path << "\")";
+				LOG_S(WARNING) << "Included file \"" << relPath << "\" not found! (resolved to \"" << path << "\")";
 				return;
 			}
 		}
 		else
 		{
-			LOG(LogWarning) << "Included file \"" << relPath << "\" not found! (resolved to \"" << path << "\")";
+			LOG_S(WARNING) << "Included file \"" << relPath << "\" not found! (resolved to \"" << path << "\")";
 			return;
 		}
 	}
@@ -902,14 +902,14 @@ void ThemeData::parseInclude(const pugi::xml_node& node)
 	pugi::xml_parse_result result = includeDoc.load_file(path.c_str());
 	if (!result)
 	{
-		LOG(LogWarning) << "Error parsing file: \n    " << result.description() << "    from included file \"" << relPath << "\":\n    ";
+		LOG_S(WARNING) << "Error parsing file: \n    " << result.description() << "    from included file \"" << relPath << "\":\n    ";
 		return;
 	}
 
 	pugi::xml_node theme = includeDoc.child("theme");
 	if (!theme)
 	{
-		LOG(LogWarning) << "Missing <theme> tag!" << "    from included file \"" << relPath << "\":\n    ";
+		LOG_S(WARNING) << "Missing <theme> tag!" << "    from included file \"" << relPath << "\":\n    ";
 		return;
 	}
 
@@ -924,7 +924,7 @@ void ThemeData::parseFeature(const pugi::xml_node& node)
 {
 	if (!node.attribute("supported"))
 	{
-		LOG(LogWarning) << "Feature missing \"supported\" attribute!";
+		LOG_S(WARNING) << "Feature missing \"supported\" attribute!";
 		return;
 	}
 
@@ -1008,7 +1008,7 @@ void ThemeData::parseViewElement(const pugi::xml_node& node)
 {
 	if (!node.attribute("name"))
 	{
-		LOG(LogWarning) << "View missing \"name\" attribute!";
+		LOG_S(WARNING) << "View missing \"name\" attribute!";
 		return;
 	}
 
@@ -1061,7 +1061,7 @@ bool ThemeData::parseFilterAttributes(const pugi::xml_node& node)
 			}
 			catch (std::domain_error& e)
 			{
-				LOG(LogError) << "if \"" << ifAttribute << "\" expression is invalid : " << e.what();
+				LOG_S(ERROR) << "if \"" << ifAttribute << "\" expression is invalid : " << e.what();
 				return false;
 			}
 		}
@@ -1375,14 +1375,14 @@ void ThemeData::parseView(const pugi::xml_node& root, ThemeView& view, bool over
 	{
 		if(!node.attribute("name"))
 		{		
-			LOG(LogWarning) << "Element of type \"" << node.name() << "\" missing \"name\" attribute!";
+			LOG_S(WARNING) << "Element of type \"" << node.name() << "\" missing \"name\" attribute!";
 			continue;
 		}		
 
 		auto elemTypeIt = sElementMap.find(node.name());
 		if(elemTypeIt == sElementMap.cend())
 		{		
-			LOG(LogWarning) << "Unknown element of type \"" << node.name() << "\"!";
+			LOG_S(WARNING) << "Unknown element of type \"" << node.name() << "\"!";
 			continue;
 		}		
 
@@ -1513,15 +1513,15 @@ void ThemeData::processElement(const pugi::xml_node& root, ThemeElement& element
 			pugi::xml_node parent = root.parent();
 
 			if (!element.extra)
-				LOG(LogWarning) << "random is only supported in extras";
+				LOG_S(WARNING) << "random is only supported in extras";
 			else if (element.type != "image" && element.type != "video")
-				LOG(LogWarning) << "random is only supported in video or image elements";
+				LOG_S(WARNING) << "random is only supported in video or image elements";
 			else if (std::string(parent.name()) != "view" || std::string(parent.attribute("name").as_string()) != "system")
-				LOG(LogWarning) << "random is only supported in systemview";
+				LOG_S(WARNING) << "random is only supported in systemview";
 			else if (element.type == "video" && path != "{random}")
-				LOG(LogWarning) << "video element only supports {random} element";
+				LOG_S(WARNING) << "video element only supports {random} element";
 			else if (element.type == "image" && path != "{random}" && path != "{random:thumbnail}" && path != "{random:marquee}" && path != "{random:image}" && path != "{random:fanart}" && path != "{random:titleshot}")
-				LOG(LogWarning) << "unknow random element " << path;
+				LOG_S(WARNING) << "unknow random element " << path;
 			else
 				element.properties[name] = path;
 
@@ -1564,14 +1564,14 @@ void ThemeData::processElement(const pugi::xml_node& root, ThemeElement& element
 				break;
 			}
 
-			LOG(LogDebug) << "Warning : could not find file \"" << value << "\" " << "(which resolved to \"" << path << "\") ";
+			LOG_S(1) << "Warning : could not find file \"" << value << "\" " << "(which resolved to \"" << path << "\") ";
 		}
 
 		break;
 	}
 
 	default:
-		LOG(LogWarning) << "Unknown ElementPropertyType for \"" << root.attribute("name").as_string() << "\", property " << name;
+		LOG_S(WARNING) << "Unknown ElementPropertyType for \"" << root.attribute("name").as_string() << "\", property " << name;
 		break;
 	}
 }
@@ -1675,7 +1675,7 @@ void ThemeData::parseElement(const pugi::xml_node& root, const std::map<std::str
 							element.mStoryBoards.erase(storyBoard->eventName);
 						}
 
-						LOG(LogWarning) << "Storyboard \"" << name << "\" has no <animation> items !";
+						LOG_S(WARNING) << "Storyboard \"" << name << "\" has no <animation> items !";
 						delete storyBoard;
 					}
 					else
@@ -1685,7 +1685,7 @@ void ThemeData::parseElement(const pugi::xml_node& root, const std::map<std::str
 							delete sb->second;
 
 						element.mStoryBoards[storyBoard->eventName] = storyBoard;
-						// LOG(LogInfo) << "Storyboard \"" << node.name() << "\"!";
+						// LOG_S(INFO) << "Storyboard \"" << node.name() << "\"!";
 					}
 				}
 				continue;
@@ -1698,7 +1698,7 @@ void ThemeData::parseElement(const pugi::xml_node& root, const std::map<std::str
 				node.set_name("animateSelection");
 			else
 			{
-				LOG(LogWarning) << "Unknown property type \"" << name << "\" (for element of type " << root.name() << ").";
+				LOG_S(WARNING) << "Unknown property type \"" << name << "\" (for element of type " << root.name() << ").";
 				continue;
 			}
 		}
@@ -1761,7 +1761,7 @@ const ThemeData::ThemeElement* ThemeData::getElement(const std::string& view, co
 
 	if(elemIt->second.type != expectedType && !expectedType.empty())
 	{
-		LOG(LogWarning) << " requested mismatched theme type for [" << view << "." << element << "] - expected \"" 
+		LOG_S(WARNING) << " requested mismatched theme type for [" << view << "." << element << "] - expected \""
 			<< expectedType << "\", got \"" << elemIt->second.type << "\"";
 		return NULL;
 	}
@@ -1800,7 +1800,7 @@ const std::shared_ptr<ThemeData>& ThemeData::getDefault()
 				theme->loadFile("", emptyMap, path);
 			} catch(ThemeException& e)
 			{
-				LOG(LogError) << e.what();
+				LOG_S(ERROR) << e.what();
 				theme = std::shared_ptr<ThemeData>(new ThemeData()); //reset to empty
 			}
 		}
@@ -2264,7 +2264,7 @@ bool ThemeData::appendFile(const std::string& path, bool perGameOverride)
 	if (!result)
 	{
 		mPaths.pop_back();
-		LOG(LogWarning) << "Error parsing file: \n    " << result.description() << "    from included file \"" << path << "\":\n    ";
+		LOG_S(WARNING) << "Error parsing file: \n    " << result.description() << "    from included file \"" << path << "\":\n    ";
 		return false;
 	}
 
@@ -2272,7 +2272,7 @@ bool ThemeData::appendFile(const std::string& path, bool perGameOverride)
 	if (!theme)
 	{
 		mPaths.pop_back();
-		LOG(LogWarning) << "Missing <theme> tag!" << "    from included file \"" << path << "\":\n    ";
+		LOG_S(WARNING) << "Missing <theme> tag!" << "    from included file \"" << path << "\":\n    ";
 		return false;
 	}
 

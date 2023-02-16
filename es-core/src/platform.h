@@ -43,7 +43,7 @@ struct BatteryInformation
 };
 
 BatteryInformation queryBatteryInformation();
-std::string queryIPAdress();
+std::string QueryIpAddress();
 
 std::string getArchString();
 

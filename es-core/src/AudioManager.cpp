@@ -1,6 +1,6 @@
 #include "AudioManager.h"
 
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "Sound.h"
 #include <SDL.h>
@@ -65,16 +65,16 @@ void AudioManager::init()
 
 	if (SDL_InitSubSystem(SDL_INIT_AUDIO) != 0)
 	{
-		LOG(LogError) << "Error initializing SDL audio!\n" << SDL_GetError();
+		LOG_S(ERROR) << "Error initializing SDL audio!\n" << SDL_GetError();
 		return;
 	}
 
 	// Open the audio device and pause
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) < 0)
-		LOG(LogError) << "MUSIC Error - Unable to open SDLMixer audio: " << SDL_GetError() << std::endl;
+		LOG_S(ERROR) << "MUSIC Error - Unable to open SDLMixer audio: " << SDL_GetError() << std::endl;
 	else
 	{
-		LOG(LogInfo) << "SDL AUDIO Initialized";
+		LOG_S(INFO) << "SDL AUDIO Initialized";
 		mInitialized = true;
 
 		// Reload known sounds
@@ -88,7 +88,7 @@ void AudioManager::deinit()
 	if (!mInitialized)
 		return;
 
-	LOG(LogDebug) << "AudioManager::deinit";
+	LOG_S(1) << "AudioManager::deinit";
 
 	mInitialized = false;
 
@@ -107,7 +107,7 @@ void AudioManager::deinit()
 	Mix_CloseAudio();
 	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 
-	LOG(LogInfo) << "SDL AUDIO Deinitialized";
+	LOG_S(INFO) << "SDL AUDIO Deinitialized";
 }
 
 void AudioManager::registerSound(std::shared_ptr<Sound> & sound)
@@ -128,7 +128,7 @@ void AudioManager::unregisterSound(std::shared_ptr<Sound> & sound)
 			return;
 		}
 	}
-	LOG(LogWarning) << "AudioManager Error - tried to unregister a sound that wasn't registered!";
+	LOG_S(WARNING) << "AudioManager Error - tried to unregister a sound that wasn't registered!";
 }
 
 void AudioManager::play()
@@ -183,7 +183,7 @@ void AudioManager::addLastPlayed(const std::string& newSong, int totalMusic)
 	}
 	mLastPlayed.push_front(newSong);
 	
-	LOG(LogDebug) << "Adding " << newSong << " to last played, " << mLastPlayed.size() << " in history";
+	LOG_S(1) << "Adding " << newSong << " to last played, " << mLastPlayed.size() << " in history";
 }
 
 // batocera
@@ -229,7 +229,7 @@ void AudioManager::playRandomMusic(bool continueIfPlaying)
 	int randomIndex = Randomizer::random(musics.size());
 	while (songWasPlayedRecently(musics.at(randomIndex)))
 	{
-		LOG(LogDebug) << "Music \"" << musics.at(randomIndex) << "\" was played recently, trying again";
+		LOG_S(1) << "Music \"" << musics.at(randomIndex) << "\" was played recently, trying again";
 		randomIndex = Randomizer::random(musics.size());
 	}
 
@@ -258,7 +258,7 @@ void AudioManager::playMusic(std::string path)
 	mCurrentMusic = Mix_LoadMUS(path.c_str());
 	if (mCurrentMusic == NULL)
 	{
-		LOG(LogError) << Mix_GetError() << " for " << path;
+		LOG_S(ERROR) << Mix_GetError() << " for " << path;
 		return;
 	}
 
@@ -368,7 +368,7 @@ void AudioManager::playSong(const std::string& song)
 				title_break = 20;
 				break;
 			default:
-				LOG(LogError) << "Error AudioManager unexpected case while loading mofile " << song;
+				LOG_S(ERROR) << "Error AudioManager unexpected case while loading mofile " << song;
 				setSongName(Utils::FileSystem::getStem(song.c_str()));				
 				return;
 		}
@@ -377,9 +377,9 @@ void AudioManager::playSong(const std::string& song)
 		if (file != NULL)
 		{
 			if (fseek(file, title_offset, SEEK_SET) < 0)
-				LOG(LogError) << "Error AudioManager seeking " << song;
+				LOG_S(ERROR) << "Error AudioManager seeking " << song;
 			else if (fread(&info, sizeof(info), 1, file) != 1)
-				LOG(LogError) << "Error AudioManager reading " << song;
+				LOG_S(ERROR) << "Error AudioManager reading " << song;
 			else  
 			{
 				info.title[title_break] = '\0';
@@ -396,7 +396,7 @@ void AudioManager::playSong(const std::string& song)
 			fclose(file);
 		}
 		else
-			LOG(LogError) << "Error AudioManager opening modfile " << song;
+			LOG_S(ERROR) << "Error AudioManager opening modfile " << song;
 	}
 
 	// now only mp3 will be parsed for ID3: .ogg, .wav and .flac will display file name
@@ -406,7 +406,7 @@ void AudioManager::playSong(const std::string& song)
 		return;
 	}
 
-	LOG(LogDebug) << "AudioManager::setSongName";
+	LOG_S(1) << "AudioManager::setSongName";
 
 	// First let's try with an ID3 v2 tag
 #define MAX_STR_SIZE 255 // Empiric max size of a MP3 title
@@ -459,9 +459,9 @@ void AudioManager::playSong(const std::string& song)
 	if (file != NULL)
 	{
 		if (fseek(file, -128, SEEK_END) < 0)
-			LOG(LogError) << "Error AudioManager seeking " << song;
+			LOG_S(ERROR) << "Error AudioManager seeking " << song;
 		else if (fread(&info, sizeof(info), 1, file) != 1)
-			LOG(LogError) << "Error AudioManager reading " << song;
+			LOG_S(ERROR) << "Error AudioManager reading " << song;
 		else if (strncmp(info.tag, "TAG", 3) == 0) 
 		{
 			std::string songTitle(info.title, 30);
@@ -479,7 +479,7 @@ void AudioManager::playSong(const std::string& song)
 		fclose(file);
 	}
 	else
-		LOG(LogError) << "Error AudioManager opening mp3 file " << song;
+		LOG_S(ERROR) << "Error AudioManager opening mp3 file " << song;
 
 	setSongName(Utils::FileSystem::getStem(song.c_str()));
 }

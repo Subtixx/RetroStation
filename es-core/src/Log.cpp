@@ -1,13 +1,14 @@
-#include "Log.h"
+#include <loguru.hpp>
 
-#include "utils/FileSystemUtil.h"
+#include "Log.h"
+#include "Paths.h"
+#include "Settings.h"
 #include "platform.h"
+#include "utils/FileSystemUtil.h"
+#include <SDL_timer.h>
+#include <iomanip>
 #include <iostream>
 #include <mutex>
-#include "Settings.h"
-#include <iomanip> 
-#include <SDL_timer.h>
-#include "Paths.h"
 
 #if WIN32
 #include <Windows.h>

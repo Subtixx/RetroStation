@@ -14,7 +14,7 @@
 #include "zip_file.hpp"
 #include "FileSystemUtil.h"
 #include "md5.h"
-#include "Log.h"
+#include <loguru.hpp>
 
 namespace Utils
 {
@@ -160,11 +160,11 @@ namespace Utils
 			}
 			catch (std::runtime_error& e)
 			{
-				LOG(LogError) << "ZipFile::load error : " << e.what();
+				LOG_S(ERROR) << "ZipFile::load error : " << e.what();
 			}
 			catch (...)
 			{
-				LOG(LogError) << "ZipFile::load unknown error";
+				LOG_S(ERROR) << "ZipFile::load unknown error";
 			}
 
 			return mZipFile != nullptr;

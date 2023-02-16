@@ -3,7 +3,7 @@
 #include "utils/TimeUtil.h"
 #include "utils/StringUtil.h"
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -297,7 +297,7 @@ void ScreenScraperScraper::generateRequests(const ScraperSearchParams& params,
 			p_ids.push_back(mapIt->second);
 		else
 		{
-			LOG(LogWarning) << "ScreenScraper: no support for platform " << getPlatformName(*platformIt);
+			LOG_S(WARNING) << "ScreenScraper: no support for platform " << getPlatformName(*platformIt);
 			// Add the scrape request without a platform/system ID
 			requests.push(std::unique_ptr<ScraperRequest>(new ScreenScraperRequest(requests, results, path, params.game->getFileName())));
 		}
@@ -340,7 +340,7 @@ bool ScreenScraperRequest::process(HttpReq* request, std::vector<ScraperSearchRe
 		ss << "ScreenScraperRequest - Error parsing XML." << std::endl << parseResult.description() << "";
 		std::string err = ss.str();
 		//setError(err); Don't consider it an error -> Request is a success. Simply : Game is not found		
-		LOG(LogWarning) << err;
+		LOG_S(WARNING) << err;
 				
 		if (Utils::String::toLower(content).find("maximum threads per minute reached") != std::string::npos)
 			return false;
@@ -425,7 +425,7 @@ std::vector<std::string> ScreenScraperRequest::getRipList(std::string imageSourc
 
 void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::vector<ScraperSearchResult>& out_results)
 {
-	LOG(LogDebug) << "ScreenScraperRequest::processGame >>";
+	LOG_S(1) << "ScreenScraperRequest::processGame >>";
 
 	pugi::xml_node data = xmldoc.child("Data");
 	if (data.child("jeux"))
@@ -676,7 +676,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					// result.urls[MetaDataId::Thumbnail] = imageUrl + "&maxheight=250";
 				}
 				else
-					LOG(LogDebug) << "Failed to find media XML node for image";
+					LOG_S(1) << "Failed to find media XML node for image";
 			}
 
 			if (!Settings::getInstance()->getString("ScrapperThumbSrc").empty() &&
@@ -689,7 +689,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Thumbnail] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for thumbnail";
+						LOG_S(1) << "Failed to find media XML node for thumbnail";
 				}
 			}
 
@@ -702,7 +702,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Marquee] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for logo";
+						LOG_S(1) << "Failed to find media XML node for logo";
 				}
 			}
 
@@ -715,7 +715,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Video] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for video";
+						LOG_S(1) << "Failed to find media XML node for video";
 				}
 			}
 
@@ -728,7 +728,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::FanArt] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for fanart";
+						LOG_S(1) << "Failed to find media XML node for fanart";
 				}
 			}
 			
@@ -741,7 +741,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::BoxBack] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for box back";
+						LOG_S(1) << "Failed to find media XML node for box back";
 				}
 			}
 
@@ -755,7 +755,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Manual] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for manual";
+						LOG_S(1) << "Failed to find media XML node for manual";
 				}
 			}
 
@@ -768,7 +768,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Map] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for map";
+						LOG_S(1) << "Failed to find media XML node for map";
 				}
 			}
 
@@ -781,7 +781,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::TitleShot] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for titleshot";
+						LOG_S(1) << "Failed to find media XML node for titleshot";
 				}
 			}		
 			
@@ -794,7 +794,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 					if (art)
 						result.urls[MetaDataId::Bezel] = ScraperSearchItem(ensureUrl(art.text().get()), art.attribute("format") ? "." + std::string(art.attribute("format").value()) : "");
 					else
-						LOG(LogDebug) << "Failed to find media XML node for bezel";
+						LOG_S(1) << "Failed to find media XML node for bezel";
 				}
 			}
 		}
@@ -802,7 +802,7 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 		out_results.push_back(result);
 	} // game
 
-	LOG(LogDebug) << "ScreenScraperRequest::processGame <<";
+	LOG_S(1) << "ScreenScraperRequest::processGame <<";
 }
 
 std::string ScreenScraperRequest::ScreenScraperConfig::getGameSearchUrl(const std::string gameName, bool jeuRecherche) const
@@ -849,7 +849,7 @@ std::string ScreenScraperRequest::ScreenScraperConfig::getUserInfoUrl() const
 
 ScreenScraperUser ScreenScraperRequest::processUserInfo(const pugi::xml_document& xmldoc)
 {
-	LOG(LogDebug) << "ScreenScraperRequest::processUserInfo >>";
+	LOG_S(1) << "ScreenScraperRequest::processUserInfo >>";
 
 	ScreenScraperUser user;
 

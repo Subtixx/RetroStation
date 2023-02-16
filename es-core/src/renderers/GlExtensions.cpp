@@ -1,6 +1,6 @@
 #include "GlExtensions.h"
 #include <SDL.h>
-#include "Log.h"
+#include <loguru.hpp>
 
 #ifdef OPENGL_EXTENSIONS
 namespace glext
@@ -37,7 +37,7 @@ namespace glext
 	{
 		void* ret = SDL_GL_GetProcAddress(proc);
 		if (ret == nullptr)
-			LOG(LogError) << "FAILED TO INITIALISE GL Extension: " << proc;
+			LOG_S(ERROR) << "FAILED TO INITIALISE GL Extension: " << proc;
 
 		return ret;
 	}
@@ -46,25 +46,25 @@ namespace glext
 	{
 		if (!SDL_GL_ExtensionSupported("GL_ARB_shader_objects"))
 		{
-			LOG(LogError) << "GL Extensions not supported. GL_ARB_shader_objects";
+			LOG_S(ERROR) << "GL Extensions not supported. GL_ARB_shader_objects";
 			return false;
 		}
 
 		if (!SDL_GL_ExtensionSupported("GL_ARB_shading_language_100"))
 		{
-			LOG(LogError) << "GL Extensions not supported. GL_ARB_shading_language_100";
+			LOG_S(ERROR) << "GL Extensions not supported. GL_ARB_shading_language_100";
 			return false;
 		}
 
 		if (!SDL_GL_ExtensionSupported("GL_ARB_vertex_shader"))
 		{
-			LOG(LogError) << "GL Extensions not supported. GL_ARB_vertex_shader";
+			LOG_S(ERROR) << "GL Extensions not supported. GL_ARB_vertex_shader";
 			return false;
 		}
 
 		if (!SDL_GL_ExtensionSupported("GL_ARB_fragment_shader"))
 		{
-			LOG(LogError) << "GL Extensions not supported. GL_ARB_fragment_shader";
+			LOG_S(ERROR) << "GL Extensions not supported. GL_ARB_fragment_shader";
 			return false;
 		}
 
@@ -110,13 +110,13 @@ namespace glext
 #endif
 
 #if defined(_DEBUG)
-#include "Log.h"
+#include <loguru.hpp>
 
 void _GLCheckError(const char* _funcName)
 {
 	const GLenum errorCode = glGetError();
 
 	if (errorCode != GL_NO_ERROR)
-		LOG(LogError) << "GL error: " << _funcName << " failed with error code: " << errorCode;
+		LOG_S(ERROR) << "GL error: " << _funcName << " failed with error code: " << errorCode;
 }
 #endif

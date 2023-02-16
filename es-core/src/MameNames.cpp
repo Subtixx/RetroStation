@@ -2,7 +2,7 @@
 
 #include "resources/ResourceManager.h"
 #include "utils/FileSystemUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <pugixml/src/pugixml.hpp>
 #include "utils/StringUtil.h"
 #include <string.h>
@@ -49,7 +49,7 @@ MameNames::MameNames()
 		result = doc.load_file(xmlpath.c_str());
 		if (result)
 		{
-			LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+			LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 			pugi::xml_node root = doc;
 
@@ -71,7 +71,7 @@ MameNames::MameNames()
 			}
 		}
 		else
-			LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+			LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 	}
 	
 	// Read bios
@@ -81,7 +81,7 @@ MameNames::MameNames()
 		result = doc.load_file(xmlpath.c_str());
 		if (result)
 		{
-			LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+			LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 			pugi::xml_node root = doc;
 
@@ -96,7 +96,7 @@ MameNames::MameNames()
 			}
 		}
 		else
-			LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+			LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 
 	}
 	
@@ -107,7 +107,7 @@ MameNames::MameNames()
 		result = doc.load_file(xmlpath.c_str());
 		if (result)
 		{
-			LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+			LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 			pugi::xml_node root = doc;
 
@@ -122,7 +122,7 @@ MameNames::MameNames()
 			}
 		}
 		else 
-			LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+			LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 	}
 
 	// Read gun games for non arcade systems
@@ -135,7 +135,7 @@ MameNames::MameNames()
 			pugi::xml_node systems = doc.child("systems");
 			if (systems)
 			{
-				LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+				LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 				for (pugi::xml_node systemNode = systems.child("system"); systemNode; systemNode = systemNode.next_sibling("system"))
 				{
@@ -160,10 +160,10 @@ MameNames::MameNames()
 				}
 			}
 			else 
-				LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\" <systems> root is missing !";
+				LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\" <systems> root is missing !";
 		}
 		else
-			LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+			LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 	}
 
 } // MameNames

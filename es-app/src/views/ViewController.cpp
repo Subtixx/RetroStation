@@ -13,7 +13,7 @@
 #include "views/SystemView.h"
 #include "views/UIModeController.h"
 #include "FileFilterIndex.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Scripting.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -518,7 +518,7 @@ void ViewController::launch(FileData* game, LaunchGameOptions options, Vector3f 
 
 	if(game->getType() != GAME)
 	{
-		LOG(LogError) << "tried to launch something that isn't a game";
+		LOG_S(ERROR) << "tried to launch something that isn't a game";
 		return;
 	}
 

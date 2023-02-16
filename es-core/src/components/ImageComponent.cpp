@@ -1,7 +1,7 @@
 #include "components/ImageComponent.h"
 
 #include "resources/TextureResource.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "ThemeData.h"
 #include "LocaleES.h"
@@ -933,7 +933,7 @@ void ImageComponent::update(int deltaTime)
 			auto item = mPlaylist->getNextItem();
 			if (!item.empty())
 			{
-				// LOG(LogDebug) << "getNextItem: " << item;
+				// LOG_S(1) << "getNextItem: " << item;
 				setImage(item, false, getMaxSizeInfo(), true, false);
 			}
 

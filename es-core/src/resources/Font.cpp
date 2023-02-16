@@ -3,7 +3,7 @@
 #include "renderers/Renderer.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "math/Misc.h"
 #include "LocaleES.h"
 
@@ -46,7 +46,7 @@ void Font::initLibrary()
 	if(FT_Init_FreeType(&sLibrary))
 	{
 		sLibrary = NULL;
-		LOG(LogError) << "Error initializing FreeType!";
+		LOG_S(ERROR) << "Error initializing FreeType!";
 	}
 }
 
@@ -221,7 +221,7 @@ void Font::FontTexture::initTexture()
 	{
 		textureId = Renderer::createTexture(Renderer::Texture::ALPHA, true, false, textureSize.x(), textureSize.y(), nullptr);
 		if (textureId == 0)
-			LOG(LogError) << "FontTexture::initTexture() failed to create texture " << textureSize.x() << "x" << textureSize.y();
+			LOG_S(ERROR) << "FontTexture::initTexture() failed to create texture " << textureSize.x() << "x" << textureSize.y();
 	}
 }
 
@@ -245,7 +245,7 @@ void Font::getTextureForNewGlyph(const Vector2i& glyphSize, FontTexture*& tex_ou
 		if(tex_out->findEmpty(glyphSize, cursor_out))
 			return; // yes
 
-		LOG(LogDebug) << "Glyph texture cache full, creating a new texture cache for " << Utils::FileSystem::getFileName(mPath) << " " << mSize << "pt";
+		LOG_S(1) << "Glyph texture cache full, creating a new texture cache for " << Utils::FileSystem::getFileName(mPath) << " " << mSize << "pt";
 	}
 
 	// current textures are full,
@@ -265,7 +265,7 @@ void Font::getTextureForNewGlyph(const Vector2i& glyphSize, FontTexture*& tex_ou
 	bool ok = tex_out->findEmpty(glyphSize, cursor_out);
 	if(!ok)
 	{
-		LOG(LogError) << "Glyph too big to fit on a new texture (glyph size > " << tex_out->textureSize.x() << ", " << tex_out->textureSize.y() << ")!";
+		LOG_S(ERROR) << "Glyph too big to fit on a new texture (glyph size > " << tex_out->textureSize.x() << ", " << tex_out->textureSize.y() << ")!";
 		delete tex;
 		tex_out = NULL;
 	}
@@ -346,7 +346,7 @@ Font::Glyph* Font::getGlyph(unsigned int id)
 	FT_Face face = getFaceForChar(id);
 	if(!face)
 	{
-		LOG(LogError) << "Could not find appropriate font face for character " << id << " for font " << mPath;
+		LOG_S(ERROR) << "Could not find appropriate font face for character " << id << " for font " << mPath;
 		return NULL;
 	}
 
@@ -354,7 +354,7 @@ Font::Glyph* Font::getGlyph(unsigned int id)
 
 	if(FT_Load_Char(face, id, FT_LOAD_RENDER))
 	{
-		LOG(LogError) << "Could not find glyph for character " << id << " for font " << mPath << ", size " << mSize << "!";
+		LOG_S(ERROR) << "Could not find glyph for character " << id << " for font " << mPath << ", size " << mSize << "!";
 		return NULL;
 	}
 
@@ -367,7 +367,7 @@ Font::Glyph* Font::getGlyph(unsigned int id)
 	// getTextureForNewGlyph can fail if the glyph is bigger than the max texture size (absurdly large font size)
 	if(tex == NULL)
 	{
-		LOG(LogError) << "Could not create glyph for character " << id << " for font " << mPath << ", size " << mSize << " (no suitable texture found)!";
+		LOG_S(ERROR) << "Could not create glyph for character " << id << " for font " << mPath << ", size " << mSize << " (no suitable texture found)!";
 		return NULL;
 	}
 
@@ -489,7 +489,7 @@ void Font::renderTextCache(TextCache* cache, bool verticesChanged)
 {
 	if(cache == NULL)
 	{
-		LOG(LogError) << "Attempted to draw NULL TextCache!";
+		LOG_S(ERROR) << "Attempted to draw NULL TextCache!";
 		return;
 	}
 
@@ -534,7 +534,7 @@ void Font::renderGradientTextCache(TextCache* cache, unsigned int colorTop, unsi
 {
 	if (cache == NULL)
 	{
-		LOG(LogError) << "Attempted to draw NULL TextCache!";
+		LOG_S(ERROR) << "Attempted to draw NULL TextCache!";
 		return;
 	}
 

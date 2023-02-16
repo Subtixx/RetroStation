@@ -3,7 +3,7 @@
 #define ES_CORE_COMPONENTS_OPTION_LIST_COMPONENT_H
 
 #include "GuiComponent.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Window.h"
 #include "LocaleES.h"
 #include "ThemeData.h"
@@ -271,7 +271,7 @@ public:
 		mRightArrow.setResize(0, mText.getFont()->getLetterHeight());
 
 		if(mSize.x() < (mLeftArrow.getSize().x() + mRightArrow.getSize().x()))
-			LOG(LogWarning) << "OptionListComponent too narrow!";
+			LOG_S(WARNING) << "OptionListComponent too narrow!";
 
 		mText.setSize(mSize.x() - mLeftArrow.getSize().x() - mRightArrow.getSize().x(), mText.getFont()->getHeight());
 
@@ -562,7 +562,7 @@ private:
 				return i;
 		}
 
-		LOG(LogWarning) << "OptionListComponent::getSelectedId() - no selected element found, defaulting to 0";
+		LOG_S(WARNING) << "OptionListComponent::getSelectedId() - no selected element found, defaulting to 0";
 		return 0;
 	}
 

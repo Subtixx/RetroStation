@@ -1,29 +1,30 @@
 #include "Window.h"
 
+#include "AudioManager.h"
+#include "InputManager.h"
+#include "LocaleES.h"
+#include "Log.h"
+#include "PowerSaver.h"
+#include "Scripting.h"
+#include "Splash.h"
+#include "SystemConf.h"
+#include "ThemeData.h"
+#include "components/AsyncNotificationComponent.h"
+#include "components/BatteryIndicatorComponent.h"
+#include "components/ControllerActivityComponent.h"
 #include "components/HelpComponent.h"
 #include "components/ImageComponent.h"
 #include "components/TextComponent.h"
+#include "components/VolumeInfoComponent.h"
+#include "guis/GuiInfoPopup.h"
+#include "guis/GuiMsgBox.h"
 #include "resources/Font.h"
 #include "resources/TextureResource.h"
-#include "InputManager.h"
-#include "Log.h"
-#include "Scripting.h"
+#include <SDL_events.h>
 #include <algorithm>
 #include <iomanip>
-#include "guis/GuiInfoPopup.h"
-#include "SystemConf.h"
-#include "LocaleES.h"
-#include "AudioManager.h"
-#include <SDL_events.h>
-#include "ThemeData.h"
+#include <loguru.hpp>
 #include <mutex>
-#include "components/AsyncNotificationComponent.h"
-#include "components/ControllerActivityComponent.h"
-#include "components/BatteryIndicatorComponent.h"
-#include "guis/GuiMsgBox.h"
-#include "components/VolumeInfoComponent.h"
-#include "Splash.h"
-#include "PowerSaver.h"
 
 Window::Window() : mNormalizeNextUpdate(false), mFrameTimeElapsed(0), mFrameCountElapsed(0), mAverageDeltaTime(10),
   mAllowSleep(true), mSleeping(false), mTimeSinceLastInput(0), mScreenSaver(NULL), mRenderScreenSaver(false), mClockElapsed(0), mMouseCapture(nullptr)
@@ -100,13 +101,13 @@ GuiComponent* Window::peekGui()
 
 bool Window::init(bool initRenderer, bool initInputManager)
 {
-	LOG(LogInfo) << "Window::init";
+	LOG_S(INFO) << "Window::init";
 
 	if (initRenderer)
 	{
 		if (!Renderer::init())
 		{
-			LOG(LogError) << "Renderer failed to initialize!";
+			LOG_S(ERROR) << "Renderer failed to initialize!";
 			return false;
 		}
 	}
@@ -305,7 +306,7 @@ void Window::processNotificationMessages()
 	NotificationMessage msg = mNotificationMessages.back();
 	mNotificationMessages.pop_back();
 
-	LOG(LogDebug) << "Notification message :" << msg.first.c_str();
+	LOG_S(1) << "Notification message :" << msg.first.c_str();
 	
 	if (mNotificationPopups.size() == 0)
 		PowerSaver::pause();
@@ -1081,7 +1082,9 @@ void Window::processPostedFunctions()
 	mNotificationMessagesLock.unlock();
 
 	for (auto func : functions)
-		TRYCATCH("processPostedFunction", func.func())
+    {
+        TRYCATCH("processPostedFunction", func.func())
+    }
 }
 
 void Window::onThemeChanged(const std::shared_ptr<ThemeData>& theme)

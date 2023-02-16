@@ -3,7 +3,7 @@
 #include "SystemConf.h"
 #include "guis/GuiMsgBox.h"
 #include "LocaleES.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <chrono>
 
 #define CHECKUPDATE_MINUTES 60
@@ -13,7 +13,7 @@ NetworkThread::NetworkThread(Window* window) : mWindow(window)
 	if (!ApiSystem::getInstance()->isScriptingSupported(ApiSystem::UPGRADE) && !ApiSystem::getInstance()->isScriptingSupported(ApiSystem::PADSINFO))
 		return;
 
-	LOG(LogDebug) << "NetworkThread : Starting";
+	LOG_S(1) << "NetworkThread : Starting";
 
 	// creer le thread
 	mCheckUpdateTimer = CHECKUPDATE_MINUTES;
@@ -34,7 +34,7 @@ NetworkThread::~NetworkThread()
 	if (mThread == nullptr)
 		return;
 	
-	LOG(LogDebug) << "NetworkThread : Exit";
+	LOG_S(1) << "NetworkThread : Exit";
 
 	mEvent.notify_all();
 
@@ -84,7 +84,7 @@ void NetworkThread::run()
 		{
 			mCheckUpdateTimer = 0;
 
-			LOG(LogDebug) << "NetworkThread : Checking for updates";
+			LOG_S(1) << "NetworkThread : Checking for updates";
 
 			std::vector<std::string> msgtbl;
 			if (ApiSystem::getInstance()->canUpdate(msgtbl))
@@ -96,12 +96,12 @@ void NetworkThread::run()
 					msg += msgtbl[i];
 				}
 
-				LOG(LogDebug) << "NetworkThread : Update available " << msg.c_str();
+				LOG_S(1) << "NetworkThread : Update available " << msg.c_str();
 				mWindow->displayNotificationMessage(_U("\uF019  ") + _("UPDATE AVAILABLE") + std::string(": ") + msg);
 				mRunning = false;
 			}
 			else
-				LOG(LogDebug) << "NetworkThread : No update found";
+				LOG_S(1) << "NetworkThread : No update found";
 		}
 	}
 }

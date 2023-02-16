@@ -1,7 +1,7 @@
 #include "components/NinePatchComponent.h"
 
 #include "resources/TextureResource.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "ThemeData.h"
 
 NinePatchComponent::NinePatchComponent(Window* window, const std::string& path, unsigned int edgeColor, unsigned int centerColor) : GuiComponent(window),
@@ -85,7 +85,7 @@ void NinePatchComponent::buildVertices()
 	if(mTexture->getSize() == Vector2i::Zero())
 	{
 		mVertices = NULL;
-		LOG(LogWarning) << "NinePatchComponent missing texture!";
+		LOG_S(WARNING) << "NinePatchComponent missing texture!";
 		return;
 	}
 

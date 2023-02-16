@@ -8,11 +8,13 @@
 #include "math/Vector2i.h"
 #include "resources/ResourceManager.h"
 #include "ImageIO.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 
 #include <SDL.h>
 #include <stack>
+
+constexpr const char* WINDOW_TITLE = "RetroStation";
 
 namespace Renderer
 {
@@ -27,7 +29,7 @@ namespace Renderer
 	static int              screenOffsetX      = 0;
 	static int              screenOffsetY      = 0;
 	static int              screenRotate       = 0;
-	static bool             initialCursorState = 1;
+	static int             initialCursorState = 1;
 	static Vector2i         screenMargin;
 	static Rect				viewPort;
 
@@ -130,29 +132,29 @@ namespace Renderer
 
 	static bool createWindow()
 	{
-		LOG(LogInfo) << "Creating window...";
+		LOG_S(INFO) << "Creating window...";
 
 		if(SDL_Init(SDL_INIT_VIDEO) != 0)
 		{
-			LOG(LogError) << "Error initializing SDL!\n	" << SDL_GetError();
+			LOG_S(ERROR) << "Error initializing SDL!\n	" << SDL_GetError();
 			return false;
 		}
 
 		static SDL_DisplayMode dispMode;
 
-		initialCursorState = (SDL_ShowCursor(0) != 0);
+		initialCursorState = SDL_ShowCursor(0);
 		if (windowWidth == 0)
 		{
 			SDL_GetDesktopDisplayMode(0, &dispMode);
 		}
 
-		windowWidth   = Settings::getInstance()->getInt("WindowWidth")   ? Settings::getInstance()->getInt("WindowWidth")   : dispMode.w;
-		windowHeight  = Settings::getInstance()->getInt("WindowHeight")  ? Settings::getInstance()->getInt("WindowHeight")  : dispMode.h;
-		screenWidth   = Settings::getInstance()->getInt("ScreenWidth")   ? Settings::getInstance()->getInt("ScreenWidth")   : windowWidth;
-		screenHeight  = Settings::getInstance()->getInt("ScreenHeight")  ? Settings::getInstance()->getInt("ScreenHeight")  : windowHeight;
-		screenOffsetX = Settings::getInstance()->getInt("ScreenOffsetX") ? Settings::getInstance()->getInt("ScreenOffsetX") : 0;
-		screenOffsetY = Settings::getInstance()->getInt("ScreenOffsetY") ? Settings::getInstance()->getInt("ScreenOffsetY") : 0;
-		screenRotate  = Settings::getInstance()->getInt("ScreenRotate")  ? Settings::getInstance()->getInt("ScreenRotate")  : 0;
+		windowWidth   = Settings::getInstance()->getInt("WindowWidth") != 0   ? Settings::getInstance()->getInt("WindowWidth")   : dispMode.w;
+		windowHeight  = Settings::getInstance()->getInt("WindowHeight") != 0  ? Settings::getInstance()->getInt("WindowHeight")  : dispMode.h;
+		screenWidth   = Settings::getInstance()->getInt("ScreenWidth") != 0   ? Settings::getInstance()->getInt("ScreenWidth")   : windowWidth;
+		screenHeight  = Settings::getInstance()->getInt("ScreenHeight") != 0  ? Settings::getInstance()->getInt("ScreenHeight")  : windowHeight;
+		screenOffsetX = Settings::getInstance()->getInt("ScreenOffsetX") != 0 ? Settings::getInstance()->getInt("ScreenOffsetX") : 0;
+		screenOffsetY = Settings::getInstance()->getInt("ScreenOffsetY") != 0 ? Settings::getInstance()->getInt("ScreenOffsetY") : 0;
+		screenRotate  = Settings::getInstance()->getInt("ScreenRotate") != 0  ? Settings::getInstance()->getInt("ScreenRotate")  : 0;
 
 		if (screenRotate == 1 || screenRotate == 3)
 		{
@@ -185,7 +187,7 @@ namespace Renderer
 					}
 				}
 
-				if (Settings::getInstance()->getBool("Windowed") && (Settings::getInstance()->getInt("WindowWidth") || Settings::getInstance()->getInt("ScreenWidth")))
+				if (Settings::getInstance()->getBool("Windowed") && ((Settings::getInstance()->getInt("WindowWidth") != 0) || (Settings::getInstance()->getInt("ScreenWidth") != 0)))
 				{
 					if (windowWidth != rc.w || windowHeight != rc.h)
 					{
@@ -209,9 +211,9 @@ namespace Renderer
 		windowFlags |= SDL_WINDOW_ALLOW_HIGHDPI;
 #endif
 
-		if((sdlWindow = SDL_CreateWindow("EmulationStation", sdlWindowPosition.x(), sdlWindowPosition.y(), windowWidth, windowHeight, windowFlags)) == nullptr)
+		if((sdlWindow = SDL_CreateWindow(WINDOW_TITLE, sdlWindowPosition.x(), sdlWindowPosition.y(), windowWidth, windowHeight, windowFlags)) == nullptr)
 		{
-			LOG(LogError) << "Error creating SDL window!\n\t" << SDL_GetError();
+			LOG_S(ERROR) << "Error creating SDL window!\n\t" << SDL_GetError();
 			return false;
 		}
 
@@ -435,7 +437,7 @@ namespace Renderer
 	{
 		if(clipStack.empty())
 		{
-			LOG(LogError) << "Tried to popClipRect while the stack was empty!";
+			LOG_S(ERROR) << "Tried to popClipRect while the stack was empty!";
 			return;
 		}
 
@@ -592,7 +594,7 @@ namespace Renderer
 
 		if (nativeClipStack.empty())
 		{
-			LOG(LogDebug) << "Renderer::isVisibleOnScreen used without any clip stack!";
+			LOG_S(1) << "Renderer::isVisibleOnScreen used without any clip stack!";
 			return true;
 		}
 

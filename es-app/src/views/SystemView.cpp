@@ -4,7 +4,7 @@
 #include "guis/GuiMsgBox.h"
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Scripting.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -442,7 +442,7 @@ bool SystemView::input(InputConfig* config, Input input)
 		*/
 		if(config->getDeviceId() == DEVICE_KEYBOARD && input.value && input.id == SDLK_r && SDL_GetModState() & KMOD_LCTRL && Settings::getInstance()->getBool("Debug"))
 		{
-			LOG(LogInfo) << " Reloading all";
+			LOG_S(INFO) << " Reloading all";
 			ViewController::get()->reloadAll();
 			return true;
 		}
@@ -1031,7 +1031,7 @@ HelpStyle SystemView::getHelpStyle()
 
 void  SystemView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
 {
-	LOG(LogDebug) << "SystemView::onThemeChanged()";
+	LOG_S(1) << "SystemView::onThemeChanged()";
 	mViewNeedsReload = true;
 	populate();
 }
@@ -1039,7 +1039,7 @@ void  SystemView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
 //  Get the ThemeElements that make up the SystemView.
 void  SystemView::getViewElements(const std::shared_ptr<ThemeData>& theme)
 {
-	LOG(LogDebug) << "SystemView::getViewElements()";
+	LOG_S(1) << "SystemView::getViewElements()";
 
 	getDefaultElements();
 

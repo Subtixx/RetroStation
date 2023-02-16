@@ -7,7 +7,7 @@
 #include "CollectionSystemManager.h"
 #include "FileFilterIndex.h"
 #include "FileSorts.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "MameNames.h"
 #include "platform.h"
 #include "Scripting.h"
@@ -613,7 +613,7 @@ std::string FileData::getMessageFromExitCode(int exitCode)
 
 bool FileData::launchGame(Window* window, LaunchGameOptions options)
 {
-	LOG(LogInfo) << "Attempting to launch game...";
+	LOG_S(INFO) << "Attempting to launch game...";
 
 	FileData* gameToUpdate = getSourceFileData();
 	if (gameToUpdate == nullptr)
@@ -640,7 +640,7 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 
 	time_t tstart = time(NULL);
 
-	LOG(LogInfo) << "	" << command;
+	LOG_S(INFO) << "	" << command;
 
 	auto p2kConv = convertP2kFile();
 
@@ -648,7 +648,7 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 
 	int exitCode = runSystemCommand(command, getDisplayName(), hideWindow ? NULL : window);
 	if (exitCode != 0)
-		LOG(LogWarning) << "...launch terminated with nonzero exit code " << exitCode << "!";
+		LOG_S(WARNING) << "...launch terminated with nonzero exit code " << exitCode << "!";
 
 	mRunningGame = nullptr;
 

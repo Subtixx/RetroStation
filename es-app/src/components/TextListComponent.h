@@ -5,7 +5,7 @@
 #include "components/IList.h"
 #include "math/Misc.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Sound.h"
 #include <memory>
 #include "components/ScrollbarComponent.h"
@@ -611,7 +611,7 @@ void TextListComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, c
 			else if (str == "right")
 				setAlignment(ALIGN_RIGHT);
 			else
-				LOG(LogError) << "Unknown TextListComponent alignment \"" << str << "\"!";
+				LOG_S(ERROR) << "Unknown TextListComponent alignment \"" << str << "\"!";
 		}
 
 		if (elem->has("horizontalMargin"))

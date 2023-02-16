@@ -1,7 +1,7 @@
 #if WIN32
 
 #include "Win32ApiSystem.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
 #include "platform.h"
@@ -273,7 +273,7 @@ int Win32ApiSystem::executeCMD(const char* lpCommandLine, std::string& output, c
 
 bool Win32ApiSystem::executeScript(const std::string command)
 {
-	LOG(LogInfo) << "Running " << command;
+	LOG_S(INFO) << "Running " << command;
 
 	std::string executable;
 	std::string parameters;
@@ -298,7 +298,7 @@ bool Win32ApiSystem::executeScript(const std::string command)
 }
 
 std::pair<std::string, int> Win32ApiSystem::executeScript(const std::string command, const std::function<void(const std::string)>& func)
-{	LOG(LogInfo) << "Running " << command;
+{	LOG_S(INFO) << "Running " << command;
 
 	std::string executable;
 	std::string parameters;
@@ -325,7 +325,7 @@ std::pair<std::string, int> Win32ApiSystem::executeScript(const std::string comm
 
 std::vector<std::string> Win32ApiSystem::executeEnumerationScript(const std::string command)
 {
-	LOG(LogDebug) << "ApiSystem::executeEnumerationScript -> " << command;
+	LOG_S(1) << "ApiSystem::executeEnumerationScript -> " << command;
 
 	std::vector<std::string> res;
 
@@ -357,7 +357,7 @@ std::vector<std::string> Win32ApiSystem::executeEnumerationScript(const std::str
 
 unsigned long Win32ApiSystem::getFreeSpaceGB(std::string mountpoint)
 {
-	LOG(LogDebug) << "ApiSystem::getFreeSpaceGB";
+	LOG_S(1) << "ApiSystem::getFreeSpaceGB";
 
 	unsigned __int64 i64FreeBytesToCaller, i64TotalBytes, i64FreeBytes;
 
@@ -376,7 +376,7 @@ unsigned long Win32ApiSystem::getFreeSpaceGB(std::string mountpoint)
 
 std::vector<std::string> Win32ApiSystem::getSystemInformations()
 {
-	LOG(LogDebug) << "ApiSystem::getSystemInformations";
+	LOG_S(1) << "ApiSystem::getSystemInformations";
 
 	std::vector<std::string> res;
 
@@ -421,7 +421,7 @@ std::vector<std::string> Win32ApiSystem::getAvailableStorageDevices()
 
 std::vector<BatoceraBezel> Win32ApiSystem::getBatoceraBezelsList()
 {
-	LOG(LogDebug) << "ApiSystem::getBatoceraBezelsList";
+	LOG_S(1) << "ApiSystem::getBatoceraBezelsList";
 
 	std::vector<BatoceraBezel> res;
 
@@ -453,7 +453,7 @@ std::vector<BatoceraBezel> Win32ApiSystem::getBatoceraBezelsList()
 
 std::pair<std::string, int> Win32ApiSystem::installBatoceraBezel(std::string bezelsystem, const std::function<void(const std::string)>& func)
 {
-	LOG(LogDebug) << "ApiSystem::installBatoceraBezel";
+	LOG_S(1) << "ApiSystem::installBatoceraBezel";
 
 	for (auto bezel : getBatoceraBezelsList())
 	{		
@@ -540,7 +540,7 @@ std::string Win32ApiSystem::getFreeSpaceSystemInfo()
 
 std::string Win32ApiSystem::getFreeSpaceInfo(const std::string drive)
 {
-	LOG(LogDebug) << "ApiSystem::getFreeSpaceInfo";
+	LOG_S(1) << "ApiSystem::getFreeSpaceInfo";
 
 	unsigned __int64 i64FreeBytesToCaller, i64TotalBytes, i64FreeBytes;
 
@@ -573,7 +573,7 @@ std::string Win32ApiSystem::getFreeSpaceInfo(const std::string drive)
 
 bool Win32ApiSystem::ping()
 {
-	LOG(LogDebug) << "ApiSystem::ping";
+	LOG_S(1) << "ApiSystem::ping";
 
 	bool connected = false;
 

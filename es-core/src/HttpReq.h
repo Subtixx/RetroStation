@@ -19,7 +19,7 @@
  * if(myRequest.status() != REQ_SUCCESS)
  * {
  *    //an error occured
- *    LOG(LogError) << "HTTP request error - " << myRequest.getErrorMessage();
+ *    LOG_S(ERROR) << "HTTP request error - " << myRequest.getErrorMessage();
  *    return;
  * }
  *

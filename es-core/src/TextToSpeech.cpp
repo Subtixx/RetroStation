@@ -1,5 +1,5 @@
 #include "TextToSpeech.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "LocaleES.h"
 
 #if WIN32
@@ -129,7 +129,7 @@ void TextToSpeech::deinit()
 	}
 #elif defined(_ENABLE_TTS_)
 	if (espeak_Terminate() != EE_OK) {
-		LOG(LogError) << "TTS::deinit() - Failed to terminate";
+		LOG_S(ERROR) << "TTS::deinit() - Failed to terminate";
 	}
 #endif
 }
@@ -205,10 +205,10 @@ void TextToSpeech::setLanguage(const std::string language)
 	if (language_part1 == "zh_TW") voice = "Mandarin"; // or cantonese ?
 
 	if (espeak_SetVoiceByName(voice.c_str()) == EE_OK) {
-		LOG(LogInfo) << "TTS::setLanguage() - set to " << language_part1 << " (" << voice << ")";
+		LOG_S(INFO) << "TTS::setLanguage() - set to " << language_part1 << " (" << voice << ")";
 	}
 	else {
-		LOG(LogError) << "TTS::setLanguage() - Failed with " << language_part1 << " (" << voice << ")";
+		LOG_S(ERROR) << "TTS::setLanguage() - Failed with " << language_part1 << " (" << voice << ")";
 	}
 #endif
 }
@@ -253,7 +253,7 @@ void TextToSpeech::say(const std::string text, bool expand, const std::string la
 		espeakCHARS_UTF8,
 		NULL,
 		NULL) != EE_OK) {
-		LOG(LogError) << "TTS::say() - Failed";
+		LOG_S(ERROR) << "TTS::say() - Failed";
 	}	
 #endif
 }

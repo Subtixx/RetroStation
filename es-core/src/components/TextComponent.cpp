@@ -1,7 +1,7 @@
 #include "components/TextComponent.h"
 
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 
 #define AUTO_SCROLL_RESET_DELAY 6000 // ms to reset to top after we reach the bottom
@@ -513,7 +513,7 @@ void TextComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, const st
 			else if (str == "right")
 				setHorizontalAlignment(ALIGN_RIGHT);
 			else
-				LOG(LogError) << "Unknown text alignment string: " << str;
+				LOG_S(ERROR) << "Unknown text alignment string: " << str;
 		}
 
 		if (elem->has("verticalAlignment"))
@@ -526,7 +526,7 @@ void TextComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, const st
 			else if (str == "bottom")
 				setVerticalAlignment(ALIGN_BOTTOM);
 			else
-				LOG(LogError) << "Unknown text alignment string: " << str;
+				LOG_S(ERROR) << "Unknown text alignment string: " << str;
 		}
 
 		if (elem->has("padding"))

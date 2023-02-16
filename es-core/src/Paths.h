@@ -78,6 +78,7 @@ private:
 
 	void loadCustomConfiguration(bool overridesOnly);
 
+    std::string mHomePath;
 	std::string mRootPath;
 	std::string mSystemConfFilePath;
 	std::string mLogPath;

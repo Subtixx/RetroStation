@@ -1,5 +1,5 @@
 #include "Shader.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "renderers/Renderer.h"
 #include "resources/ResourceManager.h"
 
@@ -49,16 +49,16 @@ namespace Renderer
 
 			if (isCompiled == GL_FALSE)
 			{
-				LOG(LogError) << "GLSL " << shaderType << " Compile Error\n" << infoLog;
+				LOG_S(ERROR) << "GLSL " << shaderType << " Compile Error\n" << infoLog;
 				delete[] infoLog;
 				return false;
 			}
 			else
 			{
 				if (strstr(infoLog, "WARNING") || strstr(infoLog, "warning") || strstr(infoLog, "Warning"))
-					LOG(LogWarning) << "GLSL " << shaderType << " Compile Warning\n" << infoLog;
+					LOG_S(WARNING) << "GLSL " << shaderType << " Compile Warning\n" << infoLog;
 				else
-					LOG(LogInfo) << "GLSL " << shaderType << " Compile Message\n" << infoLog;
+					LOG_S(INFO) << "GLSL " << shaderType << " Compile Message\n" << infoLog;
 
 				delete[] infoLog;
 			}
@@ -149,16 +149,16 @@ namespace Renderer
 
 			if (isCompiled == GL_FALSE)
 			{
-				LOG(LogError) << "GLSL Link (Texture) Error\n" << infoLog;
+				LOG_S(ERROR) << "GLSL Link (Texture) Error\n" << infoLog;
 				delete[] infoLog;
 				return false;
 			}
 			else
 			{
 				if (strstr(infoLog, "WARNING") || strstr(infoLog, "warning") || strstr(infoLog, "Warning"))
-					LOG(LogWarning) << "GLSL Link (Texture) Warning\n" << infoLog;
+					LOG_S(WARNING) << "GLSL Link (Texture) Warning\n" << infoLog;
 				else
-					LOG(LogInfo) << "GLSL Link (Texture) Message\n" << infoLog;
+					LOG_S(INFO) << "GLSL Link (Texture) Message\n" << infoLog;
 				delete[] infoLog;
 			}
 		}

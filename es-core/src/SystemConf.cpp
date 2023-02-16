@@ -1,7 +1,7 @@
 #include "SystemConf.h"
 #include <iostream>
 #include <fstream>
-#include "Log.h"
+#include <loguru.hpp>
 #include "utils/StringUtil.h"
 #include "utils/FileSystemUtil.h"
 #include "Settings.h"
@@ -92,7 +92,7 @@ bool SystemConf::loadSystemConf()
 	}
 	else
 	{
-		LOG(LogError) << "Unable to open " << mSystemConfFile;
+		LOG_S(ERROR) << "Unable to open " << mSystemConfFile;
 		return false;
 	}
 
@@ -112,7 +112,7 @@ bool SystemConf::saveSystemConf()
 #ifndef WIN32
 	if (!filein)
 	{
-		LOG(LogError) << "Unable to open for saving :  " << mSystemConfFile << "\n";
+		LOG_S(ERROR) << "Unable to open for saving :  " << mSystemConfFile << "\n";
 		return false;
 	}
 #endif
@@ -129,7 +129,7 @@ bool SystemConf::saveSystemConf()
 		filein.close();
 	}
 
-	static std::string removeID = "$^é(p$^mpv$êrpver$^vper$vper$^vper$vper$vper$^vperv^pervncvizn";
+	static std::string removeID = "$^ï¿½(p$^mpv$ï¿½rpver$^vper$vper$^vper$vper$vper$^vperv^pervncvizn";
 
 	int lastTime = SDL_GetTicks();
 
@@ -182,12 +182,12 @@ bool SystemConf::saveSystemConf()
 
 	lastTime = SDL_GetTicks() - lastTime;
 
-	LOG(LogDebug) << "saveSystemConf :  " << lastTime;
+	LOG_S(1) << "saveSystemConf :  " << lastTime;
 
 	std::ofstream fileout(mSystemConfFileTmp); //Temporary file
 	if (!fileout)
 	{
-		LOG(LogError) << "Unable to open for saving :  " << mSystemConfFileTmp << "\n";
+		LOG_S(ERROR) << "Unable to open for saving :  " << mSystemConfFileTmp << "\n";
 		return false;
 	}
 	for (int i = 0; i < fileLines.size(); i++) 

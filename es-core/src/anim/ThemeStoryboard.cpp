@@ -1,5 +1,5 @@
 #include "ThemeStoryboard.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "utils/StringUtil.h"
 #include "utils/HtmlColor.h"
 #include "resources/ResourceManager.h"
@@ -72,7 +72,7 @@ bool ThemeStoryboard::fromXmlNode(const pugi::xml_node& root, const std::map<std
 		auto typeIt = typeMap.find(prop);
 		if (typeIt == typeMap.cend())
 		{
-			LOG(LogWarning) << "Unknown storyboard property type \"" << prop << "\"";
+			LOG_S(WARNING) << "Unknown storyboard property type \"" << prop << "\"";
 			continue;
 		}
 
@@ -119,7 +119,7 @@ bool ThemeStoryboard::fromXmlNode(const pugi::xml_node& root, const std::map<std
 			break;
 
 		default:
-			LOG(LogWarning) << "Unsupported animation property type \"" << prop << "\"";
+			LOG_S(WARNING) << "Unsupported animation property type \"" << prop << "\"";
 			continue;
 		}
 

@@ -3,7 +3,7 @@
 #include "resources/ResourceManager.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <pugixml/src/pugixml.hpp>
 #include <string.h>
 
@@ -22,21 +22,21 @@ void Genres::init()
 	if (!Utils::FileSystem::exists(xmlpath))
 		return;
 
-	LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+	LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = doc.load_file(xmlpath.c_str());
 
 	if (!result)
 	{
-		LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+		LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 		return;
 	}
 
 	pugi::xml_node root = doc.child("genres");
 	if (!root)
 	{
-		LOG(LogError) << "Could not find <genres> node in \"" << xmlpath << "\"!";
+		LOG_S(ERROR) << "Could not find <genres> node in \"" << xmlpath << "\"!";
 		return;
 	}
 
@@ -335,7 +335,7 @@ void Genres::convertGenreToGenreIds(MetaDataList* file)
 	}
 	else
 	{
-		LOG(LogDebug) << "UNKNOWN GENRE : " << genre;
+		LOG_S(1) << "UNKNOWN GENRE : " << genre;
 		//file->set(MetaDataId::GenreIds, "");
 	}
 }

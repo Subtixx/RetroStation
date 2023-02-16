@@ -3,7 +3,7 @@
 #include "animations/Animation.h"
 #include "animations/AnimationController.h"
 #include "renderers/Renderer.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "ThemeData.h"
 #include "Window.h"
 #include <algorithm>
@@ -12,6 +12,7 @@
 #include "components/ScrollableContainer.h"
 #include "math/Vector2i.h"
 #include "Sound.h"
+#include "Log.h"
 
 bool GuiComponent::isLaunchTransitionRunning = false;
 
@@ -292,7 +293,7 @@ void GuiComponent::removeChild(GuiComponent* cmp)
 
 	if(cmp->getParent() != this)
 	{
-		LOG(LogError) << "Tried to remove child from incorrect parent!";
+		LOG_S(ERROR) << "Tried to remove child from incorrect parent!";
 	}
 
 	cmp->setParent(NULL);

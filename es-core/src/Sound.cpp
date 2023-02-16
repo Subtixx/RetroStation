@@ -1,7 +1,7 @@
 #include "Sound.h"
 
 #include "AudioManager.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "ThemeData.h"
 #include "resources/ResourceManager.h"
@@ -29,12 +29,12 @@ std::shared_ptr<Sound> Sound::get(const std::string& path)
 
 std::shared_ptr<Sound> Sound::getFromTheme(const std::shared_ptr<ThemeData>& theme, const std::string& view, const std::string& element)
 {
-	LOG(LogInfo) << " req sound [" << view << "." << element << "]";
+	LOG_S(INFO) << " req sound [" << view << "." << element << "]";
 
 	const ThemeData::ThemeElement* elem = theme->getElement(view, element, "sound");
 	if (!elem || !elem->has("path"))
 	{
-		LOG(LogInfo) << "   (missing)";
+		LOG_S(INFO) << "   (missing)";
 		return get("");
 	}
 
@@ -74,7 +74,7 @@ void Sound::init()
 	mSampleData = Mix_LoadWAV(mPath.c_str());
 	if (mSampleData == nullptr)
 	{
-		LOG(LogError) << "Error loading sound \"" << mPath << "\"!\n" << "	" << SDL_GetError();
+		LOG_S(ERROR) << "Error loading sound \"" << mPath << "\"!\n" << "	" << SDL_GetError();
 		return;
 	}
 }

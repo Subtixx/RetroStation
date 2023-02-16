@@ -1,7 +1,7 @@
 #include "CustomFeatures.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Paths.h"
 
 bool CustomFeatures::FeaturesLoaded = false;
@@ -103,14 +103,14 @@ void CustomFeatures::loadAdditionnalFeatures(pugi::xml_node& srcSystems)
 			pugi::xml_parse_result res = doc.load_file(customPath.c_str());
 			if (!res)
 			{
-				LOG(LogError) << "Could not parse " << Utils::FileSystem::getFileName(customPath) << " file!";
+				LOG_S(ERROR) << "Could not parse " << Utils::FileSystem::getFileName(customPath) << " file!";
 				continue;
 			}
 
 			pugi::xml_node systemList = doc.child("features");
 			if (!systemList)
 			{
-				LOG(LogError) << Utils::FileSystem::getFileName(customPath) << " is missing the <features> tag !";
+				LOG_S(ERROR) << Utils::FileSystem::getFileName(customPath) << " is missing the <features> tag !";
 				continue;
 			}
 
@@ -171,15 +171,15 @@ bool CustomFeatures::loadEsFeaturesFile()
 
 	if (!res)
 	{
-		LOG(LogError) << "Could not parse es_features.cfg file!";
-		LOG(LogError) << res.description();
+		LOG_S(ERROR) << "Could not parse es_features.cfg file!";
+		LOG_S(ERROR) << res.description();
 		return false;
 	}
 
 	pugi::xml_node systemList = doc.child("features");
 	if (!systemList)
 	{
-		LOG(LogError) << "es_features.cfg is missing the <features> tag!";
+		LOG_S(ERROR) << "es_features.cfg is missing the <features> tag!";
 		return false;
 	}
 

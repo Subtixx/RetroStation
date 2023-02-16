@@ -2,7 +2,7 @@
 
 #include "components/ImageComponent.h"
 #include "resources/ResourceManager.h"
-#include "Log.h"
+#include <loguru.hpp>
 
 AnimatedImageComponent::AnimatedImageComponent(Window* window) : GuiComponent(window), mEnabled(false)
 {
@@ -18,7 +18,7 @@ void AnimatedImageComponent::load(const AnimationDef* def)
 	{
 		if(def->frames[i].path != NULL && !ResourceManager::getInstance()->fileExists(def->frames[i].path))
 		{
-			LOG(LogError) << "Missing animation frame " << i << " (\"" << def->frames[i].path << "\")";
+			LOG_S(ERROR) << "Missing animation frame " << i << " (\"" << def->frames[i].path << "\")";
 			continue;
 		}
 

@@ -4,7 +4,7 @@
 #include "utils/StringUtil.h"
 #include "FileData.h"
 #include "FileFilterIndex.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "SystemData.h"
 #include <pugixml/src/pugixml.hpp>
@@ -36,7 +36,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 
 	if(!contains)
 	{
-		LOG(LogWarning) << "File path \"" << path << "\" is outside system path \"" << system->getStartPath() << "\"";
+		LOG_S(WARNING) << "File path \"" << path << "\" is outside system path \"" << system->getStartPath() << "\"";
 		return NULL;
 	}
 
@@ -61,14 +61,14 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 		{
 			if(type == FOLDER)
 			{
-				LOG(LogWarning) << "gameList: folder doesn't already exist, won't create";
+				LOG_S(WARNING) << "gameList: folder doesn't already exist, won't create";
 				return NULL;
 			}
 
 			// Skip if the extension in the gamelist is unknown
 			if (!system->getSystemEnvData()->isValidExtension(Utils::String::toLower(Utils::FileSystem::getExtension(path))))
 			{
-				LOG(LogWarning) << "gameList: file extension is not known by systemlist";
+				LOG_S(WARNING) << "gameList: file extension is not known by systemlist";
 				return NULL;
 			}
 
@@ -89,7 +89,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 			// if type is a folder it's gonna be empty, so don't bother
 			if(type == FOLDER)
 			{
-				LOG(LogWarning) << "gameList: folder doesn't already exist, won't create";
+				LOG_S(WARNING) << "gameList: folder doesn't already exist, won't create";
 				return NULL;
 			}
 
@@ -110,21 +110,21 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 {	
 	std::vector<FileData*> ret;
 
-	LOG(LogInfo) << "Parsing XML file \"" << xmlpath << "\"...";
+	LOG_S(INFO) << "Parsing XML file \"" << xmlpath << "\"...";
 
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = fromFile ? doc.load_file(xmlpath.c_str()) : doc.load_string(xmlpath.c_str());
 
 	if (!result)
 	{
-		LOG(LogError) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
+		LOG_S(ERROR) << "Error parsing XML file \"" << xmlpath << "\"!\n	" << result.description();
 		return ret;
 	}
 
 	pugi::xml_node root = doc.child("gameList");
 	if (!root)
 	{
-		LOG(LogError) << "Could not find <gameList> node in gamelist \"" << xmlpath << "\"!";
+		LOG_S(ERROR) << "Could not find <gameList> node in gamelist \"" << xmlpath << "\"!";
 		return ret;
 	}
 
@@ -133,7 +133,7 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 		auto parentSize = root.attribute("parentHash").as_uint();
 		if (parentSize != checkSize)
 		{
-			LOG(LogWarning) << "gamelist size don't match !";
+			LOG_S(WARNING) << "gamelist size don't match !";
 			return ret;
 		}
 	}
@@ -169,7 +169,7 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 					file = findOrCreateFile(system, path, type, fileMap);
 				else
 				{
-					LOG(LogWarning) << "File \"" << path << "\" does not exist or is arcade asset ! Ignoring.";
+					LOG_S(WARNING) << "File \"" << path << "\" does not exist or is arcade asset ! Ignoring.";
 					continue;
 				}
 			}
@@ -177,7 +177,7 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 
 		if (file == nullptr)
 		{			
-			LOG(LogError) << "Error finding/creating FileData for \"" << path << "\", skipping.";
+			LOG_S(ERROR) << "Error finding/creating FileData for \"" << path << "\", skipping.";
 			continue;
 		}
 		
@@ -285,7 +285,7 @@ bool saveToXml(FileData* file, const std::string& fileName, bool fullPaths)
 		Utils::FileSystem::removeFile(fileName);
 		if (!doc.save_file(fileName.c_str()))
 		{
-			LOG(LogError) << "Error saving metadata to \"" << fileName << "\" (for system " << system->getName() << ")!";
+			LOG_S(ERROR) << "Error saving metadata to \"" << fileName << "\" (for system " << system->getName() << ")!";
 			return false;
 		}
 
@@ -365,7 +365,7 @@ void updateGamelist(SystemData* system)
 	FolderData* rootFolder = system->getRootFolder();
 	if (rootFolder == nullptr)
 	{
-		LOG(LogError) << "Found no root folder for system \"" << system->getName() << "\"!";
+		LOG_S(ERROR) << "Found no root folder for system \"" << system->getName() << "\"!";
 		return;
 	}
 
@@ -393,12 +393,12 @@ void updateGamelist(SystemData* system)
 		//parse an existing file first
 		pugi::xml_parse_result result = doc.load_file(xmlReadPath.c_str());
 		if(!result)
-			LOG(LogError) << "Error parsing XML file \"" << xmlReadPath << "\"!\n	" << result.description();
+			LOG_S(ERROR) << "Error parsing XML file \"" << xmlReadPath << "\"!\n	" << result.description();
 
 		root = doc.child("gameList");
 		if(!root)
 		{
-			LOG(LogError) << "Could not find <gameList> node in gamelist \"" << xmlReadPath << "\"!";
+			LOG_S(ERROR) << "Could not find <gameList> node in gamelist \"" << xmlReadPath << "\"!";
 			root = doc.append_child("gameList");
 		}
 	}
@@ -447,10 +447,10 @@ void updateGamelist(SystemData* system)
 		std::string xmlWritePath(system->getGamelistPath(true));
 		Utils::FileSystem::createDirectory(Utils::FileSystem::getParent(xmlWritePath));
 
-		LOG(LogInfo) << "Added/Updated " << numUpdated << " entities in '" << xmlReadPath << "'";
+		LOG_S(INFO) << "Added/Updated " << numUpdated << " entities in '" << xmlReadPath << "'";
 
 		if (!doc.save_file(xmlWritePath.c_str()))
-			LOG(LogError) << "Error saving gamelist.xml to \"" << xmlWritePath << "\" (for system " << system->getName() << ")!";
+			LOG_S(ERROR) << "Error saving gamelist.xml to \"" << xmlWritePath << "\" (for system " << system->getName() << ")!";
 		else
 			clearTemporaryGamelistRecovery(system);
 	}
@@ -467,7 +467,7 @@ void cleanupGamelist(SystemData* system)
 	FolderData* rootFolder = system->getRootFolder();
 	if (rootFolder == nullptr)
 	{
-		LOG(LogError) << "CleanupGamelist : Found no root folder for system \"" << system->getName() << "\"!";
+		LOG_S(ERROR) << "CleanupGamelist : Found no root folder for system \"" << system->getName() << "\"!";
 		return;
 	}
 
@@ -479,14 +479,14 @@ void cleanupGamelist(SystemData* system)
 	pugi::xml_parse_result result = doc.load_file(xmlReadPath.c_str());
 	if (!result)
 	{
-		LOG(LogError) << "CleanupGamelist : Error parsing XML file \"" << xmlReadPath << "\"!\n	" << result.description();
+		LOG_S(ERROR) << "CleanupGamelist : Error parsing XML file \"" << xmlReadPath << "\"!\n	" << result.description();
 		return;
 	}
 
 	pugi::xml_node root = doc.child("gameList");
 	if (!root)
 	{
-		LOG(LogError) << "CleanupGamelist : Could not find <gameList> node in gamelist \"" << xmlReadPath << "\"!";
+		LOG_S(ERROR) << "CleanupGamelist : Could not find <gameList> node in gamelist \"" << xmlReadPath << "\"!";
 		return;
 	}
 
@@ -582,7 +582,7 @@ void cleanupGamelist(SystemData* system)
 
 						fileNode.append_child(mdd.key.c_str()).text().set(relativePath.c_str());
 
-						LOG(LogInfo) << "CleanupGamelist : Add resolved " << mdd.key << " path " << mediaPath << " to game " << gamePath << " in system " << system->getName();
+						LOG_S(INFO) << "CleanupGamelist : Add resolved " << mdd.key << " path " << mediaPath << " to game " << gamePath << " in system " << system->getName();
 						dirty = true;
 
 						knownMedias.insert(mediaPath);
@@ -592,7 +592,7 @@ void cleanupGamelist(SystemData* system)
 
 				if (mddPath)
 				{
-					LOG(LogInfo) << "CleanupGamelist : Remove " << mdd.key << " path to game " << gamePath << " in system " << system->getName();
+					LOG_S(INFO) << "CleanupGamelist : Remove " << mdd.key << " path to game " << gamePath << " in system " << system->getName();
 
 					dirty = true;
 					fileNode.remove_child(mdd.key.c_str());
@@ -620,7 +620,7 @@ void cleanupGamelist(SystemData* system)
 
 		if (addFileDataNode(root, fileData, tag, system))
 		{
-			LOG(LogInfo) << "CleanupGamelist : Add " << fileName << " to system " << system->getName();
+			LOG_S(INFO) << "CleanupGamelist : Add " << fileName << " to system " << system->getName();
 			dirty = true;
 		}
 	}
@@ -653,7 +653,7 @@ void cleanupGamelist(SystemData* system)
 		if (ext == ".txt" || ext == ".xml" || ext == ".old")
 			continue;
 		
-		LOG(LogInfo) << "CleanupGamelist : Remove unknown file " << dirFile << " to system " << system->getName();
+		LOG_S(INFO) << "CleanupGamelist : Remove unknown file " << dirFile << " to system " << system->getName();
 
 		Utils::FileSystem::removeFile(dirFile);
 	}
@@ -670,7 +670,7 @@ void cleanupGamelist(SystemData* system)
 		Utils::FileSystem::copyFile(xmlWritePath, oldXml);
 
 		if (!doc.save_file(xmlWritePath.c_str()))
-			LOG(LogError) << "Error saving gamelist.xml to \"" << xmlWritePath << "\" (for system " << system->getName() << ")!";
+			LOG_S(ERROR) << "Error saving gamelist.xml to \"" << xmlWritePath << "\" (for system " << system->getName() << ")!";
 		else
 			clearTemporaryGamelistRecovery(system);
 	}

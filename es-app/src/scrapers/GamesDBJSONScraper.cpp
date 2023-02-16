@@ -7,7 +7,7 @@
 #ifdef GAMESDB_APIKEY
 
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -240,7 +240,7 @@ void TheGamesDBScraper::generateRequests(const ScraperSearchParams& params,
 				} 
 				else
 				{
-					LOG(LogWarning) << "TheGamesDB scraper warning - no support for platform "
+					LOG_S(WARNING) << "TheGamesDB scraper warning - no support for platform "
 									<< getPlatformName(*platformIt);
 				}
 			}
@@ -554,14 +554,14 @@ bool TheGamesDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchR
 		std::string err =
 			std::string("TheGamesDBJSONRequest - Error parsing JSON. \n\t") + GetParseError_En(doc.GetParseError());
 		setError(err);
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return true;
 	}
 
 	if (!doc.HasMember("data") || !doc["data"].HasMember("games") || !doc["data"]["games"].IsArray())
 	{
 		std::string warn = "TheGamesDBJSONRequest - Response had no game data.\n";
-		LOG(LogWarning) << warn;
+		LOG_S(WARNING) << warn;
 		return true;
 	}
 	const Value& games = doc["data"]["games"];
@@ -569,7 +569,7 @@ bool TheGamesDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchR
 	if (!doc.HasMember("include") || !doc["include"].HasMember("boxart"))
 	{
 		std::string warn = "TheGamesDBJSONRequest - Response had no include boxart data.\n";
-		LOG(LogWarning) << warn;
+		LOG_S(WARNING) << warn;
 		return true;
 	}
 
@@ -578,7 +578,7 @@ bool TheGamesDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchR
 	if (!boxart.HasMember("base_url") || !boxart.HasMember("data") || !boxart.IsObject())
 	{
 		std::string warn = "TheGamesDBJSONRequest - Response include had no usable boxart data.\n";
-		LOG(LogWarning) << warn;
+		LOG_S(WARNING) << warn;
 		return true;
 	}
 
@@ -594,7 +594,7 @@ bool TheGamesDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchR
 		}
 		catch (std::runtime_error& e)
 		{
-			LOG(LogError) << "Error while processing game: " << e.what();
+			LOG_S(ERROR) << "Error while processing game: " << e.what();
 		}
 	}
 

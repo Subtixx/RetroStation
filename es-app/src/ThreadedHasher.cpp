@@ -10,7 +10,7 @@
 #include "FileData.h"
 #include "ApiSystem.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <unordered_set>
 #include <queue>
 
@@ -95,7 +95,7 @@ void ThreadedHasher::run()
 
 		auto label = formatGameName(game);
 
-		LOG(LogDebug) << "Hashing " << formatGameName(game);
+		LOG_S(1) << "Hashing " << formatGameName(game);
 		updateUI(label);
 
 		mSearchQueue.pop();
@@ -113,13 +113,13 @@ void ThreadedHasher::run()
 
 		if (netplay)
 		{
-			LOG(LogDebug) << "CheckCrc32 : " << label;
+			LOG_S(1) << "CheckCrc32 : " << label;
 			game->checkCrc32(mForce);
 		}
 
 		if (cheevos)
 		{
-			LOG(LogDebug) << "CheckCheevosHash : " << label;
+			LOG_S(1) << "CheckCheevosHash : " << label;
 			game->checkCheevosHash(mForce);
 
 			auto hash = Utils::String::toUpper(game->getMetadata(MetaDataId::CheevosHash));
@@ -132,7 +132,7 @@ void ThreadedHasher::run()
 					game->setMetadata(MetaDataId::CheevosId, "");
 			}
 
-			LOG(LogDebug) << "CheckCheevosHash OK : " << label;;
+			LOG_S(1) << "CheckCheevosHash OK : " << label;;
 		}		
 
 		lock.lock();

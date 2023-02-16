@@ -5,7 +5,7 @@
 #include "LocaleES.h"
 #include "guis/GuiMsgBox.h"
 #include "Gamelist.h"
-#include "Log.h"
+#include <loguru.hpp>
 
 #define GUIICON _U("\uF03E ")
 
@@ -40,7 +40,7 @@ void ThreadedScraper::ProcessNextGame(ScraperThread* thread)
 	mSearchQueue.pop();
 	mCurrentGame = item.getGameName();
 
-	LOG(LogInfo) << "[Thread " << thread->mThreadId << "] ProcessNextGame : " << mCurrentGame;
+	LOG_S(INFO) << "[Thread " << thread->mThreadId << "] ProcessNextGame : " << mCurrentGame;
 
 	thread->run(item);
 
@@ -93,7 +93,7 @@ int ScraperThread::updateState()
 		auto statusString = mSearchHandle->getStatusString();
 		auto httpCode = mSearchHandle->getErrorCode();
 
-		LOG(LogInfo) << "[Thread " << mThreadId << "] ThreadedScraper::SearchResponse : " << httpCode << " " << statusString;
+		LOG_S(INFO) << "[Thread " << mThreadId << "] ThreadedScraper::SearchResponse : " << httpCode << " " << statusString;
 
 		mSearchHandle.reset();
 
@@ -123,7 +123,7 @@ int ScraperThread::updateState()
 		auto statusString = mMDResolveHandle->getStatusString();
 		auto httpCode = mMDResolveHandle->getErrorCode();
 
-		LOG(LogInfo) << "[Thread " << mThreadId << "] ResolveResponse : " << statusString;
+		LOG_S(INFO) << "[Thread " << mThreadId << "] ResolveResponse : " << statusString;
 
 		mMDResolveHandle.reset();
 
@@ -197,7 +197,7 @@ void ThreadedScraper::run()
 					if (mScraperThreads.size() == 0)
 					{
 						mExitCode = ASYNC_DONE;
-						LOG(LogDebug) << "ThreadedScraper::finished";
+						LOG_S(1) << "ThreadedScraper::finished";
 					}
 					break;
 				}
@@ -228,7 +228,7 @@ void ThreadedScraper::updateUI()
 
 void ThreadedScraper::acceptResult(ScraperThread& thread)
 {
-	LOG(LogDebug) << "ThreadedScraper::acceptResult >>";
+	LOG_S(1) << "ThreadedScraper::acceptResult >>";
 
 	ScraperSearchResult& result = thread.getResult();
 	if (result.mdl.getName().empty())
@@ -243,17 +243,17 @@ void ThreadedScraper::acceptResult(ScraperThread& thread)
 
 	mWindow->postToUiThread([game, result]()
 	{
-		LOG(LogDebug) << "ThreadedScraper::importScrappedMetadata";
+		LOG_S(1) << "ThreadedScraper::importScrappedMetadata";
 		game->importP2k(result.p2k);
 		game->getMetadata().importScrappedMetadata(result.mdl);
 		game->detectLanguageAndRegion(true);
 		game->getMetadata().setScrapeDate(result.scraper);
 
-		LOG(LogDebug) << "ThreadedScraper::saveToGamelistRecovery";
+		LOG_S(1) << "ThreadedScraper::saveToGamelistRecovery";
 		saveToGamelistRecovery(game);
 	});
 
-	LOG(LogDebug) << "ThreadedScraper::acceptResult <<";
+	LOG_S(1) << "ThreadedScraper::acceptResult <<";
 }
 
 void ThreadedScraper::start(Window* window, const std::queue<ScraperSearchParams>& searches)

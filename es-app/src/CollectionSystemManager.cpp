@@ -8,7 +8,7 @@
 #include "FileData.h"
 #include "FileSorts.h"
 #include "FileFilterIndex.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "SystemData.h"
 #include "ThemeData.h"
@@ -328,7 +328,7 @@ void CollectionSystemManager::saveCustomCollection(SystemData* sys)
 	}
 	else
 	{
-		LOG(LogError) << "Couldn't find collection to save! " << name;
+		LOG_S(ERROR) << "Couldn't find collection to save! " << name;
 	}
 }
 
@@ -626,7 +626,7 @@ std::string CollectionSystemManager::getValidNewCollectionName(std::string inNam
 
 	if(name != inName)
 	{
-		LOG(LogInfo) << "Had to change name, from: " << inName << " to: " << name;
+		LOG_S(INFO) << "Had to change name, from: " << inName << " to: " << name;
 	}
 
 	// get used systems in es_systems.cfg
@@ -1139,10 +1139,10 @@ void CollectionSystemManager::populateCustomCollection(CollectionSystemData* sys
 
 	if(!Utils::FileSystem::exists(path))
 	{
-		LOG(LogInfo) << "Couldn't find custom collection config file at " << path;
+		LOG_S(INFO) << "Couldn't find custom collection config file at " << path;
 		return;
 	}
-	LOG(LogInfo) << "Loading custom collection config file at " << path;
+	LOG_S(INFO) << "Loading custom collection config file at " << path;
 
 	FolderData* rootFolder = newSys->getRootFolder();
 
@@ -1182,7 +1182,7 @@ void CollectionSystemManager::populateCustomCollection(CollectionSystemData* sys
 		}
 		else
 		{
-			LOG(LogInfo) << "Couldn't find game referenced at '" << gameKey << "' for system config '" << path << "'";
+			LOG_S(INFO) << "Couldn't find game referenced at '" << gameKey << "' for system config '" << path << "'";
 		}
 	}
 	updateCollectionFolderMetadata(newSys);
@@ -1440,7 +1440,7 @@ std::vector<std::string> CollectionSystemManager::getCollectionsFromConfigFolder
 					systems.push_back(filename);
 				}
 				else
-					LOG(LogInfo) << "Found non-collection config file in collections folder: " << filename;				
+					LOG_S(INFO) << "Found non-collection config file in collections folder: " << filename;
 			}
 		}
 	}

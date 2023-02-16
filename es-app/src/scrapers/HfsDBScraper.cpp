@@ -4,7 +4,7 @@
 #include <exception>
 #include <map>
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -453,7 +453,7 @@ static void processGame(const Value& game, std::vector<ScraperSearchResult>& res
 				result.mdl.set(MetaDataId::Publisher, value);
 			else if (name != "system" && name != "language")
 			{
-				LOG(LogDebug) << "unknown metadata : " << name << " = " << value;
+				LOG_S(1) << "unknown metadata : " << name << " = " << value;
 			}
 		}
 	}
@@ -550,21 +550,21 @@ bool HfsDBRequest::process(HttpReq* request, std::vector<ScraperSearchResult>& r
 	{
 		std::string err = std::string("HfsDBRequest - Error parsing JSON. \n\t") + GetParseError_En(doc.GetParseError());
 		setError(err);
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return true;
 	}
 
     if (!doc.HasMember("count") || !doc["count"].IsInt() || doc["count"].GetInt() <= 0)
     {
         std::string warn = "HfsDBRequest - Response had no game data.\n";
-        LOG(LogWarning) << warn;
+        LOG_S(WARNING) << warn;
         return true;
     }
 
 	if (!doc.HasMember("results") || !doc["results"].IsArray())
 	{
 		std::string warn = "HfsDBRequest - Response results is not an array.\n";
-		LOG(LogWarning) << warn;
+		LOG_S(WARNING) << warn;
 		return true;
 	}
 
@@ -580,7 +580,7 @@ bool HfsDBRequest::process(HttpReq* request, std::vector<ScraperSearchResult>& r
 		}
 		catch (std::runtime_error& e)
 		{
-			LOG(LogError) << "Error while processing game: " << e.what();
+			LOG_S(ERROR) << "Error while processing game: " << e.what();
 		}
 	}
 

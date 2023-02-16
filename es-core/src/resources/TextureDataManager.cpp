@@ -3,7 +3,7 @@
 #include "resources/TextureData.h"
 #include "resources/TextureResource.h"
 #include "Settings.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <algorithm>
 
 TextureDataManager::TextureDataManager()
@@ -191,7 +191,7 @@ void TextureDataManager::load(std::shared_ptr<TextureData> tex, bool block)
 
 	if (size >= max_texture)
 	{
-		LOG(LogDebug) << "Cleanup VRAM\tCurrent VRAM : " << std::to_string(size / 1024.0 / 1024.0).c_str() << " MB";
+		LOG_S(1) << "Cleanup VRAM\tCurrent VRAM : " << std::to_string(size / 1024.0 / 1024.0).c_str() << " MB";
 
 		std::unique_lock<std::mutex> lock(mMutex);
 		for (auto it = mTextures.crbegin(); it != mTextures.crend(); ++it)
@@ -209,7 +209,7 @@ void TextureDataManager::load(std::shared_ptr<TextureData> tex, bool block)
 
 			if ((*it)->isLoaded())
 			{
-				LOG(LogDebug) << "Cleanup VRAM\tReleased : " << (*it)->getPath().c_str();
+				LOG_S(1) << "Cleanup VRAM\tReleased : " << (*it)->getPath().c_str();
 
 				size -= (*it)->getVRAMUsage();
 
@@ -221,7 +221,7 @@ void TextureDataManager::load(std::shared_ptr<TextureData> tex, bool block)
 			// any VRAM yet but it will be. Remove it from the loader queue
 			if (mLoader->remove(*it))
 			{
-				LOG(LogDebug) << "Cleanup VRAM\tRemoved from queue : " << (*it)->getPath().c_str();
+				LOG_S(1) << "Cleanup VRAM\tRemoved from queue : " << (*it)->getPath().c_str();
 				changed = true;
 			}
 			
@@ -288,7 +288,7 @@ void TextureLoader::threadProc()
 
 			if (textureData && !textureData->isLoaded())
 			{
-				//LOG(LogDebug) << "TextureLoader::Thread\tLoading " << textureData->getPath().c_str();
+				//LOG_S(1) << "TextureLoader::Thread\tLoading " << textureData->getPath().c_str();
 				std::this_thread::yield();
 
 				textureData->load(true);

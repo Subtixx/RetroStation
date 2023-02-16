@@ -1,7 +1,7 @@
 #include "components/DateTimeComponent.h"
 
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "LocaleES.h"
 
@@ -118,7 +118,7 @@ void DateTimeComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, cons
 		else if(str == "right")
 			setHorizontalAlignment(ALIGN_RIGHT);
 		else
-		LOG(LogError) << "Unknown text alignment string: " << str;
+		LOG_S(ERROR) << "Unknown text alignment string: " << str;
 	}
 
 	if(properties & FORCE_UPPERCASE && elem->has("forceUppercase"))

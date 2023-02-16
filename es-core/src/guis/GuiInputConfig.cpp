@@ -5,7 +5,7 @@
 #include "components/MenuComponent.h"
 #include "guis/GuiMsgBox.h"
 #include "InputManager.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Window.h"
 
 #define fake_gettext_north pgettext("joystick", "NORTH")
@@ -92,7 +92,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 
 	mGrid.setSeparatorColor(theme->Text.separatorColor);
 
-	LOG(LogInfo) << "Configuring device " << target->getDeviceId() << " (" << target->getDeviceName() << ").";
+	LOG_S(INFO) << "Configuring device " << target->getDeviceId() << " (" << target->getDeviceName() << ").";
 
 	if(reconfigureAll)
 		target->clear();
@@ -398,7 +398,7 @@ bool GuiInputConfig::assign(Input input, int inputId)
 	input.configured = true;
 	mTargetConfig->mapInput(GUI_INPUT_CONFIG_LIST[inputId].name, input);
 
-	LOG(LogInfo) << "  Mapping [" << input.string() << "] -> " << GUI_INPUT_CONFIG_LIST[inputId].name;
+	LOG_S(INFO) << "  Mapping [" << input.string() << "] -> " << GUI_INPUT_CONFIG_LIST[inputId].name;
 
 	return true;
 }

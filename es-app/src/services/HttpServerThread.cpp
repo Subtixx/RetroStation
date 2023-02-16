@@ -1,6 +1,6 @@
 #include "HttpServerThread.h"
 #include "httplib.h"
-#include "Log.h"
+#include <loguru.hpp>
 
 #ifdef WIN32
 #include <Windows.h>
@@ -62,7 +62,7 @@ GET /{path relative to resources/services}"						-> any other file in resources/
 */
 HttpServerThread::HttpServerThread(Window* window) : mWindow(window)
 {
-	LOG(LogDebug) << "HttpServerThread : Starting";
+	LOG_S(1) << "HttpServerThread : Starting";
 
 	mHttpServer = nullptr;
 
@@ -74,7 +74,7 @@ HttpServerThread::HttpServerThread(Window* window) : mWindow(window)
 
 HttpServerThread::~HttpServerThread()
 {
-	LOG(LogDebug) << "HttpServerThread : Exit";
+	LOG_S(1) << "HttpServerThread : Exit";
 
 	if (mHttpServer != nullptr)
 	{
@@ -125,7 +125,7 @@ static bool isAllowed(const httplib::Request& req, httplib::Response& res)
 {
 	if (req.remote_addr != "127.0.0.1" && !Settings::getInstance()->getBool("PublicWebAccess"))
 	{
-		LOG(LogWarning) << "HttpServerThread : Access disabled for " + req.remote_addr;
+		LOG_S(WARNING) << "HttpServerThread : Access disabled for " + req.remote_addr;
 
 		res.set_content("403 - Forbidden", "text/html");
 		res.status = 403;

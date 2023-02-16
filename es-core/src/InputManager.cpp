@@ -2,7 +2,7 @@
 
 #include "utils/FileSystemUtil.h"
 #include "CECInput.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "platform.h"
 #include "Scripting.h"
 #include "Window.h"
@@ -339,9 +339,9 @@ void InputManager::rebuildAllJoysticks(bool deinit)
 		mInputConfigs[joyId] = new InputConfig(joyId, idx, SDL_JoystickName(joy), guid, SDL_JoystickNumButtons(joy), SDL_JoystickNumHats(joy), SDL_JoystickNumAxes(joy), devicePath);
 
 		if (!loadInputConfig(mInputConfigs[joyId]))
-			LOG(LogInfo) << "Added unconfigured joystick " << SDL_JoystickName(joy) << " (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << idx << ", device path : " << devicePath << ").";
+			LOG_S(INFO) << "Added unconfigured joystick " << SDL_JoystickName(joy) << " (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << idx << ", device path : " << devicePath << ").";
 		else
-			LOG(LogInfo) << "Added known joystick " << SDL_JoystickName(joy) << " (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << idx << ", device path : " << devicePath << ").";
+			LOG_S(INFO) << "Added known joystick " << SDL_JoystickName(joy) << " (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << idx << ", device path : " << devicePath << ").";
 
 		// set up the prevAxisValues
 		int numAxes = SDL_JoystickNumAxes(joy);
@@ -432,7 +432,7 @@ bool InputManager::parseEvent(const SDL_Event& ev, Window* window)
 	case SDL_FINGERMOTION:
 		window->processMouseMove(ev.tfinger.x * Renderer::getScreenWidth(), ev.tfinger.y * Renderer::getScreenHeight());
 
-		LOG(LogDebug) << "Touch motion: " << ev.tfinger.x * Renderer::getScreenWidth() << ", " << ev.tfinger.y* Renderer::getScreenHeight();
+		LOG_S(1) << "Touch motion: " << ev.tfinger.x * Renderer::getScreenWidth() << ", " << ev.tfinger.y* Renderer::getScreenHeight();
 
 		return true;
 		*/
@@ -529,7 +529,7 @@ bool InputManager::tryLoadInputConfig(std::string path, InputConfig* config, boo
 
 	if (!res)
 	{
-		LOG(LogError) << "Error parsing input config: " << res.description();
+		LOG_S(ERROR) << "Error parsing input config: " << res.description();
 		return false;
 	}
 
@@ -574,7 +574,7 @@ bool InputManager::tryLoadInputConfig(std::string path, InputConfig* config, boo
 		{
 			if (strcmp(config->getDeviceGUIDString().c_str(), item.attribute("deviceGUID").value()) == 0)
 			{
-				LOG(LogInfo) << "Approximative device found using guid=" << configNode.attribute("deviceGUID").value() << " name=" << configNode.attribute("deviceName").value() << ")";
+				LOG_S(INFO) << "Approximative device found using guid=" << configNode.attribute("deviceGUID").value() << " name=" << configNode.attribute("deviceName").value() << ")";
 				configNode = item;
 				break;
 			}
@@ -588,7 +588,7 @@ bool InputManager::tryLoadInputConfig(std::string path, InputConfig* config, boo
 		{
 			if (strcmp(config->getDeviceName().c_str(), item.attribute("deviceName").value()) == 0)
 			{
-				LOG(LogInfo) << "Approximative device found using guid=" << configNode.attribute("deviceGUID").value() << " name=" << configNode.attribute("deviceName").value() << ")";
+				LOG_S(INFO) << "Approximative device found using guid=" << configNode.attribute("deviceGUID").value() << " name=" << configNode.attribute("deviceName").value() << ")";
 				configNode = item;
 				break;
 			}
@@ -667,7 +667,7 @@ void InputManager::writeDeviceConfig(InputConfig* config)
 		pugi::xml_parse_result result = doc.load_file(path.c_str());
 		if (!result)
 		{
-			LOG(LogError) << "Error parsing input config: " << result.description();
+			LOG_S(ERROR) << "Error parsing input config: " << result.description();
 		}
 		else
 		{
@@ -729,7 +729,7 @@ void InputManager::doOnFinish()
 		pugi::xml_parse_result result = doc.load_file(path.c_str());
 		if(!result)
 		{
-			LOG(LogError) << "Error parsing input config: " << result.description();
+			LOG_S(ERROR) << "Error parsing input config: " << result.description();
 		}
 		else
 		{
@@ -744,14 +744,14 @@ void InputManager::doOnFinish()
 					{
 						std::string tocall = command.text().get();
 
-						LOG(LogInfo) << "	" << tocall;
+						LOG_S(INFO) << "	" << tocall;
 						std::cout << "==============================================\ninput config finish command:\n";
 						int exitCode = runSystemCommand(tocall, "", nullptr);
 						std::cout << "==============================================\n";
 
 						if(exitCode != 0)
 						{
-							LOG(LogWarning) << "...launch terminated with nonzero exit code " << exitCode << "!";
+							LOG_S(WARNING) << "...launch terminated with nonzero exit code " << exitCode << "!";
 						}
 					}
 				}
@@ -928,7 +928,7 @@ std::map<int, InputConfig*> InputManager::computePlayersConfigs()
 		if (playerJoysticks[player] == nullptr)
 			continue;
 
-		LOG(LogInfo) << "computePlayersConfigs : Player " << player << " => " << playerJoysticks[player]->getDevicePath();
+		LOG_S(INFO) << "computePlayersConfigs : Player " << player << " => " << playerJoysticks[player]->getDevicePath();
 	}
 
 	return playerJoysticks;
@@ -953,7 +953,7 @@ std::string InputManager::configureEmulators() {
       command << " ";
     }
   }
-  LOG(LogInfo) << "Configure emulators command : " << command.str().c_str();
+  LOG_S(INFO) << "Configure emulators command : " << command.str().c_str();
   return command.str();
 }
 

@@ -4,7 +4,7 @@
 #include "scrapers/ArcadeDBJSONScraper.h"
 
 #include "FileData.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -197,21 +197,21 @@ bool ArcadeDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchRes
 	{
 		std::string err = std::string("ArcadeDBJSONRequest - Error parsing JSON. \n\t") + GetParseError_En(doc.GetParseError());
 		setError(err);
-		LOG(LogError) << err;
+		LOG_S(ERROR) << err;
 		return true;
 	}
 
     if (!doc.HasMember("release") || !doc["release"].IsInt() || doc["release"].GetInt() < ARCADE_DB_RELEASE_VERSION)
     {
         std::string warn = "ArcadeDBJSONRequest - Response had wrong format.\n";
-        LOG(LogWarning) << warn;
+        LOG_S(WARNING) << warn;
         return true;
     }
 
 	if (!doc.HasMember("result") || !doc["result"].IsArray())
 	{
 		std::string warn = "ArcadeDBJSONRequest - Response had no game data.\n";
-		LOG(LogWarning) << warn;
+		LOG_S(WARNING) << warn;
 		return true;
 	}
 
@@ -226,7 +226,7 @@ bool ArcadeDBJSONRequest::process(HttpReq* request, std::vector<ScraperSearchRes
 		}
 		catch (std::runtime_error& e)
 		{
-			LOG(LogError) << "Error while processing game: " << e.what();
+			LOG_S(ERROR) << "Error while processing game: " << e.what();
 		}
 	}
 

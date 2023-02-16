@@ -15,11 +15,11 @@ class HttpReq;
 		AsyncReqComponent* req = new AsyncReqComponent(mWindow, httpreq,
 			[] (std::shared_ptr<HttpReq> r)
 		{
-			LOG(LogInfo) << "Request completed";
-			LOG(LogInfo) << "   error, if any: " << r->getErrorMsg();
+			LOG_S(INFO) << "Request completed";
+			LOG_S(INFO) << "   error, if any: " << r->getErrorMsg();
 		}, [] ()
 		{
-			LOG(LogInfo) << "Request canceled";
+			LOG_S(INFO) << "Request canceled";
 		});
 
 		mWindow->pushGui(req);

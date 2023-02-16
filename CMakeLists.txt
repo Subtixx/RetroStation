@@ -359,6 +359,17 @@ endif()
 find_package(flac CONFIG REQUIRED)
 find_package(ZLIB REQUIRED)
 
+
+find_package(fmt CONFIG REQUIRED)
+# Compile loguru with streams and fmtlib
+add_definitions(-DLOGURU_WITH_STREAMS=1 -DLOGURU_WITH_FMTLIB=1)
+find_package(loguru CONFIG REQUIRED)
+
+find_package(Microsoft.GSL CONFIG REQUIRED)
+
+find_path(HEDLEY_INCLUDE_DIRS "hedley.h")
+LIST(APPEND COMMON_INCLUDE_DIRS ${HEDLEY_INCLUDE_DIRS})
+
 set(COMMON_LIBRARIES
     ${FREETYPE_LIBRARIES}
     ${FreeImage_LIBRARIES}
@@ -375,6 +386,9 @@ set(COMMON_LIBRARIES
     z
     FLAC::FLAC FLAC::FLAC++
     ZLIB::ZLIB
+    loguru
+    fmt::fmt
+        Microsoft.GSL::GSL
 )
 
 if(UDEV_FOUND)

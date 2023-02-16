@@ -4,7 +4,7 @@
 #include "guis/GuiSettings.h"
 #include "components/WebImageComponent.h"
 #include "Window.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "GuiLoading.h"
 #include "components/MultiLineMenuEntry.h"

@@ -2,7 +2,7 @@
 
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <assert.h>
 #include <thread>
 
@@ -325,7 +325,7 @@ HttpReq::~HttpReq()
 		CURLMcode merr = curl_multi_remove_handle(s_multi_handle, mHandle);
 
 		if(merr != CURLM_OK)
-			LOG(LogError) << "Error removing curl_easy handle from curl_multi: " << curl_multi_strerror(merr);
+			LOG_S(ERROR) << "Error removing curl_easy handle from curl_multi: " << curl_multi_strerror(merr);
 
 		curl_easy_cleanup(mHandle);
 	}
@@ -357,7 +357,7 @@ HttpReq::Status HttpReq::status()
 				HttpReq* req = s_requests[msg->easy_handle];
 				if (req == NULL)
 				{
-					LOG(LogError) << "Cannot find easy handle!";
+					LOG_S(ERROR) << "Cannot find easy handle!";
 					continue;
 				}
 
@@ -470,7 +470,7 @@ std::string HttpReq::getContent()
 	}
 	catch (...)
 	{
-		LOG(LogError) << "Error getting Http request content";
+		LOG_S(ERROR) << "Error getting Http request content";
 	}
 
 	return "";
@@ -479,7 +479,7 @@ std::string HttpReq::getContent()
 void HttpReq::onError(const char* msg)
 {
 	mErrorMsg = msg;
-	LOG(LogError) << "HttpReq::onError (" + std::to_string(mStatus) << ") : " + mErrorMsg;
+	LOG_S(ERROR) << "HttpReq::onError (" + std::to_string(mStatus) << ") : " + mErrorMsg;
 }
 
 std::string HttpReq::getErrorMsg()

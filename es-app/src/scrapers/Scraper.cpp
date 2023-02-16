@@ -4,7 +4,7 @@
 #include "ArcadeDBJSONScraper.h"
 #include "GamesDBJSONScraper.h"
 #include "ScreenScraper.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "SystemData.h"
 #include <FreeImage.h>
@@ -282,7 +282,7 @@ void ScraperHttpRequest::update()
 		{
 			mOverQuotaPendingTime = 0;
 
-			LOG(LogDebug) << "REQ_429_TOOMANYREQUESTS : Retrying";
+			LOG_S(1) << "REQ_429_TOOMANYREQUESTS : Retrying";
 
 			std::string url = mRequest->getUrl();
 			delete mRequest;
@@ -324,7 +324,7 @@ void ScraperHttpRequest::update()
 		}
 
 		mOverQuotaPendingTime = SDL_GetTicks();
-		LOG(LogDebug) << "REQ_429_TOOMANYREQUESTS : Retrying in " << mOverQuotaRetryDelay << " seconds";
+		LOG_S(1) << "REQ_429_TOOMANYREQUESTS : Retrying in " << mOverQuotaRetryDelay << " seconds";
 		return;
 	}
 
@@ -343,7 +343,7 @@ void ScraperHttpRequest::update()
 	}	
 
 	// everything else is some sort of error
-	LOG(LogError) << "ScraperHttpRequest network error (status: " << status << ") - " << mRequest->getErrorMsg();
+	LOG_S(ERROR) << "ScraperHttpRequest network error (status: " << status << ") - " << mRequest->getErrorMsg();
 	setError(Utils::String::removeHtmlTags(mRequest->getErrorMsg()));
 }
 
@@ -476,7 +476,7 @@ void MDResolveHandle::update()
 
 std::unique_ptr<ImageDownloadHandle> MDResolveHandle::downloadImageAsync(const std::string& url, const std::string& saveAs, bool resize)
 {
-	LOG(LogDebug) << "downloadImageAsync : " << url << " -> " << saveAs;
+	LOG_S(1) << "downloadImageAsync : " << url << " -> " << saveAs;
 
 	return std::unique_ptr<ImageDownloadHandle>(new ImageDownloadHandle(url, saveAs, 
 		resize ? Settings::getInstance()->getInt("ScraperResizeWidth") : 0,
@@ -528,7 +528,7 @@ void ImageDownloadHandle::update()
 		{
 			mOverQuotaPendingTime = 0;
 
-			LOG(LogDebug) << "REQ_429_TOOMANYREQUESTS : Retrying";
+			LOG_S(1) << "REQ_429_TOOMANYREQUESTS : Retrying";
 
 			std::string url = mRequest->getUrl();
 			delete mRequest;
@@ -562,7 +562,7 @@ void ImageDownloadHandle::update()
 		}
 
 		mOverQuotaPendingTime = SDL_GetTicks();
-		LOG(LogDebug) << "REQ_429_TOOMANYREQUESTS : Retrying in " << mOverQuotaRetryDelay << " seconds";
+		LOG_S(1) << "REQ_429_TOOMANYREQUESTS : Retrying in " << mOverQuotaRetryDelay << " seconds";
 		return;
 	}
 
@@ -643,7 +643,7 @@ bool resizeImage(const std::string& path, int maxWidth, int maxHeight)
 		format = FreeImage_GetFIFFromFilename(path.c_str());
 	if(format == FIF_UNKNOWN)
 	{
-		LOG(LogError) << "Error - could not detect filetype for image \"" << path << "\"!";
+		LOG_S(ERROR) << "Error - could not detect filetype for image \"" << path << "\"!";
 		return false;
 	}
 
@@ -652,7 +652,7 @@ bool resizeImage(const std::string& path, int maxWidth, int maxHeight)
 	{
 		image = FreeImage_Load(format, path.c_str());
 	}else{
-		LOG(LogError) << "Error - file format reading not supported for image \"" << path << "\"!";
+		LOG_S(ERROR) << "Error - file format reading not supported for image \"" << path << "\"!";
 		return false;
 	}
 
@@ -681,7 +681,7 @@ bool resizeImage(const std::string& path, int maxWidth, int maxHeight)
 
 	if(imageRescaled == NULL)
 	{
-		LOG(LogError) << "Could not resize image! (not enough memory? invalid bitdepth?)";
+		LOG_S(ERROR) << "Could not resize image! (not enough memory? invalid bitdepth?)";
 		return false;
 	}
 
@@ -696,7 +696,7 @@ bool resizeImage(const std::string& path, int maxWidth, int maxHeight)
 	FreeImage_Unload(imageRescaled);
 
 	if(!saved)
-		LOG(LogError) << "Failed to save resized image!";
+		LOG_S(ERROR) << "Failed to save resized image!";
 
 	return saved;
 }

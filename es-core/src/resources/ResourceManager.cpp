@@ -4,7 +4,7 @@
 #include "utils/StringUtil.h"
 #include <fstream>
 #include <algorithm>
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "Paths.h"
 
@@ -88,7 +88,7 @@ std::string ResourceManager::getResourcePath(const std::string& path) const
 	}
 #endif
 
-	LOG(LogDebug) << "Resource path not found: " << path;
+	LOG_S(1) << "Resource path not found: " << path;
 
 	// not a resource, return unmodified path
 	return path;

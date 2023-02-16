@@ -5,7 +5,7 @@
 #include "Renderer_GLES20.h"
 #include "renderers/Renderer.h"
 #include "math/Transform4x4f.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 
 #include <vector>
@@ -109,7 +109,7 @@ namespace Renderer
 			SHADER_VERSION_STRING = "#version 110\n";
 #endif
 
-		LOG(LogInfo) << "GLSL version preprocessor :     " << SHADER_VERSION_STRING;
+		LOG_S(INFO) << "GLSL version preprocessor :     " << SHADER_VERSION_STRING;
 
 		// vertex shader (no texture)
 		std::string vertexSourceNoTexture =
@@ -415,13 +415,13 @@ namespace Renderer
 		const std::string extensions = glGetString(GL_EXTENSIONS) ? (const char*)glGetString(GL_EXTENSIONS) : "";
 		const std::string shaders    = glGetString(GL_SHADING_LANGUAGE_VERSION) ? (const char*)glGetString(GL_SHADING_LANGUAGE_VERSION) : "";
 		
-		LOG(LogInfo) << "GL vendor:   " << vendor;
-		LOG(LogInfo) << "GL renderer: " << renderer;
-		LOG(LogInfo) << "GL version:  " << version;
-		LOG(LogInfo) << "GL shading:  " << shaders;
-		LOG(LogInfo) << "GL exts:     " << extensions;
+		LOG_S(INFO) << "GL vendor:   " << vendor;
+		LOG_S(INFO) << "GL renderer: " << renderer;
+		LOG_S(INFO) << "GL version:  " << version;
+		LOG_S(INFO) << "GL shading:  " << shaders;
+		LOG_S(INFO) << "GL exts:     " << extensions;
 
-		LOG(LogInfo) << " ARB_texture_non_power_of_two: " << (extensions.find("ARB_texture_non_power_of_two") != std::string::npos ? "ok" : "MISSING");
+		LOG_S(INFO) << " ARB_texture_non_power_of_two: " << (extensions.find("ARB_texture_non_power_of_two") != std::string::npos ? "ok" : "MISSING");
 
 #if OPENGL_EXTENSIONS
 		initializeGlExtensions();
@@ -476,7 +476,7 @@ namespace Renderer
 
 		if (texture == -1)
 		{
-			LOG(LogError) << "CreateTexture error: glGenTextures failed ";
+			LOG_S(ERROR) << "CreateTexture error: glGenTextures failed ";
 			return 0;
 		}
 		
@@ -508,7 +508,7 @@ namespace Renderer
 
 			if (glGetError() != GL_NO_ERROR)
 			{
-				LOG(LogError) << "CreateTexture error: glTexImage2D failed";
+				LOG_S(ERROR) << "CreateTexture error: glTexImage2D failed";
 				destroyTexture(texture);
 				return 0;
 			}
@@ -518,7 +518,7 @@ namespace Renderer
 			glTexImage2D(GL_TEXTURE_2D, 0, type, _width, _height, 0, type, GL_UNSIGNED_BYTE, _data);
 			if (glGetError() != GL_NO_ERROR)
 			{
-				LOG(LogError) << "CreateTexture error: glTexImage2D failed";
+				LOG_S(ERROR) << "CreateTexture error: glTexImage2D failed";
 				destroyTexture(texture);
 				return 0;
 			}
@@ -772,7 +772,7 @@ namespace Renderer
 			// if vsync is requested, try normal vsync; if that doesn't work, try late swap tearing
 			// if that doesn't work, report an error
 			if(SDL_GL_SetSwapInterval(1) != 0 && SDL_GL_SetSwapInterval(-1) != 0)
-				LOG(LogWarning) << "Tried to enable vsync, but failed! (" << SDL_GetError() << ")";
+				LOG_S(WARNING) << "Tried to enable vsync, but failed! (" << SDL_GetError() << ")";
 		}
 		else
 			SDL_GL_SetSwapInterval(0);

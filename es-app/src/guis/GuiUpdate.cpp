@@ -2,7 +2,7 @@
 #include "guis/GuiMsgBox.h"
 #include "Window.h"
 #include <string>
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 #include "ApiSystem.h"
 #include "platform.h"
@@ -89,7 +89,7 @@ private:
 
 GuiUpdate::GuiUpdate(Window* window) : GuiComponent(window), mBusyAnim(window)
 {
-	LOG(LogInfo) << "Starting GuiUpdate";
+	LOG_S(INFO) << "Starting GuiUpdate";
 
 	setSize((float)Renderer::getScreenWidth(), (float)Renderer::getScreenHeight());
 
@@ -127,20 +127,20 @@ void GuiUpdate::threadPing()
 void GuiUpdate::onUpdateAvailable()
 {
 	mLoading = false;
-	LOG(LogInfo) << "GuiUpdate : Update available" << "\n";
+	LOG_S(INFO) << "GuiUpdate : Update available" << "\n";
 	mState = 1;
 }
 
 void GuiUpdate::onNoUpdateAvailable()
 {
 	mLoading = false;
-	LOG(LogInfo) << "GuiUpdate : No update available" << "\n";
+	LOG_S(INFO) << "GuiUpdate : No update available" << "\n";
 	mState = 6;
 }
 
 void GuiUpdate::onPingError()
 {
-	LOG(LogError) << "GuiUpdate : Ping failed" << "\n";
+	LOG_S(ERROR) << "GuiUpdate : Ping failed" << "\n";
 
 	mLoading = false;
 	mState = 3;

@@ -5,7 +5,7 @@
 #include <cstring>
 #include "Settings.h"
 #include "PowerSaver.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "renderers/Renderer.h"
 
 TextureDataManager		TextureResource::sTextureDataManager;
@@ -81,7 +81,7 @@ TextureResource::TextureResource(const std::string& path, bool tile, bool linear
 
 TextureResource::~TextureResource()
 {
-	LOG(LogDebug) << "~TextureResource";
+	LOG_S(1) << "~TextureResource";
 	
 	if (mTextureData == nullptr)
 		sTextureDataManager.remove(this);

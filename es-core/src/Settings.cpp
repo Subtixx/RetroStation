@@ -1,7 +1,7 @@
 #include "Settings.h"
 
 #include "utils/FileSystemUtil.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Scripting.h"
 #include "platform.h"
 #include <pugixml/src/pugixml.hpp>
@@ -392,7 +392,7 @@ bool Settings::saveFile()
 
 	mWasChanged = false;
 
-	LOG(LogDebug) << "Settings::saveFile() : Saving Settings to file.";
+	LOG_S(1) << "Settings::saveFile() : Saving Settings to file.";
 
 	const std::string path = Paths::getUserEmulationStationPath() + "/es_settings.cfg";
 
@@ -437,13 +437,17 @@ void Settings::loadFile()
 {
 	const std::string path = Paths::getUserEmulationStationPath() + "/es_settings.cfg";
 	if(!Utils::FileSystem::exists(path))
-		return;
+    {
+        LOG_S(1) << "Settings::loadFile() : No Settings file found.";
+        saveFile();
+        return;
+    }
 
 	pugi::xml_document doc;
 	pugi::xml_parse_result result = doc.load_file(path.c_str());
 	if(!result)
 	{
-		LOG(LogError) << "Could not parse Settings file!\n   " << result.description();
+		LOG_S(ERROR) << "Could not parse Settings file!\n   " << result.description();
 		return;
 	}
 
@@ -461,6 +465,8 @@ void Settings::loadFile()
 		setFloat(node.attribute("name").as_string(), node.attribute("value").as_float());
 	for(pugi::xml_node node = root.child("string"); node; node = node.next_sibling("string"))
 		setString(node.attribute("name").as_string(), node.attribute("value").as_string());
+
+    LOG_S(1) << "Settings::loadFile() : Settings loaded from file " << path;
 
 	mWasChanged = false;
 }

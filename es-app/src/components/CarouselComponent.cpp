@@ -1,7 +1,7 @@
 #include "CarouselComponent.h"
 #include "FileData.h"
 #include "Settings.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "animations/LambdaAnimation.h"
 #include "Sound.h"
 #include "LocaleES.h"

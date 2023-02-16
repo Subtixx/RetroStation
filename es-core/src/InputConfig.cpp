@@ -1,6 +1,6 @@
 #include "InputConfig.h"
 
-#include "Log.h"
+#include <loguru.hpp>
 #include <pugixml/src/pugixml.hpp>
 #include "Settings.h"
 #include "utils/StringUtil.h"
@@ -179,7 +179,7 @@ void InputConfig::loadFromXML(pugi::xml_node& node)
 
 		if(typeEnum == TYPE_COUNT)
 		{
-			LOG(LogError) << "InputConfig load error - input of type \"" << type << "\" is invalid! Skipping input \"" << name << "\".\n";
+			LOG_S(ERROR) << "InputConfig load error - input of type \"" << type << "\" is invalid! Skipping input \"" << name << "\".\n";
 			continue;
 		}
 
@@ -187,7 +187,7 @@ void InputConfig::loadFromXML(pugi::xml_node& node)
 		int value = input.attribute("value").as_int();
 
 		if(value == 0)
-			LOG(LogWarning) << "WARNING: InputConfig value is 0 for " << type << " " << id << "!\n";
+			LOG_S(WARNING) << "WARNING: InputConfig value is 0 for " << type << " " << id << "!\n";
 
 		mNameMap[toLower(name)] = Input(mDeviceId, typeEnum, id, value, true);
 	}

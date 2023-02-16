@@ -1,6 +1,6 @@
 #include "utils/StringUtil.h"
 #include <map>
-#include "Log.h"
+#include <loguru.hpp>
 
 namespace Utils
 {
@@ -175,7 +175,7 @@ namespace Utils
 				size_t len = str.length();
 				if (len != 7 && len != 9)
 				{
-					LOG(LogWarning) << "Invalid color (bad length, \"" << str << "\" - must be 6 or 8)";
+					LOG_S(WARNING) << "Invalid color (bad length, \"" << str << "\" - must be 6 or 8)";
 					return 0;
 				}
 
@@ -189,7 +189,7 @@ namespace Utils
 			size_t len = str.length();
 			if (len != 6 && len != 8)
 			{
-				LOG(LogWarning) << "Invalid color (bad length, \"" << str << "\" - must be 6 or 8)";
+				LOG_S(WARNING) << "Invalid color (bad length, \"" << str << "\" - must be 6 or 8)";
 				return 0;
 			}
 

@@ -9,7 +9,7 @@
 #include "views/ViewController.h"
 #include "FileData.h"
 #include "FileFilterIndex.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "PowerSaver.h"
 #include "Scripting.h"
 #include "Sound.h"
@@ -133,7 +133,7 @@ void SystemScreenSaver::startScreenSaver()
 
 		if (!path.empty() && Utils::FileSystem::exists(path))
 		{
-			LOG(LogDebug) << "VideoScreenSaver::startScreenSaver " << path.c_str();
+			LOG_S(1) << "VideoScreenSaver::startScreenSaver " << path.c_str();
 
 			mVideoScreensaver = std::make_shared<VideoScreenSaver>(mWindow, this);
 			mVideoScreensaver->setGame(mCurrentGame);
@@ -177,7 +177,7 @@ void SystemScreenSaver::startScreenSaver()
 
 		if (!path.empty() && Utils::FileSystem::exists(path))
 		{
-			LOG(LogDebug) << "ImageScreenSaver::startScreenSaver " << path.c_str();
+			LOG_S(1) << "ImageScreenSaver::startScreenSaver " << path.c_str();
 
 			mImageScreensaver = std::make_shared<ImageScreenSaver>(mWindow);
 			mImageScreensaver->setGame(mCurrentGame);
@@ -433,12 +433,12 @@ std::string SystemScreenSaver::pickRandomCustomImage(bool video)
 		}
 		else
 		{
-			LOG(LogError) << "Slideshow Screensaver - No image files found\n";
+			LOG_S(ERROR) << "Slideshow Screensaver - No image files found\n";
 		}
 	}
 	else
 	{
-		LOG(LogError) << "Slideshow Screensaver - Image directory does not exist: " << imageDir << "\n";
+		LOG_S(ERROR) << "Slideshow Screensaver - Image directory does not exist: " << imageDir << "\n";
 	}
 
 	return path;

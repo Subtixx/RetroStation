@@ -1,6 +1,6 @@
 #include "ScraperCmdLine.h"
 
-#include "Log.h"
+#include <loguru.hpp>
 #include "platform.h"
 #include "SystemData.h"
 #include <iostream>
@@ -17,7 +17,7 @@ void handle_interrupt_signal(int /*p*/)
 {
 	sleep(50);
 
-	LOG(LogInfo) << "Interrupt received during scrape...";
+	LOG_S(INFO) << "Interrupt received during scrape...";
 
 	SystemData::deleteSystems();
 

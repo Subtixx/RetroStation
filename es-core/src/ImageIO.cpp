@@ -1,6 +1,6 @@
 #include "ImageIO.h"
 
-#include "Log.h"
+#include <loguru.hpp>
 #include <FreeImage.h>
 #include <string.h>
 #include "utils/FileSystemUtil.h"
@@ -15,7 +15,7 @@
 
 unsigned char* ImageIO::loadFromMemoryRGBA32(const unsigned char * data, const size_t size, size_t & width, size_t & height, MaxSizeInfo* maxSize, Vector2i* baseSize, Vector2i* packedSize, int subImageIndex)
 {
-	LOG(LogDebug) << "ImageIO::loadFromMemoryRGBA32";
+	LOG_S(1) << "ImageIO::loadFromMemoryRGBA32";
 
 	if (baseSize != nullptr)
 		*baseSize = Vector2i(0, 0);
@@ -91,7 +91,7 @@ unsigned char* ImageIO::loadFromMemoryRGBA32(const unsigned char * data, const s
 						
 						if (sz.x() != width || sz.y() != height)
 						{
-							LOG(LogDebug) << "ImageIO : rescaling image from " << std::string(std::to_string(width) + "x" + std::to_string(height)).c_str() << " to " << std::string(std::to_string(sz.x()) + "x" + std::to_string(sz.y())).c_str();
+							LOG_S(1) << "ImageIO : rescaling image from " << std::string(std::to_string(width) + "x" + std::to_string(height)).c_str() << " to " << std::string(std::to_string(sz.x()) + "x" + std::to_string(sz.y())).c_str();
 
 							FIBITMAP* imageRescaled = FreeImage_Rescale(fiBitmap, sz.x(), sz.y(), FILTER_BOX);
 
@@ -144,12 +144,12 @@ unsigned char* ImageIO::loadFromMemoryRGBA32(const unsigned char * data, const s
 			}
 			else
 			{
-				LOG(LogError) << "Error - Failed to load image from memory!";
+				LOG_S(ERROR) << "Error - Failed to load image from memory!";
 			}
 		}
 		else
 		{
-			LOG(LogError) << "Error - File type " << (format == FIF_UNKNOWN ? "unknown" : "unsupported") << "!";
+			LOG_S(ERROR) << "Error - File type " << (format == FIF_UNKNOWN ? "unknown" : "unsupported") << "!";
 		}
 		//free FIMEMORY again
 		FreeImage_CloseMemory(fiMemory);
@@ -421,12 +421,12 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 		}
 	}
 
-	LOG(LogDebug) << "ImageIO::loadImageSize " << fn;
+	LOG_S(1) << "ImageIO::loadImageSize " << fn;
 
 	auto ext = Utils::String::toLower(Utils::FileSystem::getExtension(fn));
 	if (ext != ".jpg" && ext != ".png" && ext != ".jpeg" && ext != ".gif" && ext != ".svg")
 	{
-		LOG(LogWarning) << "ImageIO::loadImageSize\tUnknown file type: " << fn;
+		LOG_S(WARNING) << "ImageIO::loadImageSize\tUnknown file type: " << fn;
 		return false;
 	}
 
@@ -440,7 +440,7 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 
 	if (f == nullptr)
 	{
-		LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to open file: " << fn;
+		LOG_S(WARNING) << "ImageIO::loadImageSize\tUnable to open file: " << fn;
 		updateImageCache(fn, -1, -1, -1);
 		return false;
 	}
@@ -450,7 +450,7 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 
         NSVGimage* image = nsvgParseFromFile(fn.c_str(), "px", 96.0f);
         if (image == nullptr) {
-            LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to parse SVG file: " << fn;
+            LOG_S(WARNING) << "ImageIO::loadImageSize\tUnable to parse SVG file: " << fn;
             updateImageCache(fn, -1, -1, -1);
             return false;
         }
@@ -508,7 +508,7 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 		*y = (buf[7] << 8) + buf[8];
 		*x = (buf[9] << 8) + buf[10];
 		
-		LOG(LogDebug) << "ImageIO::loadImageSize\tJPG size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
+		LOG_S(1) << "ImageIO::loadImageSize\tJPG size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
 
 		if (*x > 5000) // security ?
 		{
@@ -526,7 +526,7 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 		*x = buf[6] + (buf[7] << 8);
 		*y = buf[8] + (buf[9] << 8);
 
-		LOG(LogDebug) << "ImageIO::loadImageSize\tGIF size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
+		LOG_S(1) << "ImageIO::loadImageSize\tGIF size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
 
 		updateImageCache(fn, size, *x, *y);
 		return true;
@@ -538,14 +538,14 @@ bool ImageIO::loadImageSize(const std::string& fn, unsigned int *x, unsigned int
 		*x = (buf[16] << 24) + (buf[17] << 16) + (buf[18] << 8) + (buf[19] << 0);
 		*y = (buf[20] << 24) + (buf[21] << 16) + (buf[22] << 8) + (buf[23] << 0);
 
-		LOG(LogDebug) << "ImageIO::loadImageSize\tPNG size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
+		LOG_S(1) << "ImageIO::loadImageSize\tPNG size " << std::string(std::to_string(*x) + "x" + std::to_string(*y)).c_str();
 
 		updateImageCache(fn, size, *x, *y);
 		return true;
 	}
 
 	updateImageCache(fn, -1, -1, -1);
-	LOG(LogWarning) << "ImageIO::loadImageSize\tUnable to extract size";
+	LOG_S(WARNING) << "ImageIO::loadImageSize\tUnable to extract size";
 	return false;
 }
 

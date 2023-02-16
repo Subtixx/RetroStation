@@ -4,7 +4,7 @@
 #include "renderers/Renderer.h"
 #include "resources/ResourceManager.h"
 #include "ImageIO.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <nanosvg/nanosvg.h>
 #include <nanosvg/nanosvgrast.h>
 #include <string.h>
@@ -65,7 +65,7 @@ bool TextureData::initSVGFromMemory(const unsigned char* fileData, size_t length
 	free(copy);
 	if (!svgImage)
 	{
-		LOG(LogError) << "Error parsing SVG image.";
+		LOG_S(ERROR) << "Error parsing SVG image.";
 		return false;
 	}
 
@@ -131,7 +131,7 @@ bool TextureData::initSVGFromMemory(const unsigned char* fileData, size_t length
 
 	if (mWidth * mHeight <= 0)
 	{
-		LOG(LogError) << "Error parsing SVG image size.";
+		LOG_S(ERROR) << "Error parsing SVG image size.";
 		return false;
 	}
 
@@ -178,7 +178,7 @@ bool TextureData::initImageFromMemory(const unsigned char* fileData, size_t leng
 
 	if (imageRGBA == nullptr)
 	{
-		LOG(LogError) << "Could not initialize texture from memory, invalid data!  (file path: " << mPath << ", data ptr: " << (size_t)fileData << ", reported size: " << length << ")";
+		LOG_S(ERROR) << "Could not initialize texture from memory, invalid data!  (file path: " << mPath << ", data ptr: " << (size_t)fileData << ", reported size: " << length << ")";
 		return false;
 	}
 
@@ -432,7 +432,7 @@ bool TextureData::load(bool updateCache)
 	// Need to load. See if there is a file
 	if (!mPath.empty())
 	{
-		LOG(LogDebug) << "TextureData::load " << mPath;
+		LOG_S(1) << "TextureData::load " << mPath;
 
 		std::string ext = Utils::String::toLower(Utils::FileSystem::getExtension(mPath));
 
@@ -573,7 +573,7 @@ void TextureData::setSourceSize(float width, float height)
 	{
 		if ((int) mSourceHeight < (int) height && (int) mSourceWidth != (int) width)
 		{
-			LOG(LogDebug) << "Requested scalable image size too small. Reloading image from (" << mSourceWidth << ", " << mSourceHeight << ") to (" << width << ", " << height << ")";
+			LOG_S(1) << "Requested scalable image size too small. Reloading image from (" << mSourceWidth << ", " << mSourceHeight << ") to (" << width << ", " << height << ")";
 
 			mSourceWidth = width;
 			mSourceHeight = height;

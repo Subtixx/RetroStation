@@ -1,5 +1,5 @@
 #include "GunManager.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "platform.h"
 #include "Window.h"
 #include <SDL.h>
@@ -292,7 +292,7 @@ bool GunManager::udev_addGun(struct udev_device *dev, Window* window, bool needG
 		return false;
 	}
 
-	LOG(LogInfo) << "Gun found at " << devnode;
+	LOG_S(INFO) << "Gun found at " << devnode;
 
 	if (ioctl(fd, EVIOCGNAME(sizeof(ident)), ident) < 0)
 		ident[0] = '\0';
@@ -323,7 +323,7 @@ bool GunManager::udev_removeGun(struct udev_device *dev, Window* window)
 	const char* devnode;
 
 	devnode = udev_device_get_devnode(dev);
-	LOG(LogInfo) << "Gun removed at " << devnode;
+	LOG_S(INFO) << "Gun removed at " << devnode;
 
 	if (devnode == NULL) return false;
 
@@ -331,7 +331,7 @@ bool GunManager::udev_removeGun(struct udev_device *dev, Window* window)
 	{
 		if ((*iter)->devpath == devnode)
 		{
-			LOG(LogInfo) << "Gun removed found at " << devnode;
+			LOG_S(INFO) << "Gun removed found at " << devnode;
 			if (window != NULL)
 				window->displayNotificationMessage(_U("\uF05B ") + Utils::String::format(_("%s disconnected").c_str(), Utils::String::trim((*iter)->mName).c_str()));
 

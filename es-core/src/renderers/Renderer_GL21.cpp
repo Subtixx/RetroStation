@@ -4,7 +4,7 @@
 
 #include "renderers/Renderer.h"
 #include "math/Transform4x4f.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "Settings.h"
 
 #include <SDL_opengl.h>
@@ -105,8 +105,8 @@ namespace Renderer
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 		std::string glExts = (const char*)glGetString(GL_EXTENSIONS);
-		LOG(LogInfo) << "Checking available OpenGL extensions...";
-		LOG(LogInfo) << " ARB_texture_non_power_of_two: " << (glExts.find("ARB_texture_non_power_of_two") != std::string::npos ? "ok" : "MISSING");
+		LOG_S(INFO) << "Checking available OpenGL extensions...";
+		LOG_S(INFO) << " ARB_texture_non_power_of_two: " << (glExts.find("ARB_texture_non_power_of_two") != std::string::npos ? "ok" : "MISSING");
 
 	} // createContext
 
@@ -286,7 +286,7 @@ namespace Renderer
 			// if vsync is requested, try normal vsync; if that doesn't work, try late swap tearing
 			// if that doesn't work, report an error
 			if(SDL_GL_SetSwapInterval(1) != 0 && SDL_GL_SetSwapInterval(-1) != 0)
-				LOG(LogWarning) << "Tried to enable vsync, but failed! (" << SDL_GetError() << ")";
+				LOG_S(WARNING) << "Tried to enable vsync, but failed! (" << SDL_GetError() << ")";
 		}
 		else
 			SDL_GL_SetSwapInterval(0);

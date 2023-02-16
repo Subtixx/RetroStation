@@ -7,7 +7,7 @@
 #include "utils/StringUtil.h"
 #include "utils/ZipFile.h"
 #include "ApiSystem.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include <algorithm>
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/pointer.h>
@@ -494,7 +494,7 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 
 std::string RetroAchievements::getCheevosHashFromFile(int consoleId, const std::string fileName)
 {
-	LOG(LogDebug) << "getCheevosHashFromFile : " << fileName;
+	LOG_S(1) << "getCheevosHashFromFile : " << fileName;
 
 	try
 	{
@@ -506,7 +506,7 @@ std::string RetroAchievements::getCheevosHashFromFile(int consoleId, const std::
 	{
 	}
 
-	LOG(LogWarning) << "cheevos -> Unable to extract hash from file :" << fileName;
+	LOG_S(WARNING) << "cheevos -> Unable to extract hash from file :" << fileName;
 	return "00000000000000000000000000000000";	
 }
 

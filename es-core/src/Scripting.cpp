@@ -1,5 +1,5 @@
 #include "Scripting.h"
-#include "Log.h"
+#include <loguru.hpp>
 #include "platform.h"
 #include "utils/FileSystemUtil.h"
 #include "Paths.h"
@@ -8,7 +8,7 @@ namespace Scripting
 {
 	void fireEvent(const std::string& eventName, const std::string& arg1, const std::string& arg2, const std::string& arg3)
 	{
-		LOG(LogDebug) << "fireEvent: " << eventName << " " << arg1 << " " << arg2 << " " << arg3;
+		LOG_S(1) << "fireEvent: " << eventName << " " << arg1 << " " << arg2 << " " << arg3;
 
         std::list<std::string> scriptDirList;
         std::string test;
@@ -35,7 +35,7 @@ namespace Scripting
 
                     script += " \"" + arg + "\"";
                 }
-                LOG(LogDebug) << "  executing: " << script;
+                LOG_S(1) << "  executing: " << script;
                 runSystemCommand(script, "", nullptr);
             }
         }

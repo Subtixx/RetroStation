@@ -30,6 +30,8 @@
 #include <SDL_events.h>
 #include <algorithm>
 #include "platform.h"
+#include <loguru.hpp>
+#include "Log.h"
 
 #include "SystemConf.h"
 #include "ApiSystem.h"
@@ -132,7 +134,7 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 		Window *window = mWindow;
 		delete this;
 		if (!ApiSystem::getInstance()->launchKodi(window))
-			LOG(LogWarning) << "Shutdown terminated with non-zero result!";
+			LOG_S(WARNING) << "Shutdown terminated with non-zero result!";
 
 	}, "iconKodi");
 #endif
@@ -1048,7 +1050,7 @@ void GuiMenu::openSystemSettings()
 				msg += _("Do you want to proceed?");
 				window->pushGui(new GuiMsgBox(window, msg,
 					_("YES"), [selectedMode] {
-					LOG(LogDebug) << "Setting user interface mode to " << selectedMode;
+					LOG_S(1) << "Setting user interface mode to " << selectedMode;
 					Settings::getInstance()->setString("UIMode", selectedMode);
 					Settings::getInstance()->saveFile();
 				}, _("NO"), nullptr));
@@ -2466,7 +2468,7 @@ void GuiMenu::openControllersSettings(int autoSel)
 				found = true;
 				alreadyTaken.push_back(deviceID);
 
-				LOG(LogWarning) << "adding entry for player" << player << " (selected): " << config->getDeviceName() << "  " << config->getDeviceGUIDString() << "  " << config->getDevicePath();
+				LOG_S(WARNING) << "adding entry for player" << player << " (selected): " << config->getDeviceName() << "  " << config->getDeviceGUIDString() << "  " << config->getDevicePath();
 
 #if WIN32
 				inputOptionList->addEx(displayName, config->getDevicePath(), newInputConfig, true, false, false);
@@ -2476,7 +2478,7 @@ void GuiMenu::openControllersSettings(int autoSel)
 			}
 			else
 			{
-				LOG(LogInfo) << "adding entry for player" << player << " (not selected): " << config->getDeviceName() << "  " << config->getDeviceGUIDString() << "  " << config->getDevicePath();
+				LOG_S(INFO) << "adding entry for player" << player << " (not selected): " << config->getDeviceName() << "  " << config->getDeviceGUIDString() << "  " << config->getDevicePath();
 #if WIN32
 				inputOptionList->addEx(displayName, config->getDevicePath(), newInputConfig, false, false, false);
 #else
@@ -2513,7 +2515,7 @@ void GuiMenu::openControllersSettings(int autoSel)
 			}
 			else if (input->changed())
 			{
-				LOG(LogInfo) << "Found the selected controller : " << input->getSelectedName() << ", " << selected->deviceGUIDString << ", " << selected->devicePath;
+				LOG_S(INFO) << "Found the selected controller : " << input->getSelectedName() << ", " << selected->deviceGUIDString << ", " << selected->devicePath;
 
 				changed |= Settings::getInstance()->setString(confName, selected->deviceName);
 				changed |= Settings::getInstance()->setString(confGuid, selected->deviceGUIDString);
@@ -4489,7 +4491,7 @@ void GuiMenu::loadSubsetSettings(const std::string themeName)
 		}
 	}
 	else
-		LOG(LogError) << "Unable to open " << fileName;
+		LOG_S(ERROR) << "Unable to open " << fileName;
 }
 
 void GuiMenu::editKeyboardMappings(Window *window, IKeyboardMapContainer* mapping, bool editable)
