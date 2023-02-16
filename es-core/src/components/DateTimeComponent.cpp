@@ -24,7 +24,7 @@ void DateTimeComponent::setValue(const std::string& val)
 
 std::string DateTimeComponent::getValue() const
 {
-	return mTime;
+	return std::string(mTime);
 }
 
 void DateTimeComponent::setFormat(const std::string& format)

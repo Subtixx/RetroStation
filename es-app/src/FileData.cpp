@@ -693,7 +693,7 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 			gameToUpdate->setMetadata(MetaDataId::GameTime, std::to_string(static_cast<long>(gameTime)));
 
 		//update last played time
-		gameToUpdate->setMetadata(MetaDataId::LastPlayed, Utils::Time::DateTime(Utils::Time::now()));
+		gameToUpdate->setMetadata(MetaDataId::LastPlayed, std::string (Utils::Time::DateTime(Utils::Time::now())));
 		CollectionSystemManager::get()->refreshCollectionSystems(gameToUpdate);
 		saveToGamelistRecovery(gameToUpdate);
 	}

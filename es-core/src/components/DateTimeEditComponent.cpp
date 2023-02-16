@@ -38,7 +38,7 @@ bool DateTimeEditComponent::input(InputConfig* config, Input input)
 			mTimeBeforeEdit = mTime;
 
 			//initialize to now if unset
-			if(mTime.getTime() == Utils::Time::NOT_A_DATE_TIME)
+			if(mTime.getTime() == 0)
 			{
 				mTime = Utils::Time::now();
 				updateTextCache();
@@ -66,7 +66,7 @@ bool DateTimeEditComponent::input(InputConfig* config, Input input)
 
 		if(incDir != 0)
 		{
-			tm new_tm = mTime;
+			tm new_tm = tm(mTime);
 
 			if(mEditIndex == 0)
 			{
@@ -183,7 +183,7 @@ void DateTimeEditComponent::setValue(const std::string& val)
 
 std::string DateTimeEditComponent::getValue() const
 {
-	return mTime;
+	return std::string (mTime);
 }
 
 DateTimeEditComponent::DisplayMode DateTimeEditComponent::getCurrentDisplayMode() const
@@ -239,7 +239,7 @@ std::string DateTimeEditComponent::getDisplayString(DisplayMode mode) const
 	if(mTime.getTime() == 0)
 		return "";
 
-	return Utils::Time::timeToString(mTime, fmt);
+	return Utils::Time::timeToString(time_t (mTime), fmt);
 }
 
 std::shared_ptr<Font> DateTimeEditComponent::getFont() const

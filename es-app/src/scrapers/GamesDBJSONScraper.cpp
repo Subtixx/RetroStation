@@ -414,7 +414,7 @@ namespace
 			result.mdl.set(MetaDataId::Desc, game["overview"].GetString());
 
 		if (game.HasMember("release_date") && game["release_date"].IsString())
-			result.mdl.set(MetaDataId::ReleaseDate, Utils::Time::DateTime(Utils::Time::stringToTime(game["release_date"].GetString(), "%Y-%m-%d")));
+			result.mdl.set(MetaDataId::ReleaseDate, std::string (Utils::Time::DateTime(Utils::Time::stringToTime(game["release_date"].GetString(), "%Y-%m-%d"))));
 
 		if (game.HasMember("developers") && game["developers"].IsArray())
 			result.mdl.set(MetaDataId::Developer, getDeveloperString(game["developers"]));

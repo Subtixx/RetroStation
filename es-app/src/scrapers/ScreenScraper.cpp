@@ -617,9 +617,9 @@ void ScreenScraperRequest::processGame(const pugi::xml_document& xmldoc, std::ve
 
 		// Date can be YYYY-MM-DD or just YYYY.
 		if (_date.length() > 4)
-			result.mdl.set(MetaDataId::ReleaseDate, Utils::Time::DateTime(Utils::Time::stringToTime(_date, "%Y-%m-%d")));
+			result.mdl.set(MetaDataId::ReleaseDate, std::string (Utils::Time::DateTime(Utils::Time::stringToTime(_date, "%Y-%m-%d"))));
 		else if (_date.length() > 0)
-			result.mdl.set(MetaDataId::ReleaseDate, Utils::Time::DateTime(Utils::Time::stringToTime(_date, "%Y")));
+			result.mdl.set(MetaDataId::ReleaseDate, std::string (Utils::Time::DateTime(Utils::Time::stringToTime(_date, "%Y"))));
 
 		/// Developer for the game( Xpath: Data/jeu[0]/developpeur )
 		std::string developer = game.child("developpeur").text().get();

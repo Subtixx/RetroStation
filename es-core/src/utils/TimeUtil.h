@@ -1,87 +1,111 @@
 #pragma once
-#ifndef ES_CORE_UTILS_TIME_UTIL_H
-#define ES_CORE_UTILS_TIME_UTIL_H
 
 #include <string>
-#include <time.h>
+#include <ctime>
 
-namespace Utils
-{
-	namespace Time
-	{
-		static int NOT_A_DATE_TIME = 0;
+namespace Utils::Time {
+class DateTime {
+  public:
+    static DateTime now();
 
-		class DateTime
-		{
-		public:
+    DateTime();
+    DateTime(const time_t &_time);
+    DateTime(const tm &_timeStruct);
+    DateTime(const std::string &_isoString);
+    ~DateTime();
 
-			static DateTime now();
+    bool operator<(const DateTime &_other) const {
+        return (mTime < _other.mTime);
+    }
 
-			 DateTime();
-			 DateTime(const time_t& _time);
-			 DateTime(const tm& _timeStruct);
-			 DateTime(const std::string& _isoString);
-			~DateTime();
+    bool operator<=(const DateTime &_other) const {
+        return (mTime <= _other.mTime);
+    }
 
-			const bool operator<           (const DateTime& _other) const { return (mTime <  _other.mTime); }
-			const bool operator<=          (const DateTime& _other) const { return (mTime <= _other.mTime); }
-			const bool operator>           (const DateTime& _other) const { return (mTime >  _other.mTime); }
-			const bool operator>=          (const DateTime& _other) const { return (mTime >= _other.mTime); }
-			           operator time_t     ()                       const { return mTime; }
-			           operator tm         ()                       const { return mTimeStruct; }
-			           operator std::string()                       const { return mIsoString; }
+    bool operator>(const DateTime &_other) const {
+        return (mTime > _other.mTime);
+    }
 
-			void               setTime      (const time_t& _time);
-			const time_t&      getTime      () const { return mTime; }
-			void               setTimeStruct(const tm& _timeStruct);
-			const tm&          getTimeStruct() const { return mTimeStruct; }
-			void               setIsoString (const std::string& _isoString);
-			const std::string& getIsoString () const { return mIsoString; }
-			std::string		   toLocalTimeString();
+    bool operator>=(const DateTime &_other) const {
+        return (mTime >= _other.mTime);
+    }
 
-			double			   elapsedSecondsSince(const DateTime& _since);
+    explicit operator time_t() const {
+        return mTime;
+    }
 
-			bool				isValid() { return mTime != 0; }
+    explicit operator tm() const {
+        return mTimeStruct;
+    }
 
-		private:
+    explicit operator std::string() const {
+        return mIsoString;
+    }
 
-			time_t      mTime;
-			tm          mTimeStruct;
-			std::string mIsoString;
+    void setTime(const time_t &_time);
 
-		}; // DateTime
+    const time_t &getTime() const {
+        return mTime;
+    }
 
-		class Duration
-		{
-		public:
+    void setTimeStruct(const tm &_timeStruct);
 
-			 Duration(const time_t& _time);
-			~Duration();
+    const tm &getTimeStruct() const {
+        return mTimeStruct;
+    }
 
-			unsigned int getDays   () const { return mDays; }
-			unsigned int getHours  () const { return mHours; }
-			unsigned int getMinutes() const { return mMinutes; }
-			unsigned int getSeconds() const { return mSeconds; }
+    void setIsoString(const std::string &_isoString);
 
-		private:
+    const std::string &getIsoString() const {
+        return mIsoString;
+    }
+    std::string toLocalTimeString();
 
-			unsigned int mTotalSeconds;
-			unsigned int mDays;
-			unsigned int mHours;
-			unsigned int mMinutes;
-			unsigned int mSeconds;
+    double elapsedSecondsSince(const DateTime &_since);
 
-		}; // Duration
+    bool isValid() {
+        return mTime != 0;
+    }
 
-		time_t      now         ();
-		time_t      stringToTime(const std::string& _string, const std::string& _format = "%Y%m%dT%H%M%S");
-		std::string timeToString(const time_t& _time, const std::string& _format = "%Y%m%dT%H%M%S");
-		int         daysInMonth (const int _year, const int _month);
-		int         daysInYear  (const int _year);
-		std::string secondsToString(const long seconds);
+  private:
+    time_t mTime;
+    tm mTimeStruct;
+    std::string mIsoString;
 
-	} // Time::
+}; // DateTime
 
-} // Utils::
+class Duration {
+  public:
+    Duration(const time_t &_time);
+    ~Duration();
 
-#endif // ES_CORE_UTILS_TIME_UTIL_H
+    unsigned int getDays() const {
+        return mDays;
+    }
+    unsigned int getHours() const {
+        return mHours;
+    }
+    unsigned int getMinutes() const {
+        return mMinutes;
+    }
+    unsigned int getSeconds() const {
+        return mSeconds;
+    }
+
+  private:
+    unsigned int mTotalSeconds;
+    unsigned int mDays;
+    unsigned int mHours;
+    unsigned int mMinutes;
+    unsigned int mSeconds;
+
+}; // Duration
+
+time_t now();
+time_t stringToTime(const std::string &_string, const std::string &_format = "%Y%m%dT%H%M%S");
+std::string timeToString(const time_t &_time, const std::string &_format = "%Y%m%dT%H%M%S");
+int daysInMonth(const int _year, const int _month);
+int daysInYear(const int _year);
+std::string secondsToString(const long seconds);
+
+} // namespace Utils::Time
