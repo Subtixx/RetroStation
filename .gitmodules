@@ -10,3 +10,6 @@
 [submodule "external/argagg"]
 	path = external/argagg
 	url = https://github.com/vietjtnguyen/argagg.git
+[submodule "external/rcheevos"]
+	path = external/rcheevos
+	url = https://github.com/RetroAchievements/rcheevos.git
