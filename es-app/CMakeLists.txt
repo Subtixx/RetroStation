@@ -247,6 +247,21 @@ if(MSVC)
     set_target_properties(emulationstation PROPERTIES LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:WINDOWS")
 endif()
 
+# Copy directory if exists skip
+add_custom_command(TARGET emulationstation POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/data/resources
+		${CMAKE_SOURCE_DIR}/bin/resources
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/data/scripts
+		${CMAKE_SOURCE_DIR}/bin/scripts
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/data/config
+		${CMAKE_SOURCE_DIR}/bin/config
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+		${CMAKE_SOURCE_DIR}/data/emulationstation
+		${CMAKE_SOURCE_DIR}/bin/.emulationstation
+)
 
 #-------------------------------------------------------------------------------
 # set up CPack install stuff so `make install` does something useful
