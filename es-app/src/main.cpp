@@ -7,6 +7,7 @@
 #include "utils/FileSystemUtil.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
+#include "CommandLineArguments.h"
 #include "EmulationStation.h"
 #include "InputManager.h"
 #include "Log.h"
@@ -48,212 +49,6 @@
 static std::string gPlayVideo;
 static int gPlayVideoDuration = 0;
 static bool enable_startup_game = true;
-
-bool parseArgs(int argc, char* argv[])
-{
-	Paths::setExePath(argv[0]);
-
-	// We need to process --home before any call to Settings::getInstance(), because settings are loaded from homepath
-	for (int i = 1; i < argc; i++)
-	{
-		if (strcmp(argv[i], "--home") == 0)
-		{
-			if (i == argc - 1)
-				continue;
-
-			std::string arg = argv[i + 1];
-			if (arg.find("-") == 0)
-				continue;
-
-			Paths::setHomePath(argv[i + 1]);
-			break;
-		}
-	}
-
-	for(int i = 1; i < argc; i++)
-	{
-		if (strcmp(argv[i], "--videoduration") == 0)
-		{
-			gPlayVideoDuration = atoi(argv[i + 1]);
-			i++; // skip the argument value
-		}
-		else if (strcmp(argv[i], "--video") == 0)
-		{
-			gPlayVideo = argv[i + 1];
-			i++; // skip the argument value
-		}
-		else if (strcmp(argv[i], "--monitor") == 0)
-		{
-			if (i >= argc - 1)
-			{
-				std::cerr << "Invalid monitor supplied.";
-				return false;
-			}
-
-			int monitorId = atoi(argv[i + 1]);
-			i++; // skip the argument value
-			Settings::getInstance()->setInt("MonitorID", monitorId);
-		}
-		else if(strcmp(argv[i], "--resolution") == 0)
-		{
-			if(i >= argc - 2)
-			{
-				std::cerr << "Invalid resolution supplied.";
-				return false;
-			}
-
-			int width = atoi(argv[i + 1]);
-			int height = atoi(argv[i + 2]);
-			i += 2; // skip the argument value
-			Settings::getInstance()->setInt("WindowWidth", width);
-			Settings::getInstance()->setInt("WindowHeight", height);
-			Settings::getInstance()->setBool("FullscreenBorderless", false);
-		}else if(strcmp(argv[i], "--screensize") == 0)
-		{
-			if(i >= argc - 2)
-			{
-				std::cerr << "Invalid screensize supplied.";
-				return false;
-			}
-
-			int width = atoi(argv[i + 1]);
-			int height = atoi(argv[i + 2]);
-			i += 2; // skip the argument value
-			Settings::getInstance()->setInt("ScreenWidth", width);
-			Settings::getInstance()->setInt("ScreenHeight", height);
-		}else if(strcmp(argv[i], "--screenoffset") == 0)
-		{
-			if(i >= argc - 2)
-			{
-				std::cerr << "Invalid screenoffset supplied.";
-				return false;
-			}
-
-			int x = atoi(argv[i + 1]);
-			int y = atoi(argv[i + 2]);
-			i += 2; // skip the argument value
-			Settings::getInstance()->setInt("ScreenOffsetX", x);
-			Settings::getInstance()->setInt("ScreenOffsetY", y);
-		}else if (strcmp(argv[i], "--screenrotate") == 0)
-		{
-			if (i >= argc - 1)
-			{
-				std::cerr << "Invalid screenrotate supplied.";
-				return false;
-			}
-
-			int rotate = atoi(argv[i + 1]);
-			++i; // skip the argument value
-			Settings::getInstance()->setInt("ScreenRotate", rotate);
-		}else if(strcmp(argv[i], "--gamelist-only") == 0)
-		{
-			Settings::getInstance()->setBool("ParseGamelistOnly", true);
-		}else if(strcmp(argv[i], "--ignore-gamelist") == 0)
-		{
-			Settings::getInstance()->setBool("IgnoreGamelist", true);
-		}else if(strcmp(argv[i], "--show-hidden-files") == 0)
-		{
-			Settings::setShowHiddenFiles(true);
-		}else if(strcmp(argv[i], "--draw-framerate") == 0)
-		{
-			Settings::getInstance()->setBool("DrawFramerate", true);
-		}else if(strcmp(argv[i], "--no-exit") == 0)
-		{
-			Settings::getInstance()->setBool("ShowExit", false);
-		}else if(strcmp(argv[i], "--exit-on-reboot-required") == 0)
-		{
-			Settings::getInstance()->setBool("ExitOnRebootRequired", true);
-		}else if(strcmp(argv[i], "--no-startup-game") == 0)
-		{
-		        enable_startup_game = false;
-		}else if(strcmp(argv[i], "--no-splash") == 0)
-		{
-			Settings::getInstance()->setBool("SplashScreen", false);
-		}else if(strcmp(argv[i], "--splash-image") == 0)
-		{
-		        if (i >= argc - 1)
-			{
-				std::cerr << "Invalid splash image supplied.";
-				return false;
-			}
-			Settings::getInstance()->setString("AlternateSplashScreen", argv[i+1]);
-			++i; // skip the argument value
-		}else if(strcmp(argv[i], "--debug") == 0)
-		{
-			Settings::getInstance()->setBool("Debug", true);
-			Settings::getInstance()->setBool("HideConsole", false);
-		}
-		else if (strcmp(argv[i], "--fullscreen-borderless") == 0)
-		{
-			Settings::getInstance()->setBool("FullscreenBorderless", true);
-		}
-		else if (strcmp(argv[i], "--fullscreen") == 0)
-		{
-		Settings::getInstance()->setBool("FullscreenBorderless", false);
-		}
-		else if(strcmp(argv[i], "--windowed") == 0)
-		{
-			Settings::getInstance()->setBool("Windowed", true);
-		}else if(strcmp(argv[i], "--vsync") == 0)
-		{
-			bool vsync = (strcmp(argv[i + 1], "on") == 0 || strcmp(argv[i + 1], "1") == 0) ? true : false;
-			Settings::getInstance()->setBool("VSync", vsync);
-			i++; // skip vsync value
-		}else if(strcmp(argv[i], "--max-vram") == 0)
-		{
-			int maxVRAM = atoi(argv[i + 1]);
-			Settings::getInstance()->setInt("MaxVRAM", maxVRAM);
-		}
-		else if (strcmp(argv[i], "--force-kiosk") == 0)
-		{
-			Settings::getInstance()->setBool("ForceKiosk", true);
-		}
-		else if (strcmp(argv[i], "--force-kid") == 0)
-		{
-			Settings::getInstance()->setBool("ForceKid", true);
-		}
-		else if (strcmp(argv[i], "--force-disable-filters") == 0)
-		{
-			Settings::getInstance()->setBool("ForceDisableFilters", true);
-		}
-		else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0)
-		{
-#ifdef WIN32
-			// This is a bit of a hack, but otherwise output will go to nowhere
-			// when the application is compiled with the "WINDOWS" subsystem (which we usually are).
-			// If you're an experienced Windows programmer and know how to do this
-			// the right way, please submit a pull request!
-			AttachConsole(ATTACH_PARENT_PROCESS);
-			freopen("CONOUT$", "wb", stdout);
-#endif
-			std::cout <<
-				"EmulationStation, a graphical front-end for ROM browsing.\n"
-				"Written by Alec \"Aloshi\" Lofquist.\n"
-				"Version " << PROGRAM_VERSION_STRING << ", built " << PROGRAM_BUILT_STRING << "\n\n"
-				"Command line arguments:\n"
-				"--resolution [width] [height]	try and force a particular resolution\n"
-				"--gamelist-only			skip automatic game search, only read from gamelist.xml\n"
-				"--ignore-gamelist		ignore the gamelist (useful for troubleshooting)\n"
-				"--draw-framerate		display the framerate\n"
-				"--no-exit			don't show the exit option in the menu\n"
-				"--no-splash			don't show the splash screen\n"
-				"--debug				more logging, show console on Windows\n"				
-				"--windowed			not fullscreen, should be used with --resolution\n"
-				"--vsync [1/on or 0/off]		turn vsync on or off (default is on)\n"
-				"--max-vram [size]		Max VRAM to use in Mb before swapping. 0 for unlimited\n"
-				"--force-kid		Force the UI mode to be Kid\n"
-				"--force-kiosk		Force the UI mode to be Kiosk\n"
-				"--force-disable-filters		Force the UI to ignore applied filters in gamelist\n"
-				"--home [path]		Directory to use as home path\n"
-				"--help, -h			summon a sentient, angry tuba\n\n"
-				"--monitor [index]			monitor index\n\n"				
-				"More information available in README.md.\n";
-			return false; //exit after printing help
-		}
-	}
-
-	return true;
-}
 
 bool verifyHomeFolderExists()
 {
@@ -448,8 +243,10 @@ int main(int argc, char* argv[])
 
 	std::locale::global(std::locale("C"));
 
-	if(!parseArgs(argc, argv))
-		return 0;
+    if(ParseArguments(argc, argv) != EXIT_SUCCESS)
+    {
+        return EXIT_FAILURE;
+    }
 
 	// only show the console on Windows if HideConsole is false
 #ifdef WIN32
