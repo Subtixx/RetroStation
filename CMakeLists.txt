@@ -290,6 +290,7 @@ set(COMMON_INCLUDE_DIRS
     ${VLC_INCLUDE_DIR}
     ${RAPIDJSON_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/external/id3v2lib/include
+    ${CMAKE_SOURCE_DIR}/external/nanosvg/src
     ${CMAKE_SOURCE_DIR}/external
     ${CMAKE_SOURCE_DIR}/es-core/src
 )

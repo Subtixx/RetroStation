@@ -13,3 +13,6 @@
 [submodule "external/rcheevos"]
 	path = external/rcheevos
 	url = https://github.com/RetroAchievements/rcheevos.git
+[submodule "external/nanosvg"]
+	path = external/nanosvg
+	url = https://github.com/memononen/nanosvg.git

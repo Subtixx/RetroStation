@@ -5,8 +5,8 @@
 #include "resources/ResourceManager.h"
 #include "ImageIO.h"
 #include <loguru.hpp>
-#include <nanosvg/nanosvg.h>
-#include <nanosvg/nanosvgrast.h>
+#include <nanosvg.h>
+#include <nanosvgrast.h>
 #include <string.h>
 #include <algorithm>
 #include <vlc/vlc.h>

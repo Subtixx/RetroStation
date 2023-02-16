@@ -11,7 +11,11 @@
 #include <mutex>
 #include "renderers/Renderer.h"
 #include "Paths.h"
-#include "nanosvg/nanosvg.h"
+
+#define NANOSVG_IMPLEMENTATION 1
+#define NANOSVGRAST_IMPLEMENTATION 1
+#include <nanosvg.h>
+#include <nanosvgrast.h>
 
 unsigned char* ImageIO::loadFromMemoryRGBA32(const unsigned char * data, const size_t size, size_t & width, size_t & height, MaxSizeInfo* maxSize, Vector2i* baseSize, Vector2i* packedSize, int subImageIndex)
 {
