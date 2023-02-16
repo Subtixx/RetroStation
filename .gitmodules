@@ -16,3 +16,6 @@
 [submodule "external/nanosvg"]
 	path = external/nanosvg
 	url = https://github.com/memononen/nanosvg.git
+[submodule "external/libretro-common"]
+	path = external/libretro-common
+	url = https://github.com/libretro/libretro-common.git
