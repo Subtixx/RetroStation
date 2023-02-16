@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="emulationstation" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--home=&quot;$CMakeCurrentBuildDir$&quot; --debug --resolution=&quot;1280 720&quot; --windowed" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/bin" PASS_PARENT_ENVS_2="true" PROJECT_NAME="emulationstation-all" TARGET_NAME="emulationstation" CONFIG_NAME="linux-gcc-debug" RUN_TARGET_PROJECT_NAME="emulationstation-all" RUN_TARGET_NAME="emulationstation">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
