@@ -3,7 +3,7 @@
 
 <div align="center">
   <a href="https://github.com/Subtixx/RetroStation">
-    <img width="960" src="./resources/splash.png" alt="@Subtixx/RetroStation's logo">
+    <img width="960" src="./data/resources/splash.png" alt="@Subtixx/RetroStation's logo">
   </a>
   <br>
   <a href="https://github.com/Subtixx/RetroStation/issues">
@@ -56,7 +56,7 @@
 
 <!-- Change your small logo -->
 <a href="https://github.com/Subtixx/RetroStation">
-  <img alt="@Subtixx/RetroStation's brand logo without text" align="right" src="./resources/small_logo.png" width="18%" />
+  <img alt="@Subtixx/RetroStation's brand logo without text" align="right" src="./data/resources/small_logo.png" width="18%" />
 </a>
 
 
