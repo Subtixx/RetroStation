@@ -19,3 +19,6 @@
 [submodule "external/libretro-common"]
 	path = external/libretro-common
 	url = https://github.com/libretro/libretro-common.git
+[submodule "external/breakpad"]
+	path = external/breakpad
+	url = https://github.com/google/breakpad.git

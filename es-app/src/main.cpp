@@ -61,11 +61,19 @@
 #include <Windows.h>
 #include <direct.h>
 #define PATH_MAX MAX_PATH
+#include "client/windows/handler/exception_handler.h"
+#else
+#include "client/linux/handler/exception_handler.h"
 #endif
 
 std::string gPlayVideo;
 int gPlayVideoDuration = 0;
 bool enable_startup_game = true;
+
+static bool dumpCallback(const google_breakpad::MinidumpDescriptor &descriptor, void *context, bool succeeded) {
+    printf("Dump path: %s\n", descriptor.path());
+    return succeeded;
+}
 
 bool verifyHomeFolderExists() {
     // make sure the config directory exists
@@ -234,6 +242,9 @@ void launchStartupGame() {
 }
 
 int main(int argc, char *argv[]) {
+    google_breakpad::MinidumpDescriptor descriptor("/tmp");
+    google_breakpad::ExceptionHandler eh(descriptor, NULL, dumpCallback, NULL, true, -1);
+
     loguru::init(argc, argv);
 
     // signal(SIGABRT, signalHandler);

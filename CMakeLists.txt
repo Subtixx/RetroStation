@@ -291,6 +291,7 @@ set(COMMON_INCLUDE_DIRS
     ${RAPIDJSON_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/external/id3v2lib/include
     ${CMAKE_SOURCE_DIR}/external/nanosvg/src
+    ${CMAKE_SOURCE_DIR}/external/breakpad/src
     ${CMAKE_SOURCE_DIR}/external
     ${CMAKE_SOURCE_DIR}/es-core/src
 )

@@ -38,6 +38,8 @@ endif()
 find_package(Lua REQUIRED)
 
 set(ADDITIONAL_LIBRARIES
+		breakpad
+		breakpad_common
 		)
 LIST(APPEND ADDITIONAL_LIBRARIES ${LUA_LIBRARIES})
 
