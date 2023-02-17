@@ -247,12 +247,12 @@ int main(int argc, char *argv[]) {
 
     loguru::init(argc, argv);
 
-    loguru::set_verbosity_to_name_callback([](int verbosity) {
+    loguru::set_verbosity_to_name_callback([](int verbosity) -> const char * {
         if (verbosity == loguru::Verbosity_1) {
             return "DEBUG";
         }
 
-        return loguru::get_verbosity_name(verbosity);
+        return nullptr;
     });
 
     // signal(SIGABRT, signalHandler);
@@ -330,7 +330,7 @@ int main(int argc, char *argv[]) {
     auto logPath = Paths::getUserEmulationStationPath() + "/es.log";
 
     loguru::add_file(logPath.c_str(), loguru::Append, verbosity);
-    LOG_S(INFO) << "EmulationStation - v" << VERSION_STRING << ", built " << __DATE__ << " " << __TIME__;
+    LOG_S(INFO) << "EmulationStation - " << VERSION_STRING << ", built " << __DATE__ << " " << __TIME__;
 
     // always close the log on exit
     atexit(&onExit);
