@@ -29,7 +29,6 @@
 #include "AudioManager.h"
 #include "CollectionSystemManager.h"
 #include "CommandLineArguments.h"
-#include "EmulationStation.h"
 #include "Genres.h"
 #include "ImageIO.h"
 #include "InputConfig.h"
@@ -331,7 +330,7 @@ int main(int argc, char *argv[]) {
     auto logPath = Paths::getUserEmulationStationPath() + "/es.log";
 
     loguru::add_file(logPath.c_str(), loguru::Append, verbosity);
-    LOG_S(INFO) << "EmulationStation - v" << PROGRAM_VERSION_STRING << ", built " << PROGRAM_BUILT_STRING;
+    LOG_S(INFO) << "EmulationStation - v" << VERSION_STRING << ", built " << __DATE__ << " " << __TIME__;
 
     // always close the log on exit
     atexit(&onExit);

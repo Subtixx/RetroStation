@@ -11,6 +11,7 @@ if (FEATURE_DOCS)
     if (DOXYGEN_FOUND)
         set(DOXYGEN_PROJECT_NAME "RetroStation")
         set(DOXYGEN_PROJECT_BRIEF "RetroStation is a graphical front-end for emulators, game engines and media players.")
+        set(DOXYGEN_PROJECT_NUMBER ${PROJECT_VERSION})
         SET(DOXYGEN_USE_MDFILE_AS_MAINPAGE "../README.md")
         set(DOXYGEN_OUTPUT_DIRECTORY doxygen)
         set(DOXYGEN_GENERATE_HTML YES)
@@ -19,37 +20,43 @@ if (FEATURE_DOCS)
         set(DOXYGEN_FULL_SIDEBAR YES)
         set(DOXYGEN_SOURCE_BROWSER YES)
         set(DOXYGEN_HTML_EXTRA_STYLESHEET
+                ${CMAKE_SOURCE_DIR}/external/awesome-code-element/styles/default.css
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome.css
                 ${CMAKE_SOURCE_DIR}/external/doxygen/custom.css
                 )
         set(DOXYGEN_HTML_HEADER ${CMAKE_SOURCE_DIR}/external/doxygen/header.html)
+        set(DOXYGEN_HTML_FOOTER ${CMAKE_SOURCE_DIR}/external/doxygen/footer.html)
         set(DOXYGEN_HTML_EXTRA_FILES
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome-interactive-toc.js
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome-paragraph-link.js
                 ${CMAKE_SOURCE_DIR}/external/doxygen-awesome-css/doxygen-awesome-tabs.js
+                ${CMAKE_SOURCE_DIR}/external/awesome-code-element/awesome-code-element.js
+                ${CMAKE_SOURCE_DIR}/external/doxygen/highlight.min.js
                 )
-        #set(DOXYGEN_HTML_COLORSTYLE LIGHT)
-        #        set( DOXYGEN_COLLABORATION_GRAPH YES )
-        #        set( DOXYGEN_CLASS_DIAGRAMS YES )
-        #        set( DOXYGEN_HIDE_UNDOC_RELATIONS NO )
-        #        set( DOXYGEN_HAVE_DOT YES )
-        #        set( DOXYGEN_CLASS_GRAPH YES )
-        #        set( DOXYGEN_CALL_GRAPH YES )
-        #        set( DOXYGEN_CALLER_GRAPH YES )
-        #        set( DOXYGEN_COLLABORATION_GRAPH YES )
-        #        set( DOXYGEN_BUILTIN_STL_SUPPORT YES )
-        #        set( DOXYGEN_EXTRACT_PRIVATE YES )
-        #        set( DOXYGEN_EXTRACT_PACKAGE YES )
-        #        set( DOXYGEN_EXTRACT_STATIC YES )
-        #        set( DOXYGEN_EXTRACT_LOCALMETHODS YES )
-        #        set( DOXYGEN_UML_LOOK YES )
-        #        set( DOXYGEN_UML_LIMIT_NUM_FIELDS 50 )
-        #        set( DOXYGEN_TEMPLATE_RELATIONS YES )
-        #        set( DOXYGEN_DOT_GRAPH_MAX_NODES 100 )
-        #        set( DOXYGEN_MAX_DOT_GRAPH_DEPTH 0 )
-        #        set( DOXYGEN_DOT_TRANSPARENT YES )
+        set( DOXYGEN_HAVE_DOT YES )
+        set( DOXYGEN_INTERACTIVE_SVG YES )
+        set( DOXYGEN_DOT_FORMAT svg )
+
+        set( DOXYGEN_COLLABORATION_GRAPH YES )
+        set( DOXYGEN_CLASS_DIAGRAMS YES )
+        set( DOXYGEN_HIDE_UNDOC_RELATIONS NO )
+        set( DOXYGEN_CLASS_GRAPH YES )
+        set( DOXYGEN_CALL_GRAPH YES )
+        set( DOXYGEN_CALLER_GRAPH YES )
+        set( DOXYGEN_COLLABORATION_GRAPH YES )
+        set( DOXYGEN_BUILTIN_STL_SUPPORT YES )
+        #set( DOXYGEN_EXTRACT_PRIVATE YES )
+        set( DOXYGEN_EXTRACT_PACKAGE YES )
+        set( DOXYGEN_EXTRACT_STATIC YES )
+        set( DOXYGEN_EXTRACT_LOCALMETHODS YES )
+        set( DOXYGEN_UML_LOOK YES )
+        set( DOXYGEN_UML_LIMIT_NUM_FIELDS 50 )
+        set( DOXYGEN_TEMPLATE_RELATIONS YES )
+        set( DOXYGEN_DOT_GRAPH_MAX_NODES 100 )
+        set( DOXYGEN_MAX_DOT_GRAPH_DEPTH 0 )
+        set( DOXYGEN_DOT_TRANSPARENT YES )
         set(DOXYGEN_EXCLUDE_PATTERNS
                 "external/*"
                 "data/*"
@@ -63,8 +70,6 @@ if (FEATURE_DOCS)
                 es-app/src
                 es-app/include
                 )
-
-        MESSAGE(WARNING "ATTENTION: The doxygen documentation is very very big! (>3GB)")
     else (DOXYGEN_FOUND)
         message("Doxygen need to be installed to generate the doxygen documentation")
     endif (DOXYGEN_FOUND)

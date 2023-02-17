@@ -25,3 +25,9 @@
 [submodule "external/doxygen-awesome-css"]
 	path = external/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "external/awesome-code-element"]
+	path = external/awesome-code-element
+	url = https://github.com/GuillaumeDua/awesome-code-element.git
+[submodule "external/cmake-git-semver"]
+	path = external/cmake-git-semver
+	url = https://github.com/Subtixx/cmake-git-semver.git

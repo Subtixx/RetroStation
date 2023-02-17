@@ -5,7 +5,6 @@
 #include "AudioManager.h"
 #include "VolumeControl.h"
 #include "InputManager.h"
-#include "EmulationStation.h"
 #include "SystemConf.h"
 #include "platform.h"
 #include "Sound.h"
@@ -179,7 +178,7 @@ std::string ApiSystem::getVersion(bool extra)
 		return localVersion;
 	}
 
-	return PROGRAM_VERSION_STRING;	
+	return VERSION_STRING;
 }
 
 std::string ApiSystem::getApplicationName()

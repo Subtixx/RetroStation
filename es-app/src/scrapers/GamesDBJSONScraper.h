@@ -1,8 +1,4 @@
 #pragma once
-#ifndef ES_APP_SCRAPERS_GAMES_DB_JSON_SCRAPER_H
-#define ES_APP_SCRAPERS_GAMES_DB_JSON_SCRAPER_H
-
-#include "EmulationStation.h"
 
 #ifdef GAMESDB_APIKEY
 
@@ -47,4 +43,3 @@ class TheGamesDBJSONRequest : public ScraperHttpRequest
 };
 
 #endif
-#endif // ES_APP_SCRAPERS_GAMES_DB_JSON_SCRAPER_H

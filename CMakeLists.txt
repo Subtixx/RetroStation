@@ -35,7 +35,36 @@ include("./Features.cmake")
 
 run_vcpkg()
 
-project(emulationstation-all VERSION 1.0.0 LANGUAGES C CXX)
+SET(PROJECT_NAME "RetroStation")
+SET(VERSION_UPDATE_FROM_GIT ON)
+find_package(Git REQUIRED)
+
+#${PROJECT_NAME}_VERSION_STRING - Version string without metadata such as "v2.0.0" or "v1.2.41-beta.1". This should correspond to the most recent git tag.
+#${PROJECT_NAME}_VERSION_STRING_FULL - Version string with metadata such as "v2.0.0+3.a23fbc" or "v1.3.1-alpha.2+4.9c4fd1"
+#${PROJECT_NAME}_VERSION - Same as ${PROJECT_NAME}_VERSION_STRING, without the preceding 'v', e.g. "2.0.0" or "1.2.41-beta.1"
+#${PROJECT_NAME}_VERSION_MAJOR - Major version integer (e.g. 2 in v2.3.1-RC.2+21.ef12c8)
+#${PROJECT_NAME}_VERSION_MINOR - Minor version integer (e.g. 3 in v2.3.1-RC.2+21.ef12c8)
+#${PROJECT_NAME}_VERSION_PATCH - Patch version integer (e.g. 1 in v2.3.1-RC.2+21.ef12c8)
+#${PROJECT_NAME}_VERSION_TWEAK - Tweak version string (e.g. "RC.2" in v2.3.1-RC.2+21.ef12c8)
+#${PROJECT_NAME}_VERSION_AHEAD - How many commits ahead of last tag (e.g. 21 in v2.3.1-RC.2+21.ef12c8)
+#${PROJECT_NAME}_VERSION_GIT_SHA - The git sha1 of the most recent commit (e.g. the "ef12c8" in v2.3.1-RC.2+21.ef12c8)
+include("external/cmake-git-semver/GetVersionFromGitTag.cmake")
+
+add_compile_definitions(
+        VERSION_MAJOR=${${PROJECT_NAME}_VERSION_MAJOR}
+        VERSION_MINOR=${${PROJECT_NAME}_VERSION_MINOR}
+        VERSION_PATCH=${${PROJECT_NAME}_VERSION_PATCH}
+        VERSION_TWEAK=${${PROJECT_NAME}_VERSION_TWEAK}
+        VERSION_AHEAD=${${PROJECT_NAME}_VERSION_AHEAD}
+        VERSION_GIT_SHA="${${PROJECT_NAME}_VERSION_GIT_SHA}"
+        VERSION_STRING="${${PROJECT_NAME}_VERSION_STRING_FULL}"
+)
+
+project(
+        RetroStation-all
+        VERSION ${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}.${${PROJECT_NAME}_VERSION_PATCH}.${${PROJECT_NAME}_VERSION_TWEAK}
+        LANGUAGES C CXX
+)
 
 if(FEATURE_TESTS)
     enable_testing()

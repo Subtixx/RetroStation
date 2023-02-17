@@ -23,7 +23,6 @@
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
-#include "EmulationStation.h"
 #include "Scripting.h"
 #include "SystemData.h"
 #include "VolumeControl.h"
@@ -243,7 +242,7 @@ void GuiMenu::openConfigInput()
 
 void GuiMenu::addVersionInfo()
 {
-	std::string  buildDate = (Settings::getInstance()->getBool("Debug") ? std::string( "   (" + Utils::String::toUpper(PROGRAM_BUILT_STRING) + ")") : (""));
+	std::string  buildDate = (Settings::getInstance()->getBool("Debug") ? std::string( "   (" + Utils::String::toUpper(VERSION_STRING) + ")") : (""));
 
 	auto theme = ThemeData::getMenuTheme();
 

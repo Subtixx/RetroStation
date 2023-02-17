@@ -1,14 +1,10 @@
 #pragma once
 
-#ifndef ES_APP_SCRAPERS_SCREEN_SCRAPER_H
-#define ES_APP_SCRAPERS_SCREEN_SCRAPER_H
-
 #include "scrapers/Scraper.h"
-#include "EmulationStation.h"
 
 #if defined(SCREENSCRAPER_DEV_LOGIN)
 
-#define VERSIONED_SOFT_NAME std::string(SCREENSCRAPER_SOFTNAME) + " " + static_cast<std::string>(PROGRAM_VERSION_STRING)
+constexpr const char* VERSIONED_SOFT_NAME = "RetroStation " VERSION_STRING;
 
 namespace pugi { class xml_document; }
 
@@ -95,5 +91,3 @@ private:
 	std::string mFileName;
 };
 #endif
-
-#endif // ES_APP_SCRAPERS_SCREEN_SCRAPER_H

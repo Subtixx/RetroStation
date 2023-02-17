@@ -1,5 +1,3 @@
-#include "EmulationStation.h"
-
 #include "windows.h"
 
 VS_VERSION_INFO VERSIONINFO
