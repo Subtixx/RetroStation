@@ -14,5 +14,19 @@
     "hedley"
   ],
   "features": {
+    "tests": {
+      "description": "Build the tests of the package's tests",
+      "dependencies": [
+        {
+          "name": "catch2",
+          "version>=": "2.13.7"
+        }
+      ]
+    },
+    "docs": {
+      "description": "Build the documentation of the package",
+      "dependencies": [
+      ]
+    }
   }
 }

@@ -1,0 +1,97 @@
+/*
+ * Copyright (c) Subtixx (Dominic Hock) 2023.
+ * Copyright (c) 2014 Alec Lofquist
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ */
+
+/* DRACULA THEME! */
+html, html.dark-mode {
+    --primary-color: #ff79c6 !important;
+    --primary-dark-color: #bd93f9 !important;
+    --primary-light-color: #282a36 !important;
+
+    --page-background-color: #282a36;
+    --page-foreground-color: #f8f8f2;
+    --page-secondary-foreground-color: #6272a4;
+
+    --separator-color: #44475a;
+
+    --border-radius-large: 0;
+    --border-radius-small: 0;
+    --border-radius-medium: 0;
+
+    --box-shadow: 0;
+
+    /** DRACULA COLORS :) **/
+    /*--warning-color: #f8d7da;
+    --warning-color-dark: #b61825;
+    --warning-color-darker: #75070f;
+    --note-color: #faf3d8;
+    --note-color-dark: #f3a600;
+    --note-color-darker: #5f4204;
+    --todo-color: #e4f3ff;
+    --todo-color-dark: #1879C4;
+    --todo-color-darker: #274a5c;
+    --deprecated-color: #ecf0f3;
+    --deprecated-color-dark: #5b6269;
+    --deprecated-color-darker: #43454a;
+    --bug-color: #e4dafd;
+    --bug-color-dark: #5b2bdd;
+    --bug-color-darker: #2a0d72;
+    --invariant-color: #d8f1e3;
+    --invariant-color-dark: #44b86f;
+    --invariant-color-darker: #265532;*/
+    --warning-color: #ff5555;
+    --warning-color-dark: #ff5555;
+    --warning-color-darker: #ff5555;
+    --note-color: #f1fa8c;
+    --note-color-dark: #f1fa8c;
+    --note-color-darker: #f1fa8c;
+    --todo-color: #8be9fd;
+    --todo-color-dark: #8be9fd;
+    --todo-color-darker: #8be9fd;
+    --deprecated-color: #6272a4;
+    --deprecated-color-dark: #6272a4;
+    --deprecated-color-darker: #6272a4;
+    --bug-color: #ff79c6;
+    --bug-color-dark: #ff79c6;
+    --bug-color-darker: #ff79c6;
+    --invariant-color: #50fa7b;
+    --invariant-color-dark: #50fa7b;
+    --invariant-color-darker: #50fa7b;
+
+    --code-background: #282a36;
+
+    /* blockquote colors */
+    --blockquote-background: #f8f9fa;
+    --blockquote-foreground: #636568;
+
+    /* table colors */
+    --tablehead-background: #f1f1f1;
+
+    --fragment-background: #282a36;
+    --fragment-foreground: #f8f8f2;
+    --fragment-keyword: #ff79c6;
+    --fragment-keywordtype: #8be9fd;
+    --fragment-keywordflow: #50fa7b;
+    --fragment-token: #f1fa8c;
+    --fragment-comment: #6272a4;
+    --fragment-link: #bd93f9;
+    --fragment-preprocessor: #f1fa8c;
+    --fragment-linenumber-color: #6272a4;
+    --fragment-linenumber-background: #282a36;
+
+    --tooltip-background-color: #282a36;
+    --tooltip-foreground-color: #f8f8f2;
+
+    --side-nav-background: #282a36;
+}

@@ -30,9 +30,36 @@ FetchContent_Declare(_project_options URL https://github.com/aminya/project_opti
 FetchContent_MakeAvailable(_project_options)
 include(${_project_options_SOURCE_DIR}/Index.cmake)
 
+# Define the features of the project
+include("./Features.cmake")
+
 run_vcpkg()
 
 project(emulationstation-all VERSION 1.0.0 LANGUAGES C CXX)
+
+if(FEATURE_TESTS)
+    enable_testing()
+
+    if(NOT
+            "${CMAKE_SYSTEM_NAME}"
+            STREQUAL
+            "Windows")
+        set(ENABLE_SANITIZER_ADDRESS "ENABLE_SANITIZER_ADDRESS")
+        set(ENABLE_SANITIZER_UNDEFINED_BEHAVIOR "ENABLE_SANITIZER_UNDEFINED_BEHAVIOR")
+    else()
+        # or it is MSVC and has run vcvarsall
+        string(FIND "$ENV{PATH}" "$ENV{VSINSTALLDIR}" index_of_vs_install_dir)
+        if(MSVC AND "${index_of_vs_install_dir}" STREQUAL "-1")
+            set(ENABLE_SANITIZER_ADDRESS "ENABLE_SANITIZER_ADDRESS")
+        endif()
+    endif()
+endif()
+
+if(FEATURE_DOCS)
+    set(ENABLE_DOXYGEN "ENABLE_DOXYGEN")
+else()
+    set(ENABLE_DOXYGEN OFF)
+endif()
 
 project_options(
         ENABLE_CACHE
