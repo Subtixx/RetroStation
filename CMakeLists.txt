@@ -291,6 +291,11 @@ set(COMMON_INCLUDE_DIRS
     ${RAPIDJSON_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/external/id3v2lib/include
     ${CMAKE_SOURCE_DIR}/external/nanosvg/src
+    ${CMAKE_SOURCE_DIR}/external/pugixml/src
+    ${CMAKE_SOURCE_DIR}/external/rapidjson/include
+    ${CMAKE_SOURCE_DIR}/external/cheevos/include
+    ${CMAKE_SOURCE_DIR}/external/libretro-common/include
+    ${CMAKE_SOURCE_DIR}/external/rcheevos/include
     ${CMAKE_SOURCE_DIR}/external/breakpad/src
     ${CMAKE_SOURCE_DIR}/external
     ${CMAKE_SOURCE_DIR}/es-core/src
@@ -361,7 +366,6 @@ endif()
 find_package(flac CONFIG REQUIRED)
 find_package(ZLIB REQUIRED)
 
-
 find_package(fmt CONFIG REQUIRED)
 # Compile loguru with streams and fmtlib
 add_definitions(-DLOGURU_WITH_STREAMS=1 -DLOGURU_WITH_FMTLIB=1)
@@ -371,6 +375,13 @@ find_package(Microsoft.GSL CONFIG REQUIRED)
 
 find_path(HEDLEY_INCLUDE_DIRS "hedley.h")
 LIST(APPEND COMMON_INCLUDE_DIRS ${HEDLEY_INCLUDE_DIRS})
+
+# for google breakpad
+add_definitions(-D__STDC_FORMAT_MACROS)
+include_directories(
+        ${CMAKE_SOURCE_DIR}/external/breakpad/src
+        ${CMAKE_SOURCE_DIR}/external/libbreakpad
+)
 
 set(COMMON_LIBRARIES
     ${FREETYPE_LIBRARIES}
@@ -390,7 +401,7 @@ set(COMMON_LIBRARIES
     ZLIB::ZLIB
     loguru
     fmt::fmt
-        Microsoft.GSL::GSL
+    Microsoft.GSL::GSL
 )
 
 if(UDEV_FOUND)

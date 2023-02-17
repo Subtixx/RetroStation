@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/pointer.h>
-#include <libcheevos/cheevos.h>
+#include <cheevos.h>
 
 #include "LocaleES.h"
 

@@ -34,6 +34,7 @@
 #include <sstream>
 
 #include "Paths.h"
+#include "md5.h"
 
 namespace Utils
 {
