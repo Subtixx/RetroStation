@@ -34,7 +34,6 @@
 #include "InputConfig.h"
 #include "InputManager.h"
 #include "LocaleES.h"
-#include "Log.h"
 #include "MameNames.h"
 #include "NetworkThread.h"
 #include "Paths.h"
@@ -94,8 +93,6 @@ bool verifyHomeFolderExists() {
 bool loadSystemConfigFile(Window *window, const char **errorString) {
     *errorString = nullptr;
 
-    StopWatch const stopWatch("loadSystemConfigFile :", LogDebug);
-
     ImageIO::loadImageCache();
 
     if (!SystemData::loadConfig(window)) {
@@ -121,7 +118,7 @@ bool loadSystemConfigFile(Window *window, const char **errorString) {
 
 // called on exit, assuming we get far enough to have the log initialized
 void onExit() {
-    Log::close();
+    loguru::shutdown();
 }
 
 #ifdef WIN32
@@ -316,9 +313,6 @@ int main(int argc, char *argv[]) {
         playVideo();
         return 0;
     }
-
-    // start the logger
-    Log::init();
 
     // verbosity
     loguru::Verbosity verbosity = loguru::Verbosity_INFO;
@@ -548,8 +542,6 @@ int main(int argc, char *argv[]) {
 #endif
 
         Renderer::swapBuffers();
-
-        Log::flush();
     }
 
     if (isFastShutdown()) {
@@ -585,6 +577,8 @@ int main(int argc, char *argv[]) {
     processQuitMode();
 
     LOG_S(INFO) << "EmulationStation cleanly shutting down.";
+
+    loguru::shutdown();
 
     return 0;
 }

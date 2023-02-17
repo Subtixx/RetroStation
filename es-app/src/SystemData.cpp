@@ -5,7 +5,6 @@
 #include "FileSorts.h"
 #include "Gamelist.h"
 #include "LocaleES.h"
-#include "Log.h"
 #include "Paths.h"
 #include "SaveStateRepository.h"
 #include "Settings.h"
@@ -146,8 +145,6 @@ void SystemData::removeMultiDiskContent(std::unordered_map<std::string, FileData
     if (mEnvData == nullptr || !(mEnvData->isValidExtension(".cue") || mEnvData->isValidExtension(".ccd") ||
                                  mEnvData->isValidExtension(".gdi") || mEnvData->isValidExtension(".m3u")))
         return;
-
-    StopWatch stopWatch("RemoveMultiDiskContent - " + getName() + " :", LogDebug);
 
     std::vector<std::string> files;
 

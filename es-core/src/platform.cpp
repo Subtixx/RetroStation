@@ -6,7 +6,6 @@
 #else
 #include <unistd.h>
 #endif
-#include "Log.h"
 #include "Paths.h"
 #include "Scripting.h"
 #include "Window.h"
@@ -124,9 +123,7 @@ int runSystemCommand(const std::string &cmd_utf8, const std::string &name, Windo
 #else
     std::string cmdOutput = " 2> " + Utils::FileSystem::combine(Paths::getLogPath(), "es_launch_stderr.log") +
                             " | head -300 > " + Utils::FileSystem::combine(Paths::getLogPath(), "es_launch_stdout.log");
-    if (!Log::enabled()) {
-        cmdOutput = " 2> /dev/null | head -300 > /dev/null";
-}
+    //cmdOutput = " 2> /dev/null | head -300 > /dev/null";
 
     return system((cmd_utf8 + cmdOutput).c_str());
 #endif

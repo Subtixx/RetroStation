@@ -30,7 +30,6 @@
 #include <algorithm>
 #include "platform.h"
 #include <loguru.hpp>
-#include "Log.h"
 
 #include "SystemConf.h"
 #include "ApiSystem.h"
@@ -508,7 +507,21 @@ void GuiMenu::openDeveloperSettings()
 	{
 		if (Settings::getInstance()->setString("LogLevel", logLevel->getSelected() == "default" ? "" : logLevel->getSelected()))
 		{
-			Log::init();
+            if (logLevel->getSelected() == "disabled")
+            {
+                loguru::g_stderr_verbosity = loguru::Verbosity_OFF;
+            }else if (logLevel->getSelected() == "warning")
+            {
+                loguru::g_stderr_verbosity = loguru::Verbosity_WARNING;
+            }else if (logLevel->getSelected() == "error")
+            {
+                loguru::g_stderr_verbosity = loguru::Verbosity_ERROR;
+            }else if (logLevel->getSelected() == "debug")
+            {
+                loguru::g_stderr_verbosity = loguru::Verbosity_MAX;
+            }else{
+                loguru::g_stderr_verbosity = loguru::Verbosity_INFO;
+            }
 		}
 	});
 
