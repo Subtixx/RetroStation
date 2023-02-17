@@ -43,12 +43,43 @@
     <script type="text/javascript" src="$relpath^doxygen-awesome-interactive-toc.js"></script>
     <script type="text/javascript" src="$relpath^doxygen-awesome-paragraph-link.js"></script>
     <script type="text/javascript" src="$relpath^doxygen-awesome-tabs.js"></script>
+    <script type="text/javascript" src="$relpath^highlight.min.js"></script>
+    <script type="module" src="$relpath^awesome-code-element.js"></script>
     <script type="text/javascript">
         DoxygenAwesomeDarkModeToggle.init()
         DoxygenAwesomeFragmentCopyButton.init()
         DoxygenAwesomeInteractiveToc.init()
         DoxygenAwesomeParagraphLink.init()
         DoxygenAwesomeTabs.init()
+
+        // hljs configuration
+        hljs.configure({
+            ignoreUnescapedHTML: true,
+            throwUnescapedHTML: false,
+            languages: ['cpp', 'c', 'bash', 'cmake', 'markdown', 'json', 'plain-text', 'HTML']
+        })
+    </script>
+    <script type="module">
+        import ace from "./awesome-code-element.js";
+        ace.API.configure({
+            compatibility : {
+                doxygen: true
+            },
+            hljs : {
+                version: '11.7.0'
+            },
+            CE : new ace.API.CE_ConfigurationManager([
+                [
+                    'cpp',
+                    {
+                        language: 'c++',
+                        compiler_id: 'clang1500',
+                        default_options: '-O2 -std=c++20'
+                    }
+                ]
+            ])
+        })
+        ace.API.initialize();
     </script>
 </head>
 <body>

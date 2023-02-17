@@ -95,3 +95,9 @@ html, html.dark-mode {
 
     --side-nav-background: #282a36;
 }
+
+span.mlabel {
+    border-radius: 0 !important;
+    color: #282a36 !important;
+    font-weight: bold;
+}
