@@ -1,9 +1,9 @@
 #include "Window.h"
 
+#include "Debug.h"
 #include "AudioManager.h"
 #include "InputManager.h"
 #include "LocaleES.h"
-#include "Log.h"
 #include "PowerSaver.h"
 #include "Scripting.h"
 #include "Splash.h"
@@ -1083,7 +1083,7 @@ void Window::processPostedFunctions()
 
 	for (auto func : functions)
     {
-        TRYCATCH("processPostedFunction", func.func())
+        Debug::TryCatch([&] { func.func(); }, "processPostedFunction");
     }
 }
 

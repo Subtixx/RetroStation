@@ -1,18 +1,18 @@
 #include "GuiComponent.h"
 
-#include "animations/Animation.h"
-#include "animations/AnimationController.h"
-#include "renderers/Renderer.h"
-#include <loguru.hpp>
+#include "Debug.h"
+#include "Sound.h"
 #include "ThemeData.h"
 #include "Window.h"
-#include <algorithm>
-#include "animations/LambdaAnimation.h"
 #include "anim/StoryboardAnimator.h"
+#include "animations/Animation.h"
+#include "animations/AnimationController.h"
+#include "animations/LambdaAnimation.h"
 #include "components/ScrollableContainer.h"
 #include "math/Vector2i.h"
-#include "Sound.h"
-#include "Log.h"
+#include "renderers/Renderer.h"
+#include <algorithm>
+#include <loguru.hpp>
 
 bool GuiComponent::isLaunchTransitionRunning = false;
 
@@ -48,7 +48,10 @@ bool GuiComponent::input(InputConfig* config, Input input)
 	for (auto it = mChildren.cbegin(), next_it = it; it != mChildren.cend(); it = next_it)
 	{
 		++next_it;
-		TRYCATCH("GuiComponent::input", if ((*it)->input(config, input)) return true)
+
+        if(Debug::TryCatch(((std::function<bool()>)[&] { return ((*it)->input(config, input)); }), "GuiComponent::input")) {
+            return true;
+        }
 	}	
 
 	return false;
@@ -80,7 +83,7 @@ void GuiComponent::updateChildren(int deltaTime)
 	for (auto it = mChildren.cbegin(), next_it = it; it != mChildren.cend(); it = next_it)
 	{
 		++next_it;
-		TRYCATCH("GuiComponent::updateChildren", (*it)->update(deltaTime))
+        Debug::TryCatch(((std::function<void()>)[&] { (*it)->update(deltaTime); }), "GuiComponent::updateChildren");
 	}
 }
 
@@ -112,9 +115,11 @@ void GuiComponent::render(const Transform4x4f& parentTrans)
 
 void GuiComponent::renderChildren(const Transform4x4f& transform) const
 {
-	for (auto child : mChildren)
-		if (child->mVisible)
-			TRYCATCH("GuiComponent::renderChildren", child->render(transform));
+	for (auto *child : mChildren) {
+        if (child->mVisible) {
+            Debug::TryCatch(((std::function<void()>)[&] { child->render(transform); }), "GuiComponent::renderChildren");
+        }
+    }
 }
 
 Vector3f GuiComponent::getPosition() const

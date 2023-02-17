@@ -4,17 +4,16 @@
 #include <Windows.h>
 #endif
 
-#include "platform.h"
+#include "CollectionSystemManager.h"
+#include "FileData.h"
 #include "Gamelist.h"
 #include "SystemData.h"
-#include "FileData.h"
-#include "views/ViewController.h"
-#include "CollectionSystemManager.h"
+#include "platform.h"
+#include "scrapers/Scraper.h"
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
 #include "utils/md5.h"
-#include "scrapers/Scraper.h"
-#include <unordered_map>
+#include "views/ViewController.h"
 
 void HttpApi::getSystemDataJson(rapidjson::PrettyWriter<rapidjson::StringBuffer>& writer, SystemData* sys)
 {
@@ -96,10 +95,18 @@ std::string HttpApi::getSystemList()
 
 std::string HttpApi::getFileDataId(FileData* game)
 {
-	MD5 md5;
-	md5.update(game->getPath().c_str(), game->getPath().size());
-	md5.finalize();
-	return md5.hexdigest();
+    MD5_CTX md5;
+    MD5_Init(&md5);
+    MD5_Update(&md5, game->getPath().c_str(), game->getPath().size());
+    unsigned char digest[16];
+    MD5_Final(digest, &md5);
+
+    std::array<char, 33> mdString;
+    for (int i = 0; i < 16; i++) {
+        sprintf(&mdString[i*2], "%02x", (unsigned int)digest[i]);
+    }
+
+    return {mdString.data(), mdString.size()};
 }
 
 FileData* HttpApi::findFileData(SystemData* system, const std::string& id)
@@ -113,7 +120,7 @@ FileData* HttpApi::findFileData(SystemData* system, const std::string& id)
 		stack.pop();
 
 		for (auto it : current->getChildren())
-		{			
+		{
 			if (it->getType() == FOLDER)
 				stack.push((FolderData*)it);
 			else if (getFileDataId(it) == id)
@@ -152,7 +159,7 @@ void HttpApi::getFileDataJson(rapidjson::PrettyWriter<rapidjson::StringBuffer>& 
 
 			if (mdd.id == MetaDataId::ScraperId)
 				writer.Key("scraperId");
-			else 
+			else
 				writer.Key(mdd.key.c_str());
 
 			writer.String(value.c_str());

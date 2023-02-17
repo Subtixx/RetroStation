@@ -63,6 +63,7 @@
 #define PATH_MAX MAX_PATH
 #include "client/windows/handler/exception_handler.h"
 #else
+#include "Debug.h"
 #include "client/linux/handler/exception_handler.h"
 #endif
 
@@ -108,7 +109,7 @@ bool loadSystemConfigFile(Window *window, const char **errorString) {
 
     if (SystemData::sSystemVector.empty()) {
         LOG_S(ERROR) << "No systems found! Does at least one system have a game present? (check that extensions "
-                         "match!)\n(Also, make sure you've updated your es_systems.cfg for XML!)";
+                        "match!)\n(Also, make sure you've updated your es_systems.cfg for XML!)";
         *errorString = "WE CAN'T FIND ANY SYSTEMS!\n"
                        "CHECK THAT YOUR PATHS ARE CORRECT IN THE SYSTEMS CONFIGURATION FILE, "
                        "AND YOUR GAME DIRECTORY HAS AT LEAST ONE GAME WITH THE CORRECT EXTENSION.\n\n"
@@ -197,7 +198,7 @@ void playVideo() {
             do {
                 if (event.type == SDL_QUIT) {
                     return;
-}
+                }
             } while (SDL_PollEvent(&event) != 0);
         }
 
@@ -209,7 +210,7 @@ void playVideo() {
 
             if (gPlayVideoDuration > 0 && totalTime > gPlayVideoDuration * 100) {
                 break;
-}
+            }
         }
 
         Transform4x4f transform = Transform4x4f::Identity();
@@ -220,7 +221,7 @@ void playVideo() {
 
         if (ApiSystem::getInstance()->isReadyFlagSet()) {
             break;
-}
+        }
     }
 
     window.deinit(true);
@@ -230,7 +231,7 @@ void launchStartupGame() {
     auto gamePath = SystemConf::getInstance()->get("global.bootgame.path");
     if (gamePath.empty() || !Utils::FileSystem::exists(gamePath)) {
         return;
-}
+    }
 
     auto command = SystemConf::getInstance()->get("global.bootgame.cmd");
     if (!command.empty()) {
@@ -247,6 +248,14 @@ int main(int argc, char *argv[]) {
 
     loguru::init(argc, argv);
 
+    loguru::set_verbosity_to_name_callback([](int verbosity) {
+        if (verbosity == loguru::Verbosity_1) {
+            return "DEBUG";
+        }
+
+        return loguru::get_verbosity_name(verbosity);
+    });
+
     // signal(SIGABRT, signalHandler);
     signal(SIGFPE, signalHandler);
     signal(SIGILL, signalHandler);
@@ -258,12 +267,11 @@ int main(int argc, char *argv[]) {
 
     std::locale::global(std::locale("C"));
 
-    if(ParseArguments(argc, argv) != EXIT_SUCCESS)
-    {
+    if (ParseArguments(argc, argv) != EXIT_SUCCESS) {
         return EXIT_FAILURE;
     }
 
-        // only show the console on Windows if HideConsole is false
+    // only show the console on Windows if HideConsole is false
 #ifdef WIN32
     // MSVC has a "SubSystem" option, with two primary options: "WINDOWS" and "CONSOLE".
     // In "WINDOWS" mode, no console is automatically created for us.  This is good,
@@ -365,7 +373,7 @@ int main(int argc, char *argv[]) {
         std::string progressText = _("Loading...");
         if (splashScreenProgress) {
             progressText = _("Loading system config...");
-}
+        }
 
         window.renderSplashScreen(progressText);
     }
@@ -391,7 +399,7 @@ int main(int argc, char *argv[]) {
     if (systemConf->getBool("kodi.enabled", true) && systemConf->getBool("kodi.atstartup")) {
         if (splashScreen) {
             window.closeSplashScreen();
-}
+        }
 
         ApiSystem::getInstance()->launchKodi(&window);
 
@@ -402,8 +410,7 @@ int main(int argc, char *argv[]) {
     }
 #endif
 
-    if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::PDFEXTRACTION))
-    {
+    if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::PDFEXTRACTION)) {
         TextureData::PdfHandler = ApiSystem::getInstance();
     }
 
@@ -426,7 +433,7 @@ int main(int argc, char *argv[]) {
 
     if (errorMsg == nullptr) {
         ViewController::get()->goToStart(true);
-}
+    }
 
     window.closeSplashScreen();
 
@@ -441,7 +448,7 @@ int main(int argc, char *argv[]) {
         AudioManager::getInstance()->changePlaylist(ViewController::get()->getState().getSystem()->getTheme());
     } else {
         AudioManager::getInstance()->playRandomMusic();
-}
+    }
 
 #ifdef WIN32
     DWORD displayFrequency = 60;
@@ -477,14 +484,15 @@ int main(int argc, char *argv[]) {
         if (ps_standby ? SDL_WaitEventTimeout(&event, PowerSaver::getTimeout()) : SDL_PollEvent(&event) != 0) {
             // PowerSaver can push events to exit SDL_WaitEventTimeout immediatly
             // Reset this event's state
-            TRYCATCH("resetRefreshEvent", PowerSaver::resetRefreshEvent());
+
+            Debug::TryCatch([&] { PowerSaver::resetRefreshEvent(); }, "resetRefreshEvent");
 
             do {
-                TRYCATCH("InputManager::parseEvent", InputManager::getInstance()->parseEvent(event, &window));
+                Debug::TryCatch([&] { InputManager::getInstance()->parseEvent(event, &window); }, "InputManager::parseEvent");
 
                 if (event.type == SDL_QUIT) {
                     running = false;
-}
+                }
             } while (SDL_PollEvent(&event) != 0);
 
             // check guns
@@ -494,7 +502,7 @@ int main(int argc, char *argv[]) {
             if (ps_standby) {
                 // show as if continuing from last event
                 lastTime = SDL_GetTicks();
-}
+            }
 
             // reset counter
             ps_time = SDL_GetTicks();
@@ -521,10 +529,15 @@ int main(int argc, char *argv[]) {
         // cap deltaTime if it ever goes negative
         if (deltaTime < 0) {
             deltaTime = 1000;
-}
+        }
 
-        TRYCATCH("Window.update", window.update(deltaTime))
-        TRYCATCH("Window.render", window.render())
+        Debug::TryCatch([&] {
+            window.update(deltaTime);
+        }, "Window.update");
+
+        Debug::TryCatch([&] {
+            window.render();
+        }, "Window.render");
 
 #ifdef WIN32
         int processDuration = SDL_GetTicks() - processStart;
