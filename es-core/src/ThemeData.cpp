@@ -1494,7 +1494,7 @@ void ThemeData::processElement(const pugi::xml_node& root, ThemeElement& element
 		break;
 
 	case COLOR:
-		element.properties[name] = Utils::HtmlColor::parse(str);
+		element.properties[name] = Utils::Color::getColor(str).toInt();
 		break;
 
 	case BOOLEAN:

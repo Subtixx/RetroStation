@@ -1,6 +1,6 @@
 #include "math/Misc.h"
 
-#include <math.h>
+#include <cmath>
 
 namespace Math
 {

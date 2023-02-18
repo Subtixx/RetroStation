@@ -10,4 +10,4 @@ add_executable(tests ${TEST_SOURCES} ${TEST_HEADERS})
 
 gtest_discover_tests(tests)
 
-target_link_libraries(tests PRIVATE GTest::gtest GTest::gtest_main)
+target_link_libraries(tests PRIVATE GTest::gtest GTest::gtest_main es-core)

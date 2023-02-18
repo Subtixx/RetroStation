@@ -96,8 +96,8 @@ bool ThemeStoryboard::fromXmlNode(const pugi::xml_node& root, const std::map<std
 
 		case ThemeData::ElementPropertyType::COLOR:			
 			anim = new ThemeColorAnimation();
-			if (node.attribute("from")) anim->from = Utils::HtmlColor::parse(node.attribute("from").as_string());
-			if (node.attribute("to")) anim->to = Utils::HtmlColor::parse(node.attribute("to").as_string());
+			if (node.attribute("from")) anim->from = Utils::Color::getColor(node.attribute("from").as_string()).toInt();
+			if (node.attribute("to")) anim->to = Utils::Color::getColor(node.attribute("to").as_string()).toInt();
 			break;
 
 		case ThemeData::ElementPropertyType::FLOAT:

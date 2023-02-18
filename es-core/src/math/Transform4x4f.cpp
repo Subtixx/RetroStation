@@ -1,6 +1,6 @@
 #include "math/Transform4x4f.h"
 
-const Transform4x4f Transform4x4f::operator*(const Transform4x4f& _other) const
+Transform4x4f Transform4x4f::operator*(const Transform4x4f& _other) const
 {
 	const float* tm = (float*)this;
 	const float* om = (float*)&_other;
@@ -35,7 +35,7 @@ const Transform4x4f Transform4x4f::operator*(const Transform4x4f& _other) const
 
 } // operator*
 
-const Vector3f Transform4x4f::operator*(const Vector3f& _other) const
+Vector3f Transform4x4f::operator*(const Vector3f& _other) const
 {
 	const float* tm = (float*)this;
 	const float* ov = (float*)&_other;
@@ -326,4 +326,8 @@ Transform4x4f& Transform4x4f::round()
 
 	return *this;
 
-} // round
+}
+
+bool Transform4x4f::operator==(const Transform4x4f &_other) const {
+    return r0() == _other.r0() && r1() == _other.r1() && r2() == _other.r2() && r3() == _other.r3();
+}
