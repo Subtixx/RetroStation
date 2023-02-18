@@ -1,9 +1,7 @@
 #pragma once
-#ifndef ES_CORE_MATH_VECTOR4F_H
-#define ES_CORE_MATH_VECTOR4F_H
 
 #include "math/Misc.h"
-#include <assert.h>
+#include <cassert>
 #include <string>
 
 class Vector2f;
@@ -91,5 +89,3 @@ private:
 	float mW;
 
 }; // Vector4f
-
-#endif // ES_CORE_MATH_VECTOR4F_H

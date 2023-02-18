@@ -17,10 +17,7 @@
     "tests": {
       "description": "Build the tests of the package's tests",
       "dependencies": [
-        {
-          "name": "catch2",
-          "version>=": "2.13.7"
-        }
+        "gtest"
       ]
     },
     "docs": {

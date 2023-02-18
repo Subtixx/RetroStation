@@ -12,8 +12,14 @@
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
  */
-#include <catch2/catch.hpp>
 
-TEST_CASE("some_fun") {
+#include <gtest/gtest.h>
 
+#include <string>
+
+TEST(StringTest, StringCompare)
+{
+   std::string str1 = "Hello";
+   std::string str2 = "Hello";
+   EXPECT_EQ(str1, str2);
 }
