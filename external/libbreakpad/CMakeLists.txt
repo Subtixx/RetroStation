@@ -111,15 +111,20 @@ else()
                 ${BREAKPAD_SRC_DIR}/common/linux/breakpad_getcontext.h)
 
         list(APPEND BREAKPADCOMMON_LIB_SRCS
+                ${BREAKPAD_SRC_DIR}/common/linux/scoped_pipe.cc
+                ${BREAKPAD_SRC_DIR}/common/linux/scoped_tmpfile.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/crc32.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/elfutils.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/file_id.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/guid_creator.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/linux_libc_support.cc
                 ${BREAKPAD_SRC_DIR}/common/linux/memory_mapped_file.cc
-                ${BREAKPAD_SRC_DIR}/common/linux/safe_readlink.cc)
+                ${BREAKPAD_SRC_DIR}/common/linux/safe_readlink.cc
+                )
 
         list(APPEND BREAKPADCOMMON_LIB_HEADERS
+                ${BREAKPAD_SRC_DIR}/common/linux/scoped_pipe.h
+                ${BREAKPAD_SRC_DIR}/common/linux/scoped_tmpfile.h
                 ${BREAKPAD_SRC_DIR}/common/linux/crc32.h
                 ${BREAKPAD_SRC_DIR}/common/linux/elfutils.h
                 ${BREAKPAD_SRC_DIR}/common/linux/elfutils-inl.h
@@ -127,7 +132,8 @@ else()
                 ${BREAKPAD_SRC_DIR}/common/linux/guid_creator.h
                 ${BREAKPAD_SRC_DIR}/common/linux/linux_libc_support.h
                 ${BREAKPAD_SRC_DIR}/common/linux/memory_mapped_file.h
-                ${BREAKPAD_SRC_DIR}/common/linux/safe_readlink.h)
+                ${BREAKPAD_SRC_DIR}/common/linux/safe_readlink.h
+                )
 
         set(CLIENT_SRC_DIR ${BREAKPAD_SRC_DIR}/client/linux)
 
@@ -484,7 +490,11 @@ if(BKPAD_MINIDUMP)
 
     set(MINIDUMP_STACKWALK_SRCS
             ${PROCESSOR_SRC_DIR}/minidump.cc
-            ${PROCESSOR_SRC_DIR}/minidump_stackwalk.cc)
+            ${PROCESSOR_SRC_DIR}/minidump_stackwalk.cc
+            # For some reason those get not built into breakpad_common
+            ${BREAKPAD_SRC_DIR}/common/linux/scoped_pipe.cc
+            ${BREAKPAD_SRC_DIR}/common/linux/scoped_tmpfile.cc
+            )
 
     if(WIN32)
         include_directories(${BREAKPAD_SRC_DIR}/third_party/getopt)
@@ -496,5 +506,5 @@ if(BKPAD_MINIDUMP)
 
     add_executable(minidump_stackwalk ${MINIDUMP_STACKWALK_SRCS} ${MINIDUMP_STACKWALK_HEADERS})
     breakpad_set_project_properties(minidump_stackwalk)
-    target_link_libraries(minidump_stackwalk breakpad_common processor_common disasm)
+    target_link_libraries(minidump_stackwalk breakpad breakpad_common processor_common disasm)
 endif()

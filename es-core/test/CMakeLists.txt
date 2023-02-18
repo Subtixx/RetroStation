@@ -1,36 +1,13 @@
-# test dependencies
-set(tests_DEPENDENCIES_CONFIGURED Catch2)
-
-foreach(DEPENDENCY ${tests_DEPENDENCIES_CONFIGURED})
-    find_package(${DEPENDENCY} CONFIG REQUIRED)
-endforeach()
+find_package(GTest CONFIG REQUIRED)
 
 include(CTest)
-include(Catch)
+include(GoogleTest)
 
-# calling es-core executable directly
-add_test(
-        NAME es-core_test
-        COMMAND es-core_exe ""
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+FILE(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.cpp)
+FILE(GLOB_RECURSE TEST_HEADERS LIST_DIRECTORIES false *.h)
 
-# testing helpers
-add_executable(es-core_helpers_tests "./tests.cpp")
+add_executable(tests ${TEST_SOURCES} ${TEST_HEADERS})
 
-# because es-core helpers and dependencies are private, we should link them here again
-target_include_directories(es-core_helpers_tests PRIVATE "${es-core_INCLUDE_DIR}")
+gtest_discover_tests(tests)
 
-target_link_libraries(
-        es-core_helpers_tests
-        PRIVATE project_warnings
-        project_options
-        Catch2::Catch2
-        ${es-core_LINKED_LIBRARIES})
-
-# generate a main function for the test executable
-target_compile_definitions(es-core_helpers_tests PRIVATE CATCH_CONFIG_MAIN DO_NOT_USE_WMAIN)
-
-# use xml reporter if coverage is enabled
-if(${ENABLE_COVERAGE})
-    set(COVERAGE_ARGS REPORTER xml)
-endif()
+target_link_libraries(tests PRIVATE GTest::gtest GTest::gtest_main)

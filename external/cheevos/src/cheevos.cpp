@@ -12,7 +12,7 @@
 #include <memory>
 
 #ifdef HAVE_CHD
-#include "libretro-common/include/streams/chd_stream.h"
+#include "streams/chd_stream.h"
 #endif
 
 static rc_hash_filereader filereader;

@@ -451,7 +451,9 @@ set(COMMON_LIBRARIES
     pugixml
     nanosvg
     id3v2lib
-	libcheevos
+	cheevos
+    7ZIP
+    libretro
     z
     FLAC::FLAC FLAC::FLAC++
     ZLIB::ZLIB
