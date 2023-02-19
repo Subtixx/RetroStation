@@ -622,3 +622,4 @@ Thumbs.db
 .env
 !datainit/**/*
 !external/**/*
+/VERSION
