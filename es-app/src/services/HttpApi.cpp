@@ -5,7 +5,8 @@
 #endif
 
 #include "CollectionSystemManager.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "Gamelist.h"
 #include "SystemData.h"
 #include "platform.h"
@@ -130,7 +131,7 @@ FileData *HttpApi::findFileData(SystemData *system, const std::string &id) {
         stack.pop();
 
         for (auto it : current->getChildren()) {
-            if (it->getType() == FOLDER)
+            if (it->getType() == FileData::FOLDER)
                 stack.push((FolderData *)it);
             else if (getFileDataId(it) == id)
                 return it;
@@ -141,7 +142,7 @@ FileData *HttpApi::findFileData(SystemData *system, const std::string &id) {
 }
 
 void HttpApi::getFileDataJson(rapidjson::PrettyWriter<rapidjson::StringBuffer> &writer, FileData *game) {
-    if (game->getType() != GAME)
+    if (game->getType() != FileData::GAME)
         return;
 
     std::string id = getFileDataId(game);
@@ -294,7 +295,7 @@ std::string HttpApi::getSystemGames(SystemData *system) {
 
         for (auto it : current->getChildren()) {
             files.push_back(it);
-            if (it->getType() == FOLDER)
+            if (it->getType() == FileData::FOLDER)
                 stack.push((FolderData *)it);
         }
     }

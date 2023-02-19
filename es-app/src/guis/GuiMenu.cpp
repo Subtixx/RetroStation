@@ -57,6 +57,7 @@
 #include "Gamelist.h"
 #include "TextToSpeech.h"
 #include "Paths.h"
+#include "FileData/FolderFileData.h"
 
 #if WIN32
 #include "Win32ApiSystem.h"
@@ -590,7 +591,7 @@ void GuiMenu::openDeveloperSettings()
 
 			mWindow->renderSplashScreen(_("Building image cache") + ": " + sys->getFullName(), (float)idx / (float)SystemData::sSystemVector.size());
 
-			for (auto file : sys->getRootFolder()->getFilesRecursive(GAME))
+			for (auto file : sys->getRootFolder()->getFilesRecursive(FileData::GAME))
 			{
 				for (auto mdd : MetaDataList::getMDD())
 				{
@@ -632,7 +633,7 @@ void GuiMenu::openDeveloperSettings()
 				if (system->isCollection() || !system->isGameSystem())
 					continue;
 
-				for (auto game : system->getRootFolder()->getFilesRecursive(GAME))
+				for (auto game : system->getRootFolder()->getFilesRecursive(FileData::GAME))
 					game->detectLanguageAndRegion(true);
 			}
 
@@ -4168,7 +4169,7 @@ void GuiMenu::popSpecificConfigurationGui(Window* mWindow, std::string title, st
 			if (bootgame->changed())
 			{
 				SystemConf::getInstance()->set("global.bootgame.path", bootgame->getState() ? gamePath : "");
-				SystemConf::getInstance()->set("global.bootgame.cmd", bootgame->getState() ? fileData->getlaunchCommand(false) : "");
+				SystemConf::getInstance()->set("global.bootgame.cmd", bootgame->getState() ? fileData->getLaunchCommand(false) : "");
 			}
 		});
 	}

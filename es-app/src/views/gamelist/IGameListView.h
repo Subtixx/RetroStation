@@ -3,7 +3,7 @@
 #define ES_APP_VIEWS_GAME_LIST_IGAME_LIST_VIEW_H
 
 #include "renderers/Renderer.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "GuiComponent.h"
 
 class ThemeData;
@@ -21,7 +21,7 @@ public:
 	// Called when a new file is added, a file is removed, a file's metadata changes, or a file's children are sorted.
 	// NOTE: FILE_SORTED is only reported for the topmost FileData, where the sort started.
 	//       Since sorts are recursive, that FileData's children probably changed too.
-	virtual void onFileChanged(FileData* file, FileChangeType change) = 0;
+	virtual void onFileChanged(FileData* file, FileData::FileChangeType change) = 0;
 	
 	// Called whenever the theme changes.
 	virtual void onThemeChanged(const std::shared_ptr<ThemeData>& theme) = 0;

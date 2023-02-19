@@ -2,7 +2,8 @@
 
 #include "animations/LambdaAnimation.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "SystemData.h"
 #include "LocaleES.h"
 #include "LangParser.h"
@@ -806,7 +807,7 @@ void DetailedContainer::updateControls(FileData* file, bool isClearing, int move
 
 		if (mFlag != nullptr)
 		{
-			if (file->getType() == GAME)
+			if (file->getType() == FileData::GAME)
 			{
 				file->detectLanguageAndRegion(false);
 				mFlag->setImage(":/flags/" + LangInfo::getFlag(file->getMetadata(MetaDataId::Language), file->getMetadata(MetaDataId::Region)) + ".png"
@@ -916,13 +917,13 @@ void DetailedContainer::updateControls(FileData* file, bool isClearing, int move
 		mName.setValue(file->getMetadata(MetaDataId::Name));
 		mTextFavorite.setText(file->getFavorite()?_("YES"):_("NO"));
 
-		if (file->getType() == GAME)
+		if (file->getType() == FileData::GAME)
 		{
 			mLastPlayed.setValue(file->getMetadata(MetaDataId::LastPlayed));
 			mPlayCount.setValue(file->getMetadata(MetaDataId::PlayCount));
 			mGameTime.setValue(Utils::Time::secondsToString(atol(file->getMetadata(MetaDataId::GameTime).c_str())));
 		}
-		else if (file->getType() == FOLDER)
+		else if (file->getType() == FileData::FOLDER)
 			updateDetailsForFolder((FolderData*)file);
 
 		for (auto extra : mThemeExtras)

@@ -5,7 +5,9 @@
 #include "utils/StringUtil.h"
 #include "views/gamelist/IGameListView.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
+#include "FileData/CollectionFileData.h"
 #include "FileSorts.h"
 #include "FileFilterIndex.h"
 #include <loguru.hpp>
@@ -16,7 +18,6 @@
 #include <pugixml/src/pugixml.hpp>
 #include <fstream>
 #include "Gamelist.h"
-#include "FileSorts.h"
 #include "views/gamelist/ISimpleGameListView.h"
 #include "PlatformId.h"
 #include "utils/ThreadPool.h"
@@ -422,7 +423,7 @@ void CollectionSystemManager::updateSystemsList()
 // updates all collection files related to the source file
 void CollectionSystemManager::refreshCollectionSystems(FileData* file)
 {
-	if (!file->getSystem()->isGameSystem() || file->getType() != GAME)
+	if (!file->getSystem()->isGameSystem() || file->getType() != FileData::GAME)
 		return;
 
 	std::map<std::string, CollectionSystemData> allCollections;
@@ -463,13 +464,13 @@ void CollectionSystemManager::updateCollectionSystem(FileData* file, CollectionS
 				delete collectionEntry;
 
 			// Send an event when removing from favorites
-			ViewController::get()->onFileChanged(file, FILE_METADATA_CHANGED);
+			ViewController::get()->onFileChanged(file, FileData::FILE_METADATA_CHANGED);
 		}
 		else
 		{
 			// re-index with new metadata
 			curSys->addToIndex(collectionEntry);
-			ViewController::get()->onFileChanged(collectionEntry, FILE_METADATA_CHANGED);
+			ViewController::get()->onFileChanged(collectionEntry, FileData::FILE_METADATA_CHANGED);
 		}
 	}
 	else
@@ -481,7 +482,7 @@ void CollectionSystemManager::updateCollectionSystem(FileData* file, CollectionS
 			CollectionFileData* newGame = new CollectionFileData(file, curSys);
 			rootFolder->addChild(newGame);
 			curSys->addToIndex(newGame);
-			ViewController::get()->onFileChanged(file, FILE_METADATA_CHANGED);
+			ViewController::get()->onFileChanged(file, FileData::FILE_METADATA_CHANGED);
 		}
 	}
 
@@ -491,10 +492,10 @@ void CollectionSystemManager::updateCollectionSystem(FileData* file, CollectionS
 	{
 		sortLastPlayed(curSys);
 		trimCollectionCount(rootFolder, LAST_PLAYED_MAX);
-		ViewController::get()->onFileChanged(rootFolder, FILE_METADATA_CHANGED);
+		ViewController::get()->onFileChanged(rootFolder, FileData::FILE_METADATA_CHANGED);
 	}
 	else
-		ViewController::get()->onFileChanged(rootFolder, FILE_SORTED);
+		ViewController::get()->onFileChanged(rootFolder, FileData::FILE_SORTED);
 }
 
 void CollectionSystemManager::sortLastPlayed(SystemData* system)
@@ -675,7 +676,7 @@ bool CollectionSystemManager::inInCustomCollection(FileData* file, const std::st
 // Adds or removes a game from a specific collection
 bool CollectionSystemManager::toggleGameInCollection(FileData* file, const std::string collectionName)
 {
-	if (file->getType() != GAME)
+	if (file->getType() != FileData::GAME)
 		return false;
 
 	bool adding = true;
@@ -702,7 +703,7 @@ bool CollectionSystemManager::toggleGameInCollection(FileData* file, const std::
 		saveToGamelistRecovery(sourceFile);
 		refreshCollectionSystems(sourceFile);
 
-		ViewController::get()->onFileChanged(sourceFile, FILE_METADATA_CHANGED);
+		ViewController::get()->onFileChanged(sourceFile, FileData::FILE_METADATA_CHANGED);
 	}
 	else
 	{
@@ -744,7 +745,7 @@ bool CollectionSystemManager::toggleGameInCollection(FileData* file, const std::
 
 			auto view = ViewController::get()->getGameListView(systemViewToUpdate, false);
 			if (view != nullptr)
-				view->onFileChanged(systemViewToUpdate->getRootFolder(), FILE_SORTED);
+				view->onFileChanged(systemViewToUpdate->getRootFolder(), FileData::FILE_SORTED);
 
 			// add to bundle index as well, if needed
 			if (systemViewToUpdate != sysData)
@@ -990,7 +991,7 @@ void CollectionSystemManager::populateAutoCollection(CollectionSystemData* sysDa
 		for (auto ext : Utils::String::split(Settings::getInstance()->getString(system->getName() + ".HiddenExt"), ';'))
 			hiddenExts.push_back("." + Utils::String::toLower(ext));
 
-		std::vector<FileData*> files = system->getRootFolder()->getFilesRecursive(GAME);
+		std::vector<FileData*> files = system->getRootFolder()->getFilesRecursive(FileData::GAME);
 		for (auto& game : files)
 		{
 			if (system->isGroupSystem() && game->getSystem() != system)
@@ -1000,7 +1001,7 @@ void CollectionSystemManager::populateAutoCollection(CollectionSystemData* sysDa
 			if (!include)
 				continue;
 
-			if (hiddenExts.size() > 0 && game->getType() == GAME)
+			if (hiddenExts.size() > 0 && game->getType() == FileData::GAME)
 			{
 				std::string extlow = Utils::String::toLower(Utils::FileSystem::getExtension(game->getFileName()));
 				if (std::find(hiddenExts.cbegin(), hiddenExts.cend(), extlow) != hiddenExts.cend())
@@ -1114,7 +1115,7 @@ void CollectionSystemManager::populateCustomCollection(CollectionSystemData* sys
 		{
 			FolderData* folder = getAllGamesCollection()->getRootFolder();
 
-			std::vector<FileData*> games = folder->getFilesRecursive(GAME);
+			std::vector<FileData*> games = folder->getFilesRecursive(FileData::GAME);
 			for (auto game : games)
 			{
 				if (sysData->filteredIndex->isSystemSelected(game->getSystemName()))
@@ -1563,7 +1564,7 @@ void CollectionSystemManager::reloadCollection(const std::string collectionName,
 	auto bundle = CollectionSystemManager::get()->getCustomCollectionsBundle();
 	for (auto ff : bundle->getRootFolder()->getChildren())
 	{
-		if (ff->getType() == FOLDER && ff->getName() == collectionName)
+		if (ff->getType() == FileData::FOLDER && ff->getName() == collectionName)
 		{			
 			auto view = ViewController::get()->getGameListView(bundle, false);
 			if (view != nullptr)

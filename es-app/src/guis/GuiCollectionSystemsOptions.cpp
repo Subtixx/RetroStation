@@ -14,6 +14,7 @@
 #include "ApiSystem.h"
 #include "GuiGamelistFilter.h"
 #include "views/gamelist/IGameListView.h"
+#include "FileData/FolderFileData.h"
 
 GuiCollectionSystemsOptions::GuiCollectionSystemsOptions(Window* window) 
 	: GuiSettings(window, _("GAME COLLECTION SETTINGS").c_str())
@@ -475,7 +476,7 @@ void GuiCollectionSystemsOptions::addSystemsToMenu()
 	bool hasGroup = false;
 	bool hasGenreGroup = false;
 
-	auto arcadeGames = CollectionSystemManager::get()->getArcadeCollection()->getRootFolder()->getFilesRecursive(GAME);
+	auto arcadeGames = CollectionSystemManager::get()->getArcadeCollection()->getRootFolder()->getFilesRecursive(FileData::GAME);
 
 	// add Auto Systems && preserve order
 	for (auto systemDecl : CollectionSystemManager::getSystemDecls())

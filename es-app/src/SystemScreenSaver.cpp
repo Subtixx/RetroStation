@@ -7,7 +7,8 @@
 #include "utils/FileSystemUtil.h"
 #include "views/gamelist/IGameListView.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "FileFilterIndex.h"
 #include <loguru.hpp>
 #include "PowerSaver.h"
@@ -17,7 +18,7 @@
 #include "components/ImageComponent.h"
 #include "components/TextComponent.h"
 #include <unordered_map>
-#include <time.h>
+#include <ctime>
 #include "AudioManager.h"
 #include "math/Vector2i.h"
 #include "SystemConf.h"
@@ -311,7 +312,7 @@ unsigned long SystemScreenSaver::countGameListNodes(bool video)
 		if (!system->isGameSystem() || system->isCollection() || system->hasPlatformId(PlatformIds::IMAGEVIEWER) || system->hasPlatformId(PlatformIds::PLATFORM_IGNORE))
 			continue;
 
-		auto games = system->getRootFolder()->getFilesRecursive(GAME, true);
+		auto games = system->getRootFolder()->getFilesRecursive(FileData::GAME, true);
 		for (auto game : games)
 		{
 			if (video && !game->getVideoPath().empty())

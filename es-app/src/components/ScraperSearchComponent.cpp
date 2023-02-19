@@ -11,7 +11,7 @@
 #include "guis/GuiTextEditPopupKeyboard.h"
 #include "resources/Font.h"
 #include "utils/StringUtil.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include <loguru.hpp>
 #include "Window.h"
 #include "LocaleES.h"

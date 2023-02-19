@@ -15,7 +15,8 @@
 #include "utils/StringUtil.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "FileFilterIndex.h"
 #include "SystemData.h"
 #include "Window.h"
@@ -84,7 +85,7 @@ GuiMetaDataEd::GuiMetaDataEd(Window* window, MetaDataList* md, const std::vector
 		if(iter->isStatistic)
 			continue;
 
-		if (file->getType() != GAME && !iter->visibleForFolder)
+		if (file->getType() != FileData::GAME && !iter->visibleForFolder)
 			continue;
 
 		// create ed and add it (and any related components) to mMenu

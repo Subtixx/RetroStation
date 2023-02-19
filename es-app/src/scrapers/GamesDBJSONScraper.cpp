@@ -6,7 +6,7 @@
 
 #ifdef GAMESDB_APIKEY
 
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"

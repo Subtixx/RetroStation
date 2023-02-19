@@ -17,7 +17,6 @@
 #include "guis/GuiTextEditPopupKeyboard.h"
 #include "scrapers/ThreadedScraper.h"
 #include "ThreadedHasher.h"
-#include "guis/GuiMenu.h"
 #include "ApiSystem.h"
 #include "guis/GuiImageViewer.h"
 #include "views/SystemView.h"
@@ -26,6 +25,7 @@
 #include "SaveStateRepository.h"
 #include "guis/GuiSaveState.h"
 #include "SystemConf.h"
+#include "FileData/FolderFileData.h"
 
 GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(window),
 	mMenu(window, game->getName()), mReloadAll(false)
@@ -138,7 +138,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 	}
 
 
-	if (game->getType() == GAME)
+	if (game->getType() == FileData::GAME)
 	{
 		mMenu.addGroup(_("GAME"));
 
@@ -205,7 +205,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 		}
 
 		SystemData* all = SystemData::getSystem("all");
-		if (all != nullptr && game != nullptr && game->getType() != FOLDER && !isImageViewer)
+		if (all != nullptr && game != nullptr && game->getType() != FileData::FOLDER && !isImageViewer)
 		{
 			mMenu.addEntry(_("FIND SIMILAR GAMES..."), false, [this, game, all]
 			{
@@ -246,8 +246,8 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 		}
 	}
 
-	bool isCustomCollection = (mSystem->isCollection() && game->getType() == FOLDER && CollectionSystemManager::get()->isCustomCollection(mSystem->getName()));
-	bool isAppendableToCollection = (game->getType() == GAME) && (mSystem->isGameSystem() || mSystem->isGroupSystem());
+	bool isCustomCollection = (mSystem->isCollection() && game->getType() == FileData::FOLDER && CollectionSystemManager::get()->isCustomCollection(mSystem->getName()));
+	bool isAppendableToCollection = (game->getType() == FileData::GAME) && (mSystem->isGameSystem() || mSystem->isGroupSystem());
 
 	if (UIModeController::getInstance()->isUIModeFull())
 	{
@@ -331,9 +331,9 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 	bool fromPlaceholder = game->isPlaceHolder();
 	if (isImageViewer)
 		fromPlaceholder = true; 
-	else if (game->getType() == FOLDER && ((FolderData*)game)->isVirtualStorage())
+	else if (game->getType() == FileData::FOLDER && ((FolderData*)game)->isVirtualStorage())
 		fromPlaceholder = true;
-	else if (game->getType() == FOLDER && mSystem->isCollection()) // >getName() == CollectionSystemManager::get()->getCustomCollectionsBundle()->getName())
+	else if (game->getType() == FileData::FOLDER && mSystem->isCollection()) // >getName() == CollectionSystemManager::get()->getCustomCollectionsBundle()->getName())
 		fromPlaceholder = true;
 
 	if (!fromPlaceholder && !isCustomCollection && UIModeController::getInstance()->isUIModeFull())
@@ -353,7 +353,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 				game->detectLanguageAndRegion(true);
 				game->getMetadata().setScrapeDate(result.scraper);
 
-				ViewController::get()->onFileChanged(game, FILE_METADATA_CHANGED);
+				ViewController::get()->onFileChanged(game, FileData::FILE_METADATA_CHANGED);
 			});
 
 			mWindow->pushGui(scr);
@@ -361,7 +361,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 			close();
 		});
 
-		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::ScriptId::EVMAPY) && game->getType() != FOLDER)
+		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::ScriptId::EVMAPY) && game->getType() != FileData::FOLDER)
 		{
 			if (game->hasKeyboardMapping())
 			{
@@ -386,7 +386,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 			auto srcSystem = game->getSourceFileData()->getSystem();
 			auto sysOptions = !mSystem->isGameSystem() ? srcSystem : mSystem;
 
-			if (game->getType() != FOLDER)
+			if (game->getType() != FileData::FOLDER)
 			{
 				if (srcSystem->hasFeatures() || srcSystem->hasEmulatorSelection())
 				{
@@ -400,7 +400,7 @@ GuiGameOptions::GuiGameOptions(Window* window, FileData* game) : GuiComponent(wi
 			}
 		}
 
-		if (game->getType() == FOLDER)
+		if (game->getType() == FileData::FOLDER)
 			mMenu.addEntry(_("EDIT FOLDER METADATA"), false, std::bind(&GuiGameOptions::openMetaDataEd, this));
 		else
 			mMenu.addEntry(_("EDIT THIS GAME'S METADATA"), false, std::bind(&GuiGameOptions::openMetaDataEd, this));
@@ -456,7 +456,7 @@ std::string GuiGameOptions::getCustomCollectionName()
 	{
 		FileData* file = getGamelist()->getCursor();
 		// do we have the cursor on a specific collection?
-		if (file->getType() == FOLDER)
+		if (file->getType() == FileData::FOLDER)
 			return file->getName();
 
 		return file->getSystem()->getName();
@@ -467,7 +467,7 @@ std::string GuiGameOptions::getCustomCollectionName()
 
 void GuiGameOptions::deleteGame(FileData* file)
 {
-	if (file->getType() != GAME)
+	if (file->getType() != FileData::GAME)
 		return;
 
 	auto sourceFile = file->getSourceFileData();
@@ -506,7 +506,7 @@ void GuiGameOptions::openMetaDataEd()
 
 	std::function<void()> deleteBtnFunc = nullptr;
 
-	if (file->getType() == GAME)
+	if (file->getType() == FileData::GAME)
 	{
 		auto sourceFile = file->getSourceFileData();
 		deleteBtnFunc = [sourceFile] { GuiGameOptions::deleteGame(sourceFile); };
@@ -517,7 +517,7 @@ void GuiGameOptions::openMetaDataEd()
 		system = system->getParentGroupSystem();
 
 	mWindow->pushGui(new GuiMetaDataEd(mWindow, &file->getMetadata(), file->getMetadata().getMDD(), p, Utils::FileSystem::getFileName(file->getPath()),
-		std::bind(&ViewController::onFileChanged, ViewController::get(), file, FILE_METADATA_CHANGED), deleteBtnFunc, file));
+		std::bind(&ViewController::onFileChanged, ViewController::get(), file, FileData::FILE_METADATA_CHANGED), deleteBtnFunc, file));
 
 	close();
 }

@@ -31,3 +31,6 @@
 [submodule "external/cmake-git-semver"]
 	path = external/cmake-git-semver
 	url = https://github.com/Subtixx/cmake-git-semver.git
+[submodule "external/cparse"]
+	path = external/cparse
+	url = https://github.com/cparse/cparse.git

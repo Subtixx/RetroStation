@@ -3,7 +3,7 @@
 #define ES_APP_VIEWS_VIEW_CONTROLLER_H
 
 #include "renderers/Renderer.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "GuiComponent.h"
 #include <vector>
 #include <functional>
@@ -59,7 +59,7 @@ public:
 	void goToStart(bool forceImmediate = false);
 	void ReloadAndGoToStart();
 
-	void onFileChanged(FileData* file, FileChangeType change);
+	void onFileChanged(FileData* file, FileData::FileChangeType change);
 
 	// Plays a nice launch effect and launches the game at the end of it.
 	// Once the game terminates, plays a return effect.

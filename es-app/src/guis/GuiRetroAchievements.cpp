@@ -10,7 +10,8 @@
 #include "components/MultiLineMenuEntry.h"
 #include "GuiGameAchievements.h"
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "views/ViewController.h"
 
 #include <string>
@@ -286,7 +287,7 @@ FileData* GuiRetroAchievements::getFileData(const std::string& cheevosGameId)
 		if (!sys->isCheevosSupported())
 			continue;
 
-		for (auto file : sys->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : sys->getRootFolder()->getFilesRecursive(FileData::GAME))
 			if (file->getMetadata(MetaDataId::CheevosId) == cheevosGameId)
 				return file;
 	}

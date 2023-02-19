@@ -16,13 +16,14 @@
 #include "guis/GuiTextEditPopupKeyboard.h"
 #include "scrapers/ThreadedScraper.h"
 #include "ThreadedHasher.h"
-#include "guis/GuiMenu.h"
 #include "ApiSystem.h"
 #include "guis/GuiImageViewer.h"
 #include "views/SystemView.h"
 #include "GuiGameAchievements.h"
 #include "guis/GuiGameOptions.h"
 #include "views/gamelist/ISimpleGameListView.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 
 std::vector<std::string> GuiGamelistOptions::gridSizes {
 	"automatic", 
@@ -221,9 +222,9 @@ GuiGamelistOptions::GuiGamelistOptions(Window* window, IGameListView* gamelist, 
 			});
 		}
 
-		if (file->getType() == FOLDER && ((FolderData*) file)->isVirtualStorage())
+		if (file->getType() == FileData::FOLDER && ((FolderData*) file)->isVirtualStorage())
 			fromPlaceholder = true;
-		else if (file->getType() == FOLDER && mSystem->getName() == CollectionSystemManager::get()->getCustomCollectionsBundle()->getName())
+		else if (file->getType() == FileData::FOLDER && mSystem->getName() == CollectionSystemManager::get()->getCustomCollectionsBundle()->getName())
 			fromPlaceholder = true;
 		
 		if (!fromPlaceholder)
@@ -355,7 +356,7 @@ GuiGamelistOptions::~GuiGamelistOptions()
 		root->sort(sort);
 		*/
 		// notify that the root folder was sorted
-		getGamelist()->onFileChanged(root, FILE_SORTED);
+		getGamelist()->onFileChanged(root, FileData::FILE_SORTED);
 	}
 
 	Vector2f gridSizeOverride(0, 0);
@@ -429,7 +430,7 @@ std::string GuiGamelistOptions::getCustomCollectionName()
 	{
 		FileData* file = getGamelist()->getCursor();
 		// do we have the cursor on a specific collection?
-		if (file->getType() == FOLDER)
+		if (file->getType() == FileData::FOLDER)
 			return file->getName();
 
 		return file->getSystem()->getName();
@@ -459,7 +460,7 @@ void GuiGamelistOptions::openMetaDataEd()
 	if (system->isGroupChildSystem())
 		system = system->getParentGroupSystem();
 
-	if (file->getType() == GAME)
+	if (file->getType() == FileData::GAME)
 	{
 		deleteBtnFunc = [this, file, system]
 		{
@@ -482,7 +483,7 @@ void GuiGamelistOptions::openMetaDataEd()
 	}
 
 	mWindow->pushGui(new GuiMetaDataEd(mWindow, &file->getMetadata(), file->getMetadata().getMDD(), p, Utils::FileSystem::getFileName(file->getPath()),
-		std::bind(&ViewController::onFileChanged, ViewController::get(), file, FILE_METADATA_CHANGED), deleteBtnFunc, file));
+		std::bind(&ViewController::onFileChanged, ViewController::get(), file, FileData::FILE_METADATA_CHANGED), deleteBtnFunc, file));
 }
 
 void GuiGamelistOptions::jumpToLetter()
@@ -500,7 +501,7 @@ void GuiGamelistOptions::jumpToLetter()
 		const FolderData::SortType& sort = FileSorts::getSortTypes().at(0);
 		root->sort(sort);
 		*/
-		getGamelist()->onFileChanged(root, FILE_SORTED);
+		getGamelist()->onFileChanged(root, FileData::FILE_SORTED);
 	}
 
 	// this is a really shitty way to get a list of files

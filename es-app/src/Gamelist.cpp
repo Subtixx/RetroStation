@@ -2,7 +2,8 @@
 
 #include "utils/FileSystemUtil.h"
 #include "utils/StringUtil.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "FileFilterIndex.h"
 #include <loguru.hpp>
 #include "Settings.h"
@@ -23,7 +24,7 @@ std::string getGamelistRecoveryPath(SystemData* system)
 	return Utils::FileSystem::getGenericPath(Paths::getUserEmulationStationPath() + "/recovery/" + system->getName());
 }
 
-FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType type, std::unordered_map<std::string, FileData*>& fileMap)
+FileData* findOrCreateFile(SystemData* system, const std::string& path, FileData::FileType type, std::unordered_map<std::string, FileData*>& fileMap)
 {
 	auto pGame = fileMap.find(path);
 	if (pGame != fileMap.end())
@@ -50,7 +51,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 		FileData* item = (fileMap.find(key) != fileMap.end()) ? fileMap[key] : nullptr;
 		if (item != nullptr)
 		{
-			if (item->getType() == FOLDER)
+			if (item->getType() == FileData::FOLDER)
 				treeNode = (FolderData*) item;
 			else
 				return item;
@@ -59,7 +60,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 		// this is the end
 		if(path_it == --pathList.end())
 		{
-			if(type == FOLDER)
+			if(type == FileData::FOLDER)
 			{
 				LOG_S(WARNING) << "gameList: folder doesn't already exist, won't create";
 				return NULL;
@@ -73,7 +74,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 			}
 
 			// Add final game
-			item = new FileData(GAME, path, system);
+			item = new FileData(FileData::GAME, path, system);
 			if (!item->isArcadeAsset())
 			{
 				fileMap[key] = item;
@@ -87,7 +88,7 @@ FileData* findOrCreateFile(SystemData* system, const std::string& path, FileType
 		{
 			// don't create folders unless it's leading up to a game
 			// if type is a folder it's gonna be empty, so don't bother
-			if(type == FOLDER)
+			if(type == FileData::FOLDER)
 			{
 				LOG_S(WARNING) << "gameList: folder doesn't already exist, won't create";
 				return NULL;
@@ -143,12 +144,12 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 
 	for (pugi::xml_node fileNode : root.children())
 	{
-		FileType type = GAME;
+        FileData::FileType type = FileData::GAME;
 
 		std::string tag = fileNode.name();
 
 		if (tag == "folder")
-			type = FOLDER;
+			type = FileData::FOLDER;
 		else if (tag != "game")
 			continue;
 
@@ -184,7 +185,7 @@ std::vector<FileData*> loadGamelistFile(const std::string xmlpath, SystemData* s
 		if (!trustGamelist || !file->isArcadeAsset()) // arcade assets already filtered when !trustGamelist
 		{
 			MetaDataList& mdl = file->getMetadata();
-			mdl.loadFromXML(type == FOLDER ? FOLDER_METADATA : GAME_METADATA, fileNode, system);
+			mdl.loadFromXML(type == FileData::FOLDER ? FOLDER_METADATA : GAME_METADATA, fileNode, system);
 			mdl.migrate(file, fileNode);
 
 			// Make sure name gets set if one didn't exist
@@ -255,7 +256,7 @@ bool addFileDataNode(pugi::xml_node& parent, FileData* file, const char* tag, Sy
 		// there's something useful in there so we'll keep the node, add the path
 		// try and make the path relative if we can so things still work if we change the rom folder location in the future
 		std::string path = Utils::FileSystem::createRelativePath(file->getPath(), system->getStartPath(), false).c_str();
-		if (path.empty() && file->getType() == FOLDER)
+		if (path.empty() && file->getType() == FileData::FOLDER)
 			path = ".";
 
 		newNode.prepend_child("path").text().set(path.c_str());
@@ -272,7 +273,7 @@ bool saveToXml(FileData* file, const std::string& fileName, bool fullPaths)
 	pugi::xml_document doc;
 	pugi::xml_node root = doc.append_child("gameList");
 
-	const char* tag = file->getType() == GAME ? "game" : "folder";
+	const char* tag = file->getType() == FileData::GAME ? "game" : "folder";
 
 	root.append_attribute("parentHash").set_value(system->getGamelistHash());
 
@@ -342,7 +343,7 @@ bool hasDirtyFile(SystemData* system)
 	if (rootFolder == nullptr)
 		return false;
 
-	for (auto file : rootFolder->getFilesRecursive(GAME | FOLDER))
+	for (auto file : rootFolder->getFilesRecursive(FileData::GAME | FileData::FOLDER))
 		if (file->getMetadata().wasChanged())
 			return true;
 
@@ -371,7 +372,7 @@ void updateGamelist(SystemData* system)
 
 	std::vector<FileData*> dirtyFiles;
 	
-	auto files = rootFolder->getFilesRecursive(GAME | FOLDER, false, nullptr, false);
+	auto files = rootFolder->getFilesRecursive(FileData::GAME | FileData::FOLDER, false, nullptr, false);
 	for (auto file : files)
 		if (file->getSystem() == system && file->getMetadata().wasChanged())
 			dirtyFiles.push_back(file);
@@ -431,7 +432,7 @@ void updateGamelist(SystemData* system)
 			root.remove_child(xmf->second);
 		}
 		
-		const char* tag = (file->getType() == GAME) ? "game" : "folder";
+		const char* tag = (file->getType() == FileData::GAME) ? "game" : "folder";
 
 		// it was either removed or never existed to begin with; either way, we can add it now
 		if (addFileDataNode(root, file, tag, system))
@@ -491,7 +492,7 @@ void cleanupGamelist(SystemData* system)
 	}
 
 	std::map<std::string, FileData*> fileMap;
-	for (auto file : rootFolder->getFilesRecursive(GAME | FOLDER, false, nullptr, false))
+	for (auto file : rootFolder->getFilesRecursive(FileData::GAME | FileData::FOLDER, false, nullptr, false))
 		fileMap[Utils::FileSystem::getCanonicalPath(file->getPath())] = file;
 
 	bool dirty = false;
@@ -616,7 +617,7 @@ void cleanupGamelist(SystemData* system)
 		if (knownXmlPaths.find(fileName) != knownXmlPaths.cend())
 			continue;
 
-		const char* tag = (fileData->getType() == GAME) ? "game" : "folder";
+		const char* tag = (fileData->getType() == FileData::GAME) ? "game" : "folder";
 
 		if (addFileDataNode(root, fileData, tag, system))
 		{

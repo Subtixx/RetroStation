@@ -1,5 +1,5 @@
 #include "CarouselComponent.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "Settings.h"
 #include <loguru.hpp>
 #include "animations/LambdaAnimation.h"

@@ -2,7 +2,8 @@
 
 #include "animations/LambdaAnimation.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "SystemData.h"
 #include "LocaleES.h"
 

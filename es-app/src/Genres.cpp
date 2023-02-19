@@ -5,10 +5,9 @@
 #include "utils/StringUtil.h"
 #include <loguru.hpp>
 #include <pugixml/src/pugixml.hpp>
-#include <string.h>
 
 #include "SystemConf.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 
 #include <set>
 

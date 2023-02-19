@@ -1,6 +1,7 @@
 #include "GameNameFormatter.h"
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "FileSorts.h"
 #include "Settings.h"
 #include "utils/StringUtil.h"
@@ -114,7 +115,7 @@ std::string GameNameFormatter::getDisplayName(FileData* fd, bool showFolderIcon)
 {
 	std::string name = fd->getName();
 
-	bool showSystemNameByFile = (fd->getType() == GAME || fd->getParent() == nullptr || fd->getParent()->getName() != "collections");
+	bool showSystemNameByFile = (fd->getType() == FileData::GAME || fd->getParent() == nullptr || fd->getParent()->getName() != "collections");
 	if (showSystemNameByFile)
 	{
 		/*if (fd->getSystem()->isGroupChildSystem())
@@ -219,7 +220,7 @@ std::string GameNameFormatter::getDisplayName(FileData* fd, bool showFolderIcon)
 		return lang + FAVORITEICON + name + langAfter;
 	}
 
-	if (fd->getType() == FOLDER)
+	if (fd->getType() == FileData::FOLDER)
 	{
 		if (showFolderIcon)
 			return FOLDERICON + name;

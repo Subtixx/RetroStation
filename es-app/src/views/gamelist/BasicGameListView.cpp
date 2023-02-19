@@ -7,7 +7,8 @@
 #include "Settings.h"
 #include "SystemData.h"
 #include "SystemConf.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "LocaleES.h"
 #include "GameNameFormatter.h"
 #include "TextToSpeech.h"
@@ -46,9 +47,9 @@ void BasicGameListView::onThemeChanged(const std::shared_ptr<ThemeData>& theme)
 	sortChildren();
 }
 
-void BasicGameListView::onFileChanged(FileData* file, FileChangeType change)
+void BasicGameListView::onFileChanged(FileData* file, FileData::FileChangeType change)
 {
-	if(change == FILE_METADATA_CHANGED)
+	if(change == FileData::FILE_METADATA_CHANGED)
 	{
 		// might switch to a detailed view
 		ViewController::get()->reloadGameListView(this);
@@ -69,7 +70,7 @@ void BasicGameListView::populateList(const std::vector<FileData*>& files)
 		bool showParentFolder = mRoot->getSystem()->getShowParentFolder();
 		if (showParentFolder && mCursorStack.size())
 		{
-			FileData* placeholder = new FileData(PLACEHOLDER, "..", this->mRoot->getSystem());
+			FileData* placeholder = new FileData(FileData::PLACEHOLDER, "..", this->mRoot->getSystem());
 			mList.add(". .", placeholder, true);
 		}
 
@@ -83,7 +84,7 @@ void BasicGameListView::populateList(const std::vector<FileData*>& files)
 				if (!file->getFavorite())
 					continue;
 						
-				mList.add(formatter.getDisplayName(file), file, file->getType() == FOLDER);
+				mList.add(formatter.getDisplayName(file), file, file->getType() == FileData::FOLDER);
 			}
 		}
 
@@ -92,7 +93,7 @@ void BasicGameListView::populateList(const std::vector<FileData*>& files)
 			if (favoritesFirst && file->getFavorite())
 				continue;
 				
-			mList.add(formatter.getDisplayName(file), file, file->getType() == FOLDER);
+			mList.add(formatter.getDisplayName(file), file, file->getType() == FileData::FOLDER);
 		}
 
 		// if we have the ".." PLACEHOLDER, then select the first game instead of the placeholder
@@ -128,7 +129,7 @@ std::shared_ptr<std::vector<FileData*>> recurseFind(FileData* toFind, FolderData
 
 	for (auto item : items)
 	{
-		if (item->getType() == FOLDER)
+		if (item->getType() == FileData::FOLDER)
 		{
 			stack.push(item);
 
@@ -170,7 +171,7 @@ void BasicGameListView::setCursor(FileData* cursor)
 void BasicGameListView::addPlaceholder()
 {
 	// empty list - add a placeholder
-	FileData* placeholder = new FileData(PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());	
+	FileData* placeholder = new FileData(FileData::PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());
 	mList.add(placeholder->getName(), placeholder, true);
 }
 
@@ -209,7 +210,7 @@ void BasicGameListView::remove(FileData *game)
 
 	mRoot->removeFromVirtualFolders(game);
 	delete game;                                 // remove before repopulating (removes from parent)
-	onFileChanged(parent, FILE_REMOVED);           // update the view, with game removed
+	onFileChanged(parent, FileData::FILE_REMOVED);           // update the view, with game removed
 }
 
 void BasicGameListView::setCursorIndex(int cursor)

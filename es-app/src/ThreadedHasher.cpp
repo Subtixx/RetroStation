@@ -1,13 +1,13 @@
 #include "ThreadedHasher.h"
 #include "Window.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "components/AsyncNotificationComponent.h"
 #include "guis/GuiMsgBox.h"
 #include "Gamelist.h"
 #include "RetroAchievements.h"
 #include "SystemConf.h"
 #include "SystemData.h"
-#include "FileData.h"
 #include "ApiSystem.h"
 #include "utils/StringUtil.h"
 #include <loguru.hpp>
@@ -197,7 +197,7 @@ void ThreadedHasher::start(Window* window, HasherType type, bool forceAllGames, 
 		if (sys->isGroupChildSystem() ? sys->isHidden() : !sys->isVisible())
 			continue;
 
-		for (auto file : sys->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : sys->getRootFolder()->getFilesRecursive(FileData::GAME))
 		{
 			bool netPlay = takeNetplay && (forceAllGames || file->getMetadata(MetaDataId::Crc32).empty());
 			bool cheevos = takeCheevos && (forceAllGames || file->getMetadata(MetaDataId::CheevosHash).empty());

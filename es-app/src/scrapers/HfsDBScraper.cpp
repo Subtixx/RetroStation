@@ -3,7 +3,7 @@
 #include "scrapers/HfsDBScraper.h"
 #include <exception>
 #include <map>
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include <loguru.hpp>
 #include "PlatformId.h"
 #include "Settings.h"

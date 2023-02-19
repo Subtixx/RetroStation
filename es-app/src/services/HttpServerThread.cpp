@@ -9,7 +9,7 @@
 #include "platform.h"
 #include "Gamelist.h"
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "views/ViewController.h"
 #include <unordered_map>
 #include "CollectionSystemManager.h"
@@ -24,6 +24,7 @@
 #include "scrapers/ThreadedScraper.h"
 #include "guis/GuiUpdate.h"
 #include "ContentInstaller.h"
+#include "FileData/FolderFileData.h"
 
 /* 
 
@@ -417,7 +418,7 @@ void HttpServerThread::run()
 					if (HttpApi::ImportMedia(game, metadataName, contentType, req.body))
 					{
 						if (ViewController::hasInstance())
-							mWindow->postToUiThread([game]() { ViewController::get()->onFileChanged(game, FileChangeType::FILE_METADATA_CHANGED); });
+							mWindow->postToUiThread([game]() { ViewController::get()->onFileChanged(game, FileData::FileChangeType::FILE_METADATA_CHANGED); });
 
 						return;
 					}
@@ -453,7 +454,7 @@ void HttpServerThread::run()
 				if (HttpApi::ImportFromJson(game, req.body))
 				{
 					if (ViewController::hasInstance())
-						mWindow->postToUiThread([game]() { ViewController::get()->onFileChanged(game, FileChangeType::FILE_METADATA_CHANGED); });					
+						mWindow->postToUiThread([game]() { ViewController::get()->onFileChanged(game, FileData::FileChangeType::FILE_METADATA_CHANGED); });
 
 					return;
 				}
@@ -568,7 +569,7 @@ void HttpServerThread::run()
 			if (system->isCollection() || !system->isGameSystem())
 				continue;
 
-			for (auto file : system->getRootFolder()->getFilesRecursive(GAME))
+			for (auto file : system->getRootFolder()->getFilesRecursive(FileData::GAME))
 			{
 				if (file->getFullPath() == path || file->getPath() == path)
 				{
@@ -610,7 +611,7 @@ void HttpServerThread::run()
 		}
 			
 		std::unordered_map<std::string, FileData*> fileMap;
-		for (auto file : system->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : system->getRootFolder()->getFilesRecursive(FileData::GAME))
 			fileMap[file->getPath()] = file;
 
 		auto fileList = loadGamelistFile(req.body, system, fileMap, SIZE_MAX, false);
@@ -628,7 +629,7 @@ void HttpServerThread::run()
 		for (auto file : fileList)
 			file->getMetadata().setDirty();
 
-		for (auto file : system->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : system->getRootFolder()->getFilesRecursive(FileData::GAME))
 			if (fileMap.find(file->getPath()) != fileMap.cend())
 				file->getMetadata().setDirty();
 
@@ -648,7 +649,7 @@ void HttpServerThread::run()
 		{
 			mWindow->postToUiThread([system]()
 			{
-				ViewController::get()->onFileChanged(system->getRootFolder(), FILE_METADATA_CHANGED); // Update root folder			
+				ViewController::get()->onFileChanged(system->getRootFolder(), FileData::FILE_METADATA_CHANGED); // Update root folder
 			});
 		}
 
@@ -678,7 +679,7 @@ void HttpServerThread::run()
 		}
 
 		std::unordered_map<std::string, FileData*> fileMap;
-		for (auto file : system->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : system->getRootFolder()->getFilesRecursive(FileData::GAME))
 			fileMap[file->getPath()] = file;
 
 		auto fileList = loadGamelistFile(req.body, system, fileMap, SIZE_MAX, false);
@@ -722,7 +723,7 @@ void HttpServerThread::run()
 			mWindow->postToUiThread([systems]()
 			{
 				for (auto changedSystem : systems)
-					ViewController::get()->onFileChanged(changedSystem->getRootFolder(), FILE_REMOVED); // Update root folder			
+					ViewController::get()->onFileChanged(changedSystem->getRootFolder(), FileData::FILE_REMOVED); // Update root folder
 			});
 		}
 		

@@ -1,6 +1,6 @@
 #include "ThreadedScraper.h"
 #include "Window.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "components/AsyncNotificationComponent.h"
 #include "LocaleES.h"
 #include "guis/GuiMsgBox.h"

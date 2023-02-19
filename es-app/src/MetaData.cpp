@@ -7,7 +7,7 @@
 #include "SystemData.h"
 #include "LocaleES.h"
 #include "Settings.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "ImageIO.h"
 
 std::vector<MetaDataDecl> MetaDataList::mMetaDataDecls;

@@ -4,7 +4,7 @@
 
 #include "components/MenuComponent.h"
 #include "components/OptionListComponent.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "GuiComponent.h"
 
 class IGameListView;

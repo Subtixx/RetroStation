@@ -1,5 +1,6 @@
 #include "views/gamelist/GridGameListView.h"
 
+#include "FileData/FolderFileData.h"
 #include "animations/LambdaAnimation.h"
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
@@ -141,7 +142,7 @@ const std::string GridGameListView::getImagePath(FileData* file)
 
 const bool GridGameListView::isVirtualFolder(FileData* file)
 {
-	return file->getType() == FOLDER && ((FolderData*)file)->isVirtualFolderDisplay();
+	return file->getType() == FileData::FOLDER && ((FolderData*)file)->isVirtualFolderDisplay();
 }
 
 void GridGameListView::populateList(const std::vector<FileData*>& files)
@@ -184,7 +185,7 @@ void GridGameListView::populateList(const std::vector<FileData*>& files)
 					{
 						if (child->getPath() == startPath)
 						{
-							if (child->getType() == FOLDER)
+							if (child->getType() == FileData::FOLDER)
 								displayAsVirtualFolder = ((FolderData*)child)->isVirtualFolderDisplayEnabled();
 
 							imagePath = child->getMetadata(MetaDataId::Image);
@@ -196,7 +197,7 @@ void GridGameListView::populateList(const std::vector<FileData*>& files)
 
 			if (showParentFolder)
 			{
-				FileData* placeholder = new FileData(PLACEHOLDER, "..", this->mRoot->getSystem());
+				FileData* placeholder = new FileData(FileData::PLACEHOLDER, "..", this->mRoot->getSystem());
 				mGrid.add(". .", imagePath, "", "", false, true, false, displayAsVirtualFolder && !imagePath.empty(), placeholder);
 			}
 		}
@@ -211,7 +212,7 @@ void GridGameListView::populateList(const std::vector<FileData*>& files)
 				if (!file->getFavorite())
 					continue;
 
-				mGrid.add(formatter.getDisplayName(file, file->getType() == FOLDER && Utils::FileSystem::exists(getImagePath(file))), getImagePath(file), file->getVideoPath(), file->getMarqueePath(), file->getFavorite(), file->hasCheevos(), file->getType() != GAME, isVirtualFolder(file), file);
+				mGrid.add(formatter.getDisplayName(file, file->getType() == FileData::FOLDER && Utils::FileSystem::exists(getImagePath(file))), getImagePath(file), file->getVideoPath(), file->getMarqueePath(), file->getFavorite(), file->hasCheevos(), file->getType() != FileData::GAME, isVirtualFolder(file), file);
 			}
 		}
 
@@ -220,7 +221,7 @@ void GridGameListView::populateList(const std::vector<FileData*>& files)
 			if (file->getFavorite() && favoritesFirst)
 				continue;
 
-			mGrid.add(formatter.getDisplayName(file, file->getType() == FOLDER && Utils::FileSystem::exists(getImagePath(file))), getImagePath(file), file->getVideoPath(), file->getMarqueePath(), file->getFavorite(), file->hasCheevos(), file->getType() != GAME, isVirtualFolder(file), file);
+			mGrid.add(formatter.getDisplayName(file, file->getType() == FileData::FOLDER && Utils::FileSystem::exists(getImagePath(file))), getImagePath(file), file->getVideoPath(), file->getMarqueePath(), file->getFavorite(), file->hasCheevos(), file->getType() != FileData::GAME, isVirtualFolder(file), file);
 		}
 
 		// if we have the ".." PLACEHOLDER, then select the first game instead of the placeholder
@@ -263,7 +264,7 @@ void GridGameListView::updateInfoPanel()
 void GridGameListView::addPlaceholder()
 {
 	// empty grid - add a placeholder
-	FileData* placeholder = new FileData(PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());
+	FileData* placeholder = new FileData(FileData::PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());
 	mGrid.add(placeholder->getName(), "", "", "", false, false,false,false, placeholder);
 }
 
@@ -301,12 +302,12 @@ void GridGameListView::remove(FileData *game)
 	mRoot->removeFromVirtualFolders(game);
 	delete game;                                 // remove before repopulating (removes from parent)
 
-	onFileChanged(parent, FILE_REMOVED);           // update the view, with game removed
+	onFileChanged(parent, FileData::FILE_REMOVED);           // update the view, with game removed
 }
 
-void GridGameListView::onFileChanged(FileData* file, FileChangeType change)
+void GridGameListView::onFileChanged(FileData* file, FileData::FileChangeType change)
 {
-	if (change == FILE_METADATA_CHANGED)
+	if (change == FileData::FILE_METADATA_CHANGED)
 	{
 		// might switch to a detailed view
 		ViewController::get()->reloadGameListView(this);

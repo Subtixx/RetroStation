@@ -246,7 +246,7 @@ int main(int argc, char *argv[]) {
 
     loguru::set_verbosity_to_name_callback([](int verbosity) -> const char * {
         if (verbosity == loguru::Verbosity_1) {
-            return "DEBUG";
+            return "DBG";
         }
 
         return nullptr;

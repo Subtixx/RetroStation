@@ -7,7 +7,8 @@
 #include "Settings.h"
 #include "SystemData.h"
 #include "SystemConf.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "LocaleES.h"
 #include "GameNameFormatter.h"
 
@@ -51,9 +52,9 @@ void CarouselGameListView::updateInfoPanel()
 	mDetails.updateControls(file, isClearing, mList.getCursorIndex() - mList.getLastCursor());
 }
 
-void CarouselGameListView::onFileChanged(FileData* file, FileChangeType change)
+void CarouselGameListView::onFileChanged(FileData* file, FileData::FileChangeType change)
 {
-	if(change == FILE_METADATA_CHANGED)
+	if(change == FileData::FILE_METADATA_CHANGED)
 	{
 		// might switch to a detailed view
 		ViewController::get()->reloadGameListView(this);
@@ -74,7 +75,7 @@ void CarouselGameListView::populateList(const std::vector<FileData*>& files)
 		bool showParentFolder = mRoot->getSystem()->getShowParentFolder();
 		if (showParentFolder && mCursorStack.size())
 		{
-			FileData* placeholder = new FileData(PLACEHOLDER, "..", this->mRoot->getSystem());
+			FileData* placeholder = new FileData(FileData::PLACEHOLDER, "..", this->mRoot->getSystem());
 			mList.add(". .", placeholder);
 		}
 
@@ -146,7 +147,7 @@ void CarouselGameListView::setCursor(FileData* cursor)
 void CarouselGameListView::addPlaceholder()
 {
 	// empty list - add a placeholder
-	FileData* placeholder = new FileData(PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());	
+	FileData* placeholder = new FileData(FileData::PLACEHOLDER, "<" + _("No Entries Found") + ">", mRoot->getSystem());
 	mList.add(placeholder->getName(), placeholder);
 }
 
@@ -191,7 +192,7 @@ void CarouselGameListView::remove(FileData *game)
 
 	mRoot->removeFromVirtualFolders(game);
 	delete game;                                 // remove before repopulating (removes from parent)
-	onFileChanged(parent, FILE_REMOVED);           // update the view, with game removed
+	onFileChanged(parent, FileData::FILE_REMOVED);           // update the view, with game removed
 }
 
 void CarouselGameListView::setCursorIndex(int cursor)

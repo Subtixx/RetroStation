@@ -30,6 +30,7 @@
 #include <SDL_timer.h>
 #include "TextToSpeech.h"
 #include "VolumeControl.h"
+#include "FileData/FolderFileData.h"
 
 ViewController* ViewController::sInstance = nullptr;
 
@@ -245,7 +246,7 @@ void ViewController::goToGameList(SystemData* system, bool forceImmediate)
 		{
 			for (auto child : bundle->getRootFolder()->getChildren())
 			{
-				if (child->getType() == FOLDER && child->getName() == system->getName())
+				if (child->getType() == FileData::FOLDER && child->getName() == system->getName())
 				{
 					collectionFolder = (FolderData*)child;
 					destinationSystem = bundle;
@@ -421,7 +422,7 @@ void ViewController::playViewTransition(bool forceImmediate)
 	}
 }
 
-void ViewController::onFileChanged(FileData* file, FileChangeType change)
+void ViewController::onFileChanged(FileData* file, FileData::FileChangeType change)
 {
 	std::string key = file->getFullPath();
 	auto sourceSystem = file->getSourceFileData()->getSystem();
@@ -516,7 +517,7 @@ void ViewController::launch(FileData* game, LaunchGameOptions options, Vector3f 
 	if (allowCheckLaunchOptions && !checkLaunchOptions(game, options, center))
 		return;
 
-	if(game->getType() != GAME)
+	if(game->getType() != FileData::GAME)
 	{
 		LOG_S(ERROR) << "tried to launch something that isn't a game";
 		return;
@@ -599,7 +600,7 @@ void ViewController::launch(FileData* game, LaunchGameOptions options, Vector3f 
 			else
 			{
 				setAnimation(new LambdaAnimation(fadeFunc, 800), 0, [this] { GuiComponent::isLaunchTransitionRunning = false; mLockInput = false; mWindow->closeSplashScreen(); }, true, 3);
-				this->onFileChanged(game, FILE_METADATA_CHANGED);
+				this->onFileChanged(game, FileData::FILE_METADATA_CHANGED);
 			}
 		});
 	} 
@@ -619,7 +620,7 @@ void ViewController::launch(FileData* game, LaunchGameOptions options, Vector3f 
 			{
 				mCamera = origCamera;
 				setAnimation(new LaunchAnimation(mCamera, mFadeOpacity, center, 600), 0, [this] { GuiComponent::isLaunchTransitionRunning = false; mLockInput = false; mWindow->closeSplashScreen(); }, true, 3);
-				this->onFileChanged(game, FILE_METADATA_CHANGED);
+				this->onFileChanged(game, FileData::FILE_METADATA_CHANGED);
 			}
 		});
 	} 
@@ -638,7 +639,7 @@ void ViewController::launch(FileData* game, LaunchGameOptions options, Vector3f 
 			{
 				mCamera = origCamera;
 				setAnimation(new LaunchAnimation(mCamera, mFadeOpacity, center, 10), 0, [this] { GuiComponent::isLaunchTransitionRunning = false; mLockInput = false; mWindow->closeSplashScreen(); }, true, 3);
-				this->onFileChanged(game, FILE_METADATA_CHANGED);
+				this->onFileChanged(game, FileData::FILE_METADATA_CHANGED);
 			}
 		});
 	}
@@ -742,7 +743,7 @@ std::shared_ptr<IGameListView> ViewController::getGameListView(SystemData* syste
 
 		if (system->getTheme()->getDefaultView() != "basic")
 		{
-			std::vector<FileData*> files = system->getRootFolder()->getFilesRecursive(GAME | FOLDER);
+			std::vector<FileData*> files = system->getRootFolder()->getFilesRecursive(FileData::GAME | FileData::FOLDER);
 			for (auto it = files.cbegin(); it != files.cend(); it++)
 			{
 				if (!allowDetailedDowngrade && themeHasVideoView && !(*it)->getVideoPath().empty())
@@ -1073,7 +1074,7 @@ void ViewController::reloadGameListView(IGameListView* view)
 			{
 				if (!cursorPath.empty())
 				{
-					for (auto file : system->getRootFolder()->getFilesRecursive(GAME, true))
+					for (auto file : system->getRootFolder()->getFilesRecursive(FileData::GAME, true))
 					{
 						if (file->getPath() == cursorPath)
 						{

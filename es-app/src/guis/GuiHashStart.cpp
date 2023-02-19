@@ -4,7 +4,7 @@
 #include "components/SwitchComponent.h"
 #include "guis/GuiMsgBox.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include "SystemData.h"
 #include "scrapers/ThreadedScraper.h"
 #include "LocaleES.h"

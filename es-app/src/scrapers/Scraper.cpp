@@ -1,6 +1,7 @@
 #include "scrapers/Scraper.h"
 
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "ArcadeDBJSONScraper.h"
 #include "GamesDBJSONScraper.h"
 #include "ScreenScraper.h"

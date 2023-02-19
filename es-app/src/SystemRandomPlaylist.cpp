@@ -2,7 +2,8 @@
 #include "utils/StringUtil.h"
 #include "utils/FileSystemUtil.h"
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 
 ///////////// SystemRandomPlaylist ///////////// 
 
@@ -30,7 +31,7 @@ std::string SystemRandomPlaylist::getNextItem()
 			mPaths = it->second;
 		else
 		{
-			std::vector<FileData*> files = mSystem->getRootFolder()->getFilesRecursive(GAME, false);
+			std::vector<FileData*> files = mSystem->getRootFolder()->getFilesRecursive(FileData::GAME, false);
 
 			for (auto file : files)
 			{

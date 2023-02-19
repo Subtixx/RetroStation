@@ -14,6 +14,7 @@
 #include "Window.h"
 #include "platform.h"
 #include "utils/FileSystemUtil.h"
+#include "FileData/FolderFileData.h"
 #include "utils/Randomizer.h"
 #include "utils/StringUtil.h"
 #include "utils/ThreadPool.h"
@@ -158,10 +159,10 @@ void SystemData::removeMultiDiskContent(std::unordered_map<std::string, FileData
         stack.pop();
 
         for (auto it : current->getChildren()) {
-            if (it->getType() == GAME && it->hasContentFiles()) {
+            if (it->getType() == FileData::GAME && it->hasContentFiles()) {
                 for (auto ct : it->getContentFiles())
                     files.push_back(ct);
-            } else if (it->getType() == FOLDER) {
+            } else if (it->getType() == FileData::FOLDER) {
                 folders.push_back((FolderData *)it);
                 stack.push((FolderData *)it);
             }
@@ -243,7 +244,7 @@ void SystemData::populateFolder(FolderData *folder, std::unordered_map<std::stri
 
         isGame = false;
         if (mEnvData->isValidExtension(extension)) {
-            FileData *newGame = new FileData(GAME, filePath, this);
+            FileData *newGame = new FileData(FileData::GAME, filePath, this);
 
             // preventing new arcade assets to be added
             if (!newGame->isArcadeAsset()) {
@@ -328,10 +329,10 @@ void SystemData::indexAllGameFilters(const FolderData *folder) {
 
     for (auto it = children.cbegin(); it != children.cend(); ++it) {
         switch ((*it)->getType()) {
-        case GAME: {
+        case FileData::GAME: {
             mFilterIndex->addToIndex(*it);
         } break;
-        case FOLDER: {
+        case FileData::FOLDER: {
             indexAllGameFilters((FolderData *)*it);
         } break;
         }
@@ -1201,7 +1202,7 @@ bool SystemData::hasGamelist() const {
 }
 
 unsigned int SystemData::getGameCount() const {
-    return (unsigned int)mRootFolder->getFilesRecursive(GAME).size();
+    return (unsigned int)mRootFolder->getFilesRecursive(FileData::GAME).size();
 }
 
 SystemData *SystemData::getRandomSystem() {
@@ -1226,7 +1227,7 @@ SystemData *SystemData::getRandomSystem() {
 }
 
 FileData *SystemData::getRandomGame() {
-    std::vector<FileData *> list = mRootFolder->getFilesRecursive(GAME, true);
+    std::vector<FileData *> list = mRootFolder->getFilesRecursive(FileData::GAME, true);
     unsigned int total = (int)list.size();
     if (total == 0)
         return NULL;
@@ -1240,13 +1241,13 @@ GameCountInfo *SystemData::getGameCountInfo() {
     if (mGameCountInfo != nullptr)
         return mGameCountInfo;
 
-    std::vector<FileData *> games = mRootFolder->getFilesRecursive(GAME, true);
+    std::vector<FileData *> games = mRootFolder->getFilesRecursive(FileData::GAME, true);
 
     int realTotal = games.size();
     if (mFilterIndex != nullptr) {
         auto savedFilter = mFilterIndex;
         mFilterIndex = nullptr;
-        realTotal = mRootFolder->getFilesRecursive(GAME, true).size();
+        realTotal = mRootFolder->getFilesRecursive(FileData::GAME, true).size();
         mFilterIndex = savedFilter;
     }
 

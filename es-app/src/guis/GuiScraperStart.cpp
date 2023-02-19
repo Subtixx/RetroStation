@@ -3,7 +3,8 @@
 #include "components/SwitchComponent.h"
 #include "guis/GuiMsgBox.h"
 #include "views/ViewController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "SystemData.h"
 #include "scrapers/ThreadedScraper.h"
 #include "LocaleES.h"
@@ -197,7 +198,7 @@ std::queue<ScraperSearchParams> GuiScraperStart::getSearches(std::vector<SystemD
 			handler->setText(_("PLEASE WAIT") + " " + std::to_string(percent) + "%");
 		}
 
-		auto games = system->getRootFolder()->getFilesRecursive(GAME);
+		auto games = system->getRootFolder()->getFilesRecursive(FileData::GAME);
 		for(auto game : games)
 		{
 			if (dateSelector(game) && mediaSelector(game))

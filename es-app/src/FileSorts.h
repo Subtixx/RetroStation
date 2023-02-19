@@ -2,7 +2,7 @@
 #ifndef ES_APP_FILE_SORTS_H
 #define ES_APP_FILE_SORTS_H
 
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include <vector>
 
 namespace FileSorts

@@ -2,7 +2,7 @@
 
 #include "utils/StringUtil.h"
 #include "views/UIModeController.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
 #include <loguru.hpp>
 #include "Settings.h"
 #include "LocaleES.h"
@@ -10,7 +10,7 @@
 #include <pugixml/src/pugixml.hpp>
 
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FolderFileData.h"
 #include "CollectionSystemManager.h"
 #include "Genres.h"
 #include "SystemConf.h"
@@ -275,7 +275,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 
 	case FAVORITES_FILTER:
 	{
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		key = game->getMetadata(MetaDataId::Favorite);
@@ -284,7 +284,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 
 	case KIDGAME_FILTER:
 	{
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		key = game->getMetadata(MetaDataId::KidGame);
@@ -304,7 +304,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 		if (getSecondary)
 			break;
 
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		return game->hasCheevos() ? "TRUE" : "FALSE";		
@@ -315,7 +315,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 		if (getSecondary)
 			break;
 
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		return game->hasAnyMedia() ? "TRUE" : "FALSE";
@@ -326,7 +326,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 		if (getSecondary)
 			break;
 
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		return game->isLightGunGame() ? "TRUE" : "FALSE";
@@ -337,7 +337,7 @@ std::string FileFilterIndex::getIndexableKey(FileData* game, FilterIndexType typ
 		if (getSecondary)
 			break;
 
-		if (game->getType() != GAME)
+		if (game->getType() != FileData::GAME)
 			return "FALSE";
 
 		return game->isVerticalArcadeGame() ? "TRUE" : "FALSE";		
@@ -548,7 +548,7 @@ int FileFilterIndex::showFile(FileData* game)
 
 	// if folder, needs further inspection - i.e. see if folder contains at least one element
 	// that should be shown
-	if (game->getType() == FOLDER) 
+	if (game->getType() == FileData::FOLDER)
 	{
 		std::vector<FileData*> children = ((FolderData*)game)->getChildren();
 		// iterate through all of the children, until there's a match

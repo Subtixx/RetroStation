@@ -9,7 +9,8 @@
 #include "AsyncHandle.h"
 #include "guis/GuiMsgBox.h"
 #include "SystemData.h"
-#include "FileData.h"
+#include "FileData/FileData.h"
+#include "FileData/FolderFileData.h"
 #include "ThemeData.h"
 #include "components/MenuComponent.h"
 #include "components/ButtonComponent.h"
@@ -328,7 +329,7 @@ FileData* GuiNetPlay::getFileData(std::string gameInfo, bool crc, std::string co
 				continue;
 		}
 
-		for (auto file : sys->getRootFolder()->getFilesRecursive(GAME))
+		for (auto file : sys->getRootFolder()->getFilesRecursive(FileData::GAME))
 		{
 			if (crc)
 			{

@@ -36,7 +36,7 @@ public:
 	}
 
 	virtual void launch(FileData* game) override;
-	virtual void onFileChanged(FileData* file, FileChangeType change);
+	virtual void onFileChanged(FileData* file, FileData::FileChangeType change);
 
 	virtual void setThemeName(std::string name);
 	virtual void onShow();

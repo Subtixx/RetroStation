@@ -66,6 +66,7 @@ bool TextureData::initSVGFromMemory(const unsigned char* fileData, size_t length
 	if (!svgImage)
 	{
 		LOG_S(ERROR) << "Error parsing SVG image.";
+        nsvgDelete(svgImage);
 		return false;
 	}
 

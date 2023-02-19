@@ -1,5 +1,6 @@
 #include "views/gamelist/ISimpleGameListView.h"
 
+#include "FileData/FolderFileData.h"
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
@@ -98,7 +99,7 @@ void ISimpleGameListView::onThemeChanged(const std::shared_ptr<ThemeData>& theme
 	}
 }
 
-void ISimpleGameListView::onFileChanged(FileData* /*file*/, FileChangeType /*change*/)
+void ISimpleGameListView::onFileChanged(FileData* /*file*/, FileData::FileChangeType /*change*/)
 {
 	// we could be tricky here to be efficient;
 	// but this shouldn't happen very often so we'll just always repopulate
@@ -161,7 +162,7 @@ FolderData* ISimpleGameListView::getCurrentFolder()
 	if (mCursorStack.size())
 	{
 		auto top = mCursorStack.top();
-		if (top->getType() == FOLDER)
+		if (top->getType() == FileData::FOLDER)
 			return (FolderData*)top;
 	}
 
@@ -345,7 +346,7 @@ void ISimpleGameListView::showSelectedGameOptions()
 bool ISimpleGameListView::cursorHasSaveStatesEnabled()
 {
 	FileData* cursor = getCursor();
-	if (cursor == nullptr || cursor->getType() != GAME)
+	if (cursor == nullptr || cursor->getType() != FileData::GAME)
 		return false;
 
 	return SaveStateRepository::isEnabled(cursor);
@@ -354,7 +355,7 @@ bool ISimpleGameListView::cursorHasSaveStatesEnabled()
 void ISimpleGameListView::showSelectedGameSaveSnapshots()
 {
 	FileData* cursor = getCursor();
-	if (cursor == nullptr || cursor->getType() != GAME)
+	if (cursor == nullptr || cursor->getType() != FileData::GAME)
 		return;
 
 	if (SaveStateRepository::isEnabled(cursor))
@@ -382,7 +383,7 @@ void ISimpleGameListView::launchSelectedGame()
 	FileData* cursor = getCursor();
 	FolderData* folder = NULL;
 
-	if (mCursorStack.size() && cursor->getType() == PLACEHOLDER && cursor->getPath() == "..")
+	if (mCursorStack.size() && cursor->getType() == FileData::PLACEHOLDER && cursor->getPath() == "..")
 	{
 		auto top = mCursorStack.top();
 		mCursorStack.pop();
@@ -397,7 +398,7 @@ void ISimpleGameListView::launchSelectedGame()
 	}
 	else
 	{
-		if (cursor->getType() == GAME)
+		if (cursor->getType() == FileData::GAME)
 		{
 			if (SaveStateRepository::isEnabled(cursor) &&
 				(cursor->getCurrentGameSetting("savestates") == "1" || (cursor->getCurrentGameSetting("savestates") == "2" && cursor->getSourceFileData()->getSystem()->getSaveStateRepository()->hasSaveStates(cursor))))
@@ -418,7 +419,7 @@ void ISimpleGameListView::launchSelectedGame()
 				launch(cursor);
 			}
 		}
-		else if (cursor->getType() == FOLDER)
+		else if (cursor->getType() == FileData::FOLDER)
 			moveToFolder((FolderData*)cursor);
 	}
 }
@@ -472,7 +473,7 @@ std::vector<std::string> ISimpleGameListView::getEntriesLetters()
 	std::set<std::string> setOfLetters;
 
 	for (auto file : getFileDataEntries()) 
-		if (file->getType() == GAME)
+		if (file->getType() == FileData::GAME)
 			setOfLetters.insert(std::string(1, toupper(file->getName()[0])));
 
 	std::vector<std::string> letters;
@@ -517,7 +518,7 @@ void ISimpleGameListView::repopulate()
 	if (mCursorStack.size())
 	{
 		auto top = mCursorStack.top();
-		if (top->getType() == FOLDER)
+		if (top->getType() == FileData::FOLDER)
 			folder = (FolderData*)top;
 	}
 

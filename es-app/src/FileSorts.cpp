@@ -76,7 +76,7 @@ namespace FileSorts
 	{
 		if (file1->getType() != file2->getType())
 		{
-			return file1->getType() == FOLDER;
+			return file1->getType() == FileData::FOLDER;
 		}
 		// we compare the actual metadata name, as collection files have the system appended which messes up the order
 		auto name1 = ((FileData *) file1)->getName();
