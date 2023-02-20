@@ -33,7 +33,7 @@ include(${_project_options_SOURCE_DIR}/Index.cmake)
 # Define the features of the project
 include("./Features.cmake")
 
-run_vcpkg()
+#run_vcpkg()
 
 SET(PROJECT_NAME "RetroStation")
 SET(VERSION_UPDATE_FROM_GIT ON)

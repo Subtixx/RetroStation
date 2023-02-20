@@ -47,10 +47,6 @@
         "lhs": "${hostSystemName}",
         "rhs": "Linux"
       },
-      "cacheVariables": {
-        "FEATURE_TESTS": "ON",
-        "FEATURE_DOCS": "ON"
-      },
       "vendor": {
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
           "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"

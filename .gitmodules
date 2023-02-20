@@ -34,3 +34,6 @@
 [submodule "external/cparse"]
 	path = external/cparse
 	url = https://github.com/cparse/cparse.git
+[submodule "external/vcpkg"]
+	path = external/vcpkg
+	url = https://github.com/Microsoft/vcpkg.git
