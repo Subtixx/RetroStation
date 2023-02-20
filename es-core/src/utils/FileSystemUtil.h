@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DateTime.h"
 #include "utils/TimeUtil.h"
 #include <list>
 #include <string>
@@ -54,8 +55,8 @@ fileList getDirectoryFiles(const std::string &_path);
 std::string combine(const std::string &_path, const std::string &filename);
 unsigned long long getFileSize(const std::string &_path);
 
-Utils::Time::DateTime getFileCreationDate(const std::string &_path);
-Utils::Time::DateTime getFileModificationDate(const std::string &_path);
+Utils::DateTime getFileCreationDate(const std::string &_path);
+Utils::DateTime getFileModificationDate(const std::string &_path);
 
 std::string readAllText(const std::string fileName);
 void writeAllText(const std::string &fileName, const std::string &text);

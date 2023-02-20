@@ -15,462 +15,23 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Parser: loco_parse_po\n"
 
-msgid "UPDATE AVAILABLE"
-msgstr "PEMBAHARUAN TERSEDIA"
+msgid "Extracting"
+msgstr "Mengekstrak"
 
-msgid "Name"
-msgstr "Name"
+msgid "SEARCHING RETROACHIEVEMENTS"
+msgstr "CARI BERDASARKAN PERINGKAT"
 
-msgid "this game's name"
-msgstr "nama game ini"
+msgid "SEARCHING NETPLAY GAMES"
+msgstr "CARI GAME ONLINE"
 
-msgid "Description"
-msgstr "Deskripsi"
+msgid "INDEXING COMPLETED"
+msgstr "PENGINDEKSAN SELESAI"
 
-msgid "this game's description"
-msgstr "deskripsi game ini"
+msgid "UPDATE GAMELISTS TO APPLY CHANGES."
+msgstr "UPDATE LISTGAME UNTUK MENERAPKAN PERUBAHAN."
 
-msgid "Emulator"
-msgstr "Emulator"
-
-msgid "emulator"
-msgstr "emulator"
-
-msgid "Core"
-msgstr "Core"
-
-msgid "core"
-msgstr "core"
-
-msgid "Image"
-msgstr "Gambar"
-
-msgid "enter path to image"
-msgstr "masukkan jalur ke gambar"
-
-msgid "Video"
-msgstr "Video"
-
-msgid "enter path to video"
-msgstr "masukkan jalur ke video"
-
-msgid "Logo"
-msgstr "Logo"
-
-msgid "enter path to logo"
-msgstr "masukkan jalur ke logo"
-
-msgid "Box"
-msgstr "Box"
-
-msgid "enter path to box"
-msgstr "masukkan jalur ke box"
-
-msgid "Fan art"
-msgstr "Seni penggemar"
-
-msgid "enter path to fanart"
-msgstr "masukkan jalur ke seni penggemar"
-
-msgid "Title shot"
-msgstr "Judul utama"
-
-msgid "enter path to title shot"
-msgstr "masukkan jalur ke judul utama"
-
-msgid "Manual"
-msgstr "Petunjuk"
-
-msgid "enter path to manual"
-msgstr "masukkan jalur ke petunjuk"
-
-msgid "Magazine"
-msgstr "Kalawarta"
-
-msgid "enter path to magazine"
-msgstr "masukkan jalur ke kalawarta"
-
-msgid "Map"
-msgstr "Peta"
-
-msgid "enter path to map"
-msgstr "masukkan jalur ke peta"
-
-msgid "Bezel (16:9)"
-msgstr "Frame layar (16:9)"
-
-msgid "enter path to bezel (16:9)"
-msgstr "masukkan jalur ke frame layar (16:9)"
-
-msgid "Cartridge"
-msgstr "Katrid"
-
-msgid "enter path to cartridge"
-msgstr "masukkan jalur ke katrid"
-
-msgid "Alt BoxArt"
-msgstr "Sampul Depan"
-
-msgid "enter path to alt boxart"
-msgstr "masukkan jalur ke sampul depan"
-
-msgid "Box backside"
-msgstr "Sampul belakang"
-
-msgid "enter path to box background"
-msgstr "masukkan jalur ke sampul belakang"
-
-msgid "Wheel"
-msgstr "Tokoh"
-
-msgid "enter path to wheel"
-msgstr "masukkan jalur ke tokoh"
-
-msgid "Mix"
-msgstr "Campuran"
-
-msgid "enter path to mix"
-msgstr "masukkan jalur ke campuran"
-
-msgid "Rating"
-msgstr "Peringkat"
-
-msgid "enter rating"
-msgstr "masukkan peringkat"
-
-msgid "Release date"
-msgstr "Tanggal rilis"
-
-msgid "enter release date"
-msgstr "masukkan tanggal rilis"
-
-msgid "Developer"
-msgstr "Pengembang"
-
-msgid "this game's developer"
-msgstr "pengembang game ini"
-
-msgid "Publisher"
-msgstr "Penerbit"
-
-msgid "this game's publisher"
-msgstr "penerbit game ini"
-
-msgid "Genre"
-msgstr "Genre"
-
-msgid "enter game genre"
-msgstr "masukkan genre game"
-
-msgid "Game family"
-msgstr "PGame kelurga"
-
-msgid "this game's game family"
-msgstr "ini game keluarga"
-
-msgid "Genres"
-msgstr "Jenis"
-
-msgid "enter game genres"
-msgstr "masukkan jenis game"
-
-msgid "Arcade system"
-msgstr "Sistem arcade"
-
-msgid "this game's arcade system"
-msgstr "game ini sistem arcade"
-
-msgid "Players"
-msgstr "Pemain"
-
-msgid "this game's number of players"
-msgstr "jumlah pemain game ini"
-
-msgid "Favorite"
-msgstr "Favorit"
-
-msgid "enter favorite"
-msgstr "masukkan favorit"
-
-msgid "Hidden"
-msgstr "Sembunyikan"
-
-msgid "enter hidden"
-msgstr "masukkan sembunyi"
-
-msgid "Kidgame"
-msgstr "Game anak"
-
-msgid "enter kidgame"
-msgstr "masukkan game anak"
-
-msgid "Play count"
-msgstr "Hitungan bermain"
-
-msgid "enter number of times played"
-msgstr "masukkan jumlah hitungan bermain"
-
-msgid "Last played"
-msgstr "Dimainkan terakhir"
-
-msgid "enter last played date"
-msgstr "masukkan tanggal terakhir dimainkan"
-
-msgid "Crc32"
-msgstr "Crc32"
-
-msgid "Crc32 checksum"
-msgstr "Ceksum Crc32"
-
-msgid "Md5"
-msgstr "Md5"
-
-msgid "Md5 checksum"
-msgstr "Ceksum Md5"
-
-msgid "Game time"
-msgstr "Lama game"
-
-msgid "how long the game has been played in total (seconds)"
-msgstr "berapa lama game ini dimainkan (detik)"
-
-msgid "Languages"
-msgstr "Bahasa"
-
-msgid "this game's languages"
-msgstr "bahasa game ini"
-
-msgid "Region"
-msgstr "Kawasan"
-
-msgid "this game's region"
-msgstr "kawasan game ini"
-
-msgid "Cheevos Hash"
-msgstr "Hash cheevos"
-
-msgid "Cheevos checksum"
-msgstr "Ceksum cheevos"
-
-msgid "Cheevos Game ID"
-msgstr "ID Game Cheevos"
-
-msgid "Screenscraper Game ID"
-msgstr "ID Game Screenscraper"
-
-msgid "all games"
-msgstr "semua game"
-
-msgid "last played"
-msgstr "dimainkan terakhir"
-
-msgid "favorites"
-msgstr "faforit"
-
-msgid "2 players"
-msgstr "2 pemain"
-
-msgid "4 players"
-msgstr "4 pemain"
-
-msgid "never played"
-msgstr "tidak pernah dimainkan"
-
-msgid "retroachievements"
-msgstr "peringkat retro"
-
-msgid "arcade"
-msgstr "arcade"
-
-msgid "vertical arcade"
-msgstr "arcade vertikal"
-
-msgid "lightgun games"
-msgstr "permainan bersenjata ringan"
-
-msgid "collections"
-msgstr "koleksi"
-
-#, c-format
-msgid "Added '%s' to '%s'"
-msgstr "Ditambahkan '%s' sampai '%s"
-
-#, c-format
-msgid "Removed '%s' from '%s'"
-msgstr "Dihapus '%s' dari '%s'"
-
-msgid "This collection is empty."
-msgstr "Koleksi ini kosong"
-
-#. TRANSLATION: number of developpers / various developpers
-msgid "None"
-msgstr "Tidak ada"
-
-msgid "Various"
-msgstr "Macam-macam"
-
-#, c-format
-msgid "This collection contains %i game:%s"
-msgid_plural "This collection contains %i games, including:%s"
-msgstr[0] ""
-"Koleksi ini terdapat\n"
-"Gamenya %i adalah :%s"
-
-msgid "SCANNING BLUETOOTH"
-msgstr "MEMINDAI BLUETOOTH"
-
-msgid "Searching for devices..."
-msgstr "Mencari perangkat..."
-
-msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
-msgstr "PEMINDAI BLUETOOTH SUDAH BERJALAN."
-
-msgid "FORMATTING DEVICE"
-msgstr "FORMAT PERANGKAT"
-
-msgid "Formatting"
-msgstr "Memformat"
-
-msgid "A REBOOT IS REQUIRED TO COMPLETE THE OPERATION"
-msgstr "REBOOT DIPERLUKAN UNTUK MENYELESAIKAN OPERASI"
-
-msgid "A DRIVE IS ALREADY BEING FORMATTED."
-msgstr "DRIVE SUDAH DIFORMAT."
-
-msgid "DOWNLOADING"
-msgstr "MENGUNDUH"
-
-msgid "THEME INSTALLED SUCCESSFULLY"
-msgstr "TEMA BERHASIL DIPASANG"
-
-msgid "AN ERROR OCCURED"
-msgstr "TERJADI KESALAHAN"
-
-msgid "THEME UNINSTALLED SUCCESSFULLY"
-msgstr "TEMA TIDAK BERHASIL DIPASANG"
-
-msgid "BEZELS INSTALLED SUCCESSFULLY"
-msgstr "FRAME LAYAR BERHASIL DIPASANG"
-
-msgid "BEZELS UNINSTALLED SUCCESSFULLY"
-msgstr "FRAME LAYAR BERHASIL DICOPOT"
-
-msgid "PACKAGE INSTALLED SUCCESSFULLY"
-msgstr "PAKET BERHASIL DIPASANG"
-
-msgid "PACKAGE REMOVED SUCCESSFULLY"
-msgstr "PAKET BERHASIL DIHAPUS"
-
-msgid "RETROACHIEVEMENT SETTINGS"
-msgstr "PENGATURAN PERINGKAT RETRO"
-
-msgid "SETTINGS"
-msgstr "PENGATURAN"
-
-msgid "RETROACHIEVEMENTS"
-msgstr "PERINGKAT RETRO"
-
-msgid "USERNAME"
-msgstr "NAMA PENGGUNA"
-
-msgid "PASSWORD"
-msgstr "KATA SANDI"
-
-msgid "OPTIONS"
-msgstr "PILIHAN"
-
-msgid "HARDCORE MODE"
-msgstr "MODE HARDCORE"
-
-msgid "Disable loading states, rewind and cheats for more points."
-msgstr ""
-"Nonaktifkan status pemuatan, mundur, dan curang untuk mendapatkan lebih "
-"banyak poin."
-
-msgid "LEADERBOARDS"
-msgstr "PAPAN PERINGKAT"
-
-msgid "Compete in high-score and best time leaderboards (requires hardcore)."
-msgstr "Bersaing di papan peringkat dan waktu terbaik (membutuhkan hardcore)."
-
-msgid "VERBOSE MODE"
-msgstr "MODE VERBOSE"
-
-msgid "Show achievement progression on game launch and other notifications."
-msgstr ""
-"Tampilkan perkembangan pencapaian pada peluncuran game dan notifikasi "
-"lainnya."
-
-msgid "RICH PRESENCE"
-msgstr "KEHADIRAN TINGGI"
-
-msgid "ENCORE MODE"
-msgstr "MODE ENCORE"
-
-msgid "Unlocked achievements can be earned again."
-msgstr "Pncapaian yang tidak terkunci dapat diperoleh lagi."
-
-msgid "AUTOMATIC SCREENSHOT"
-msgstr "TANGKAPAN LAYAR OTOMATIS"
-
-msgid "Automatically take a screenshot when an achievement is earned."
-msgstr "Otomatis mengambil tangkapan layar saat pencapaian diperoleh."
-
-msgid "CHALLENGE INDICATORS"
-msgstr "INDIKATOR TANTANGAN"
-
-msgid ""
-"Shows icons in the bottom right corner when eligible achievements can be "
-"earned."
-msgstr "Menampilkan ikon di pojok kanan bawah saat pencapaian memenuhi syarat"
-
-msgid "RETROACHIEVEMENT UNLOCK SOUND"
-msgstr "MEMBUKA PERINGKAT SUARA RETRO"
-
-msgid "none"
-msgstr "tidak ada"
-
-msgid "UNLOCK SOUND"
-msgstr "MEMBUKA SUARA"
-
-msgid "SHOW RETROACHIEVEMENTS ENTRY IN MAIN MENU"
-msgstr "TAMPILKAN PENCAPAIAN RETRO DI MENU UTAMA"
-
-msgid "View your RetroAchievement stats right from the main menu!"
-msgstr "Lihat statistik RetroAchievement Anda langsung dari menu utama!"
-
-msgid "GAME INDEXES"
-msgstr "INDEKS GAME"
-
-msgid "INDEX NEW GAMES AT STARTUP"
-msgstr "INDEKS GAME SAAT MEMULAI"
-
-msgid "INDEX GAMES"
-msgstr "INDEK GAME"
-
-msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
-msgstr "TIDAK DAPAT MENGAKTIFKAN PENCAPAIAN:"
-
-msgid "OK"
-msgstr "KUY"
-
-msgid "FILTER GAMELIST BY"
-msgstr "FILTER DAFTAR GAME BERDASARKAN"
-
-msgid "EDIT DYNAMIC COLLECTION FILTERS"
-msgstr "EDIT FILTER KOLEKSI DINAMIS"
-
-msgid "RESET ALL FILTERS"
-msgstr "RESET SEMUA FILTER"
-
-msgid "BACK"
-msgstr "KEMBALI"
-
-msgid "FIND GAMES"
-msgstr "TEMUKAN GAME"
-
-msgid "Unknown"
-msgstr "Tidak dikenal"
+msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
+msgstr "HASHING GAME SEDANG BERJALAN. INGIN MENGHENTIKANNYA?"
 
 msgid "YES"
 msgstr "YA"
@@ -478,715 +39,26 @@ msgstr "YA"
 msgid "NO"
 msgstr "TIDAK"
 
-msgid "SYSTEMS"
-msgstr "SISTEM"
-
-msgid "GAME COLLECTION SETTINGS"
-msgstr "PENGATURAN KOLEKSI GAME"
-
-msgid "COLLECTIONS TO DISPLAY"
-msgstr "KOLEKSI UNTUK DITAMPILKAN"
-
-msgid "SYSTEMS DISPLAYED"
-msgstr "TAMPILAN SISTEM"
-
-msgid "GROUPED SYSTEMS"
-msgstr "SISTEM GRUP"
-
-msgid "CREATE CUSTOM COLLECTION"
-msgstr "BUAT KOLEKSI KUSTOM"
-
-msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
-msgstr "BUAT KOLEKSI KUSTOM BARU DARI TEMA"
-
-msgid "SELECT THEME FOLDER"
-msgstr "PILIH FOLDER TEMA"
-
-msgid "CREATE NEW EDITABLE COLLECTION"
-msgstr "BUAT KOLEKSI BARU YANG DAPAT DIEDIT"
-
-msgid "New Collection Name"
-msgstr "Nama Koleksi Baru"
-
-msgid "CREATE NEW DYNAMIC COLLECTION"
-msgstr "BUAT KOLEKSI DINAMIS BARU"
-
-msgid "SORT COLLECTIONS AND SYSTEMS"
-msgstr "URUT KOLEKSI DAN SISTEM"
-
-msgid "ALPHABETICALLY"
-msgstr "URUT ALFABET"
-
-msgid "BY MANUFACTURER"
-msgstr "BERDASARKAN PRODUSEN"
-
-msgid "BY HARDWARE TYPE"
-msgstr "BERDASARKAN TIPE HARDWARE"
-
-msgid "BY MANUFACTURER AND TYPE"
-msgstr "BERDASARKAN PRODUSEN DAN TIPE"
-
-msgid "BY RELEASE YEAR"
-msgstr "BERDASARKAN TAHUN RILIS"
-
-msgid "SORT SYSTEMS"
-msgstr "URUT SISTEM"
-
-msgid "START ON SYSTEM"
-msgstr "MULAI PADA SISTEM"
-
-msgid "NONE"
-msgstr "TIDAK ADA"
-
-msgid "RESTORE LAST SELECTED"
-msgstr "PULIHKAN TERAKHIR DIPILIH"
-
-msgid "START ON GAMELIST"
-msgstr "MULAI DI DAFTAR GAME"
-
-msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
-msgstr "KELOMPOK KOLEKSI KUSTOM YANG TIDAK DIKENAL"
-
-msgid "SHOW SYSTEM NAME IN COLLECTIONS"
-msgstr "TAMPILKAN NAMA SISTEM DALAM KOLEKSI"
-
-msgid "SHOW GAMES OF HIDDEN SYSTEMS IN COLLECTIONS"
-msgstr "TAMPILKAN GAME SISTEM TERSEMBUNYI DALAM KOLEKSI"
-
-msgid "SHOW EMPTY SYSTEMS"
-msgstr "TAMPILKAN SISTEM KOSONG"
-
-msgid "UPDATE GAMELISTS"
-msgstr "PERBARUI LIST GAME"
-
-msgid "Loading..."
-msgstr "Memuat..."
-
-msgid "SELECT COLLECTIONS"
-msgstr "PILIH KOLEKSI"
-
-msgid "AUTOMATIC COLLECTIONS"
-msgstr "KOLEKSI OTOMATIS"
-
-msgid "PER GENRE"
-msgstr "PER GENRE"
-
-msgid "ARCADE SYSTEMS"
-msgstr "SISTEM ARCADE"
-
-msgid "AUTOMATIC GAME COLLECTIONS"
-msgstr "KOLEKSI GAME OTOMATIS"
-
-msgid "EDITABLE COLLECTIONS"
-msgstr "KOLEKSI DAPAT DIEDIT"
-
-msgid "DYNAMIC COLLECTIONS"
-msgstr "KOLEKSI DINAMIS"
-
-msgid "CUSTOM GAME COLLECTIONS"
-msgstr "KOLEKSI GAME KOSTUM"
+msgid "NO GAMES FIT THAT CRITERIA."
+msgstr "TIDAK ADA GAME YANG COCOK DENGAN KRITERIA ITU."
 
 msgid "PLEASE WAIT"
 msgstr "MOHON TUNGGU"
-
-#, c-format
-msgid "%d%% (%d of %d)"
-msgstr ""
-
-msgid "Points (hardcore)"
-msgstr "Poin (hardcore)"
-
-msgid "Softcore points"
-msgstr "Poin softcore"
-
-msgid "Rank"
-msgstr "Peringkat"
-
-msgid "VIEW DETAILS"
-msgstr "LIHAT RINCIAN"
-
-msgid "LAUNCH"
-msgstr "LUNCURKAN"
-
-msgid "NETPLAY SETTINGS"
-msgstr "PENGATURAN NETPLAY"
-
-msgid "ENABLE NETPLAY"
-msgstr "AKTIFKAN NETPLAY"
-
-msgid "NICKNAME"
-msgstr "INISIAL"
-
-msgid "PORT"
-msgstr "PORT"
-
-msgid "USE RELAY SERVER"
-msgstr "GUNAKAN SERVER RELAY"
-
-msgid "NEW YORK"
-msgstr "NEW YORK"
-
-msgid "MADRID"
-msgstr "MADRID"
-
-msgid "MONTREAL"
-msgstr "MONTREAL"
-
-msgid "SAO PAULO"
-msgstr "SAO PAULO"
-
-msgid "SHOW UNAVAILABLE GAMES"
-msgstr "TAMPILKAN GAME YANG TIDAK TERSEDIA"
-
-msgid "Show rooms for games not present on this machine."
-msgstr "Tampilkan ruang untuk game yang tidak ada di mesin ini."
-
-msgid "FINISHED"
-msgstr "SELESAI"
-
-msgid "VIEW OPTIONS"
-msgstr "LIHAT PILIHAN"
-
-msgid "go back"
-msgstr "kembali"
-
-msgid "NAVIGATION"
-msgstr "NAVIGASI"
-
-msgid "OTHER FILTERS"
-msgstr "FILTER LAINNYA"
-
-msgid "SELECT RANDOM GAME"
-msgstr "PILIH GAME RANDOM"
-
-msgid "JUMP TO GAME BEGINNING WITH THE LETTER"
-msgstr "LOMPAT KE GAME AWAL"
-
-msgid "SORT GAMES BY"
-msgstr "URUT GAME BERDASARKAN"
-
-msgid "DYNAMIC COLLECTION"
-msgstr "KOLEKSI DINAMIS"
-
-msgid "CUSTOM COLLECTION"
-msgstr "KOLEKSI KOSTUM"
-
-msgid "DELETE COLLECTION"
-msgstr "HAPUS KOLEKSI"
-
-msgid "COLLECTION"
-msgstr "KOLEKSI"
-
-msgid "GAMELIST VIEW STYLE"
-msgstr "GAYA TAMPILAN GAMELIST"
-
-msgid "automatic"
-msgstr "otomatis"
-
-msgid "VIEW CUSTOMIZATION"
-msgstr "LIHAT KUSTOMISASI"
-
-msgid "VIEW PAD TO KEYBOARD INFORMATION"
-msgstr "LIHAT INFORMASI PAD KE KEYBOARD"
-
-msgid "ADVANCED SYSTEM OPTIONS"
-msgstr "PILIHAN SISTEM LANJUTAN"
-
-msgid "RESET FILTERS"
-msgstr ""
-
-msgid "FILTER GAMES BY TEXT"
-msgstr "FILTER ULANG"
-
-msgid "THIS FUNCTION IS DISABLED WHILE THE SCRAPER IS RUNNING"
-msgstr "FUNGSI INI DINONAKTIFKAN SAAT SCRAPER BERJALAN"
-
-msgid "CLOSE"
-msgstr "TUTUP"
-
-msgid "ARE YOU SURE YOU WANT TO DELETE THIS ITEM?"
-msgstr "ANDA YAKIN INGIN MENGHAPUS ITEM INI?"
-
-msgid "FORGET A BLUETOOTH DEVICE"
-msgstr "LUPAKAN PERANGKAT BLUETOOTH"
-
-msgid "REMOVE ALL"
-msgstr "HAPUS SEMUA"
-
-msgid "NO BLUETOOTH DEVICES FOUND"
-msgstr "TIDAK DITEMUKAN PERANGKAT BLUETOOTH"
-
-msgid "REMOVE"
-msgstr "HAPUS"
-
-msgid "BLUETOOTH DEVICES HAVE BEEN DELETED."
-msgstr "PERANGKAT BLUETOOTH TERHAPUS"
-
-#, c-format
-msgid "ARE YOU SURE YOU WANT TO REMOVE '%s' ?"
-msgstr "ANDA YAKIN INGIN MENGHAPUS '%s' ?"
-
-msgid "INPUT"
-msgstr "INPUT"
-
-msgid "SEARCH"
-msgstr "CARI"
-
-msgid "CANCEL"
-msgstr "BATALKAN"
-
-msgid "CONNECT TO NETPLAY"
-msgstr "HUBUNGKAN KE NETPLAY"
-
-msgid "Select a game lobby to join"
-msgstr "Pilih lobi permainan untuk bergabung"
-
-msgid "REFRESH"
-msgstr "SEGARKAN"
-
-msgid "FAILED"
-msgstr "GAGAL"
-
-msgid "UNKNOWN ROM VERSION"
-msgstr "VERSI ROM TIDAK DIKENAL"
-
-msgid "DIFFERENT ROM"
-msgstr "ROM BERBEDA"
-
-msgid "SAME ROM"
-msgstr "ROM SAMA"
-
-msgid "UNAVAILABLE CORE"
-msgstr "CORE TIDAK TERSEDIA"
-
-msgid "AVAILABLE GAMES"
-msgstr "GAME TERSEDIA"
-
-msgid "UNAVAILABLE GAMES"
-msgstr "GAME TIDAK TERSEDIA"
-
-msgid "NO GAMES FOUND"
-msgstr "GAME TIDAK DITEMUKAN"
-
-msgid "JOIN GAME"
-msgstr "GABUNG GAME"
-
-msgid "WATCH GAME"
-msgstr "TONTON GAME"
-
-msgid "INPUT MANUALLY"
-msgstr "INPUT MANUAL"
-
-msgid "NO WI-FI NETWORKS FOUND"
-msgstr "TIDAK DITEMUKAN JARINGAN WI-FI"
-
-msgid "SEARCHING WI-FI NETWORKS"
-msgstr "MENCARI JARINGAN WI-FI"
-
-msgid "YOU ARE NOT CONNECTED TO A NETWORK"
-msgstr "ANDA TIDAK TERHUBUNG KE JARINGAN"
-
-msgid "PAIR A BLUETOOTH DEVICE"
-msgstr "PASANGKAN PERANGKAT BLUETOOTH"
-
-msgid "PAIR"
-msgstr "PASANGKAN"
-
-msgid "FILE BROWSER"
-msgstr "BROWSER FILE"
-
-msgid "RESET"
-msgstr "MENGATUR ULANG"
-
-msgid "PARENT FOLDER"
-msgstr "FOLDER ROOT"
-
-msgid "SCREENSHOTS FOLDER"
-msgstr "FOLDER TANGKAPAN LAYAR"
-
-msgid "SELECT"
-msgstr "PILIH"
-
-msgid "ADD COMBINATION KEY"
-msgstr "TAMBAH KOMBINASI"
-
-msgid "CONTENT DOWNLOADER"
-msgstr "PENGUNDUH KONTEN"
-
-msgid "SELECT CONTENT TO INSTALL/REMOVE"
-msgstr "PILIH KONTEN UNTUK DI PASANG/HAPUS"
-
-msgid "UPDATE INSTALLED CONTENT"
-msgstr "PERBARUI KONTEN TERPASANG"
-
-msgid "No items"
-msgstr "Tidak ada item"
-
-msgid "MISC"
-msgstr "LAIN-LAIN"
-
-msgid "UPDATE"
-msgstr "PERBARUI"
-
-#, c-format
-msgid "'%s' ADDED TO DOWNLOAD QUEUE"
-msgstr "'%s' DITAMBAHKAN KE ANTRIAN UNDUH"
-
-msgid "UNINSTALLATION ADDED TO QUEUE"
-msgstr "DITAMBAHKAN KE ANTRIAN PENCOPOTAN"
-
-msgid "INSTALL"
-msgstr "PASANG"
-
-#, c-format
-msgid "CURRENTLY IN DOWNLOAD QUEUE"
-msgstr "SEDANG ANTRI MENGUNDUH"
-
-msgid "NO MISSING BIOS FILES"
-msgstr "TIDAK ADA FILE BIOS YANG HILANG"
-
-msgid "MISSING BIOS CHECK"
-msgstr "PERIKSA BIOS HILANG"
-
-msgid "NO MISSING BIOS"
-msgstr "TIDAK ADA BIOS YANG HILANG"
-
-msgid "dim"
-msgstr "redup"
-
-msgid "black"
-msgstr "gelap"
-
-msgid "random video"
-msgstr "vidio acak"
-
-msgid "slideshow"
-msgstr "tampilan slide"
-
-msgid "suspend"
-msgstr "suspend"
-
-msgid "always"
-msgstr "selalu"
-
-msgid "start & end"
-msgstr "awal & akhir"
-
-msgid "never"
-msgstr "tidak pernah"
-
-msgid "systems"
-msgstr "sistem"
-
-msgid "random"
-msgstr "acak"
-
-msgid "SCREENSAVER SETTINGS"
-msgstr "PENGATURAN SCREENSAVER"
-
-msgid "START SCREENSAVER AFTER"
-msgstr "MULAI SCREENSAVER SETELAH"
-
-msgid "SCREENSAVER TYPE"
-msgstr "JENIS SCREENSAVER"
-
-msgid "STOP MUSIC ON SCREENSAVER"
-msgstr "STOP MUSIC ON SCREENSAVER"
-
-msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
-msgstr "PENGATURAN VIDEO ACAK SCREENSAVER"
-
-msgid "VIDEO DURATION (SECS)"
-msgstr "DURASI VIDEO (DETIK)"
-
-msgid "USE OMX PLAYER FOR SCREENSAVER"
-msgstr "GUNAKAN OMX PLAYER UNTUK SCREENSAVER"
-
-msgid "SHOW GAME INFO"
-msgstr "TAMPILKAN INFORMASI GAME"
-
-msgid "USE MARQUEE AS GAME INFO"
-msgstr "GUNAKAN MARQUEE SEBAGAI INFO GAME"
-
-msgid "DECORATION SET USED"
-msgstr "SET DEKORASI yang DIGUNAKAN"
-
-msgid "STRETCH VIDEOS"
-msgstr ""
-
-msgid "MUTE VIDEO AUDIO"
-msgstr "BISUKAN SUARA VIDIO"
-
-msgid "SCREENSAVER CONTROLS"
-msgstr "KONTROL SCREENSAVER"
-
-msgid "USE CUSTOM VIDEOS"
-msgstr "GUNAKAN VIDIO KOSTOM"
-
-msgid "CUSTOM VIDEO DIRECTORY"
-msgstr "DIREKTORI VIDIO KUSTOM"
-
-msgid "USE VIDEOS IN SUBFOLDERS OF CUSTOM DIRECTORY"
-msgstr "GUNAKAN VIDEO DALAM SUBFOLDER DIREKTORI KUSTOM"
-
-msgid "CUSTOM VIDEO FILE EXTENSIONS"
-msgstr "EKSTENSI FILE VIDEO KUSTOM"
-
-msgid "SLIDESHOW SCREENSAVER SETTINGS"
-msgstr "PENGATURAN SLIDESHOW SCREENSAVER"
-
-msgid "IMAGE DURATION (SECS)"
-msgstr "DURASI GAMBAR (DETIK)"
-
-msgid "STRETCH IMAGES"
-msgstr "UKURAN GAMBAR"
-
-msgid "USE CUSTOM IMAGES"
-msgstr "GUNAKAN GAMBAR KUSTOM"
-
-msgid "CUSTOM IMAGE DIRECTORY"
-msgstr "DIREKTORI GAMBAR KUSTOM"
-
-msgid "USE IMAGES IN SUBFOLDERS OF CUSTOM DIRECTORY"
-msgstr "GUNAKAN GAMBAR DI SUBFOLDER DIREKTORI KUSTOM"
-
-msgid "CUSTOM IMAGE FILE EXTENSIONS"
-msgstr "EKSTENSI FILE GAMBAR KUSTOM"
-
-msgid "PAD TO KEYBOARD CONFIGURATION"
-msgstr "KONFIGURASI PAD KE KEYBOARD"
-
-msgid "SELECT ACTIONS TO CHANGE"
-msgstr "PILIH TINDAKAN YANG AKAN DIUBAH"
-
-msgid "SAVE"
-msgstr "SIMPAN"
-
-msgid "DELETE"
-msgstr "HAPUS"
-
-msgid "PLAYER 1"
-msgstr "PEMAIN 1"
-
-msgid "PLAYER 2"
-msgstr "PEMAIN 2"
-
-msgid "PLAYER 3"
-msgstr "PEMAIN 3"
-
-msgid "PLAYER 4"
-msgstr "PEMAIN 4"
-
-msgid "COMBINATIONS"
-msgstr "KOMBINASI"
-
-msgid "MOUSE CURSOR"
-msgstr "KURSOR MOUSE"
-
-msgid "EMULATE MOUSE CURSOR"
-msgstr "MENGEMULASI KURSOR MOUSE"
-
-msgid "LEFT ANALOG STICK"
-msgstr "STIK ANALOG KIRI"
-
-msgid "RIGHT ANALOG STICK"
-msgstr "STIK ANALOG KANAN"
-
-msgid "EDIT DESCRIPTION"
-msgstr "EDIT DESKRIPSI"
-
-msgid "DELETE MAPPING"
-msgstr "HAPUS PEMETAAN"
-
-msgid "SAVE CHANGES?"
-msgstr "SIMPAN PERUBAHAN?"
-
-msgid "ARE YOU SURE?"
-msgstr "APA KAMU YAKIN?"
-
-#, c-format
-msgid "UPDATING %s"
-msgstr "MEMPERBARUI %s"
-
-msgid "UPDATE IS READY"
-msgstr "PEMBARUAN SUDAH SIAP"
-
-msgid "REBOOT TO APPLY"
-msgstr "REBOOT UNTUK MENERAPKAN"
-
-msgid "REALLY UPDATE?"
-msgstr "YAKIN MEMPERBARUI?"
-
-#, c-format
-msgid ""
-"YOU ARE CURRENTLY USING VERSION %s\n"
-"DO YOU WANT TO UPDATE TO VERSION %s?"
-msgstr ""
-"VERSIMU SAAT INI %s\n"
-"PERBARUI VERSIMU %s?"
-
-#, c-format
-msgid ""
-"UNOFFICIAL SYSTEM MODIFICATIONS DETECTED.\n"
-"UPGRADING COULD BREAK YOUR SYSTEM.\n"
-"DO YOU WANT TO UPDATE TO VERSION %s?"
-msgstr ""
-"MODIFIKASI SISTEM TIDAK RESMI TERDETEKSI.\n"
-"UPGRADE BISA MERUSAK SISTEM ANDA.\n"
-"INGIN MEMPERBARUI KE VERSI %s?"
-
-msgid "NETWORK CONNECTION NEEDED"
-msgstr "KONEKSI JARINGAN DIPERLUKAN"
-
-msgid "NO UPDATE AVAILABLE"
-msgstr "TIDAK ADA PEMBARUAN YANG TERSEDIA"
-
-msgid "INSTALL ON A NEW DISK"
-msgstr "INSTALL PADA DISK BARU"
-
-msgid "TARGET DEVICE"
-msgstr "PERANGKAT TARGET"
-
-msgid "TARGET ARCHITECTURE"
-msgstr "ARSITEKTUR TARGET"
-
-msgid "NETWORK REQUIRED"
-msgstr "JARINGAN DIPERLUKAN"
-
-msgid "INVALID PARAMETERS"
-msgstr "PARAMETER TIDAK VALID"
-
-msgid "GAME MEDIA"
-msgstr "MEDIA GAME"
-
-msgid "VIEW GAME MANUAL"
-msgstr "LIHAT MANUAL GAME"
-
-msgid "VIEW GAME MAGAZINE"
-msgstr "LIHAT MAJALAH GAME"
-
-msgid "VIEW GAME MAP"
-msgstr "LIHAT PETA PERMAINAN"
-
-msgid "VIEW FULLSCREEN VIDEO"
-msgstr "LIHAT VIDEO LAYAR PENUH"
-
-msgid "VIEW GAME MEDIA"
-msgstr "LIHAT MEDIA GAME"
-
-msgid "CURRENT CORE IS NOT COMPATIBLE"
-msgstr "CORE SAAT INI TIDAK KOMPATIBEL"
-
-msgid "COMPATIBLE CORE(S)"
-msgstr "KOMPATIBEL CORE(S)"
-
-msgid "VIEW THIS GAME'S ACHIEVEMENTS"
-msgstr "LIHAT PENCAPAIAN GAME INI"
-
-msgid "GAME"
-msgstr "GAME"
-
-msgid "SAVE STATES"
-msgstr "SIMPAN STATUS"
-
-msgid "OPEN"
-msgstr "BUKA"
-
-msgid "START A NETPLAY GAME"
-msgstr "MULAI GAME NETPLAY"
-
-msgid "NETPLAY"
-msgstr "NETPLAY"
-
-msgid "START GAME"
-msgstr "MULAI GAME"
-
-msgid "HOST A NETPLAY GAME"
-msgstr "HOST GAME NETPLAY"
-
-msgid "PUBLICLY ANNOUNCE GAME"
-msgstr "UMUMKAN GAME SECARA PUBLIK"
-
-msgid "PLAYER PASSWORD"
-msgstr "PASSWORD PEMAIN"
-
-msgid "VIEWER PASSWORD"
-msgstr "PASSWOR PENONTON"
-
-msgid "FIND SIMILAR GAMES..."
-msgstr "TEMUKAN GAME SERUPA..."
-
-msgid "DELETE ITEM"
-msgstr "HAPUS ITEM"
-
-msgid "DELETE GAME"
-msgstr "HAPUS GAME"
-
-msgid ""
-"THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
-"ARE YOU SURE?"
-msgstr ""
-"INI AKAN MENGHAPUS FILE GAME!\n"
-"KAU YAKIN?"
-
-msgid "COLLECTIONS"
-msgstr "KOLEKSI"
-
-#, c-format
-msgid "REMOVE FROM %s"
-msgstr "HAPUS DARI %s"
-
-#, c-format
-msgid "ADD TO %s"
-msgstr "TAMBAHKAN KE %s"
-
-msgid "FAVORITES"
-msgstr "FAVORIT"
-
-msgid "ADD TO CUSTOM COLLECTION..."
-msgstr "TAMBAHKAN KE KOLEKSI KUSTOM..."
-
-msgid "SCRAPE"
-msgstr "SCRAPE"
-
-msgid "EDIT PADTOKEY PROFILE"
-msgstr "EDIT PROFIL PADTOKEY"
-
-msgid "CREATE PADTOKEY PROFILE"
-msgstr "BUAT PROFIL PADTOKEY"
-
-msgid "ADVANCED GAME OPTIONS"
-msgstr "OPSI GAME LANJUTAN"
-
-msgid "EDIT FOLDER METADATA"
-msgstr "EDIT METADATA FOLDER"
-
-msgid "EDIT THIS GAME'S METADATA"
-msgstr "EDIT METADATA GAME INI"
-
-msgid "THEMES DOWNLOADER"
-msgstr "PENGUNDUH TEMA"
-
-msgid "SELECT THEMES TO INSTALL/REMOVE"
-msgstr "PILIH TEMA YANG AKAN DIPASANG/HAPUS"
-
-msgid "All"
-msgstr "SEMUA"
-
-msgid "Installed"
-msgstr "Terpasang"
-
-msgid "Available"
-msgstr "Tersedia"
-
-msgid "CURRENT THEME"
-msgstr "TEMA SAAT INI"
 
 msgid "Points"
 msgstr "Poin"
 
 msgid "Unlocked on"
 msgstr "Tidak terkunci"
+
+msgid "LAUNCH"
+msgstr "LUNCURKAN"
+
+msgid "BACK"
+msgstr "KEMBALI"
+
+msgid "go back"
+msgstr "kembali"
 
 msgid "THIS GAME HAS NO ACHIEVEMENTS YET"
 msgstr "GAME INI BELUM MEMILIKI PRESTASI"
@@ -1197,186 +69,6 @@ msgstr "Prestasi dimenangkan"
 #, c-format
 msgid "%d%% complete"
 msgstr "%d%% selesai"
-
-msgid "SAVESTATE MANAGER"
-msgstr "MANAJER SIMPAN"
-
-msgid "START NEW GAME"
-msgstr "MULAI GAME BARU"
-
-msgid "START NEW AUTO SAVE"
-msgstr "MULAI SIMPAN OTOMATIS BARU"
-
-msgid "AUTO SAVE"
-msgstr "SIMPAN OTOMATIS"
-
-msgid "SLOT"
-msgstr "SLOT"
-
-msgid "COPY TO FREE SLOT"
-msgstr "SALIN KE SLOT BEBAS"
-
-msgid "SCRAPER SETTINGS"
-msgstr "PENGATURAN SCRAPER"
-
-msgid "IMAGE SOURCE"
-msgstr "SUMBER GAMBAR"
-
-msgid "SCREENSHOT"
-msgstr "TANGKAPAN LAYAR"
-
-msgid "TITLE SCREENSHOT"
-msgstr "JUDUL TANGKAPAN LAYAR"
-
-msgid "MIX V1"
-msgstr "MIX V1"
-
-msgid "MIX V2"
-msgstr "MIX V2"
-
-msgid "BOX 2D"
-msgstr "BOX 2D"
-
-msgid "BOX 3D"
-msgstr "BOX 3D"
-
-msgid "FAN ART"
-msgstr "KARYA SENI"
-
-msgid "BOX SOURCE"
-msgstr "SUMBER BOX"
-
-msgid "LOGO SOURCE"
-msgstr "SUMBER LOGO"
-
-msgid "WHEEL"
-msgstr "WHEEL"
-
-msgid "MARQUEE"
-msgstr "MARQUEE"
-
-msgid "SCRAPE FOR"
-msgstr "SCRAPE UNTUK"
-
-msgid "SHORT NAME"
-msgstr "URUTKAN NAMA"
-
-msgid "COMMUNITY RATING"
-msgstr "PERINGKAT KOMUNITAS"
-
-msgid "VIDEO"
-msgstr "VIDIO"
-
-msgid "FANART"
-msgstr "SENI"
-
-msgid "BEZEL (16:9)"
-msgstr "RESOLUSI (16:9)"
-
-msgid "BOX BACKSIDE"
-msgstr "BAGIAN BELAKANG BOX"
-
-msgid "MAP"
-msgstr "PETA"
-
-msgid "MANUAL"
-msgstr "PANDUAN"
-
-msgid "PADTOKEY SETTINGS"
-msgstr "PENGATURAN PADTOKEY"
-
-msgid "SCRAPER"
-msgstr "SCRAPER"
-
-msgid "SCRAPING DATABASE"
-msgstr "DATABASE SCRAPING"
-
-msgid "SOURCE"
-msgstr "SUMBER"
-
-msgid "SCRAPE FROM"
-msgstr "SCRAPE DARI"
-
-msgid "FILTERS"
-msgstr "FILTER"
-
-msgid "GAMES TO SCRAPE FOR"
-msgstr "GAME UNTUK SCRAPE"
-
-msgid "ALL"
-msgstr "SEMUA"
-
-msgid "GAMES MISSING ANY MEDIA"
-msgstr "GAMES HILANG DARI MEDIA APAPUN"
-
-msgid "GAMES MISSING ALL MEDIA"
-msgstr "GAME HILANG DARI SEMUA MEDIA"
-
-msgid "IGNORE RECENTLY SCRAPED GAMES"
-msgstr "ABAIKAN GAME YANG BARU-BARU DIHAPUS"
-
-msgid "LAST DAY"
-msgstr "HARI TERAKHIR"
-
-msgid "LAST WEEK"
-msgstr "MINGGU LALU"
-
-msgid "LAST 15 DAYS"
-msgstr "15 HARI LALU"
-
-msgid "LAST MONTH"
-msgstr "BULAN LALU"
-
-msgid "LAST 3 MONTHS"
-msgstr "3 BULAN LALU"
-
-msgid "LAST YEAR"
-msgstr "TAHUN LALU"
-
-msgid "SYSTEMS INCLUDED"
-msgstr "SISTEM TERMASUK"
-
-msgid "SCRAPE NOW"
-msgstr "SCRAPE SEKARANG"
-
-msgid "START"
-msgstr "MULAI"
-
-msgid ""
-"WARNING: SOME OF YOUR SELECTED SYSTEMS DO NOT HAVE A PLATFORM SET. RESULTS "
-"MAY BE FOR DIFFERENT SYSTEMS!\n"
-"CONTINUE ANYWAY?"
-msgstr ""
-
-msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT?"
-msgstr "SCRAP SEDANG BERJALAN. ANDA YAKIN INGIN BERHENTI"
-
-msgid "NO GAMES FIT THAT CRITERIA."
-msgstr "TIDAK ADA GAME YANG COCOK DENGAN KRITERIA ITU."
-
-msgid "INFORMATION"
-msgstr "INFORMASI"
-
-msgid "VERSION"
-msgstr "VERSI"
-
-msgid "USER DISK USAGE"
-msgstr "PENGGUNAAN DISK PEMILIK"
-
-msgid "SYSTEM DISK USAGE"
-msgstr "PENGGUNAAN DISK SISTEM"
-
-msgid "SYSTEM"
-msgstr "SISTEM"
-
-msgid "VIDEO DRIVER"
-msgstr "DRIVER VIDIO"
-
-msgid "THE BEZEL PROJECT"
-msgstr "PROYEK BEZEL"
-
-msgid "SELECT BEZELS TO INSTALL/REMOVE"
-msgstr "PILIH BEZEL UNTUK DIINSTALL/DIHAPUS"
 
 msgid "fade"
 msgstr "fade"
@@ -1461,6 +153,9 @@ msgstr "VENDOR"
 msgid "RENDERER"
 msgstr "RENDERER"
 
+msgid "VERSION"
+msgstr "VERSI"
+
 msgid "SHADERS"
 msgstr "SHADERS"
 
@@ -1488,11 +183,17 @@ msgstr "MENU UTAMA"
 msgid "KODI MEDIA CENTER"
 msgstr "PUSAT MEDIA KODI"
 
+msgid "RETROACHIEVEMENTS"
+msgstr "PERINGKAT RETRO"
+
 msgid "GAME SETTINGS"
 msgstr "PENGATURAN GAME"
 
 msgid "USER INTERFACE SETTINGS"
 msgstr "PENGATURAN ANTARMUKA PENGGUNA"
+
+msgid "GAME COLLECTION SETTINGS"
+msgstr "PENGATURAN KOLEKSI GAME"
 
 msgid "SOUND SETTINGS"
 msgstr "PENGATURAN SUARA"
@@ -1506,11 +207,17 @@ msgstr "KONFIGURASI INPUT"
 msgid "EMULATOR SETTINGS"
 msgstr "PENGATURAN EMULATOR"
 
+msgid "SCRAPER"
+msgstr "SCRAPER"
+
 msgid "UPDATES & DOWNLOADS"
 msgstr "PEMBARUAN & UNDUHAN"
 
 msgid "SYSTEM SETTINGS"
 msgstr "PENGATURAN SISTEM"
+
+msgid "INFORMATION"
+msgstr "INFORMASI"
 
 msgid "UNLOCK USER INTERFACE MODE"
 msgstr "BUKA MODE ANTARMUKA PENGGUNA"
@@ -1521,11 +228,23 @@ msgstr "KELUAR"
 msgid "ARE YOU SURE YOU WANT TO CONFIGURE THE INPUT?"
 msgstr "APAKAH ANDA YAKIN INGIN MENGKONFIGURASI INPUT?"
 
+msgid "THIS FUNCTION IS DISABLED WHILE THE SCRAPER IS RUNNING"
+msgstr "FUNGSI INI DINONAKTIFKAN SAAT SCRAPER BERJALAN"
+
 msgid "CHOOSE"
 msgstr "PILIH"
 
+msgid "SELECT"
+msgstr "PILIH"
+
+msgid "CLOSE"
+msgstr "TUTUP"
+
 msgid "THE USER INTERFACE MODE IS NOW UNLOCKED"
 msgstr "MODE ANTARMUKA PENGGUNA SEKARANG TERBUKA"
+
+msgid "OK"
+msgstr "KUY"
 
 msgid "ENTER THE CODE NOW TO UNLOCK"
 msgstr "MASUKKAN KODE UNTUK MEMBUKA"
@@ -1587,6 +306,9 @@ msgstr "FORMAT DISK"
 
 msgid "CLEAN GAMELISTS & REMOVE UNUSED MEDIA"
 msgstr "BERSIHKAN LIST GAME dan HAPUS MEDIA YANG TIDAK DIGUNAKAN"
+
+msgid "ARE YOU SURE?"
+msgstr "APA KAMU YAKIN?"
 
 msgid "Cleaning"
 msgstr "Membersihkan"
@@ -1687,8 +409,11 @@ msgstr ""
 msgid "CONTROL EMULATIONSTATION WITH FIRST JOYSTICK ONLY"
 msgstr "KONTROL EMULATIONSTATION DENGAN JOYSTICK PERTAMA"
 
-msgid "GUN MOVE TOLERENCE"
-msgstr "TOLERANSI GUN MOVE"
+msgid "LIGHT GUN MOVEMENT DEADZONE"
+msgstr ""
+
+msgid "Can help prevent cursor jitter. Has no effect in-game."
+msgstr ""
 
 msgid "ENABLE HID JOYSTICK DRIVERS"
 msgstr "AKTIFKAN DRIVER JOYSTICK HID"
@@ -1733,8 +458,14 @@ msgstr "OPTIMALKAN PENGGUNAAN VIDEO VRAM"
 msgid "DOWNLOADS"
 msgstr "UNDUHAN"
 
+msgid "CONTENT DOWNLOADER"
+msgstr "PENGUNDUH KONTEN"
+
 msgid "THEMES"
 msgstr "TEMA"
+
+msgid "THE BEZEL PROJECT"
+msgstr "PROYEK BEZEL"
 
 msgid "SOFTWARE UPDATES"
 msgstr "PEMBARUAN SOFTWARE"
@@ -1753,6 +484,12 @@ msgstr "MULAI PEMBARUAN"
 
 msgid "UPDATER IS ALREADY RUNNING"
 msgstr "PEMBARUAN SEDANG BERLANGSUNG"
+
+msgid "YOU ARE NOT CONNECTED TO A NETWORK"
+msgstr "ANDA TIDAK TERHUBUNG KE JARINGAN"
+
+msgid "SYSTEM"
+msgstr "SISTEM"
 
 msgid "LANGUAGE"
 msgstr "BAHASA"
@@ -1868,6 +605,15 @@ msgstr "GAMBAR SPLASH BATOCERA"
 msgid "SPLASH SETTING"
 msgstr "PENGATURAN SPLASH"
 
+msgid "RETROACHIEVEMENT SETTINGS"
+msgstr "PENGATURAN PERINGKAT RETRO"
+
+msgid "NETPLAY SETTINGS"
+msgstr "PENGATURAN NETPLAY"
+
+msgid "MISSING BIOS CHECK"
+msgstr "PERIKSA BIOS HILANG"
+
 msgid "CHECK BIOS FILES BEFORE RUNNING A GAME"
 msgstr "PERIKSA FILE BIOS SEBELUM MENJALANKAN GAME"
 
@@ -1919,6 +665,9 @@ msgstr "on"
 msgid "OVERCLOCK"
 msgstr "OVERCLOCK"
 
+msgid "NONE"
+msgstr "TIDAK ADA"
+
 msgid "STORAGE"
 msgstr "PENYIMPANAN"
 
@@ -1927,6 +676,9 @@ msgstr "PERANGKAT PENYIMPANAN"
 
 msgid "BACKUP USER DATA"
 msgstr "CADANGKAN DATA PENGGUNA"
+
+msgid "INSTALL ON A NEW DISK"
+msgstr "INSTALL PADA DISK BARU"
 
 msgid "ADVANCED"
 msgstr "LANJUTAN"
@@ -1991,6 +743,9 @@ msgstr "SET DEKORASI"
 
 msgid "Current setting"
 msgstr "Pengaturan saat ini"
+
+msgid "UPDATE GAMELISTS"
+msgstr "PERBARUI LIST GAME"
 
 msgid "DEFAULT GLOBAL SETTINGS"
 msgstr "PENGATURAN GLOBAL DEFAULT"
@@ -2134,11 +889,17 @@ msgstr "KONFIGURASI LANJUTAN PER SISTEM"
 msgid "SCRAPER IS RUNNING. DO YOU WANT TO STOP IT?"
 msgstr "SCRAPER SEDANG BERJALAN. INGIN MENGHENTIKANNYA?"
 
-msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
-msgstr "HASHING GAME SEDANG BERJALAN. INGIN MENGHENTIKANNYA?"
-
 msgid "REALLY UPDATE GAMELISTS?"
 msgstr "BENERAN UPDATE LISTGAME?"
+
+msgid "Emulator"
+msgstr "Emulator"
+
+msgid "Core"
+msgstr "Core"
+
+msgid "SETTINGS"
+msgstr "PENGATURAN"
 
 msgid "CONTROLLER MAPPING"
 msgstr "PEMETAAN KONTROLER"
@@ -2150,6 +911,9 @@ msgid ""
 "BUTTON. PRESS THE SOUTH BUTTON TO CONFIRM WHEN DONE."
 msgstr ""
 
+msgid "CANCEL"
+msgstr "BATALKAN"
+
 msgid "SINDEN GUN SETTINGS"
 msgstr "PENGATURAN GUN SINDEN"
 
@@ -2159,11 +923,17 @@ msgstr "PENGATURAN GUN WIIMOTE"
 msgid "BLUETOOTH"
 msgstr "BLUETOOTH"
 
-msgid "PAIR BLUETOOTH PADS AUTOMATICALLY"
-msgstr "PASANGKAN PAD BLUETOOTH SECARA OTOMATIS"
+msgid "PAIR A BLUETOOTH CONTROLLER AUTOMATICALLY"
+msgstr ""
 
-msgid "PAIR A BLUETOOTH DEVICE MANUALLY"
-msgstr "PASANGKAN PERANGKAT BLUETOOTH SECARA MANUAL"
+msgid "PAIR A BLUETOOTH DEVICE FROM A LIST"
+msgstr ""
+
+msgid "A BLUETOOTH SCAN IS ALREADY RUNNING."
+msgstr ""
+
+msgid "FORGET A BLUETOOTH DEVICE"
+msgstr "LUPAKAN PERANGKAT BLUETOOTH"
 
 msgid "DISPLAY OPTIONS"
 msgstr "TAMPILAN PILIHAN"
@@ -2235,8 +1005,17 @@ msgstr "ANDA HARUS MENERAPKAN TEMA SEBELUM MENGEDIT KONFIGURASINYA"
 msgid "THEME CONFIGURATION"
 msgstr "KONFIGURASI TEMA"
 
+msgid "VIEW CUSTOMIZATION"
+msgstr "LIHAT KUSTOMISASI"
+
 msgid "GAMELIST STYLE"
 msgstr "GAYA LISTGAME"
+
+msgid "GAMELIST VIEW STYLE"
+msgstr "GAYA TAMPILAN GAMELIST"
+
+msgid "automatic"
+msgstr "otomatis"
 
 msgid "basic"
 msgstr "biasa"
@@ -2267,6 +1046,12 @@ msgstr "TAMPILKAN FILE TERSEMBUNYI"
 
 msgid "SHOW FOLDERS"
 msgstr "TAMPILKAN FOLDER"
+
+msgid "always"
+msgstr "selalu"
+
+msgid "never"
+msgstr "tidak pernah"
 
 msgid "having multiple games"
 msgstr "memiliki banyak permainan"
@@ -2309,6 +1094,9 @@ msgstr "vidio"
 
 msgid "grid"
 msgstr "kisi"
+
+msgid "SCREENSAVER SETTINGS"
+msgstr "PENGATURAN SCREENSAVER"
 
 msgid "LIST TRANSITION"
 msgstr "DAFTAR TRANSISI"
@@ -2498,6 +1286,12 @@ msgstr "BERDAMPINGAN"
 msgid "INTERNAL RESOLUTION"
 msgstr "RESOLUSI BAGIAN DALAM"
 
+msgid "EDIT PADTOKEY PROFILE"
+msgstr "EDIT PROFIL PADTOKEY"
+
+msgid "CREATE PADTOKEY PROFILE"
+msgstr "BUAT PROFIL PADTOKEY"
+
 msgid "LAUNCH THIS GAME AT STARTUP"
 msgstr "LUNCURKAN GAME INI SAAT MULAI"
 
@@ -2519,11 +1313,339 @@ msgstr "PILIHAN TIDAK VALID"
 msgid "ARE YOU SURE YOU WANT TO FORMAT THIS DRIVE?"
 msgstr "YAKIN MAU FORMAT DRIVE INI?"
 
+msgid "AN ERROR OCCURED"
+msgstr "TERJADI KESALAHAN"
+
+#, c-format
+msgid "%d%% (%d of %d)"
+msgstr ""
+
+msgid "Points (hardcore)"
+msgstr "Poin (hardcore)"
+
+msgid "Softcore points"
+msgstr "Poin softcore"
+
+msgid "Rank"
+msgstr "Peringkat"
+
+msgid "VIEW DETAILS"
+msgstr "LIHAT RINCIAN"
+
+msgid "TARGET DEVICE"
+msgstr "PERANGKAT TARGET"
+
+msgid "NO DEVICE FOUND"
+msgstr "TIDAK DITEMUKAN PERANGKAT"
+
+msgid "START"
+msgstr "MULAI"
+
+msgid "PAD TO KEYBOARD CONFIGURATION"
+msgstr "KONFIGURASI PAD KE KEYBOARD"
+
+msgid "SELECT ACTIONS TO CHANGE"
+msgstr "PILIH TINDAKAN YANG AKAN DIUBAH"
+
+msgid "SAVE"
+msgstr "SIMPAN"
+
+msgid "DELETE"
+msgstr "HAPUS"
+
+msgid "PLAYER 1"
+msgstr "PEMAIN 1"
+
+msgid "PLAYER 2"
+msgstr "PEMAIN 2"
+
+msgid "PLAYER 3"
+msgstr "PEMAIN 3"
+
+msgid "PLAYER 4"
+msgstr "PEMAIN 4"
+
+msgid "COMBINATIONS"
+msgstr "KOMBINASI"
+
+msgid "MOUSE CURSOR"
+msgstr "KURSOR MOUSE"
+
+msgid "EMULATE MOUSE CURSOR"
+msgstr "MENGEMULASI KURSOR MOUSE"
+
+msgid "LEFT ANALOG STICK"
+msgstr "STIK ANALOG KIRI"
+
+msgid "RIGHT ANALOG STICK"
+msgstr "STIK ANALOG KANAN"
+
+msgid "EDIT DESCRIPTION"
+msgstr "EDIT DESKRIPSI"
+
+msgid "ARE YOU SURE YOU WANT TO DELETE THIS ITEM?"
+msgstr "ANDA YAKIN INGIN MENGHAPUS ITEM INI?"
+
+msgid "DELETE MAPPING"
+msgstr "HAPUS PEMETAAN"
+
+msgid "SAVE CHANGES?"
+msgstr "SIMPAN PERUBAHAN?"
+
+msgid "THEMES DOWNLOADER"
+msgstr "PENGUNDUH TEMA"
+
+msgid "SELECT THEMES TO INSTALL/REMOVE"
+msgstr "PILIH TEMA YANG AKAN DIPASANG/HAPUS"
+
+msgid "All"
+msgstr "SEMUA"
+
+msgid "Installed"
+msgstr "Terpasang"
+
+msgid "Available"
+msgstr "Tersedia"
+
+msgid "No items"
+msgstr "Tidak ada item"
+
+msgid "UPDATE"
+msgstr "PERBARUI"
+
+#, c-format
+msgid "'%s' ADDED TO DOWNLOAD QUEUE"
+msgstr "'%s' DITAMBAHKAN KE ANTRIAN UNDUH"
+
+msgid "REMOVE"
+msgstr "HAPUS"
+
+msgid "THEME UNINSTALLED SUCCESSFULLY"
+msgstr "TEMA TIDAK BERHASIL DIPASANG"
+
+msgid "INSTALL"
+msgstr "PASANG"
+
+msgid "CURRENT THEME"
+msgstr "TEMA SAAT INI"
+
+#, c-format
+msgid "CURRENTLY IN DOWNLOAD QUEUE"
+msgstr "SEDANG ANTRI MENGUNDUH"
+
+msgid "SELECT BEZELS TO INSTALL/REMOVE"
+msgstr "PILIH BEZEL UNTUK DIINSTALL/DIHAPUS"
+
+msgid "BEZELS UNINSTALLED SUCCESSFULLY"
+msgstr "FRAME LAYAR BERHASIL DICOPOT"
+
+msgid "RESET"
+msgstr "MENGATUR ULANG"
+
+msgid "ADD COMBINATION KEY"
+msgstr "TAMBAH KOMBINASI"
+
+msgid "SCRAPING DATABASE"
+msgstr "DATABASE SCRAPING"
+
+msgid "SOURCE"
+msgstr "SUMBER"
+
+msgid "SCRAPE FROM"
+msgstr "SCRAPE DARI"
+
+msgid "SCRAPER SETTINGS"
+msgstr "PENGATURAN SCRAPER"
+
+msgid "FILTERS"
+msgstr "FILTER"
+
+msgid "GAMES TO SCRAPE FOR"
+msgstr "GAME UNTUK SCRAPE"
+
+msgid "ALL"
+msgstr "SEMUA"
+
+msgid "GAMES MISSING ANY MEDIA"
+msgstr "GAMES HILANG DARI MEDIA APAPUN"
+
+msgid "GAMES MISSING ALL MEDIA"
+msgstr "GAME HILANG DARI SEMUA MEDIA"
+
+msgid "IGNORE RECENTLY SCRAPED GAMES"
+msgstr "ABAIKAN GAME YANG BARU-BARU DIHAPUS"
+
+msgid "LAST DAY"
+msgstr "HARI TERAKHIR"
+
+msgid "LAST WEEK"
+msgstr "MINGGU LALU"
+
+msgid "LAST 15 DAYS"
+msgstr "15 HARI LALU"
+
+msgid "LAST MONTH"
+msgstr "BULAN LALU"
+
+msgid "LAST 3 MONTHS"
+msgstr "3 BULAN LALU"
+
+msgid "LAST YEAR"
+msgstr "TAHUN LALU"
+
+msgid "SYSTEMS INCLUDED"
+msgstr "SISTEM TERMASUK"
+
+msgid "SCRAPE NOW"
+msgstr "SCRAPE SEKARANG"
+
+msgid ""
+"WARNING: SOME OF YOUR SELECTED SYSTEMS DO NOT HAVE A PLATFORM SET. RESULTS "
+"MAY BE FOR DIFFERENT SYSTEMS!\n"
+"CONTINUE ANYWAY?"
+msgstr ""
+
+msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT?"
+msgstr "SCRAP SEDANG BERJALAN. ANDA YAKIN INGIN BERHENTI"
+
+msgid "FINISHED"
+msgstr "SELESAI"
+
+msgid "USERNAME"
+msgstr "NAMA PENGGUNA"
+
+msgid "PASSWORD"
+msgstr "KATA SANDI"
+
+msgid "OPTIONS"
+msgstr "PILIHAN"
+
+msgid "HARDCORE MODE"
+msgstr "MODE HARDCORE"
+
+msgid "Disable loading states, rewind and cheats for more points."
+msgstr ""
+"Nonaktifkan status pemuatan, mundur, dan curang untuk mendapatkan lebih "
+"banyak poin."
+
+msgid "LEADERBOARDS"
+msgstr "PAPAN PERINGKAT"
+
+msgid "Compete in high-score and best time leaderboards (requires hardcore)."
+msgstr "Bersaing di papan peringkat dan waktu terbaik (membutuhkan hardcore)."
+
+msgid "VERBOSE MODE"
+msgstr "MODE VERBOSE"
+
+msgid "Show achievement progression on game launch and other notifications."
+msgstr ""
+"Tampilkan perkembangan pencapaian pada peluncuran game dan notifikasi "
+"lainnya."
+
+msgid "RICH PRESENCE"
+msgstr "KEHADIRAN TINGGI"
+
+msgid "ENCORE MODE"
+msgstr "MODE ENCORE"
+
+msgid "Unlocked achievements can be earned again."
+msgstr "Pncapaian yang tidak terkunci dapat diperoleh lagi."
+
+msgid "AUTOMATIC SCREENSHOT"
+msgstr "TANGKAPAN LAYAR OTOMATIS"
+
+msgid "Automatically take a screenshot when an achievement is earned."
+msgstr "Otomatis mengambil tangkapan layar saat pencapaian diperoleh."
+
+msgid "CHALLENGE INDICATORS"
+msgstr "INDIKATOR TANTANGAN"
+
+msgid ""
+"Shows icons in the bottom right corner when eligible achievements can be "
+"earned."
+msgstr "Menampilkan ikon di pojok kanan bawah saat pencapaian memenuhi syarat"
+
+msgid "RETROACHIEVEMENT UNLOCK SOUND"
+msgstr "MEMBUKA PERINGKAT SUARA RETRO"
+
+msgid "none"
+msgstr "tidak ada"
+
+msgid "UNLOCK SOUND"
+msgstr "MEMBUKA SUARA"
+
+msgid "SHOW RETROACHIEVEMENTS ENTRY IN MAIN MENU"
+msgstr "TAMPILKAN PENCAPAIAN RETRO DI MENU UTAMA"
+
+msgid "View your RetroAchievement stats right from the main menu!"
+msgstr "Lihat statistik RetroAchievement Anda langsung dari menu utama!"
+
+msgid "GAME INDEXES"
+msgstr "INDEKS GAME"
+
+msgid "INDEX NEW GAMES AT STARTUP"
+msgstr "INDEKS GAME SAAT MEMULAI"
+
+msgid "INDEX GAMES"
+msgstr "INDEK GAME"
+
+msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
+msgstr "TIDAK DAPAT MENGAKTIFKAN PENCAPAIAN:"
+
+msgid "CONNECT TO NETPLAY"
+msgstr "HUBUNGKAN KE NETPLAY"
+
+msgid "Select a game lobby to join"
+msgstr "Pilih lobi permainan untuk bergabung"
+
+msgid "REFRESH"
+msgstr "SEGARKAN"
+
+msgid "FAILED"
+msgstr "GAGAL"
+
+msgid "UNKNOWN ROM VERSION"
+msgstr "VERSI ROM TIDAK DIKENAL"
+
+msgid "DIFFERENT ROM"
+msgstr "ROM BERBEDA"
+
+msgid "SAME ROM"
+msgstr "ROM SAMA"
+
+msgid "UNAVAILABLE CORE"
+msgstr "CORE TIDAK TERSEDIA"
+
+msgid "AVAILABLE GAMES"
+msgstr "GAME TERSEDIA"
+
+msgid "UNAVAILABLE GAMES"
+msgstr "GAME TIDAK TERSEDIA"
+
+msgid "NO GAMES FOUND"
+msgstr "GAME TIDAK DITEMUKAN"
+
+msgid "JOIN GAME"
+msgstr "GABUNG GAME"
+
+msgid "WATCH GAME"
+msgstr "TONTON GAME"
+
 msgid "EDIT METADATA"
 msgstr "UBAH METADATA"
 
 msgid "GENRES"
 msgstr "GENRE"
+
+msgid "SCRAPE"
+msgstr "SCRAPE"
+
+msgid ""
+"THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
+"ARE YOU SURE?"
+msgstr ""
+"INI AKAN MENGHAPUS FILE GAME!\n"
+"KAU YAKIN?"
 
 msgid ""
 "SOME FILES YOU LINKED ARE LOCATED OUTSIDE THE GAMELIST PATH.\n"
@@ -2532,8 +1654,425 @@ msgstr ""
 "BEBERAPA FILE YANG ANDA TAUTkAN BERADA DI LUAR JALUR LISTGAME.\n"
 "APAKAH ANDA INGIN MENGGUNAKAN SALINAN FILE INI DENGAN GAMELIST ?"
 
-msgid "NO DEVICE FOUND"
-msgstr "TIDAK DITEMUKAN PERANGKAT"
+msgid "ENABLE NETPLAY"
+msgstr "AKTIFKAN NETPLAY"
+
+msgid "NICKNAME"
+msgstr "INISIAL"
+
+msgid "PORT"
+msgstr "PORT"
+
+msgid "USE RELAY SERVER"
+msgstr "GUNAKAN SERVER RELAY"
+
+msgid "NEW YORK"
+msgstr "NEW YORK"
+
+msgid "MADRID"
+msgstr "MADRID"
+
+msgid "MONTREAL"
+msgstr "MONTREAL"
+
+msgid "SAO PAULO"
+msgstr "SAO PAULO"
+
+msgid "SHOW UNAVAILABLE GAMES"
+msgstr "TAMPILKAN GAME YANG TIDAK TERSEDIA"
+
+msgid "Show rooms for games not present on this machine."
+msgstr "Tampilkan ruang untuk game yang tidak ada di mesin ini."
+
+msgid "GAMES TO INDEX"
+msgstr "GAME KE INDEKS"
+
+msgid "ONLY MISSING"
+msgstr "YANG HILANG"
+
+msgid "USER DISK USAGE"
+msgstr "PENGGUNAAN DISK PEMILIK"
+
+msgid "SYSTEM DISK USAGE"
+msgstr "PENGGUNAAN DISK SISTEM"
+
+msgid "VIDEO DRIVER"
+msgstr "DRIVER VIDIO"
+
+msgid "TARGET ARCHITECTURE"
+msgstr "ARSITEKTUR TARGET"
+
+msgid "NETWORK REQUIRED"
+msgstr "JARINGAN DIPERLUKAN"
+
+msgid "INVALID PARAMETERS"
+msgstr "PARAMETER TIDAK VALID"
+
+msgid "dim"
+msgstr "redup"
+
+msgid "black"
+msgstr "gelap"
+
+msgid "random video"
+msgstr "vidio acak"
+
+msgid "slideshow"
+msgstr "tampilan slide"
+
+msgid "suspend"
+msgstr "suspend"
+
+msgid "start & end"
+msgstr "awal & akhir"
+
+msgid "systems"
+msgstr "sistem"
+
+msgid "random"
+msgstr "acak"
+
+msgid "START SCREENSAVER AFTER"
+msgstr "MULAI SCREENSAVER SETELAH"
+
+msgid "SCREENSAVER TYPE"
+msgstr "JENIS SCREENSAVER"
+
+msgid "STOP MUSIC ON SCREENSAVER"
+msgstr "STOP MUSIC ON SCREENSAVER"
+
+msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
+msgstr "PENGATURAN VIDEO ACAK SCREENSAVER"
+
+msgid "VIDEO DURATION (SECS)"
+msgstr "DURASI VIDEO (DETIK)"
+
+msgid "USE OMX PLAYER FOR SCREENSAVER"
+msgstr "GUNAKAN OMX PLAYER UNTUK SCREENSAVER"
+
+msgid "SHOW GAME INFO"
+msgstr "TAMPILKAN INFORMASI GAME"
+
+msgid "USE MARQUEE AS GAME INFO"
+msgstr "GUNAKAN MARQUEE SEBAGAI INFO GAME"
+
+msgid "DECORATION SET USED"
+msgstr "SET DEKORASI yang DIGUNAKAN"
+
+msgid "STRETCH VIDEOS"
+msgstr ""
+
+msgid "MUTE VIDEO AUDIO"
+msgstr "BISUKAN SUARA VIDIO"
+
+msgid "SCREENSAVER CONTROLS"
+msgstr "KONTROL SCREENSAVER"
+
+msgid "USE CUSTOM VIDEOS"
+msgstr "GUNAKAN VIDIO KOSTOM"
+
+msgid "CUSTOM VIDEO DIRECTORY"
+msgstr "DIREKTORI VIDIO KUSTOM"
+
+msgid "USE VIDEOS IN SUBFOLDERS OF CUSTOM DIRECTORY"
+msgstr "GUNAKAN VIDEO DALAM SUBFOLDER DIREKTORI KUSTOM"
+
+msgid "CUSTOM VIDEO FILE EXTENSIONS"
+msgstr "EKSTENSI FILE VIDEO KUSTOM"
+
+msgid "SLIDESHOW SCREENSAVER SETTINGS"
+msgstr "PENGATURAN SLIDESHOW SCREENSAVER"
+
+msgid "IMAGE DURATION (SECS)"
+msgstr "DURASI GAMBAR (DETIK)"
+
+msgid "STRETCH IMAGES"
+msgstr "UKURAN GAMBAR"
+
+msgid "USE CUSTOM IMAGES"
+msgstr "GUNAKAN GAMBAR KUSTOM"
+
+msgid "CUSTOM IMAGE DIRECTORY"
+msgstr "DIREKTORI GAMBAR KUSTOM"
+
+msgid "USE IMAGES IN SUBFOLDERS OF CUSTOM DIRECTORY"
+msgstr "GUNAKAN GAMBAR DI SUBFOLDER DIREKTORI KUSTOM"
+
+msgid "CUSTOM IMAGE FILE EXTENSIONS"
+msgstr "EKSTENSI FILE GAMBAR KUSTOM"
+
+msgid "SAVESTATE MANAGER"
+msgstr "MANAJER SIMPAN"
+
+msgid "START NEW GAME"
+msgstr "MULAI GAME BARU"
+
+msgid "START NEW AUTO SAVE"
+msgstr "MULAI SIMPAN OTOMATIS BARU"
+
+msgid "AUTO SAVE"
+msgstr "SIMPAN OTOMATIS"
+
+msgid "SLOT"
+msgstr "SLOT"
+
+msgid "COPY TO FREE SLOT"
+msgstr "SALIN KE SLOT BEBAS"
+
+msgid "VIEW OPTIONS"
+msgstr "LIHAT PILIHAN"
+
+msgid "NAVIGATION"
+msgstr "NAVIGASI"
+
+msgid "OTHER FILTERS"
+msgstr "FILTER LAINNYA"
+
+msgid "SELECT RANDOM GAME"
+msgstr "PILIH GAME RANDOM"
+
+msgid "JUMP TO GAME BEGINNING WITH THE LETTER"
+msgstr "LOMPAT KE GAME AWAL"
+
+msgid "SORT GAMES BY"
+msgstr "URUT GAME BERDASARKAN"
+
+msgid "DYNAMIC COLLECTION"
+msgstr "KOLEKSI DINAMIS"
+
+msgid "EDIT DYNAMIC COLLECTION FILTERS"
+msgstr "EDIT FILTER KOLEKSI DINAMIS"
+
+msgid "CUSTOM COLLECTION"
+msgstr "KOLEKSI KOSTUM"
+
+msgid "DELETE COLLECTION"
+msgstr "HAPUS KOLEKSI"
+
+msgid "COLLECTION"
+msgstr "KOLEKSI"
+
+msgid "CREATE NEW DYNAMIC COLLECTION"
+msgstr "BUAT KOLEKSI DINAMIS BARU"
+
+msgid "VIEW PAD TO KEYBOARD INFORMATION"
+msgstr "LIHAT INFORMASI PAD KE KEYBOARD"
+
+msgid "ADVANCED SYSTEM OPTIONS"
+msgstr "PILIHAN SISTEM LANJUTAN"
+
+msgid "RESET FILTERS"
+msgstr ""
+
+msgid "FILTER GAMES BY TEXT"
+msgstr "FILTER ULANG"
+
+msgid "Loading..."
+msgstr "Memuat..."
+
+msgid "New Collection Name"
+msgstr "Nama Koleksi Baru"
+
+msgid "INPUT"
+msgstr "INPUT"
+
+msgid "SEARCH"
+msgstr "CARI"
+
+msgid "GAME MEDIA"
+msgstr "MEDIA GAME"
+
+msgid "VIEW GAME MANUAL"
+msgstr "LIHAT MANUAL GAME"
+
+msgid "VIEW GAME MAGAZINE"
+msgstr "LIHAT MAJALAH GAME"
+
+msgid "VIEW GAME MAP"
+msgstr "LIHAT PETA PERMAINAN"
+
+msgid "VIEW FULLSCREEN VIDEO"
+msgstr "LIHAT VIDEO LAYAR PENUH"
+
+msgid "VIEW GAME MEDIA"
+msgstr "LIHAT MEDIA GAME"
+
+msgid "CURRENT CORE IS NOT COMPATIBLE"
+msgstr "CORE SAAT INI TIDAK KOMPATIBEL"
+
+msgid "COMPATIBLE CORE(S)"
+msgstr "KOMPATIBEL CORE(S)"
+
+msgid "VIEW THIS GAME'S ACHIEVEMENTS"
+msgstr "LIHAT PENCAPAIAN GAME INI"
+
+msgid "GAME"
+msgstr "GAME"
+
+msgid "SAVE STATES"
+msgstr "SIMPAN STATUS"
+
+msgid "OPEN"
+msgstr "BUKA"
+
+msgid "START A NETPLAY GAME"
+msgstr "MULAI GAME NETPLAY"
+
+msgid "NETPLAY"
+msgstr "NETPLAY"
+
+msgid "START GAME"
+msgstr "MULAI GAME"
+
+msgid "HOST A NETPLAY GAME"
+msgstr "HOST GAME NETPLAY"
+
+msgid "PUBLICLY ANNOUNCE GAME"
+msgstr "UMUMKAN GAME SECARA PUBLIK"
+
+msgid "PLAYER PASSWORD"
+msgstr "PASSWORD PEMAIN"
+
+msgid "VIEWER PASSWORD"
+msgstr "PASSWOR PENONTON"
+
+msgid "FIND SIMILAR GAMES..."
+msgstr "TEMUKAN GAME SERUPA..."
+
+msgid "DELETE ITEM"
+msgstr "HAPUS ITEM"
+
+msgid "DELETE GAME"
+msgstr "HAPUS GAME"
+
+msgid "COLLECTIONS"
+msgstr "KOLEKSI"
+
+#, c-format
+msgid "REMOVE FROM %s"
+msgstr "HAPUS DARI %s"
+
+#, c-format
+msgid "ADD TO %s"
+msgstr "TAMBAHKAN KE %s"
+
+msgid "FAVORITES"
+msgstr "FAVORIT"
+
+msgid "ADD TO CUSTOM COLLECTION..."
+msgstr "TAMBAHKAN KE KOLEKSI KUSTOM..."
+
+msgid "ADVANCED GAME OPTIONS"
+msgstr "OPSI GAME LANJUTAN"
+
+msgid "EDIT FOLDER METADATA"
+msgstr "EDIT METADATA FOLDER"
+
+msgid "EDIT THIS GAME'S METADATA"
+msgstr "EDIT METADATA GAME INI"
+
+msgid "IMAGE SOURCE"
+msgstr "SUMBER GAMBAR"
+
+msgid "SCREENSHOT"
+msgstr "TANGKAPAN LAYAR"
+
+msgid "TITLE SCREENSHOT"
+msgstr "JUDUL TANGKAPAN LAYAR"
+
+msgid "MIX V1"
+msgstr "MIX V1"
+
+msgid "MIX V2"
+msgstr "MIX V2"
+
+msgid "BOX 2D"
+msgstr "BOX 2D"
+
+msgid "BOX 3D"
+msgstr "BOX 3D"
+
+msgid "FAN ART"
+msgstr "KARYA SENI"
+
+msgid "BOX SOURCE"
+msgstr "SUMBER BOX"
+
+msgid "LOGO SOURCE"
+msgstr "SUMBER LOGO"
+
+msgid "WHEEL"
+msgstr "WHEEL"
+
+msgid "MARQUEE"
+msgstr "MARQUEE"
+
+msgid "SCRAPE FOR"
+msgstr "SCRAPE UNTUK"
+
+msgid "SHORT NAME"
+msgstr "URUTKAN NAMA"
+
+msgid "COMMUNITY RATING"
+msgstr "PERINGKAT KOMUNITAS"
+
+msgid "VIDEO"
+msgstr "VIDIO"
+
+msgid "FANART"
+msgstr "SENI"
+
+msgid "BEZEL (16:9)"
+msgstr "RESOLUSI (16:9)"
+
+msgid "BOX BACKSIDE"
+msgstr "BAGIAN BELAKANG BOX"
+
+msgid "MAP"
+msgstr "PETA"
+
+msgid "MANUAL"
+msgstr "PANDUAN"
+
+msgid "PADTOKEY SETTINGS"
+msgstr "PENGATURAN PADTOKEY"
+
+msgid "FILE BROWSER"
+msgstr "BROWSER FILE"
+
+msgid "PARENT FOLDER"
+msgstr "FOLDER ROOT"
+
+msgid "SCREENSHOTS FOLDER"
+msgstr "FOLDER TANGKAPAN LAYAR"
+
+msgid "INPUT MANUALLY"
+msgstr "INPUT MANUAL"
+
+msgid "NO WI-FI NETWORKS FOUND"
+msgstr "TIDAK DITEMUKAN JARINGAN WI-FI"
+
+msgid "SEARCHING WI-FI NETWORKS"
+msgstr "MENCARI JARINGAN WI-FI"
+
+msgid "REMOVE ALL"
+msgstr "HAPUS SEMUA"
+
+msgid "NO BLUETOOTH DEVICES FOUND"
+msgstr "TIDAK DITEMUKAN PERANGKAT BLUETOOTH"
+
+msgid "BLUETOOTH DEVICES HAVE BEEN DELETED."
+msgstr "PERANGKAT BLUETOOTH TERHAPUS"
+
+#, c-format
+msgid "ARE YOU SURE YOU WANT TO REMOVE '%s' ?"
+msgstr "ANDA YAKIN INGIN MENGHAPUS '%s' ?"
+
+msgid "NO MISSING BIOS FILES"
+msgstr "TIDAK ADA FILE BIOS YANG HILANG"
+
+msgid "NO MISSING BIOS"
+msgstr "TIDAK ADA BIOS YANG HILANG"
 
 msgid "ZOOM OUT"
 msgstr "PERKECIL"
@@ -2547,11 +2086,234 @@ msgstr "MOVE"
 msgid "ZOOM"
 msgstr "ZOOM"
 
-msgid "GAMES TO INDEX"
-msgstr "GAME KE INDEKS"
+msgid "SELECT CONTENT TO INSTALL/REMOVE"
+msgstr "PILIH KONTEN UNTUK DI PASANG/HAPUS"
 
-msgid "ONLY MISSING"
-msgstr "YANG HILANG"
+msgid "UPDATE INSTALLED CONTENT"
+msgstr "PERBARUI KONTEN TERPASANG"
+
+msgid "MISC"
+msgstr "LAIN-LAIN"
+
+msgid "UNINSTALLATION ADDED TO QUEUE"
+msgstr "DITAMBAHKAN KE ANTRIAN PENCOPOTAN"
+
+msgid "FILTER GAMELIST BY"
+msgstr "FILTER DAFTAR GAME BERDASARKAN"
+
+msgid "RESET ALL FILTERS"
+msgstr "RESET SEMUA FILTER"
+
+msgid "FIND GAMES"
+msgstr "TEMUKAN GAME"
+
+msgid "Unknown"
+msgstr "Tidak dikenal"
+
+msgid "SYSTEMS"
+msgstr "SISTEM"
+
+msgid "COLLECTIONS TO DISPLAY"
+msgstr "KOLEKSI UNTUK DITAMPILKAN"
+
+msgid "SYSTEMS DISPLAYED"
+msgstr "TAMPILAN SISTEM"
+
+msgid "GROUPED SYSTEMS"
+msgstr "SISTEM GRUP"
+
+msgid "CREATE CUSTOM COLLECTION"
+msgstr "BUAT KOLEKSI KUSTOM"
+
+msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
+msgstr "BUAT KOLEKSI KUSTOM BARU DARI TEMA"
+
+msgid "SELECT THEME FOLDER"
+msgstr "PILIH FOLDER TEMA"
+
+msgid "CREATE NEW EDITABLE COLLECTION"
+msgstr "BUAT KOLEKSI BARU YANG DAPAT DIEDIT"
+
+msgid "SORT COLLECTIONS AND SYSTEMS"
+msgstr "URUT KOLEKSI DAN SISTEM"
+
+msgid "ALPHABETICALLY"
+msgstr "URUT ALFABET"
+
+msgid "BY MANUFACTURER"
+msgstr "BERDASARKAN PRODUSEN"
+
+msgid "BY HARDWARE TYPE"
+msgstr "BERDASARKAN TIPE HARDWARE"
+
+msgid "BY MANUFACTURER AND TYPE"
+msgstr "BERDASARKAN PRODUSEN DAN TIPE"
+
+msgid "BY RELEASE YEAR"
+msgstr "BERDASARKAN TAHUN RILIS"
+
+msgid "SORT SYSTEMS"
+msgstr "URUT SISTEM"
+
+msgid "START ON SYSTEM"
+msgstr "MULAI PADA SISTEM"
+
+msgid "RESTORE LAST SELECTED"
+msgstr "PULIHKAN TERAKHIR DIPILIH"
+
+msgid "START ON GAMELIST"
+msgstr "MULAI DI DAFTAR GAME"
+
+msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
+msgstr "KELOMPOK KOLEKSI KUSTOM YANG TIDAK DIKENAL"
+
+msgid "SHOW SYSTEM NAME IN COLLECTIONS"
+msgstr "TAMPILKAN NAMA SISTEM DALAM KOLEKSI"
+
+msgid "SHOW GAMES OF HIDDEN SYSTEMS IN COLLECTIONS"
+msgstr "TAMPILKAN GAME SISTEM TERSEMBUNYI DALAM KOLEKSI"
+
+msgid "SHOW EMPTY SYSTEMS"
+msgstr "TAMPILKAN SISTEM KOSONG"
+
+msgid "SELECT COLLECTIONS"
+msgstr "PILIH KOLEKSI"
+
+msgid "AUTOMATIC COLLECTIONS"
+msgstr "KOLEKSI OTOMATIS"
+
+msgid "PER GENRE"
+msgstr "PER GENRE"
+
+msgid "ARCADE SYSTEMS"
+msgstr "SISTEM ARCADE"
+
+msgid "AUTOMATIC GAME COLLECTIONS"
+msgstr "KOLEKSI GAME OTOMATIS"
+
+msgid "EDITABLE COLLECTIONS"
+msgstr "KOLEKSI DAPAT DIEDIT"
+
+msgid "DYNAMIC COLLECTIONS"
+msgstr "KOLEKSI DINAMIS"
+
+msgid "CUSTOM GAME COLLECTIONS"
+msgstr "KOLEKSI GAME KOSTUM"
+
+msgid "PAIR A BLUETOOTH DEVICE"
+msgstr "PASANGKAN PERANGKAT BLUETOOTH"
+
+msgid "PAIR"
+msgstr "PASANGKAN"
+
+#, c-format
+msgid "UPDATING %s"
+msgstr "MEMPERBARUI %s"
+
+msgid "UPDATE IS READY"
+msgstr "PEMBARUAN SUDAH SIAP"
+
+msgid "REBOOT TO APPLY"
+msgstr "REBOOT UNTUK MENERAPKAN"
+
+msgid "REALLY UPDATE?"
+msgstr "YAKIN MEMPERBARUI?"
+
+#, c-format
+msgid ""
+"YOU ARE CURRENTLY USING VERSION %s\n"
+"DO YOU WANT TO UPDATE TO VERSION %s?"
+msgstr ""
+"VERSIMU SAAT INI %s\n"
+"PERBARUI VERSIMU %s?"
+
+#, c-format
+msgid ""
+"UNOFFICIAL SYSTEM MODIFICATIONS DETECTED.\n"
+"UPGRADING COULD BREAK YOUR SYSTEM.\n"
+"DO YOU WANT TO UPDATE TO VERSION %s?"
+msgstr ""
+"MODIFIKASI SISTEM TIDAK RESMI TERDETEKSI.\n"
+"UPGRADE BISA MERUSAK SISTEM ANDA.\n"
+"INGIN MEMPERBARUI KE VERSI %s?"
+
+msgid "NETWORK CONNECTION NEEDED"
+msgstr "KONEKSI JARINGAN DIPERLUKAN"
+
+msgid "NO UPDATE AVAILABLE"
+msgstr "TIDAK ADA PEMBARUAN YANG TERSEDIA"
+
+msgid "THE EMULATOR EXITED UNEXPECTEDLY"
+msgstr "EMULATOR KELUAR SECARA TIBA-TIBA"
+
+msgid "BAD COMMAND LINE ARGUMENTS"
+msgstr "ARGUMEN BARIS PERINTAH SALAH"
+
+msgid "INVALID CONFIGURATION"
+msgstr "KONFIGURASI TIDAK VALID"
+
+msgid "UNKNOWN EMULATOR"
+msgstr "EMULATOR TAK DIKENAL"
+
+msgid "EMULATOR IS MISSING"
+msgstr "EMULATOR HILANG"
+
+msgid "CORE IS MISSING"
+msgstr "CORE HILANG"
+
+msgid "UKNOWN ERROR"
+msgstr "ERROR TAK DIKETAHUI"
+
+msgid "UPDATE AVAILABLE"
+msgstr "PEMBAHARUAN TERSEDIA"
+
+msgid "SCRAPING"
+msgstr "SEDANG SCRAP"
+
+msgid "SCRAPE FAILED"
+msgstr "SCRAP GAGAL"
+
+msgid "SCRAPING FINISHED"
+msgstr "SCRAP SELESAI"
+
+msgid "GENRE"
+msgstr "GENRE"
+
+msgid "FAMILY"
+msgstr "KELUARGA"
+
+msgid "PLAYERS"
+msgstr "PEMAIN"
+
+msgid "PUBLISHER/DEVELOPER"
+msgstr "PENERBIT / PENGEMBANG"
+
+msgid "RATING"
+msgstr "PERINGKAT"
+
+msgid "YEAR"
+msgstr "TAHUN"
+
+msgid "REGION"
+msgstr "WILAYAH"
+
+msgid "KIDGAME"
+msgstr "GAME ANAK"
+
+msgid "ALREADY PLAYED"
+msgstr "SUDAH DIMAINKAN"
+
+msgid "HAS ACHIEVEMENTS"
+msgstr "MEMILIKI PRESTASI"
+
+msgid "VERTICAL"
+msgstr "VERTIKAL"
+
+msgid "LIGHTGUN"
+msgstr "SENJATA RINGAN"
+
+msgid "HAS MEDIAS"
+msgstr "MEMILIKI MEDIA"
 
 msgid "SYSTEM INFO"
 msgstr "SISTEM INFORMASI"
@@ -2601,6 +2363,63 @@ msgstr "BAR NAVIGASI"
 msgid "FILES"
 msgstr "FILE"
 
+msgid "No Entries Found"
+msgstr "Entri Tidak Ditemukan"
+
+msgid "Games similar to"
+msgstr "Permainan mirip dengan"
+
+msgid "SAVE STATES (HOLD)"
+msgstr "SIMPAN STATUS (HOLD)"
+
+msgid "GAME OPTIONS (HOLD)"
+msgstr "PILIHAN GAME (HOLD)"
+
+msgid "GAME OPTIONS"
+msgstr "PILIHAN GAME"
+
+msgid "FAVORITE"
+msgstr "FAVORIT"
+
+msgid "Rating"
+msgstr "Peringkat"
+
+msgid "Released"
+msgstr "Penerbit"
+
+msgid "Developer"
+msgstr "Pengembang"
+
+msgid "Publisher"
+msgstr "Penerbit"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Players"
+msgstr "Pemain"
+
+msgid "Last played"
+msgstr "Dimainkan terakhir"
+
+msgid "Times played"
+msgstr "Waktu bermain"
+
+msgid "Game time"
+msgstr "Lama game"
+
+msgid "Favorite"
+msgstr "Favorit"
+
+#, c-format
+msgid "This folder contains %i game, including :%s"
+msgid_plural "This folder contains %i games, including :%s"
+msgstr[0] "Folder ini berisi %i game, termasuk :%s"
+
+#. TRANSLATION: number of developpers / various developpers
+msgid "None"
+msgstr "Tidak ada"
+
 msgid ""
 "WARNING: THE EMULATOR/CORE CURRENTLY SET DOES NOT SUPPORT THIS GAME'S FILE "
 "FORMAT.\n"
@@ -2642,42 +2461,6 @@ msgstr "Anak-anak"
 msgid "Basic"
 msgstr "Dasar"
 
-msgid "Released"
-msgstr "Penerbit"
-
-msgid "Times played"
-msgstr "Waktu bermain"
-
-#, c-format
-msgid "This folder contains %i game, including :%s"
-msgid_plural "This folder contains %i games, including :%s"
-msgstr[0] "Folder ini berisi %i game, termasuk :%s"
-
-msgid "No Entries Found"
-msgstr "Entri Tidak Ditemukan"
-
-msgid "Games similar to"
-msgstr "Permainan mirip dengan"
-
-msgid "SAVE STATES (HOLD)"
-msgstr "SIMPAN STATUS (HOLD)"
-
-msgid "GAME OPTIONS (HOLD)"
-msgstr "PILIHAN GAME (HOLD)"
-
-msgid "GAME OPTIONS"
-msgstr "PILIHAN GAME"
-
-msgid "FAVORITE"
-msgstr "FAVORIT"
-
-msgid ""
-"A valid account is required. Please register an account on https://"
-"retroachievements.org"
-msgstr ""
-"Diperlukan akun yang valid. Silakan daftarkan akun di https://"
-"retroachievements.org"
-
 msgid "Searching"
 msgstr "Mencari"
 
@@ -2699,17 +2482,89 @@ msgstr "PENCARIAN UNTUK"
 msgid "ACCEPT RESULT"
 msgstr "DAPATKAN HASIL"
 
+msgid "Collections"
+msgstr "Koleksi"
+
+msgid "SCANNING BLUETOOTH"
+msgstr "MEMINDAI BLUETOOTH"
+
+msgid "Searching for devices..."
+msgstr "Mencari perangkat..."
+
+msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
+msgstr "PEMINDAI BLUETOOTH SUDAH BERJALAN."
+
+msgid "FORMATTING DEVICE"
+msgstr "FORMAT PERANGKAT"
+
+msgid "Formatting"
+msgstr "Memformat"
+
+msgid "A REBOOT IS REQUIRED TO COMPLETE THE OPERATION"
+msgstr "REBOOT DIPERLUKAN UNTUK MENYELESAIKAN OPERASI"
+
+msgid "A DRIVE IS ALREADY BEING FORMATTED."
+msgstr "DRIVE SUDAH DIFORMAT."
+
+msgid "all games"
+msgstr "semua game"
+
+msgid "last played"
+msgstr "dimainkan terakhir"
+
+msgid "favorites"
+msgstr "faforit"
+
+msgid "2 players"
+msgstr "2 pemain"
+
+msgid "4 players"
+msgstr "4 pemain"
+
+msgid "never played"
+msgstr "tidak pernah dimainkan"
+
+msgid "retroachievements"
+msgstr "peringkat retro"
+
+msgid "arcade"
+msgstr "arcade"
+
+msgid "vertical arcade"
+msgstr "arcade vertikal"
+
+msgid "lightgun games"
+msgstr "permainan bersenjata ringan"
+
+msgid "collections"
+msgstr "koleksi"
+
+#, c-format
+msgid "Added '%s' to '%s'"
+msgstr "Ditambahkan '%s' sampai '%s"
+
+#, c-format
+msgid "Removed '%s' from '%s'"
+msgstr "Dihapus '%s' dari '%s'"
+
+msgid "This collection is empty."
+msgstr "Koleksi ini kosong"
+
+msgid "Various"
+msgstr "Macam-macam"
+
+#, c-format
+msgid "This collection contains %i game:%s"
+msgid_plural "This collection contains %i games, including:%s"
+msgstr[0] ""
+"Koleksi ini terdapat\n"
+"Gamenya %i adalah :%s"
+
 msgid "Loading system config..."
 msgstr "Memuat konfigurasi sistem..."
 
-msgid "SAVING METADATAS. PLEASE WAIT..."
-msgstr "MENYIMPAN METADATA. HARAP TUNGGU..."
-
-msgid "DO YOU WANT TO SWITCH THE SCREEN ?"
-msgstr "APAKAH INGIN BERALIH LAYAR?"
-
-msgid "Collections"
-msgstr "Koleksi"
+msgid "SAVING METADATA. PLEASE WAIT..."
+msgstr ""
 
 msgid "FILENAME, ASCENDING"
 msgstr "NAMA FILE, URUT KE ATAS"
@@ -2798,104 +2653,240 @@ msgstr "TAHUN RILIS, SISTEM, KEBAWAH"
 msgid "A,AN,THE"
 msgstr "A,AN,THE"
 
-msgid "Extracting"
-msgstr "Mengekstrak"
+msgid "Name"
+msgstr "Name"
 
-msgid "SEARCHING RETROACHIEVEMENTS"
-msgstr "CARI BERDASARKAN PERINGKAT"
+msgid "this game's name"
+msgstr "nama game ini"
 
-msgid "SEARCHING NETPLAY GAMES"
-msgstr "CARI GAME ONLINE"
+msgid "Description"
+msgstr "Deskripsi"
 
-msgid "INDEXING COMPLETED"
-msgstr "PENGINDEKSAN SELESAI"
+msgid "this game's description"
+msgstr "deskripsi game ini"
 
-msgid "UPDATE GAMELISTS TO APPLY CHANGES."
-msgstr "UPDATE LISTGAME UNTUK MENERAPKAN PERUBAHAN."
+msgid "emulator"
+msgstr "emulator"
 
-msgid "THE EMULATOR EXITED UNEXPECTEDLY"
-msgstr "EMULATOR KELUAR SECARA TIBA-TIBA"
+msgid "core"
+msgstr "core"
 
-msgid "BAD COMMAND LINE ARGUMENTS"
-msgstr "ARGUMEN BARIS PERINTAH SALAH"
+msgid "Image"
+msgstr "Gambar"
 
-msgid "INVALID CONFIGURATION"
-msgstr "KONFIGURASI TIDAK VALID"
+msgid "enter path to image"
+msgstr "masukkan jalur ke gambar"
 
-msgid "UNKNOWN EMULATOR"
-msgstr "EMULATOR TAK DIKENAL"
+msgid "Video"
+msgstr "Video"
 
-msgid "EMULATOR IS MISSING"
-msgstr "EMULATOR HILANG"
+msgid "enter path to video"
+msgstr "masukkan jalur ke video"
 
-msgid "CORE IS MISSING"
-msgstr "CORE HILANG"
+msgid "Logo"
+msgstr "Logo"
 
-msgid "UKNOWN ERROR"
-msgstr "ERROR TAK DIKETAHUI"
+msgid "enter path to logo"
+msgstr "masukkan jalur ke logo"
 
-msgid "GENRE"
-msgstr "GENRE"
+msgid "Box"
+msgstr "Box"
 
-msgid "FAMILY"
-msgstr "KELUARGA"
+msgid "enter path to box"
+msgstr "masukkan jalur ke box"
 
-msgid "PLAYERS"
-msgstr "PEMAIN"
+msgid "Fan art"
+msgstr "Seni penggemar"
 
-msgid "PUBLISHER/DEVELOPER"
-msgstr "PENERBIT / PENGEMBANG"
+msgid "enter path to fanart"
+msgstr "masukkan jalur ke seni penggemar"
 
-msgid "RATING"
-msgstr "PERINGKAT"
+msgid "Title shot"
+msgstr "Judul utama"
 
-msgid "YEAR"
-msgstr "TAHUN"
+msgid "enter path to title shot"
+msgstr "masukkan jalur ke judul utama"
 
-msgid "REGION"
-msgstr "WILAYAH"
+msgid "Manual"
+msgstr "Petunjuk"
 
-msgid "KIDGAME"
-msgstr "GAME ANAK"
+msgid "enter path to manual"
+msgstr "masukkan jalur ke petunjuk"
 
-msgid "ALREADY PLAYED"
-msgstr "SUDAH DIMAINKAN"
+msgid "Magazine"
+msgstr "Kalawarta"
 
-msgid "HAS ACHIEVEMENTS"
-msgstr "MEMILIKI PRESTASI"
+msgid "enter path to magazine"
+msgstr "masukkan jalur ke kalawarta"
 
-msgid "VERTICAL"
-msgstr "VERTIKAL"
+msgid "Map"
+msgstr "Peta"
 
-msgid "LIGHTGUN"
-msgstr "SENJATA RINGAN"
+msgid "enter path to map"
+msgstr "masukkan jalur ke peta"
 
-msgid "HAS MEDIAS"
-msgstr "MEMILIKI MEDIA"
+msgid "Bezel (16:9)"
+msgstr "Frame layar (16:9)"
 
-msgid "SCRAPING"
-msgstr "SEDANG SCRAP"
+msgid "enter path to bezel (16:9)"
+msgstr "masukkan jalur ke frame layar (16:9)"
 
-msgid "SCRAPE FAILED"
-msgstr "SCRAP GAGAL"
+msgid "Cartridge"
+msgstr "Katrid"
 
-msgid "SCRAPING FINISHED"
-msgstr "SCRAP SELESAI"
+msgid "enter path to cartridge"
+msgstr "masukkan jalur ke katrid"
+
+msgid "Alt BoxArt"
+msgstr "Sampul Depan"
+
+msgid "enter path to alt boxart"
+msgstr "masukkan jalur ke sampul depan"
+
+msgid "Box backside"
+msgstr "Sampul belakang"
+
+msgid "enter path to box background"
+msgstr "masukkan jalur ke sampul belakang"
+
+msgid "Wheel"
+msgstr "Tokoh"
+
+msgid "enter path to wheel"
+msgstr "masukkan jalur ke tokoh"
+
+msgid "Mix"
+msgstr "Campuran"
+
+msgid "enter path to mix"
+msgstr "masukkan jalur ke campuran"
+
+msgid "enter rating"
+msgstr "masukkan peringkat"
+
+msgid "Release date"
+msgstr "Tanggal rilis"
+
+msgid "enter release date"
+msgstr "masukkan tanggal rilis"
+
+msgid "this game's developer"
+msgstr "pengembang game ini"
+
+msgid "this game's publisher"
+msgstr "penerbit game ini"
+
+msgid "enter game genre"
+msgstr "masukkan genre game"
+
+msgid "Game family"
+msgstr "PGame kelurga"
+
+msgid "this game's game family"
+msgstr "ini game keluarga"
+
+msgid "Genres"
+msgstr "Jenis"
+
+msgid "enter game genres"
+msgstr "masukkan jenis game"
+
+msgid "Arcade system"
+msgstr "Sistem arcade"
+
+msgid "this game's arcade system"
+msgstr "game ini sistem arcade"
+
+msgid "this game's number of players"
+msgstr "jumlah pemain game ini"
+
+msgid "enter favorite"
+msgstr "masukkan favorit"
+
+msgid "Hidden"
+msgstr "Sembunyikan"
+
+msgid "enter hidden"
+msgstr "masukkan sembunyi"
+
+msgid "Kidgame"
+msgstr "Game anak"
+
+msgid "enter kidgame"
+msgstr "masukkan game anak"
+
+msgid "Play count"
+msgstr "Hitungan bermain"
+
+msgid "enter number of times played"
+msgstr "masukkan jumlah hitungan bermain"
+
+msgid "enter last played date"
+msgstr "masukkan tanggal terakhir dimainkan"
+
+msgid "Crc32"
+msgstr "Crc32"
+
+msgid "Crc32 checksum"
+msgstr "Ceksum Crc32"
+
+msgid "Md5"
+msgstr "Md5"
+
+msgid "Md5 checksum"
+msgstr "Ceksum Md5"
+
+msgid "how long the game has been played in total (seconds)"
+msgstr "berapa lama game ini dimainkan (detik)"
+
+msgid "Languages"
+msgstr "Bahasa"
+
+msgid "this game's languages"
+msgstr "bahasa game ini"
+
+msgid "Region"
+msgstr "Kawasan"
+
+msgid "this game's region"
+msgstr "kawasan game ini"
+
+msgid "Cheevos Hash"
+msgstr "Hash cheevos"
+
+msgid "Cheevos checksum"
+msgstr "Ceksum cheevos"
+
+msgid "Cheevos Game ID"
+msgstr "ID Game Cheevos"
+
+msgid "Screenscraper Game ID"
+msgstr "ID Game Screenscraper"
+
+msgid "DOWNLOADING"
+msgstr "MENGUNDUH"
+
+msgid "THEME INSTALLED SUCCESSFULLY"
+msgstr "TEMA BERHASIL DIPASANG"
+
+msgid "BEZELS INSTALLED SUCCESSFULLY"
+msgstr "FRAME LAYAR BERHASIL DIPASANG"
+
+msgid "PACKAGE INSTALLED SUCCESSFULLY"
+msgstr "PAKET BERHASIL DIPASANG"
+
+msgid "PACKAGE REMOVED SUCCESSFULLY"
+msgstr "PAKET BERHASIL DIHAPUS"
 
 msgid ""
-"CALIBRATING GUN\n"
-"Fire on targets to calibrate"
+"A valid account is required. Please register an account on https://"
+"retroachievements.org"
 msgstr ""
-"KALIBER SENJATA\n"
-"TARGET KALIBER"
+"Diperlukan akun yang valid. Silakan daftarkan akun di https://"
+"retroachievements.org"
 
-#, c-format
-msgid "%s connected"
-msgstr "%s terhubung"
-
-#, c-format
-msgid "%s disconnected"
-msgstr "%s terputus"
+msgid "DO YOU WANT TO SWITCH THE SCREEN ?"
+msgstr "APAKAH INGIN BERALIH LAYAR?"
 
 msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
 msgstr "TEKAN SHIFT UNTUK ATAS, BAWAH, DAN SPESIAL"
@@ -3052,6 +3043,9 @@ msgstr "TEKAN APA SAJA"
 msgid "ALREADY TAKEN"
 msgstr "TELAH DIGUNAKAN"
 
+msgid "DISCARD CHANGES"
+msgstr "PERUBAHAN DIBATALKAN"
+
 msgid "WELCOME"
 msgstr "SELAMAT DATANG"
 
@@ -3066,43 +3060,22 @@ msgstr "GAMEPAD TIDAK TERDETEKSI"
 msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
 msgstr "TAHAN TOMBOL DI PERANGKATMU UNTUK MENKONFIGURASINYA"
 
-msgid "DISCARD CHANGES"
-msgstr "PERUBAHAN DIBATALKAN"
+#, c-format
+msgid "%s connected"
+msgstr "%s terhubung"
+
+#, c-format
+msgid "%s disconnected"
+msgstr "%s terputus"
+
+msgid "ENABLED"
+msgstr "DI AKTIFKAN"
 
 msgid "up/down"
 msgstr "atas/bawah"
 
-msgid "accept"
-msgstr "terima"
-
-msgid "SELECT ALL"
-msgstr "PILIH SEMUA"
-
-msgid "select all"
-msgstr "pilih semua"
-
-msgid "SELECT NONE"
-msgstr "TIDAK SATUPUN"
-
-msgid "select none"
-msgstr "tidak satupun"
-
-#, c-format
-msgid "%i SELECTED"
-msgid_plural "%i SELECTED"
-msgstr[0] "DIPILIH"
-
 msgid "CHANGE"
 msgstr "UBAH"
-
-msgid "MOVE CURSOR"
-msgstr "GERAKKAN KURSOR"
-
-msgid "EDIT"
-msgstr "SUNTING"
-
-msgid "ENABLED"
-msgstr "DI AKTIFKAN"
 
 #, c-format
 msgid "%d day ago"
@@ -3124,8 +3097,40 @@ msgid "%d second ago"
 msgid_plural "%d seconds ago"
 msgstr[0] "sedetik lalu"
 
+msgid "accept"
+msgstr "terima"
+
+msgid "SELECT ALL"
+msgstr "PILIH SEMUA"
+
+msgid "select all"
+msgstr "pilih semua"
+
+msgid "SELECT NONE"
+msgstr "TIDAK SATUPUN"
+
+msgid "select none"
+msgstr "tidak satupun"
+
+#, c-format
+msgid "%i SELECTED"
+msgid_plural "%i SELECTED"
+msgstr[0] "DIPILIH"
+
 msgid "WORKING..."
 msgstr "DIKERJAKAN..."
+
+msgid "MOVE CURSOR"
+msgstr "GERAKKAN KURSOR"
+
+msgid "EDIT"
+msgstr "SUNTING"
+
+msgid "SCREEN READER ENABLED"
+msgstr "PEMBACA LAYAR DIAKTIFKAN"
+
+msgid "SCREEN READER DISABLED"
+msgstr "PEMBACA LAYAR DINONAKTIFKAN"
 
 #, c-format
 msgid "%d h"
@@ -3139,11 +3144,24 @@ msgstr "%d menit"
 msgid "%d sec"
 msgstr "%d detik"
 
-msgid "SCREEN READER ENABLED"
-msgstr "PEMBACA LAYAR DIAKTIFKAN"
+msgid ""
+"CALIBRATING GUN\n"
+"Fire on targets to calibrate"
+msgstr ""
+"KALIBER SENJATA\n"
+"TARGET KALIBER"
 
-msgid "SCREEN READER DISABLED"
-msgstr "PEMBACA LAYAR DINONAKTIFKAN"
+#~ msgid "GUN MOVE TOLERENCE"
+#~ msgstr "TOLERANSI GUN MOVE"
+
+#~ msgid "PAIR BLUETOOTH PADS AUTOMATICALLY"
+#~ msgstr "PASANGKAN PAD BLUETOOTH SECARA OTOMATIS"
+
+#~ msgid "PAIR A BLUETOOTH DEVICE MANUALLY"
+#~ msgstr "PASANGKAN PERANGKAT BLUETOOTH SECARA MANUAL"
+
+#~ msgid "SAVING METADATAS. PLEASE WAIT..."
+#~ msgstr "MENYIMPAN METADATA. HARAP TUNGGU..."
 
 #~ msgctxt "joystick"
 #~ msgid "UP"

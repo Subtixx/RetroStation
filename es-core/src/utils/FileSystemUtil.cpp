@@ -1093,34 +1093,34 @@ unsigned long long getFileSize(const std::string &_path) {
     return 0;
 }
 
-Utils::Time::DateTime getFileCreationDate(const std::string &_path) {
+Utils::DateTime getFileCreationDate(const std::string &_path) {
     std::string path = getGenericPath(_path);
     struct stat64 info;
 
     // check if stat64 succeeded
 #if defined(_WIN32)
     if ((_wstat64(Utils::String::convertToWideString(path).c_str(), &info) == 0))
-        return Utils::Time::DateTime(info.st_ctime);
+        return Utils::DateTime(info.st_ctime);
 #else
     if ((stat64(path.c_str(), &info) == 0))
-        return Utils::Time::DateTime(info.st_ctime);
+        return Utils::DateTime(info.st_ctime);
 #endif
-    return Utils::Time::DateTime();
+    return Utils::DateTime();
 }
 
-Utils::Time::DateTime getFileModificationDate(const std::string &_path) {
+Utils::DateTime getFileModificationDate(const std::string &_path) {
     std::string path = getGenericPath(_path);
     struct stat64 info;
 
     // check if stat64 succeeded
 #if defined(_WIN32)
     if ((_wstat64(Utils::String::convertToWideString(path).c_str(), &info) == 0))
-        return Utils::Time::DateTime(info.st_mtime);
+        return Utils::DateTime(info.st_mtime);
 #else
     if ((stat64(path.c_str(), &info) == 0))
-        return Utils::Time::DateTime(info.st_mtime);
+        return Utils::DateTime(info.st_mtime);
 #endif
-    return Utils::Time::DateTime();
+    return Utils::DateTime();
 }
 
 std::string readAllText(const std::string fileName) {

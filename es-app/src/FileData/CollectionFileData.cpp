@@ -17,48 +17,40 @@
 
 #include "FolderFileData.h"
 
-CollectionFileData::CollectionFileData(FileData* file, SystemData* system)
-    : FileData(file->getSourceFileData()->getType(), "", system)
-{
-    mSourceFileData = file->getSourceFileData();
-    mParent = NULL;
+CollectionFileData::CollectionFileData(FileData *file, SystemData *system) :
+    FileData(file->getSourceFileData()->getType(), "", system), mSourceFileData(file->getSourceFileData()) {
+    mParent = nullptr;
 }
 
-SystemEnvironmentData* CollectionFileData::getSystemEnvData() const
-{
+SystemEnvironmentData *CollectionFileData::getSystemEnvData() const {
     return mSourceFileData->getSystemEnvData();
 }
 
-const std::string CollectionFileData::getPath() const
-{
+const std::string CollectionFileData::getPath() const {
     return mSourceFileData->getPath();
 }
 
-std::string CollectionFileData::getSystemName() const
-{
+std::string CollectionFileData::getSystemName() const {
     return mSourceFileData->getSystem()->getName();
 }
 
-CollectionFileData::~CollectionFileData()
-{
+CollectionFileData::~CollectionFileData() {
     // need to remove collection file data at the collection object destructor
-    if(mParent)
+    if (mParent != nullptr) {
         mParent->removeChild(this);
+    }
 
-    mParent = NULL;
+    mParent = nullptr;
 }
 
-std::string CollectionFileData::getKey()
-{
+std::string CollectionFileData::getKey() {
     return getFullPath();
 }
 
-FileData* CollectionFileData::getSourceFileData()
-{
+FileData *CollectionFileData::getSourceFileData() {
     return mSourceFileData;
 }
 
-const std::string& CollectionFileData::getName()
-{
+const std::string &CollectionFileData::getName() {
     return mSourceFileData->getName();
 }

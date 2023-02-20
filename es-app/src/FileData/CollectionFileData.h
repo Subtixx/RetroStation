@@ -20,22 +20,28 @@
 class CollectionFileData : public FileData {
   public:
     CollectionFileData(FileData *file, SystemData *system);
-    ~CollectionFileData();
-    const std::string &getName();
-    FileData *getSourceFileData();
-    std::string getKey();
-    virtual const std::string getPath() const;
+    ~CollectionFileData() override;
 
-    virtual std::string getSystemName() const;
-    virtual SystemEnvironmentData *getSystemEnvData() const;
+    CollectionFileData(const CollectionFileData &) = delete;
+    CollectionFileData &operator=(const CollectionFileData &) = delete;
+    CollectionFileData(CollectionFileData &&) = delete;
+    CollectionFileData &operator=(CollectionFileData &&) = delete;
 
-    virtual const MetaDataList &getMetadata() const {
+    const std::string &getName() override;
+    FileData *getSourceFileData() override;
+    std::string getKey() override;
+    [[nodiscard]] const std::string getPath() const override;
+
+    [[nodiscard]] std::string getSystemName() const override;
+    [[nodiscard]] SystemEnvironmentData *getSystemEnvData() const override;
+
+    [[nodiscard]] const MetaDataList &getMetadata() const override {
         return mSourceFileData->getMetadata();
     }
-    virtual MetaDataList &getMetadata() {
+    MetaDataList &getMetadata() override {
         return mSourceFileData->getMetadata();
     }
-    virtual std::string &getDisplayName() {
+    std::string &getDisplayName() override {
         return mSourceFileData->getDisplayName();
     }
 

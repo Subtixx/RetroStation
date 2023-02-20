@@ -31,7 +31,7 @@ protected:
 private:
 	std::string getDisplayString() const;
 
-	Utils::Time::DateTime mTime;
+	Utils::DateTime mTime;
 	std::string mFormat;
 	bool mDisplayRelative;
 };

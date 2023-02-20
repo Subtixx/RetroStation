@@ -10,457 +10,23 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "UPDATE AVAILABLE"
-msgstr "ΔΙΑΘΕΣΙΜΗ ΑΝΑΒΑΘΜΙΣΗ"
+msgid "Extracting"
+msgstr "Εξαγωγή"
 
-msgid "Name"
-msgstr "Όνομα"
+msgid "SEARCHING RETROACHIEVEMENTS"
+msgstr "ΑΝΑΖΗΤΗΣΗ RETROACHIEVEMENTS"
 
-msgid "this game's name"
+msgid "SEARCHING NETPLAY GAMES"
+msgstr "ΑΝΑΖΗΤΗΣΗ ΠΑΙΧΝΙΔΙΩΝ NETPLAY"
+
+msgid "INDEXING COMPLETED"
+msgstr "Η ΕΥΡΕΤΗΡΙΑΣΗ ΟΛΟΚΛΗΡΩΘΗΚΕ"
+
+msgid "UPDATE GAMELISTS TO APPLY CHANGES."
 msgstr ""
 
-msgid "Description"
-msgstr "Περιγραφή"
-
-msgid "this game's description"
-msgstr ""
-
-msgid "Emulator"
-msgstr "Εξομοιωτής"
-
-msgid "emulator"
-msgstr "εξομοιωτής"
-
-msgid "Core"
-msgstr "Πυρήνας"
-
-msgid "core"
-msgstr "πυρήνας"
-
-msgid "Image"
-msgstr "Εικόνα"
-
-msgid "enter path to image"
-msgstr "προσθήκη διαδρομής εικόνας"
-
-msgid "Video"
-msgstr "Βίντεο"
-
-msgid "enter path to video"
-msgstr "προσθήκη διαδρομής βίντεο"
-
-msgid "Logo"
-msgstr "Λογότυπο"
-
-msgid "enter path to logo"
-msgstr "προσθήκη διαδρομής λογότυπου"
-
-msgid "Box"
-msgstr ""
-
-msgid "enter path to box"
-msgstr "προσθήκη διαδρομής box"
-
-msgid "Fan art"
-msgstr ""
-
-msgid "enter path to fanart"
-msgstr ""
-
-msgid "Title shot"
-msgstr ""
-
-msgid "enter path to title shot"
-msgstr ""
-
-msgid "Manual"
-msgstr ""
-
-msgid "enter path to manual"
-msgstr ""
-
-msgid "Magazine"
-msgstr "Περιοδικό"
-
-msgid "enter path to magazine"
-msgstr "προσθήκη διαδρομής για περιοδικό"
-
-msgid "Map"
-msgstr "Χάρτης"
-
-msgid "enter path to map"
-msgstr "προσθήκη διαδρομής χάρτη"
-
-msgid "Bezel (16:9)"
-msgstr ""
-
-msgid "enter path to bezel (16:9)"
-msgstr ""
-
-msgid "Cartridge"
-msgstr "Κασέτα"
-
-msgid "enter path to cartridge"
-msgstr "προσθήκη διαδρομής cartridge"
-
-msgid "Alt BoxArt"
-msgstr ""
-
-msgid "enter path to alt boxart"
-msgstr ""
-
-msgid "Box backside"
-msgstr ""
-
-msgid "enter path to box background"
-msgstr ""
-
-msgid "Wheel"
-msgstr ""
-
-msgid "enter path to wheel"
-msgstr ""
-
-msgid "Mix"
-msgstr ""
-
-msgid "enter path to mix"
-msgstr ""
-
-msgid "Rating"
-msgstr "Βαθμολογία"
-
-msgid "enter rating"
-msgstr "προσθήκη βαθμολογίας"
-
-msgid "Release date"
-msgstr "Ημερομηνία κυκλοφορίας"
-
-msgid "enter release date"
-msgstr "προσθήκη ημερομηνίας κυκλοφορίας"
-
-msgid "Developer"
-msgstr "Δημιουργός"
-
-msgid "this game's developer"
-msgstr ""
-
-msgid "Publisher"
-msgstr "Εκδότης"
-
-msgid "this game's publisher"
-msgstr ""
-
-msgid "Genre"
-msgstr "Είδος"
-
-msgid "enter game genre"
-msgstr "προσθήκη είδους παιχνιδιού"
-
-msgid "Game family"
-msgstr "Οικογένεια παιχνιδιού"
-
-msgid "this game's game family"
-msgstr ""
-
-msgid "Genres"
-msgstr "Είδη"
-
-msgid "enter game genres"
-msgstr "προσθήκη ειδών παιχνιδιών"
-
-msgid "Arcade system"
-msgstr "Arcade σύστημα"
-
-msgid "this game's arcade system"
-msgstr ""
-
-msgid "Players"
-msgstr "Παίκτες"
-
-msgid "this game's number of players"
-msgstr ""
-
-msgid "Favorite"
-msgstr "Αγαπημένο"
-
-msgid "enter favorite"
-msgstr "προσθήκη αγαπημένου"
-
-msgid "Hidden"
-msgstr "Κρυμμένο"
-
-msgid "enter hidden"
-msgstr "προσθήκη κρυμμένου"
-
-msgid "Kidgame"
-msgstr "Παιδικό παιχνίδι"
-
-msgid "enter kidgame"
-msgstr "προσθήκη παιδικού παιχνιδιού"
-
-msgid "Play count"
-msgstr "Φορές που παίχτηκε"
-
-msgid "enter number of times played"
-msgstr "προσθήκη αριθμού φορών που παίχτηκε"
-
-msgid "Last played"
-msgstr "Παίχτηκε τελευταία φορά"
-
-msgid "enter last played date"
-msgstr "προσθήκη τελευταίας φοράς παιχνιδιού"
-
-msgid "Crc32"
-msgstr ""
-
-msgid "Crc32 checksum"
-msgstr ""
-
-msgid "Md5"
-msgstr ""
-
-msgid "Md5 checksum"
-msgstr ""
-
-msgid "Game time"
-msgstr "Χρόνος παιχνιδιού"
-
-msgid "how long the game has been played in total (seconds)"
-msgstr "Πόσο παίχτηκε το παιχνίδι συνολικά (δευτερόλεπτα)"
-
-msgid "Languages"
-msgstr "Γλώσσες"
-
-msgid "this game's languages"
-msgstr ""
-
-msgid "Region"
-msgstr "Περιοχή"
-
-msgid "this game's region"
-msgstr ""
-
-msgid "Cheevos Hash"
-msgstr ""
-
-msgid "Cheevos checksum"
-msgstr ""
-
-msgid "Cheevos Game ID"
-msgstr ""
-
-msgid "Screenscraper Game ID"
-msgstr ""
-
-msgid "all games"
-msgstr "Ολα τα παιχνίδια"
-
-msgid "last played"
-msgstr "Παίχτηκε τελευταία φορά"
-
-msgid "favorites"
-msgstr "Αγαπημένα"
-
-msgid "2 players"
-msgstr "2 παίκτες"
-
-msgid "4 players"
-msgstr "4 παίκτες"
-
-msgid "never played"
-msgstr "Δεν παίχτηκε ποτέ"
-
-msgid "retroachievements"
-msgstr ""
-
-msgid "arcade"
-msgstr ""
-
-msgid "vertical arcade"
-msgstr "κάθετα arcade"
-
-msgid "lightgun games"
-msgstr "lightgun παιχνίδια"
-
-msgid "collections"
-msgstr "συλλογές"
-
-#, c-format
-msgid "Added '%s' to '%s'"
-msgstr "Προστέθηκε '%s' σε '%s'"
-
-#, c-format
-msgid "Removed '%s' from '%s'"
-msgstr "Αφαιρέθηκε '%s' απο '%s'"
-
-msgid "This collection is empty."
-msgstr "Αυτή η συλλογή είναι άδεια"
-
-#. TRANSLATION: number of developpers / various developpers
-msgid "None"
-msgstr "Κανένας"
-
-msgid "Various"
-msgstr "Διάφοροι"
-
-#, c-format
-msgid "This collection contains %i game:%s"
-msgid_plural "This collection contains %i games, including:%s"
-msgstr[0] ""
-msgstr[1] ""
-
-msgid "SCANNING BLUETOOTH"
-msgstr "ΑΝΙΧΝΕΥΣΗ BLUETOOTH"
-
-msgid "Searching for devices..."
-msgstr ""
-
-msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
-msgstr "Η ΑΝΙΧΝΕΥΣΗ BLUETOOTH ΓΙΝΕΤΑΙ ΗΔΗ"
-
-msgid "FORMATTING DEVICE"
-msgstr ""
-
-msgid "Formatting"
-msgstr ""
-
-msgid "A REBOOT IS REQUIRED TO COMPLETE THE OPERATION"
-msgstr "ΧΡΕΙΑΖΕΤΑΙ ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΟΥ ΣΥΣΤΗΜΑΤΟΣ ΓΙΑ ΝΑ ΟΛΟΚΛΗΡΩΘΕΙ Η ΛΕΙΤΟΥΡΓΙΑ"
-
-msgid "A DRIVE IS ALREADY BEING FORMATTED."
-msgstr ""
-
-msgid "DOWNLOADING"
-msgstr "ΚΑΤΕΒΑΙΝΕΙ"
-
-msgid "THEME INSTALLED SUCCESSFULLY"
-msgstr "ΤΟ ΘΕΜΑ ΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
-
-msgid "AN ERROR OCCURED"
-msgstr "ΕΝΑ ΣΦΑΛΜΑ ΠΡΟΕΚΥΨΕ"
-
-msgid "THEME UNINSTALLED SUCCESSFULLY"
-msgstr "ΤΟ ΘΕΜΑ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
-
-msgid "BEZELS INSTALLED SUCCESSFULLY"
-msgstr "ΤΑ ΠΕΡΙΘΩΡΙΑ ΕΓΚΑΤΑΣΤΑΘΗΚΑΝ ΕΠΙΤΥΧΩΣ"
-
-msgid "BEZELS UNINSTALLED SUCCESSFULLY"
-msgstr "ΤΑ ΠΕΡΙΘΩΡΙΑ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΑΝ ΕΠΙΤΥΧΩΣ"
-
-msgid "PACKAGE INSTALLED SUCCESSFULLY"
-msgstr "ΤΟ ΠΑΚΕΤΟ ΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
-
-msgid "PACKAGE REMOVED SUCCESSFULLY"
-msgstr "ΤΟ ΠΑΚΕΤΟ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
-
-msgid "RETROACHIEVEMENT SETTINGS"
-msgstr ""
-
-msgid "SETTINGS"
-msgstr "ΡΥΘΜΙΣΕΙΣ"
-
-msgid "RETROACHIEVEMENTS"
-msgstr ""
-
-msgid "USERNAME"
-msgstr "ΟΝΟΜΑ ΧΡΗΣΤΗ"
-
-msgid "PASSWORD"
-msgstr "ΚΩΔΙΚΟΣ"
-
-msgid "OPTIONS"
-msgstr "ΕΠΙΛΟΓΕΣ"
-
-msgid "HARDCORE MODE"
-msgstr "ΛΕΙΤΟΥΡΓΙΑ HARDCORE"
-
-msgid "Disable loading states, rewind and cheats for more points."
-msgstr ""
-
-msgid "LEADERBOARDS"
-msgstr ""
-
-msgid "Compete in high-score and best time leaderboards (requires hardcore)."
-msgstr ""
-
-msgid "VERBOSE MODE"
-msgstr "ΛΕΙΤΟΥΡΓΙΑ VERBOSE"
-
-msgid "Show achievement progression on game launch and other notifications."
-msgstr ""
-
-msgid "RICH PRESENCE"
-msgstr ""
-
-msgid "ENCORE MODE"
-msgstr ""
-
-msgid "Unlocked achievements can be earned again."
-msgstr ""
-
-msgid "AUTOMATIC SCREENSHOT"
-msgstr "AYTOMATO ΣΤΙΓΜΙΟΤΥΠΟ"
-
-msgid "Automatically take a screenshot when an achievement is earned."
-msgstr ""
-
-msgid "CHALLENGE INDICATORS"
-msgstr ""
-
-msgid ""
-"Shows icons in the bottom right corner when eligible achievements can be "
-"earned."
-msgstr ""
-
-msgid "RETROACHIEVEMENT UNLOCK SOUND"
-msgstr ""
-
-msgid "none"
-msgstr "κανένα"
-
-msgid "UNLOCK SOUND"
-msgstr "ΞΕΚΛΕΙΔΩΜΑ ΗΧΟΥ"
-
-msgid "SHOW RETROACHIEVEMENTS ENTRY IN MAIN MENU"
-msgstr ""
-
-msgid "View your RetroAchievement stats right from the main menu!"
-msgstr ""
-
-msgid "GAME INDEXES"
-msgstr "ΕΥΡΕΤΗΡΙΑ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "INDEX NEW GAMES AT STARTUP"
-msgstr ""
-
-msgid "INDEX GAMES"
-msgstr ""
-
-msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
-msgstr ""
-
-msgid "OK"
-msgstr "ΕΝΤΑΞΕΙ"
-
-msgid "FILTER GAMELIST BY"
-msgstr "ΦΙΛΙΤΡΑΡΙΣΜΑ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ ΑΠΟ"
-
-msgid "EDIT DYNAMIC COLLECTION FILTERS"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΦΙΛΤΡΩΝ ΔΥΝΑΜΙΚΩΝ ΣΥΛΛΟΓΩΝ"
-
-msgid "RESET ALL FILTERS"
-msgstr "ΕΠΑΝΑΦΟΡΑ ΟΛΩΝ ΤΩΝ ΦΙΛΤΡΩΝ"
-
-msgid "BACK"
-msgstr "ΠΙΣΩ"
-
-msgid "FIND GAMES"
-msgstr "ΕΥΡΕΣΗ ΠΑΙΧΝΙΔΙΩΝ"
-
-msgid "Unknown"
-msgstr "Άγνωστο"
+msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
+msgstr "ΤΟ HASHING ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ ΕΚΤΕΛΕΙΤΑΙ. ΘΕΛΕΤΕ ΝΑ ΤΟ ΔΙΑΚΟΨΕΤΕ ;"
 
 msgid "YES"
 msgstr "ΝΑΙ"
@@ -468,710 +34,26 @@ msgstr "ΝΑΙ"
 msgid "NO"
 msgstr "ΟΧΙ"
 
-msgid "SYSTEMS"
-msgstr "ΣΥΣΤΗΜΑΤΑ"
-
-msgid "GAME COLLECTION SETTINGS"
-msgstr "ΡΥΘΜΙΣΕΙΣ ΣΥΛΛΟΓΩΝ ΠΑΙΧΝΙΔΙΩΝ"
-
-msgid "COLLECTIONS TO DISPLAY"
-msgstr "ΣΥΛΛΟΓΕΣ ΠΡΟΣ ΕΜΦΑΝΙΣΗ"
-
-msgid "SYSTEMS DISPLAYED"
-msgstr "ΕΜΦΑΝΙΖΟΜΕΝΑ ΣΥΣΤΗΜΑΤΑ"
-
-msgid "GROUPED SYSTEMS"
-msgstr "ΟΜΑΔΟΠΟΙΗΜΕΝΑ ΣΥΣΤΗΜΑΤΑ"
-
-msgid "CREATE CUSTOM COLLECTION"
-msgstr "ΔΗΜΙΟΥΡΓΙΑ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗΣ ΣΥΛΛΟΓΗΣ"
-
-msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
-msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗΣ ΣΥΛΛΟΓΗΣ ΑΠΟ ΤΟ ΘΕΜΑ"
-
-msgid "SELECT THEME FOLDER"
-msgstr "ΕΠΙΛΟΓΗ ΦΑΚΕΛΟΥ ΘΕΜΑΤΟΣ"
-
-msgid "CREATE NEW EDITABLE COLLECTION"
-msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΕΠΕΞΕΡΓΑΣΙΜΗΣ ΣΥΛΛΟΓΗΣ"
-
-msgid "New Collection Name"
-msgstr "Όνομα Νέας Συλλογής"
-
-msgid "CREATE NEW DYNAMIC COLLECTION"
-msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΔΥΝΑΜΙΚΗΣ ΣΥΛΛΟΓΗΣ"
-
-msgid "SORT COLLECTIONS AND SYSTEMS"
-msgstr "ΤΑΞΙΝΟΜΗΣΗ ΣΥΛΛΟΓΩΝ ΚΑΙ ΣΥΣΤΗΜΑΤΩΝ"
-
-msgid "ALPHABETICALLY"
-msgstr "ΑΛΦΑΒΗΤΙΚΑ"
-
-msgid "BY MANUFACTURER"
-msgstr "ΚΑΤΑ ΚΑΤΑΣΚΕΥΑΣΤΗ"
-
-msgid "BY HARDWARE TYPE"
-msgstr "ΚΑΤΑ ΤΥΠΟ ΥΛΙΚΟΥ"
-
-msgid "BY MANUFACTURER AND TYPE"
-msgstr ""
-
-msgid "BY RELEASE YEAR"
-msgstr "ΚΑΤΑ ΕΤΟΣ ΚΥΚΛΟΦΟΡΙΑΣ"
-
-msgid "SORT SYSTEMS"
-msgstr "ΤΑΞΙΝΟΜΗΣΗ ΣΥΣΤΗΜΑΤΩΝ"
-
-msgid "START ON SYSTEM"
-msgstr "ΕΚΚΙΝΗΣΗ ΣΕ ΣΥΣΤΗΜΑ"
-
-msgid "NONE"
-msgstr "ΚΑΝΕΝΑ"
-
-msgid "RESTORE LAST SELECTED"
-msgstr "ΕΠΑΝΑΦΟΡΑ ΤΕΛΕΥΤΑΙΟΥ ΕΠΙΛΕΓΜΕΝΟΥ"
-
-msgid "START ON GAMELIST"
-msgstr "ΕΚΚΙΝΗΣΗ ΣΕ ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΩΝ"
-
-msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
-msgstr "ΟΜΑΔΟΠΟΙΗΣΗ ΠΡΟΣΩΠΙΚΩΝ ΣΥΛΛΟΓΩΝ ΧΩΡΙΣ ΘΕΜΑ"
-
-msgid "SHOW SYSTEM NAME IN COLLECTIONS"
-msgstr "ΕΜΦΑΝΙΣΗ ΟΝΟΜΑΤΩΝ ΣΥΣΤΗΜΑΤΟΣ ΣΤΙΣ ΣΥΛΛΟΓΕΣ"
-
-msgid "SHOW GAMES OF HIDDEN SYSTEMS IN COLLECTIONS"
-msgstr "ΕΜΦΑΝΙΣΗ ΠΑΙΧΝΙΔΩΝ ΚΡΥΜΜΕΝΩΝ ΣΥΣΤΗΜΑΤΩΝ ΣΤΙΣ ΣΥΛΛΟΓΕΣ"
-
-msgid "SHOW EMPTY SYSTEMS"
-msgstr ""
-
-msgid "UPDATE GAMELISTS"
-msgstr ""
-
-msgid "Loading..."
-msgstr "Φόρτωση..."
-
-msgid "SELECT COLLECTIONS"
-msgstr "ΕΠΙΛΟΓΗ ΣΥΛΛΟΓΩΝ"
-
-msgid "AUTOMATIC COLLECTIONS"
-msgstr "ΑΥΤΟΜΑΤΕΣ ΣΥΛΛΟΓΕΣ"
-
-msgid "PER GENRE"
-msgstr "ΑΝΑ ΕΙΔΟΣ"
-
-msgid "ARCADE SYSTEMS"
-msgstr "ARCADE ΣΥΣΤΗΜΑΤΑ"
-
-msgid "AUTOMATIC GAME COLLECTIONS"
-msgstr "ΑΥΤΟΜΑΤΕΣ ΣΥΛΛΟΓΕΣ ΠΑΙΧΝΙΔΙΩΝ"
-
-msgid "EDITABLE COLLECTIONS"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΜΕΣ ΣΥΛΛΟΓΕΣ"
-
-msgid "DYNAMIC COLLECTIONS"
-msgstr "ΔΥΝΑΜΙΚΕΣ ΣΥΛΛΟΓΕΣ"
-
-msgid "CUSTOM GAME COLLECTIONS"
-msgstr "ΠΡΟΣΩΠΙΚΕΣ ΣΥΛΛΟΓΕΣ ΠΑΙΧΝΙΔΙΩΝ"
+msgid "NO GAMES FIT THAT CRITERIA."
+msgstr "ΔΕΝ ΤΑΙΡΙΑΖΟΥΝ ΠΑΙΧΝΙΔΙΑ Σ'ΑΥΤΑ ΤΑ ΚΡΙΤΗΡΙΑ"
 
 msgid "PLEASE WAIT"
 msgstr "ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ"
-
-#, c-format
-msgid "%d%% (%d of %d)"
-msgstr ""
-
-msgid "Points (hardcore)"
-msgstr ""
-
-msgid "Softcore points"
-msgstr ""
-
-msgid "Rank"
-msgstr "Σειρά"
-
-msgid "VIEW DETAILS"
-msgstr "ΠΡΟΒΟΛΗ ΛΕΠΤΟΜΕΡΙΩΝ"
-
-msgid "LAUNCH"
-msgstr "ΕΝΑΡΞΗ"
-
-msgid "NETPLAY SETTINGS"
-msgstr "ΡΥΘΜΙΣΕΙΣ NETPLAY"
-
-msgid "ENABLE NETPLAY"
-msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ NETPLAY"
-
-msgid "NICKNAME"
-msgstr "ΨΕΥΔΩΝΥΜΟ"
-
-msgid "PORT"
-msgstr "ΘΥΡΑ"
-
-msgid "USE RELAY SERVER"
-msgstr "ΧΡΗΣΗ RELAY ΣΕΡΒΕΡ"
-
-msgid "NEW YORK"
-msgstr ""
-
-msgid "MADRID"
-msgstr ""
-
-msgid "MONTREAL"
-msgstr ""
-
-msgid "SAO PAULO"
-msgstr ""
-
-msgid "SHOW UNAVAILABLE GAMES"
-msgstr ""
-
-msgid "Show rooms for games not present on this machine."
-msgstr ""
-
-msgid "FINISHED"
-msgstr "ΤΕΤΕΛΕΣΜΕΝΟ"
-
-msgid "VIEW OPTIONS"
-msgstr "ΠΡΟΒΟΛΗ ΕΠΙΛΟΓΩΝ"
-
-msgid "go back"
-msgstr "ΠΗΓΑΙΝΕ ΠΙΣΩ"
-
-msgid "NAVIGATION"
-msgstr "ΠΛΟΗΓΗΣΗ"
-
-msgid "OTHER FILTERS"
-msgstr "ΑΛΛΑ ΦΙΛΤΡΑ"
-
-msgid "SELECT RANDOM GAME"
-msgstr "ΤΥΧΑΙΑ ΕΠΙΛΟΓΗ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "JUMP TO GAME BEGINNING WITH THE LETTER"
-msgstr ""
-
-msgid "SORT GAMES BY"
-msgstr "ΤΑΞΙΝΟΜΗΣΗ ΠΑΙΧΝΙΔΙΩΝ ΚΑΤΑ"
-
-msgid "DYNAMIC COLLECTION"
-msgstr ""
-
-msgid "CUSTOM COLLECTION"
-msgstr ""
-
-msgid "DELETE COLLECTION"
-msgstr "ΔΙΑΓΡΑΦΗ ΣΥΛΛΟΓΗΣ"
-
-msgid "COLLECTION"
-msgstr "ΣΥΛΛΟΓΗ"
-
-msgid "GAMELIST VIEW STYLE"
-msgstr "ΣΤΥΛ ΠΡΟΒΟΛΗΣ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
-
-msgid "automatic"
-msgstr "ΑΥΤΟΜΑΤΑ"
-
-msgid "VIEW CUSTOMIZATION"
-msgstr ""
-
-msgid "VIEW PAD TO KEYBOARD INFORMATION"
-msgstr "ΠΡΟΒΟΛΗ PAD ΣΤΙΣ ΠΛΗΡΟΦΟΡΙΕΣ ΠΛΗΚΤΡΟΛΟΓΙΟΥ"
-
-msgid "ADVANCED SYSTEM OPTIONS"
-msgstr "ΣΥΝΘΕΤΕΣ ΕΠΙΛΟΓΕΣ ΣΥΣΤΗΜΑΤΟΣ"
-
-msgid "RESET FILTERS"
-msgstr "ΕΠΑΝΑΦΟΡΑ ΦΙΛΤΡΩΝ"
-
-msgid "FILTER GAMES BY TEXT"
-msgstr "ΦΙΛΤΡΑ ΠΑΙΧΝΙΔΙΟΥ ΚΑΤΑ ΚΕΙΜΕΝΟ"
-
-msgid "THIS FUNCTION IS DISABLED WHILE THE SCRAPER IS RUNNING"
-msgstr ""
-
-msgid "CLOSE"
-msgstr "ΚΛΕΙΣΙΜΟ"
-
-msgid "ARE YOU SURE YOU WANT TO DELETE THIS ITEM?"
-msgstr "ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ ΠΩΣ ΘΕΛΕΤΕ ΝΑ ΔΙΑΓΡΑΨΕΤΕ ΑΥΤΟ ΤΟ ΑΝΤΙΚΕΙΜΕΝΟ ;"
-
-msgid "FORGET A BLUETOOTH DEVICE"
-msgstr "ΞΕΧΝΑ ΜΙΑ ΣΥΣΚΕΥΗ BLUETOOTH"
-
-msgid "REMOVE ALL"
-msgstr "ΔΙΑΓΡΑΦΗ ΟΛΩΝ"
-
-msgid "NO BLUETOOTH DEVICES FOUND"
-msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΣΥΣΚΕΥΕΣ BLUETOOTH"
-
-msgid "REMOVE"
-msgstr "ΑΦΑΙΡΕΣΗ"
-
-msgid "BLUETOOTH DEVICES HAVE BEEN DELETED."
-msgstr "ΔΙΑΓΡΑΦΗΚΑΝ ΣΥΣΚΕΥΕΣ BLUETOOTH"
-
-#, c-format
-msgid "ARE YOU SURE YOU WANT TO REMOVE '%s' ?"
-msgstr ""
-
-msgid "INPUT"
-msgstr "ΕΙΣΑΓΩΓΗ"
-
-msgid "SEARCH"
-msgstr "ΑΝΑΖΗΤΗΣΗ"
-
-msgid "CANCEL"
-msgstr "ΑΚΥΡΩΣΗ"
-
-msgid "CONNECT TO NETPLAY"
-msgstr "ΣΥΝΔΕΣΗ ΣΤΟ NETPLAY"
-
-msgid "Select a game lobby to join"
-msgstr ""
-
-msgid "REFRESH"
-msgstr "ΑΝΑΝΕΩΣΗ"
-
-msgid "FAILED"
-msgstr "ΑΠΕΤΥΧΕ"
-
-msgid "UNKNOWN ROM VERSION"
-msgstr "ΑΓΝΩΣΗ ΕΚΔΟΣΗ ROM"
-
-msgid "DIFFERENT ROM"
-msgstr "ΔΙΑΦΟΡΕΤΙΚΟ ROM"
-
-msgid "SAME ROM"
-msgstr "ΙΔΙΟ ROM"
-
-msgid "UNAVAILABLE CORE"
-msgstr "ΜΗ ΔΙΑΘΕΣΙΜΟΣ ΠYΡHΝΑΣ"
-
-msgid "AVAILABLE GAMES"
-msgstr "ΔΙΑΘΕΣΙΜΑ ΠΑΙΧΝΙΔΙΑ"
-
-msgid "UNAVAILABLE GAMES"
-msgstr "ΜΗ ΔΙΑΘΕΣΙΜΑ ΠΑΙΧΝΙΔΙΑ"
-
-msgid "NO GAMES FOUND"
-msgstr ""
-
-msgid "JOIN GAME"
-msgstr "ΜΠΕΙΤΕ ΣΤΟ ΠΑΙΧΝΙΔΙ"
-
-msgid "WATCH GAME"
-msgstr "ΠΑΡΑΚΟΛΟΥΘΗΣΤΕ ΤΟ ΠΑΙΧΝΙΔΙ"
-
-msgid "INPUT MANUALLY"
-msgstr ""
-
-msgid "NO WI-FI NETWORKS FOUND"
-msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΑΣΥΡΜΑΤΑ ΔΙΚΤΥΑ"
-
-msgid "SEARCHING WI-FI NETWORKS"
-msgstr "ΑΝΑΖΗΤΗΣΗ ΑΣΥΡΜΑΤΩΝ ΔΙΚΤΥΩΝ"
-
-msgid "YOU ARE NOT CONNECTED TO A NETWORK"
-msgstr "ΔΕΝ ΕΙΣΤΕ ΣΥΝΔΕΔΕΜΕΝΟΣ ΣΕ ΔΙΚΤΥΟ"
-
-msgid "PAIR A BLUETOOTH DEVICE"
-msgstr "ΖΕΥΞΗ ΣΥΣΚΕΥΗΣ BLUETOOTH"
-
-msgid "PAIR"
-msgstr ""
-
-msgid "FILE BROWSER"
-msgstr "ΠΕΡΙΗΓΗΤΗΣ ΑΡΧΕΙΩΝ"
-
-msgid "RESET"
-msgstr "ΕΠΑΝΑΦΟΡΑ"
-
-msgid "PARENT FOLDER"
-msgstr "ΓΟΝΙΚΟΣ ΦΑΚΕΛΟΣ"
-
-msgid "SCREENSHOTS FOLDER"
-msgstr "ΦΑΚΕΛΟΣ ΣΤΙΓΜΙΟΤΥΠΩΝ"
-
-msgid "SELECT"
-msgstr "ΕΠΙΛΟΓΗ"
-
-msgid "ADD COMBINATION KEY"
-msgstr "ΠΡΟΣΘΗΚΗ ΣΥΝΔΥΑΣΤΙΚΟΥ ΚΛΕΙΔΙΟΥ"
-
-msgid "CONTENT DOWNLOADER"
-msgstr "ΛΗΠΤΗΣ ΠΕΡΙΕΧΟΜΕΝΟΥ"
-
-msgid "SELECT CONTENT TO INSTALL/REMOVE"
-msgstr ""
-
-msgid "UPDATE INSTALLED CONTENT"
-msgstr "ΕΝΗΜΕΡΩΣΗ ΕΓΚΑΤΕΣΤΗΜΕΝΟΥ ΠΕΡΙΕΧΟΜΕΝΟΥ"
-
-msgid "No items"
-msgstr "Δεν υπάρχουν αντικείμενα σ'αυτή την προβολή"
-
-msgid "MISC"
-msgstr ""
-
-msgid "UPDATE"
-msgstr "ΕΝΗΜΕΡΩΣΗ"
-
-#, c-format
-msgid "'%s' ADDED TO DOWNLOAD QUEUE"
-msgstr "'%s' ΠΡΟΣΤΕΘΗΚΕ ΣΤΗΝ ΟΥΡΑ ΜΕΤΑΦΟΡΤΩΣΗΣ"
-
-msgid "UNINSTALLATION ADDED TO QUEUE"
-msgstr ""
-
-msgid "INSTALL"
-msgstr "ΕΓΚΑΤΑΣΤΑΣΗ"
-
-#, c-format
-msgid "CURRENTLY IN DOWNLOAD QUEUE"
-msgstr "ΣΤΗΝ ΟΥΡΑ ΜΕΤΑΦΟΡΤΩΣΗΣ ΑΥΤΗ ΤΗΝ ΣΤΙΓΜΗ"
-
-msgid "NO MISSING BIOS FILES"
-msgstr ""
-
-msgid "MISSING BIOS CHECK"
-msgstr "ΛΕΙΠΟΥΝ BIOS ΑΡΧΕΙΑ"
-
-msgid "NO MISSING BIOS"
-msgstr "ΔΕΝ ΛΕΙΠΟΥΝ BIOS ΑΡΧΕΙΑ"
-
-msgid "dim"
-msgstr ""
-
-msgid "black"
-msgstr "μαύρο"
-
-msgid "random video"
-msgstr "τυχαίο βίντεο"
-
-msgid "slideshow"
-msgstr "παρουσίαση διαφανειών"
-
-msgid "suspend"
-msgstr ""
-
-msgid "always"
-msgstr "πάντα"
-
-msgid "start & end"
-msgstr "αρχή & τέλος"
-
-msgid "never"
-msgstr "ποτέ"
-
-msgid "systems"
-msgstr "συστήματα"
-
-msgid "random"
-msgstr "τυχαίο"
-
-msgid "SCREENSAVER SETTINGS"
-msgstr "ΡΥΘΜΙΣΗΣ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
-
-msgid "START SCREENSAVER AFTER"
-msgstr "ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ ΜΕΤΑ ΑΠΟ"
-
-msgid "SCREENSAVER TYPE"
-msgstr "ΣΥΜΠΕΡΙΦΟΡΑ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
-
-msgid "STOP MUSIC ON SCREENSAVER"
-msgstr "ΔΙΑΚΟΠΗ ΜΟΥΣΙΚΗΣ ΣΤΗΝ ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ"
-
-msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
-msgstr "ΤΥΧΑΙΕΣ ΡΥΘΜΙΣΕΙΣ ΒΙΝΤΕΟ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
-
-msgid "VIDEO DURATION (SECS)"
-msgstr ""
-
-msgid "USE OMX PLAYER FOR SCREENSAVER"
-msgstr "ΧΡΗΣΙΜΟΠΟΙΗΣΤΕ ΤΟΝ OMX PLAYER ΓΙΑ ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ"
-
-msgid "SHOW GAME INFO"
-msgstr "ΠΡΟΒΟΛΗ ΠΛΗΡΟΦΟΡΙΩΝ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "USE MARQUEE AS GAME INFO"
-msgstr "ΧΡΗΣΗ ΛΟΓΟΤΥΠΟΥ ΩΣ ΠΛΗΡΟΦΟΡΙΑ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "DECORATION SET USED"
-msgstr ""
-
-msgid "STRETCH VIDEOS"
-msgstr ""
-
-msgid "MUTE VIDEO AUDIO"
-msgstr "ΣΙΓΑΣΗ ΗΧΟΥ ΒΙΝΤΕΟ"
-
-msgid "SCREENSAVER CONTROLS"
-msgstr "ΕΠΙΛΟΓΕΣ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
-
-msgid "USE CUSTOM VIDEOS"
-msgstr "ΧΡΗΣΗ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΒΙΝΤΕΟ"
-
-msgid "CUSTOM VIDEO DIRECTORY"
-msgstr "ΚΑΤΑΛΟΓΟΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΟΥ ΒΙΝΤΕΟ"
-
-msgid "USE VIDEOS IN SUBFOLDERS OF CUSTOM DIRECTORY"
-msgstr ""
-
-msgid "CUSTOM VIDEO FILE EXTENSIONS"
-msgstr ""
-
-msgid "SLIDESHOW SCREENSAVER SETTINGS"
-msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΒΟΛΗΣ ΔΙΑΦΑΝΕΙΩΝ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
-
-msgid "IMAGE DURATION (SECS)"
-msgstr "ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΕΙΚΟΝΑΣ ΜΕΤΑ"
-
-msgid "STRETCH IMAGES"
-msgstr "ΕΚΤΑΣΗ ΕΙΚΟΝΩΝ"
-
-msgid "USE CUSTOM IMAGES"
-msgstr "ΧΡΗΣΗ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΕΙΚΟΝΩΝ"
-
-msgid "CUSTOM IMAGE DIRECTORY"
-msgstr "ΚΑΤΑΛΟΓΟΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΕΙΚΟΝΩΝ"
-
-msgid "USE IMAGES IN SUBFOLDERS OF CUSTOM DIRECTORY"
-msgstr ""
-
-msgid "CUSTOM IMAGE FILE EXTENSIONS"
-msgstr ""
-
-msgid "PAD TO KEYBOARD CONFIGURATION"
-msgstr "PAD ΣΤΗ ΔΙΑΜΟΡΦΩΣΗ ΠΛΗΚΤΡΟΛΟΓΙΟΥ"
-
-msgid "SELECT ACTIONS TO CHANGE"
-msgstr "ΕΠΙΛΕΞΤΕ ΔΡΑΣΕΙΣ ΠΡΟΣ ΑΛΛΑΓΗ"
-
-msgid "SAVE"
-msgstr "ΑΠΟΘΗΚΕΥΣΗ"
-
-msgid "DELETE"
-msgstr "ΔΙΑΓΡΑΦΗ"
-
-msgid "PLAYER 1"
-msgstr "ΠΑΙΚΤΗΣ 1"
-
-msgid "PLAYER 2"
-msgstr "ΠΑΙΚΤΗΣ 2"
-
-msgid "PLAYER 3"
-msgstr "ΠΑΙΚΤΗΣ 3"
-
-msgid "PLAYER 4"
-msgstr "ΠΑΙΚΤΗΣ 4"
-
-msgid "COMBINATIONS"
-msgstr "ΣΥΝΔΥΑΣΜΟΙ"
-
-msgid "MOUSE CURSOR"
-msgstr "ΚΕΡΣΟΡΑΣ ΠΟΝΤΙΚΙΟΥ"
-
-msgid "EMULATE MOUSE CURSOR"
-msgstr "ΕΞΟΜΟΙΩΣΗ ΚΕΡΣΟΡΑ ΠΟΝΤΙΚΙΟΥ"
-
-msgid "LEFT ANALOG STICK"
-msgstr "ΔΕΞΙ ΑΝΑΓΟΙΚΟ STICK"
-
-msgid "RIGHT ANALOG STICK"
-msgstr "ΑΡΙΣΤΕΡΟ ΑΝΑΛΟΓΙΚΟ STICK"
-
-msgid "EDIT DESCRIPTION"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΡΙΓΡΑΦΗΣ"
-
-msgid "DELETE MAPPING"
-msgstr "ΔΙΑΓΡΑΦΗ MAPPING"
-
-msgid "SAVE CHANGES?"
-msgstr "ΑΠΟΘΗΚΕΥΣΗ ΑΛΛΑΓΩΝ"
-
-msgid "ARE YOU SURE?"
-msgstr "ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ ;"
-
-#, c-format
-msgid "UPDATING %s"
-msgstr "ΑΝΑΒΑΘΜΙΣΗ %s"
-
-msgid "UPDATE IS READY"
-msgstr "Η ΑΝΑΒΑΘΜΙΣΗ ΕΙΝΑΙ ΕΤΟΙΜΗ"
-
-msgid "REBOOT TO APPLY"
-msgstr ""
-
-msgid "REALLY UPDATE?"
-msgstr "ΘΕΛΕΤΕ ΝΑ ΚΑΝΕΤΕ ΑΝΑΒΑΘΜΙΣΗ;"
-
-#, c-format
-msgid ""
-"YOU ARE CURRENTLY USING VERSION %s\n"
-"DO YOU WANT TO UPDATE TO VERSION %s?"
-msgstr ""
-
-#, c-format
-msgid ""
-"UNOFFICIAL SYSTEM MODIFICATIONS DETECTED.\n"
-"UPGRADING COULD BREAK YOUR SYSTEM.\n"
-"DO YOU WANT TO UPDATE TO VERSION %s?"
-msgstr ""
-
-msgid "NETWORK CONNECTION NEEDED"
-msgstr "ΑΠΑΙΤΕΙΤΑΙ ΣΥΝΔΕΣΗ ΣΤΟ ΔΙΑΔΙΚΤΥΟ"
-
-msgid "NO UPDATE AVAILABLE"
-msgstr "ΔΕΝ ΥΠΑΡΧΕΙ ΔΙΑΘΕΣΙΜΗ ΑΝΑΒΑΘΜΙΣΗ"
-
-msgid "INSTALL ON A NEW DISK"
-msgstr ""
-
-msgid "TARGET DEVICE"
-msgstr "ΕΝΔΕΙΚΤΙΚΗ ΣΥΣΚΕΥΗ"
-
-msgid "TARGET ARCHITECTURE"
-msgstr "ΕΝΔΕΙΚΤΙΚΗ ΑΡΧΙΤΕΚΤΟΝΙΚΗ"
-
-msgid "NETWORK REQUIRED"
-msgstr "ΑΠΑΙΤΕΙΤΑΙ ΔΙΚΤΥΟ"
-
-msgid "INVALID PARAMETERS"
-msgstr "ΜΗ ΕΓΚΥΡΟΙ ΠΑΡΑΜΕΤΡΟΙ"
-
-msgid "GAME MEDIA"
-msgstr ""
-
-msgid "VIEW GAME MANUAL"
-msgstr "ΠΡΟΒΟΛΗ ΕΓΧΕΙΡΙΔΙΟΥ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "VIEW GAME MAGAZINE"
-msgstr "ΠΡΟΒΟΛΗ ΠΕΡΙΟΔΙΚΟΥ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "VIEW GAME MAP"
-msgstr "ΠΡΟΒΟΛΗ ΧΑΡΤΗ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "VIEW FULLSCREEN VIDEO"
-msgstr "ΠΡΟΒΟΛΗ ΒΙΝΤΕΟ ΣΕ ΠΛΗΡΗ ΟΘΟΝΗ"
-
-msgid "VIEW GAME MEDIA"
-msgstr ""
-
-msgid "CURRENT CORE IS NOT COMPATIBLE"
-msgstr "Ο ΤΡΕΧΩΝ ΠΥΡΗΝΑΣ ΔΕΝ ΕΙΝΑΙ ΣΥΜΒΑΤΟΣ"
-
-msgid "COMPATIBLE CORE(S)"
-msgstr ""
-
-msgid "VIEW THIS GAME'S ACHIEVEMENTS"
-msgstr ""
-
-msgid "GAME"
-msgstr "ΠΑΙΧΝΙΔΙ"
-
-msgid "SAVE STATES"
-msgstr ""
-
-msgid "OPEN"
-msgstr "ΑΝΟΙΓΜΑ"
-
-msgid "START A NETPLAY GAME"
-msgstr ""
-
-msgid "NETPLAY"
-msgstr ""
-
-msgid "START GAME"
-msgstr "ΕΚΚΙΝΗΣΗ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "HOST A NETPLAY GAME"
-msgstr ""
-
-msgid "PUBLICLY ANNOUNCE GAME"
-msgstr "ΔΗΜΟΣΙΑ ΑΝΑΚΟΙΝΩΣΗ ΠΑΙΧΝΙΔΙΟΥ "
-
-msgid "PLAYER PASSWORD"
-msgstr ""
-
-msgid "VIEWER PASSWORD"
-msgstr ""
-
-msgid "FIND SIMILAR GAMES..."
-msgstr "ΒΡΕΙΤΕ ΠΑΡΟΜΟΙΑ ΠΑΙΧΝΙΔΙΑ"
-
-msgid "DELETE ITEM"
-msgstr "ΔΙΑΓΡΑΦΗ ΑΝΤΙΚΕΙΜΕΝΟΥ"
-
-msgid "DELETE GAME"
-msgstr "ΔΙΑΓΡΑΦΗ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid ""
-"THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
-"ARE YOU SURE?"
-msgstr ""
-"ΑΥΤΟ ΘΑ ΔΙΑΓΡΑΨΕΙ ΤΟ/Α ΠΡΑΓΜΑΤΙΚΟ/Α ΑΡΧΕΙΟ/Α ΠΑΙΧΝΙΔΙΟΥ/ΩΝ!\n"
-"ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ;"
-
-msgid "COLLECTIONS"
-msgstr "ΣΥΛΛΟΓΕΣ"
-
-#, c-format
-msgid "REMOVE FROM %s"
-msgstr "ΑΦΑΙΡΕΣΗ ΑΠΟ %s"
-
-#, c-format
-msgid "ADD TO %s"
-msgstr "ΠΡΟΣΘΗΚΗ ΣΤΟ %s"
-
-msgid "FAVORITES"
-msgstr "ΑΓΑΠΗΜΕΝΑ"
-
-msgid "ADD TO CUSTOM COLLECTION..."
-msgstr "ΠΡΟΣΘΗΚΗ ΣΤΗΝ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗ ΣΥΛΛΟΓΗ"
-
-msgid "SCRAPE"
-msgstr ""
-
-msgid "EDIT PADTOKEY PROFILE"
-msgstr ""
-
-msgid "CREATE PADTOKEY PROFILE"
-msgstr ""
-
-msgid "ADVANCED GAME OPTIONS"
-msgstr "ΣΥΝΘΕΤΕΣ ΡΥΘΜΙΣΕΙΣ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "EDIT FOLDER METADATA"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ ΦΑΚΕΛΟΥ"
-
-msgid "EDIT THIS GAME'S METADATA"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ ΑΥΤΟΥ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "THEMES DOWNLOADER"
-msgstr "DOWNLOADER ΘΕΜΑΤΩΝ"
-
-msgid "SELECT THEMES TO INSTALL/REMOVE"
-msgstr ""
-
-msgid "All"
-msgstr ""
-
-msgid "Installed"
-msgstr ""
-
-msgid "Available"
-msgstr ""
-
-msgid "CURRENT THEME"
-msgstr "ΤΡΕΧΟΝ ΘΕΜΑ"
 
 msgid "Points"
 msgstr "Πόντοι"
 
 msgid "Unlocked on"
 msgstr "Ξεκλειδωμένο σε"
+
+msgid "LAUNCH"
+msgstr "ΕΝΑΡΞΗ"
+
+msgid "BACK"
+msgstr "ΠΙΣΩ"
+
+msgid "go back"
+msgstr "ΠΗΓΑΙΝΕ ΠΙΣΩ"
 
 msgid "THIS GAME HAS NO ACHIEVEMENTS YET"
 msgstr "ΑΥΤΟ ΤΟ ΠΑΙΧΝΙΔΙ ΔΕΝ ΕΧΕΙ «ΚΑΤΟΡΘΩΜΑ» ΑΚΟΜΗ"
@@ -1182,186 +64,6 @@ msgstr "«ΚΑΤΟΡΘΩΜΑΤΑ» ΕΠΕΤΕΥΧΘΗΣΑΝ"
 #, c-format
 msgid "%d%% complete"
 msgstr "%d%% ολοκληρωμένο"
-
-msgid "SAVESTATE MANAGER"
-msgstr ""
-
-msgid "START NEW GAME"
-msgstr "ΕΚΚΙΝΗΣΗ ΝΕΟΥ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "START NEW AUTO SAVE"
-msgstr ""
-
-msgid "AUTO SAVE"
-msgstr "ΑΥΤΟΜΑΤΗ ΑΠΟΘΗΚΕΥΣΗ"
-
-msgid "SLOT"
-msgstr ""
-
-msgid "COPY TO FREE SLOT"
-msgstr "ΑΝΤΙΓΡΑΦΗ ΣΕ ΕΛΕΥΘΕΡΟ SLOT"
-
-msgid "SCRAPER SETTINGS"
-msgstr ""
-
-msgid "IMAGE SOURCE"
-msgstr "ΠΗΓΗ ΕΙΚΟΝΑΣ"
-
-msgid "SCREENSHOT"
-msgstr "ΣΤΙΓΜΙΟΤΥΠΟ"
-
-msgid "TITLE SCREENSHOT"
-msgstr "ΣΤΙΓΜΙΟΤΥΠΟ ΤΙΤΛΟΥ"
-
-msgid "MIX V1"
-msgstr ""
-
-msgid "MIX V2"
-msgstr ""
-
-msgid "BOX 2D"
-msgstr ""
-
-msgid "BOX 3D"
-msgstr ""
-
-msgid "FAN ART"
-msgstr ""
-
-msgid "BOX SOURCE"
-msgstr "ΠΗΓΗ BOX"
-
-msgid "LOGO SOURCE"
-msgstr "ΠΗΓΗ ΛΟΓΟΤΥΠΟΥ"
-
-msgid "WHEEL"
-msgstr ""
-
-msgid "MARQUEE"
-msgstr "ΛΟΓΟΤΥΠΟ"
-
-msgid "SCRAPE FOR"
-msgstr ""
-
-msgid "SHORT NAME"
-msgstr ""
-
-msgid "COMMUNITY RATING"
-msgstr ""
-
-msgid "VIDEO"
-msgstr ""
-
-msgid "FANART"
-msgstr ""
-
-msgid "BEZEL (16:9)"
-msgstr ""
-
-msgid "BOX BACKSIDE"
-msgstr ""
-
-msgid "MAP"
-msgstr ""
-
-msgid "MANUAL"
-msgstr ""
-
-msgid "PADTOKEY SETTINGS"
-msgstr ""
-
-msgid "SCRAPER"
-msgstr ""
-
-msgid "SCRAPING DATABASE"
-msgstr ""
-
-msgid "SOURCE"
-msgstr ""
-
-msgid "SCRAPE FROM"
-msgstr "SCRAPE ΑΠΟ"
-
-msgid "FILTERS"
-msgstr ""
-
-msgid "GAMES TO SCRAPE FOR"
-msgstr ""
-
-msgid "ALL"
-msgstr ""
-
-msgid "GAMES MISSING ANY MEDIA"
-msgstr ""
-
-msgid "GAMES MISSING ALL MEDIA"
-msgstr ""
-
-msgid "IGNORE RECENTLY SCRAPED GAMES"
-msgstr ""
-
-msgid "LAST DAY"
-msgstr ""
-
-msgid "LAST WEEK"
-msgstr ""
-
-msgid "LAST 15 DAYS"
-msgstr ""
-
-msgid "LAST MONTH"
-msgstr ""
-
-msgid "LAST 3 MONTHS"
-msgstr ""
-
-msgid "LAST YEAR"
-msgstr ""
-
-msgid "SYSTEMS INCLUDED"
-msgstr ""
-
-msgid "SCRAPE NOW"
-msgstr "SCRAPE ΤΩΡΑ"
-
-msgid "START"
-msgstr "ΕΚΚΙΝΗΣΗ"
-
-msgid ""
-"WARNING: SOME OF YOUR SELECTED SYSTEMS DO NOT HAVE A PLATFORM SET. RESULTS "
-"MAY BE FOR DIFFERENT SYSTEMS!\n"
-"CONTINUE ANYWAY?"
-msgstr ""
-
-msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT?"
-msgstr "SCRAPING ΣΕ ΕΞΕΛΙΞΗ. ΘΕΛΕΤΕ ΝΑ ΤΟ ΣΤΑΜΑΤΗΣΕΤΕ ?"
-
-msgid "NO GAMES FIT THAT CRITERIA."
-msgstr "ΔΕΝ ΤΑΙΡΙΑΖΟΥΝ ΠΑΙΧΝΙΔΙΑ Σ'ΑΥΤΑ ΤΑ ΚΡΙΤΗΡΙΑ"
-
-msgid "INFORMATION"
-msgstr "ΠΛΗΡΟΦΟΡΙΑ"
-
-msgid "VERSION"
-msgstr "ΕΚΔΟΣΗ"
-
-msgid "USER DISK USAGE"
-msgstr "ΧΡΗΣΗ ΔΙΣΚΟΥ (ΑΠΟ) ΧΡΗΣΤΗ"
-
-msgid "SYSTEM DISK USAGE"
-msgstr "ΧΡΗΣΗ ΔΙΣΚΟΥ (ΑΠΟ) ΣΥΣΤΗΜΑ"
-
-msgid "SYSTEM"
-msgstr "ΣΥΣΤΗΜΑ"
-
-msgid "VIDEO DRIVER"
-msgstr "ΟΔΗΓΟΣ ΒΙΝΤΕΟ"
-
-msgid "THE BEZEL PROJECT"
-msgstr "ΤΟ PROJECT ΠΕΡΙΘΩΡΙΩΝ"
-
-msgid "SELECT BEZELS TO INSTALL/REMOVE"
-msgstr ""
 
 msgid "fade"
 msgstr "Εξασθενημένο"
@@ -1446,6 +148,9 @@ msgstr ""
 msgid "RENDERER"
 msgstr ""
 
+msgid "VERSION"
+msgstr "ΕΚΔΟΣΗ"
+
 msgid "SHADERS"
 msgstr "ΣΚΙΑΣΕΙΣ"
 
@@ -1473,11 +178,17 @@ msgstr "ΚΥΡΙΟ ΜΕΝΟΥ"
 msgid "KODI MEDIA CENTER"
 msgstr ""
 
+msgid "RETROACHIEVEMENTS"
+msgstr ""
+
 msgid "GAME SETTINGS"
 msgstr ""
 
 msgid "USER INTERFACE SETTINGS"
 msgstr ""
+
+msgid "GAME COLLECTION SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΣΥΛΛΟΓΩΝ ΠΑΙΧΝΙΔΙΩΝ"
 
 msgid "SOUND SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΗΧΟΥ"
@@ -1491,11 +202,17 @@ msgstr ""
 msgid "EMULATOR SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΕΞΟΜΟΙΩΤΗ"
 
+msgid "SCRAPER"
+msgstr ""
+
 msgid "UPDATES & DOWNLOADS"
 msgstr "ΑΝΑΒΑΘΜΙΣΕΙΣ & ΛΗΨΕΙΣ"
 
 msgid "SYSTEM SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΣΥΣΤΗΜΑΤΟΣ"
+
+msgid "INFORMATION"
+msgstr "ΠΛΗΡΟΦΟΡΙΑ"
 
 msgid "UNLOCK USER INTERFACE MODE"
 msgstr ""
@@ -1506,11 +223,23 @@ msgstr "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
 msgid "ARE YOU SURE YOU WANT TO CONFIGURE THE INPUT?"
 msgstr ""
 
+msgid "THIS FUNCTION IS DISABLED WHILE THE SCRAPER IS RUNNING"
+msgstr ""
+
 msgid "CHOOSE"
 msgstr "ΕΠΙΛΟΓΗ"
 
+msgid "SELECT"
+msgstr "ΕΠΙΛΟΓΗ"
+
+msgid "CLOSE"
+msgstr "ΚΛΕΙΣΙΜΟ"
+
 msgid "THE USER INTERFACE MODE IS NOW UNLOCKED"
 msgstr ""
+
+msgid "OK"
+msgstr "ΕΝΤΑΞΕΙ"
 
 msgid "ENTER THE CODE NOW TO UNLOCK"
 msgstr ""
@@ -1572,6 +301,9 @@ msgstr "ΔΙΑΜΟΡΦΩΣΗ ΕΝΟΣ ΔΙΣΚΟΥ"
 
 msgid "CLEAN GAMELISTS & REMOVE UNUSED MEDIA"
 msgstr "ΚΑΘΑΡΙΣΜΟΣ ΛΙΣΤΩΝ ΠΑΙΧΝΙΔΙΩΝ & ΑΦΑΙΡΕΣΗ ΑΧΡΗΣΙΜΟΠΟΙΗΤΩΝ ΜΕΣΩΝ"
+
+msgid "ARE YOU SURE?"
+msgstr "ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ ;"
 
 msgid "Cleaning"
 msgstr "Καθαρισμός"
@@ -1667,7 +399,10 @@ msgstr ""
 msgid "CONTROL EMULATIONSTATION WITH FIRST JOYSTICK ONLY"
 msgstr "ΕΛΕΓΧΟΣ EMULATIONSTATION ΜΟΝΟ ΜΕ ΤΟ ΠΡΩΤΟ ΧΕΙΡΙΣΤΗΡΙΟ"
 
-msgid "GUN MOVE TOLERENCE"
+msgid "LIGHT GUN MOVEMENT DEADZONE"
+msgstr ""
+
+msgid "Can help prevent cursor jitter. Has no effect in-game."
 msgstr ""
 
 msgid "ENABLE HID JOYSTICK DRIVERS"
@@ -1709,8 +444,14 @@ msgstr "ΒΕΛΣΤΙΠΟΙΗΣΗ ΧΡΗΣΗΣ VRAM ΒΙΝΤΕΟ"
 msgid "DOWNLOADS"
 msgstr "ΛΗΨΕΙΣ"
 
+msgid "CONTENT DOWNLOADER"
+msgstr "ΛΗΠΤΗΣ ΠΕΡΙΕΧΟΜΕΝΟΥ"
+
 msgid "THEMES"
 msgstr "ΘΕΜΑΤΑ"
+
+msgid "THE BEZEL PROJECT"
+msgstr "ΤΟ PROJECT ΠΕΡΙΘΩΡΙΩΝ"
 
 msgid "SOFTWARE UPDATES"
 msgstr "ΑΝΑΒΑΘΜΙΣΕΙΣ ΛΟΓΙΣΜΙΚΟΥ"
@@ -1729,6 +470,12 @@ msgstr "ΕΚΚΙΝΗΣΗ ΑΝΑΒΑΘΜΙΣΗΣ"
 
 msgid "UPDATER IS ALREADY RUNNING"
 msgstr ""
+
+msgid "YOU ARE NOT CONNECTED TO A NETWORK"
+msgstr "ΔΕΝ ΕΙΣΤΕ ΣΥΝΔΕΔΕΜΕΝΟΣ ΣΕ ΔΙΚΤΥΟ"
+
+msgid "SYSTEM"
+msgstr "ΣΥΣΤΗΜΑ"
 
 msgid "LANGUAGE"
 msgstr "ΓΛΩΣΣΑ"
@@ -1838,6 +585,15 @@ msgstr ""
 msgid "SPLASH SETTING"
 msgstr ""
 
+msgid "RETROACHIEVEMENT SETTINGS"
+msgstr ""
+
+msgid "NETPLAY SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ NETPLAY"
+
+msgid "MISSING BIOS CHECK"
+msgstr "ΛΕΙΠΟΥΝ BIOS ΑΡΧΕΙΑ"
+
 msgid "CHECK BIOS FILES BEFORE RUNNING A GAME"
 msgstr "ΕΛΕΓΧΟΣ ΑΡΧΕΙΩΝ BIOS ΠΡΙΝ ΤΗΝ ΕΝΑΡΞΗ ΕΝΟΣ ΠΑΙΧΝΙΔΙΟΥ"
 
@@ -1889,6 +645,9 @@ msgstr "ενεργό"
 msgid "OVERCLOCK"
 msgstr "ΥΠΕΡΧΡΟΝΙΣΜΟΣ"
 
+msgid "NONE"
+msgstr "ΚΑΝΕΝΑ"
+
 msgid "STORAGE"
 msgstr "ΑΠΟΘΗΚΕΥΣΗ"
 
@@ -1897,6 +656,9 @@ msgstr "ΣΥΣΚΕΥΗ ΑΠΟΘΗΚΕΥΣΗΣ"
 
 msgid "BACKUP USER DATA"
 msgstr "ΑΝΤΙΓΡΑΦΟ ΔΕΔΟΜΕΝΩΝ ΧΡΗΣΤΗ"
+
+msgid "INSTALL ON A NEW DISK"
+msgstr ""
 
 msgid "ADVANCED"
 msgstr "ΠΡΟΧΩΡΗΜΕΝΟΣ"
@@ -1957,6 +719,9 @@ msgid "DECORATION SET"
 msgstr ""
 
 msgid "Current setting"
+msgstr ""
+
+msgid "UPDATE GAMELISTS"
 msgstr ""
 
 msgid "DEFAULT GLOBAL SETTINGS"
@@ -2098,11 +863,17 @@ msgstr "ΣΥΝΘΕΤΕΣ ΕΠΙΛΟΓΕΣ ΑΝΑ ΣΥΣΤΗΜΑ"
 msgid "SCRAPER IS RUNNING. DO YOU WANT TO STOP IT?"
 msgstr ""
 
-msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
-msgstr "ΤΟ HASHING ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ ΕΚΤΕΛΕΙΤΑΙ. ΘΕΛΕΤΕ ΝΑ ΤΟ ΔΙΑΚΟΨΕΤΕ ;"
-
 msgid "REALLY UPDATE GAMELISTS?"
 msgstr ""
+
+msgid "Emulator"
+msgstr "Εξομοιωτής"
+
+msgid "Core"
+msgstr "Πυρήνας"
+
+msgid "SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ"
 
 msgid "CONTROLLER MAPPING"
 msgstr ""
@@ -2114,6 +885,9 @@ msgid ""
 "BUTTON. PRESS THE SOUTH BUTTON TO CONFIRM WHEN DONE."
 msgstr ""
 
+msgid "CANCEL"
+msgstr "ΑΚΥΡΩΣΗ"
+
 msgid "SINDEN GUN SETTINGS"
 msgstr ""
 
@@ -2123,11 +897,17 @@ msgstr ""
 msgid "BLUETOOTH"
 msgstr ""
 
-msgid "PAIR BLUETOOTH PADS AUTOMATICALLY"
+msgid "PAIR A BLUETOOTH CONTROLLER AUTOMATICALLY"
 msgstr ""
 
-msgid "PAIR A BLUETOOTH DEVICE MANUALLY"
+msgid "PAIR A BLUETOOTH DEVICE FROM A LIST"
 msgstr ""
+
+msgid "A BLUETOOTH SCAN IS ALREADY RUNNING."
+msgstr ""
+
+msgid "FORGET A BLUETOOTH DEVICE"
+msgstr "ΞΕΧΝΑ ΜΙΑ ΣΥΣΚΕΥΗ BLUETOOTH"
 
 msgid "DISPLAY OPTIONS"
 msgstr "ΕΠΙΛΟΓΕΣ ΕΜΦΑΝΙΣΗΣ"
@@ -2199,8 +979,17 @@ msgstr ""
 msgid "THEME CONFIGURATION"
 msgstr "ΤΡΟΠΟΠΟΙΗΣΗ ΘΕΜΑΤΟΣ"
 
+msgid "VIEW CUSTOMIZATION"
+msgstr ""
+
 msgid "GAMELIST STYLE"
 msgstr "ΣΤΥΛ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "GAMELIST VIEW STYLE"
+msgstr "ΣΤΥΛ ΠΡΟΒΟΛΗΣ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "automatic"
+msgstr "ΑΥΤΟΜΑΤΑ"
 
 msgid "basic"
 msgstr "ΒΑΣΙΚΟ"
@@ -2231,6 +1020,12 @@ msgstr "ΕΜΦΑΝΙΣΗ ΚΡΥΦΩΝ ΑΡΧΕΙΩΝ"
 
 msgid "SHOW FOLDERS"
 msgstr "ΕΜΦΑΝΙΣΗ ΦΑΚΕΛΩΝ"
+
+msgid "always"
+msgstr "πάντα"
+
+msgid "never"
+msgstr "ποτέ"
 
 msgid "having multiple games"
 msgstr "διάθεση πολλαπλων παιχνιδιών"
@@ -2273,6 +1068,9 @@ msgstr "βίντεο"
 
 msgid "grid"
 msgstr "πλέγμα"
+
+msgid "SCREENSAVER SETTINGS"
+msgstr "ΡΥΘΜΙΣΗΣ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
 
 msgid "LIST TRANSITION"
 msgstr ""
@@ -2460,6 +1258,12 @@ msgstr "ΔΊΠΛΑ-ΔΊΠΛΑ"
 msgid "INTERNAL RESOLUTION"
 msgstr "ΕΣΩΤΕΡΙΚΗ ΑΝΑΛΥΣΗ"
 
+msgid "EDIT PADTOKEY PROFILE"
+msgstr ""
+
+msgid "CREATE PADTOKEY PROFILE"
+msgstr ""
+
 msgid "LAUNCH THIS GAME AT STARTUP"
 msgstr ""
 
@@ -2481,11 +1285,335 @@ msgstr "ΟΙ ΕΠΙΛΕΓΜΕΝΕΣ ΕΠΙΛΟΓΕΣ ΔΕΝ ΕΙΝΑΙ ΕΓΚΥ�
 msgid "ARE YOU SURE YOU WANT TO FORMAT THIS DRIVE?"
 msgstr "ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ ΠΩΣ ΘΕΛΕΤΕ ΝΑ ΔΙΑΜΟΡΦΩΣΕΤΕ ΑΥΤΟΝ ΤΟΝ ΔΙΣΚΟ ;"
 
+msgid "AN ERROR OCCURED"
+msgstr "ΕΝΑ ΣΦΑΛΜΑ ΠΡΟΕΚΥΨΕ"
+
+#, c-format
+msgid "%d%% (%d of %d)"
+msgstr ""
+
+msgid "Points (hardcore)"
+msgstr ""
+
+msgid "Softcore points"
+msgstr ""
+
+msgid "Rank"
+msgstr "Σειρά"
+
+msgid "VIEW DETAILS"
+msgstr "ΠΡΟΒΟΛΗ ΛΕΠΤΟΜΕΡΙΩΝ"
+
+msgid "TARGET DEVICE"
+msgstr "ΕΝΔΕΙΚΤΙΚΗ ΣΥΣΚΕΥΗ"
+
+msgid "NO DEVICE FOUND"
+msgstr "ΔΕΝ ΒΡΕΘΗΚΕ ΣΥΣΚΕΥΗ"
+
+msgid "START"
+msgstr "ΕΚΚΙΝΗΣΗ"
+
+msgid "PAD TO KEYBOARD CONFIGURATION"
+msgstr "PAD ΣΤΗ ΔΙΑΜΟΡΦΩΣΗ ΠΛΗΚΤΡΟΛΟΓΙΟΥ"
+
+msgid "SELECT ACTIONS TO CHANGE"
+msgstr "ΕΠΙΛΕΞΤΕ ΔΡΑΣΕΙΣ ΠΡΟΣ ΑΛΛΑΓΗ"
+
+msgid "SAVE"
+msgstr "ΑΠΟΘΗΚΕΥΣΗ"
+
+msgid "DELETE"
+msgstr "ΔΙΑΓΡΑΦΗ"
+
+msgid "PLAYER 1"
+msgstr "ΠΑΙΚΤΗΣ 1"
+
+msgid "PLAYER 2"
+msgstr "ΠΑΙΚΤΗΣ 2"
+
+msgid "PLAYER 3"
+msgstr "ΠΑΙΚΤΗΣ 3"
+
+msgid "PLAYER 4"
+msgstr "ΠΑΙΚΤΗΣ 4"
+
+msgid "COMBINATIONS"
+msgstr "ΣΥΝΔΥΑΣΜΟΙ"
+
+msgid "MOUSE CURSOR"
+msgstr "ΚΕΡΣΟΡΑΣ ΠΟΝΤΙΚΙΟΥ"
+
+msgid "EMULATE MOUSE CURSOR"
+msgstr "ΕΞΟΜΟΙΩΣΗ ΚΕΡΣΟΡΑ ΠΟΝΤΙΚΙΟΥ"
+
+msgid "LEFT ANALOG STICK"
+msgstr "ΔΕΞΙ ΑΝΑΓΟΙΚΟ STICK"
+
+msgid "RIGHT ANALOG STICK"
+msgstr "ΑΡΙΣΤΕΡΟ ΑΝΑΛΟΓΙΚΟ STICK"
+
+msgid "EDIT DESCRIPTION"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΡΙΓΡΑΦΗΣ"
+
+msgid "ARE YOU SURE YOU WANT TO DELETE THIS ITEM?"
+msgstr "ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ ΠΩΣ ΘΕΛΕΤΕ ΝΑ ΔΙΑΓΡΑΨΕΤΕ ΑΥΤΟ ΤΟ ΑΝΤΙΚΕΙΜΕΝΟ ;"
+
+msgid "DELETE MAPPING"
+msgstr "ΔΙΑΓΡΑΦΗ MAPPING"
+
+msgid "SAVE CHANGES?"
+msgstr "ΑΠΟΘΗΚΕΥΣΗ ΑΛΛΑΓΩΝ"
+
+msgid "THEMES DOWNLOADER"
+msgstr "DOWNLOADER ΘΕΜΑΤΩΝ"
+
+msgid "SELECT THEMES TO INSTALL/REMOVE"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Installed"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "No items"
+msgstr "Δεν υπάρχουν αντικείμενα σ'αυτή την προβολή"
+
+msgid "UPDATE"
+msgstr "ΕΝΗΜΕΡΩΣΗ"
+
+#, c-format
+msgid "'%s' ADDED TO DOWNLOAD QUEUE"
+msgstr "'%s' ΠΡΟΣΤΕΘΗΚΕ ΣΤΗΝ ΟΥΡΑ ΜΕΤΑΦΟΡΤΩΣΗΣ"
+
+msgid "REMOVE"
+msgstr "ΑΦΑΙΡΕΣΗ"
+
+msgid "THEME UNINSTALLED SUCCESSFULLY"
+msgstr "ΤΟ ΘΕΜΑ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
+
+msgid "INSTALL"
+msgstr "ΕΓΚΑΤΑΣΤΑΣΗ"
+
+msgid "CURRENT THEME"
+msgstr "ΤΡΕΧΟΝ ΘΕΜΑ"
+
+#, c-format
+msgid "CURRENTLY IN DOWNLOAD QUEUE"
+msgstr "ΣΤΗΝ ΟΥΡΑ ΜΕΤΑΦΟΡΤΩΣΗΣ ΑΥΤΗ ΤΗΝ ΣΤΙΓΜΗ"
+
+msgid "SELECT BEZELS TO INSTALL/REMOVE"
+msgstr ""
+
+msgid "BEZELS UNINSTALLED SUCCESSFULLY"
+msgstr "ΤΑ ΠΕΡΙΘΩΡΙΑ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΑΝ ΕΠΙΤΥΧΩΣ"
+
+msgid "RESET"
+msgstr "ΕΠΑΝΑΦΟΡΑ"
+
+msgid "ADD COMBINATION KEY"
+msgstr "ΠΡΟΣΘΗΚΗ ΣΥΝΔΥΑΣΤΙΚΟΥ ΚΛΕΙΔΙΟΥ"
+
+msgid "SCRAPING DATABASE"
+msgstr ""
+
+msgid "SOURCE"
+msgstr ""
+
+msgid "SCRAPE FROM"
+msgstr "SCRAPE ΑΠΟ"
+
+msgid "SCRAPER SETTINGS"
+msgstr ""
+
+msgid "FILTERS"
+msgstr ""
+
+msgid "GAMES TO SCRAPE FOR"
+msgstr ""
+
+msgid "ALL"
+msgstr ""
+
+msgid "GAMES MISSING ANY MEDIA"
+msgstr ""
+
+msgid "GAMES MISSING ALL MEDIA"
+msgstr ""
+
+msgid "IGNORE RECENTLY SCRAPED GAMES"
+msgstr ""
+
+msgid "LAST DAY"
+msgstr ""
+
+msgid "LAST WEEK"
+msgstr ""
+
+msgid "LAST 15 DAYS"
+msgstr ""
+
+msgid "LAST MONTH"
+msgstr ""
+
+msgid "LAST 3 MONTHS"
+msgstr ""
+
+msgid "LAST YEAR"
+msgstr ""
+
+msgid "SYSTEMS INCLUDED"
+msgstr ""
+
+msgid "SCRAPE NOW"
+msgstr "SCRAPE ΤΩΡΑ"
+
+msgid ""
+"WARNING: SOME OF YOUR SELECTED SYSTEMS DO NOT HAVE A PLATFORM SET. RESULTS "
+"MAY BE FOR DIFFERENT SYSTEMS!\n"
+"CONTINUE ANYWAY?"
+msgstr ""
+
+msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT?"
+msgstr "SCRAPING ΣΕ ΕΞΕΛΙΞΗ. ΘΕΛΕΤΕ ΝΑ ΤΟ ΣΤΑΜΑΤΗΣΕΤΕ ?"
+
+msgid "FINISHED"
+msgstr "ΤΕΤΕΛΕΣΜΕΝΟ"
+
+msgid "USERNAME"
+msgstr "ΟΝΟΜΑ ΧΡΗΣΤΗ"
+
+msgid "PASSWORD"
+msgstr "ΚΩΔΙΚΟΣ"
+
+msgid "OPTIONS"
+msgstr "ΕΠΙΛΟΓΕΣ"
+
+msgid "HARDCORE MODE"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ HARDCORE"
+
+msgid "Disable loading states, rewind and cheats for more points."
+msgstr ""
+
+msgid "LEADERBOARDS"
+msgstr ""
+
+msgid "Compete in high-score and best time leaderboards (requires hardcore)."
+msgstr ""
+
+msgid "VERBOSE MODE"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ VERBOSE"
+
+msgid "Show achievement progression on game launch and other notifications."
+msgstr ""
+
+msgid "RICH PRESENCE"
+msgstr ""
+
+msgid "ENCORE MODE"
+msgstr ""
+
+msgid "Unlocked achievements can be earned again."
+msgstr ""
+
+msgid "AUTOMATIC SCREENSHOT"
+msgstr "AYTOMATO ΣΤΙΓΜΙΟΤΥΠΟ"
+
+msgid "Automatically take a screenshot when an achievement is earned."
+msgstr ""
+
+msgid "CHALLENGE INDICATORS"
+msgstr ""
+
+msgid ""
+"Shows icons in the bottom right corner when eligible achievements can be "
+"earned."
+msgstr ""
+
+msgid "RETROACHIEVEMENT UNLOCK SOUND"
+msgstr ""
+
+msgid "none"
+msgstr "κανένα"
+
+msgid "UNLOCK SOUND"
+msgstr "ΞΕΚΛΕΙΔΩΜΑ ΗΧΟΥ"
+
+msgid "SHOW RETROACHIEVEMENTS ENTRY IN MAIN MENU"
+msgstr ""
+
+msgid "View your RetroAchievement stats right from the main menu!"
+msgstr ""
+
+msgid "GAME INDEXES"
+msgstr "ΕΥΡΕΤΗΡΙΑ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "INDEX NEW GAMES AT STARTUP"
+msgstr ""
+
+msgid "INDEX GAMES"
+msgstr ""
+
+msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
+msgstr ""
+
+msgid "CONNECT TO NETPLAY"
+msgstr "ΣΥΝΔΕΣΗ ΣΤΟ NETPLAY"
+
+msgid "Select a game lobby to join"
+msgstr ""
+
+msgid "REFRESH"
+msgstr "ΑΝΑΝΕΩΣΗ"
+
+msgid "FAILED"
+msgstr "ΑΠΕΤΥΧΕ"
+
+msgid "UNKNOWN ROM VERSION"
+msgstr "ΑΓΝΩΣΗ ΕΚΔΟΣΗ ROM"
+
+msgid "DIFFERENT ROM"
+msgstr "ΔΙΑΦΟΡΕΤΙΚΟ ROM"
+
+msgid "SAME ROM"
+msgstr "ΙΔΙΟ ROM"
+
+msgid "UNAVAILABLE CORE"
+msgstr "ΜΗ ΔΙΑΘΕΣΙΜΟΣ ΠYΡHΝΑΣ"
+
+msgid "AVAILABLE GAMES"
+msgstr "ΔΙΑΘΕΣΙΜΑ ΠΑΙΧΝΙΔΙΑ"
+
+msgid "UNAVAILABLE GAMES"
+msgstr "ΜΗ ΔΙΑΘΕΣΙΜΑ ΠΑΙΧΝΙΔΙΑ"
+
+msgid "NO GAMES FOUND"
+msgstr ""
+
+msgid "JOIN GAME"
+msgstr "ΜΠΕΙΤΕ ΣΤΟ ΠΑΙΧΝΙΔΙ"
+
+msgid "WATCH GAME"
+msgstr "ΠΑΡΑΚΟΛΟΥΘΗΣΤΕ ΤΟ ΠΑΙΧΝΙΔΙ"
+
 msgid "EDIT METADATA"
 msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ"
 
 msgid "GENRES"
 msgstr "ΕΙΔΗ"
+
+msgid "SCRAPE"
+msgstr ""
+
+msgid ""
+"THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
+"ARE YOU SURE?"
+msgstr ""
+"ΑΥΤΟ ΘΑ ΔΙΑΓΡΑΨΕΙ ΤΟ/Α ΠΡΑΓΜΑΤΙΚΟ/Α ΑΡΧΕΙΟ/Α ΠΑΙΧΝΙΔΙΟΥ/ΩΝ!\n"
+"ΕΙΣΤΕ ΣΙΓΟΥΡΟΣ;"
 
 msgid ""
 "SOME FILES YOU LINKED ARE LOCATED OUTSIDE THE GAMELIST PATH.\n"
@@ -2495,8 +1623,425 @@ msgstr ""
 "ΘΕΛΕΤΕ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΣΕΤΕ ΣΧΕΤΙΚΑ ΜΕ ΤΗΝ ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΟΥ ΑΝΤΙΓΡΑΦΑ ΑΥΤΩΝ "
 "ΤΩΝ ΑΡΧΕΙΩΝ ;"
 
-msgid "NO DEVICE FOUND"
-msgstr "ΔΕΝ ΒΡΕΘΗΚΕ ΣΥΣΚΕΥΗ"
+msgid "ENABLE NETPLAY"
+msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ NETPLAY"
+
+msgid "NICKNAME"
+msgstr "ΨΕΥΔΩΝΥΜΟ"
+
+msgid "PORT"
+msgstr "ΘΥΡΑ"
+
+msgid "USE RELAY SERVER"
+msgstr "ΧΡΗΣΗ RELAY ΣΕΡΒΕΡ"
+
+msgid "NEW YORK"
+msgstr ""
+
+msgid "MADRID"
+msgstr ""
+
+msgid "MONTREAL"
+msgstr ""
+
+msgid "SAO PAULO"
+msgstr ""
+
+msgid "SHOW UNAVAILABLE GAMES"
+msgstr ""
+
+msgid "Show rooms for games not present on this machine."
+msgstr ""
+
+msgid "GAMES TO INDEX"
+msgstr ""
+
+msgid "ONLY MISSING"
+msgstr ""
+
+msgid "USER DISK USAGE"
+msgstr "ΧΡΗΣΗ ΔΙΣΚΟΥ (ΑΠΟ) ΧΡΗΣΤΗ"
+
+msgid "SYSTEM DISK USAGE"
+msgstr "ΧΡΗΣΗ ΔΙΣΚΟΥ (ΑΠΟ) ΣΥΣΤΗΜΑ"
+
+msgid "VIDEO DRIVER"
+msgstr "ΟΔΗΓΟΣ ΒΙΝΤΕΟ"
+
+msgid "TARGET ARCHITECTURE"
+msgstr "ΕΝΔΕΙΚΤΙΚΗ ΑΡΧΙΤΕΚΤΟΝΙΚΗ"
+
+msgid "NETWORK REQUIRED"
+msgstr "ΑΠΑΙΤΕΙΤΑΙ ΔΙΚΤΥΟ"
+
+msgid "INVALID PARAMETERS"
+msgstr "ΜΗ ΕΓΚΥΡΟΙ ΠΑΡΑΜΕΤΡΟΙ"
+
+msgid "dim"
+msgstr ""
+
+msgid "black"
+msgstr "μαύρο"
+
+msgid "random video"
+msgstr "τυχαίο βίντεο"
+
+msgid "slideshow"
+msgstr "παρουσίαση διαφανειών"
+
+msgid "suspend"
+msgstr ""
+
+msgid "start & end"
+msgstr "αρχή & τέλος"
+
+msgid "systems"
+msgstr "συστήματα"
+
+msgid "random"
+msgstr "τυχαίο"
+
+msgid "START SCREENSAVER AFTER"
+msgstr "ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ ΜΕΤΑ ΑΠΟ"
+
+msgid "SCREENSAVER TYPE"
+msgstr "ΣΥΜΠΕΡΙΦΟΡΑ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
+
+msgid "STOP MUSIC ON SCREENSAVER"
+msgstr "ΔΙΑΚΟΠΗ ΜΟΥΣΙΚΗΣ ΣΤΗΝ ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ"
+
+msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
+msgstr "ΤΥΧΑΙΕΣ ΡΥΘΜΙΣΕΙΣ ΒΙΝΤΕΟ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
+
+msgid "VIDEO DURATION (SECS)"
+msgstr ""
+
+msgid "USE OMX PLAYER FOR SCREENSAVER"
+msgstr "ΧΡΗΣΙΜΟΠΟΙΗΣΤΕ ΤΟΝ OMX PLAYER ΓΙΑ ΠΡΟΦΥΛΑΞΗ ΟΘΟΝΗΣ"
+
+msgid "SHOW GAME INFO"
+msgstr "ΠΡΟΒΟΛΗ ΠΛΗΡΟΦΟΡΙΩΝ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "USE MARQUEE AS GAME INFO"
+msgstr "ΧΡΗΣΗ ΛΟΓΟΤΥΠΟΥ ΩΣ ΠΛΗΡΟΦΟΡΙΑ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "DECORATION SET USED"
+msgstr ""
+
+msgid "STRETCH VIDEOS"
+msgstr ""
+
+msgid "MUTE VIDEO AUDIO"
+msgstr "ΣΙΓΑΣΗ ΗΧΟΥ ΒΙΝΤΕΟ"
+
+msgid "SCREENSAVER CONTROLS"
+msgstr "ΕΠΙΛΟΓΕΣ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
+
+msgid "USE CUSTOM VIDEOS"
+msgstr "ΧΡΗΣΗ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΒΙΝΤΕΟ"
+
+msgid "CUSTOM VIDEO DIRECTORY"
+msgstr "ΚΑΤΑΛΟΓΟΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΟΥ ΒΙΝΤΕΟ"
+
+msgid "USE VIDEOS IN SUBFOLDERS OF CUSTOM DIRECTORY"
+msgstr ""
+
+msgid "CUSTOM VIDEO FILE EXTENSIONS"
+msgstr ""
+
+msgid "SLIDESHOW SCREENSAVER SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΒΟΛΗΣ ΔΙΑΦΑΝΕΙΩΝ ΠΡΟΦΥΛΑΞΗΣ ΟΘΟΝΗΣ"
+
+msgid "IMAGE DURATION (SECS)"
+msgstr "ΑΝΤΙΚΑΤΑΣΤΑΣΗ ΕΙΚΟΝΑΣ ΜΕΤΑ"
+
+msgid "STRETCH IMAGES"
+msgstr "ΕΚΤΑΣΗ ΕΙΚΟΝΩΝ"
+
+msgid "USE CUSTOM IMAGES"
+msgstr "ΧΡΗΣΗ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΕΙΚΟΝΩΝ"
+
+msgid "CUSTOM IMAGE DIRECTORY"
+msgstr "ΚΑΤΑΛΟΓΟΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΩΝ ΕΙΚΟΝΩΝ"
+
+msgid "USE IMAGES IN SUBFOLDERS OF CUSTOM DIRECTORY"
+msgstr ""
+
+msgid "CUSTOM IMAGE FILE EXTENSIONS"
+msgstr ""
+
+msgid "SAVESTATE MANAGER"
+msgstr ""
+
+msgid "START NEW GAME"
+msgstr "ΕΚΚΙΝΗΣΗ ΝΕΟΥ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "START NEW AUTO SAVE"
+msgstr ""
+
+msgid "AUTO SAVE"
+msgstr "ΑΥΤΟΜΑΤΗ ΑΠΟΘΗΚΕΥΣΗ"
+
+msgid "SLOT"
+msgstr ""
+
+msgid "COPY TO FREE SLOT"
+msgstr "ΑΝΤΙΓΡΑΦΗ ΣΕ ΕΛΕΥΘΕΡΟ SLOT"
+
+msgid "VIEW OPTIONS"
+msgstr "ΠΡΟΒΟΛΗ ΕΠΙΛΟΓΩΝ"
+
+msgid "NAVIGATION"
+msgstr "ΠΛΟΗΓΗΣΗ"
+
+msgid "OTHER FILTERS"
+msgstr "ΑΛΛΑ ΦΙΛΤΡΑ"
+
+msgid "SELECT RANDOM GAME"
+msgstr "ΤΥΧΑΙΑ ΕΠΙΛΟΓΗ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "JUMP TO GAME BEGINNING WITH THE LETTER"
+msgstr ""
+
+msgid "SORT GAMES BY"
+msgstr "ΤΑΞΙΝΟΜΗΣΗ ΠΑΙΧΝΙΔΙΩΝ ΚΑΤΑ"
+
+msgid "DYNAMIC COLLECTION"
+msgstr ""
+
+msgid "EDIT DYNAMIC COLLECTION FILTERS"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΦΙΛΤΡΩΝ ΔΥΝΑΜΙΚΩΝ ΣΥΛΛΟΓΩΝ"
+
+msgid "CUSTOM COLLECTION"
+msgstr ""
+
+msgid "DELETE COLLECTION"
+msgstr "ΔΙΑΓΡΑΦΗ ΣΥΛΛΟΓΗΣ"
+
+msgid "COLLECTION"
+msgstr "ΣΥΛΛΟΓΗ"
+
+msgid "CREATE NEW DYNAMIC COLLECTION"
+msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΔΥΝΑΜΙΚΗΣ ΣΥΛΛΟΓΗΣ"
+
+msgid "VIEW PAD TO KEYBOARD INFORMATION"
+msgstr "ΠΡΟΒΟΛΗ PAD ΣΤΙΣ ΠΛΗΡΟΦΟΡΙΕΣ ΠΛΗΚΤΡΟΛΟΓΙΟΥ"
+
+msgid "ADVANCED SYSTEM OPTIONS"
+msgstr "ΣΥΝΘΕΤΕΣ ΕΠΙΛΟΓΕΣ ΣΥΣΤΗΜΑΤΟΣ"
+
+msgid "RESET FILTERS"
+msgstr "ΕΠΑΝΑΦΟΡΑ ΦΙΛΤΡΩΝ"
+
+msgid "FILTER GAMES BY TEXT"
+msgstr "ΦΙΛΤΡΑ ΠΑΙΧΝΙΔΙΟΥ ΚΑΤΑ ΚΕΙΜΕΝΟ"
+
+msgid "Loading..."
+msgstr "Φόρτωση..."
+
+msgid "New Collection Name"
+msgstr "Όνομα Νέας Συλλογής"
+
+msgid "INPUT"
+msgstr "ΕΙΣΑΓΩΓΗ"
+
+msgid "SEARCH"
+msgstr "ΑΝΑΖΗΤΗΣΗ"
+
+msgid "GAME MEDIA"
+msgstr ""
+
+msgid "VIEW GAME MANUAL"
+msgstr "ΠΡΟΒΟΛΗ ΕΓΧΕΙΡΙΔΙΟΥ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "VIEW GAME MAGAZINE"
+msgstr "ΠΡΟΒΟΛΗ ΠΕΡΙΟΔΙΚΟΥ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "VIEW GAME MAP"
+msgstr "ΠΡΟΒΟΛΗ ΧΑΡΤΗ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "VIEW FULLSCREEN VIDEO"
+msgstr "ΠΡΟΒΟΛΗ ΒΙΝΤΕΟ ΣΕ ΠΛΗΡΗ ΟΘΟΝΗ"
+
+msgid "VIEW GAME MEDIA"
+msgstr ""
+
+msgid "CURRENT CORE IS NOT COMPATIBLE"
+msgstr "Ο ΤΡΕΧΩΝ ΠΥΡΗΝΑΣ ΔΕΝ ΕΙΝΑΙ ΣΥΜΒΑΤΟΣ"
+
+msgid "COMPATIBLE CORE(S)"
+msgstr ""
+
+msgid "VIEW THIS GAME'S ACHIEVEMENTS"
+msgstr ""
+
+msgid "GAME"
+msgstr "ΠΑΙΧΝΙΔΙ"
+
+msgid "SAVE STATES"
+msgstr ""
+
+msgid "OPEN"
+msgstr "ΑΝΟΙΓΜΑ"
+
+msgid "START A NETPLAY GAME"
+msgstr ""
+
+msgid "NETPLAY"
+msgstr ""
+
+msgid "START GAME"
+msgstr "ΕΚΚΙΝΗΣΗ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "HOST A NETPLAY GAME"
+msgstr ""
+
+msgid "PUBLICLY ANNOUNCE GAME"
+msgstr "ΔΗΜΟΣΙΑ ΑΝΑΚΟΙΝΩΣΗ ΠΑΙΧΝΙΔΙΟΥ "
+
+msgid "PLAYER PASSWORD"
+msgstr ""
+
+msgid "VIEWER PASSWORD"
+msgstr ""
+
+msgid "FIND SIMILAR GAMES..."
+msgstr "ΒΡΕΙΤΕ ΠΑΡΟΜΟΙΑ ΠΑΙΧΝΙΔΙΑ"
+
+msgid "DELETE ITEM"
+msgstr "ΔΙΑΓΡΑΦΗ ΑΝΤΙΚΕΙΜΕΝΟΥ"
+
+msgid "DELETE GAME"
+msgstr "ΔΙΑΓΡΑΦΗ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "COLLECTIONS"
+msgstr "ΣΥΛΛΟΓΕΣ"
+
+#, c-format
+msgid "REMOVE FROM %s"
+msgstr "ΑΦΑΙΡΕΣΗ ΑΠΟ %s"
+
+#, c-format
+msgid "ADD TO %s"
+msgstr "ΠΡΟΣΘΗΚΗ ΣΤΟ %s"
+
+msgid "FAVORITES"
+msgstr "ΑΓΑΠΗΜΕΝΑ"
+
+msgid "ADD TO CUSTOM COLLECTION..."
+msgstr "ΠΡΟΣΘΗΚΗ ΣΤΗΝ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗ ΣΥΛΛΟΓΗ"
+
+msgid "ADVANCED GAME OPTIONS"
+msgstr "ΣΥΝΘΕΤΕΣ ΡΥΘΜΙΣΕΙΣ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "EDIT FOLDER METADATA"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ ΦΑΚΕΛΟΥ"
+
+msgid "EDIT THIS GAME'S METADATA"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΜΕΤΑΔΕΔΟΜΕΝΩΝ ΑΥΤΟΥ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "IMAGE SOURCE"
+msgstr "ΠΗΓΗ ΕΙΚΟΝΑΣ"
+
+msgid "SCREENSHOT"
+msgstr "ΣΤΙΓΜΙΟΤΥΠΟ"
+
+msgid "TITLE SCREENSHOT"
+msgstr "ΣΤΙΓΜΙΟΤΥΠΟ ΤΙΤΛΟΥ"
+
+msgid "MIX V1"
+msgstr ""
+
+msgid "MIX V2"
+msgstr ""
+
+msgid "BOX 2D"
+msgstr ""
+
+msgid "BOX 3D"
+msgstr ""
+
+msgid "FAN ART"
+msgstr ""
+
+msgid "BOX SOURCE"
+msgstr "ΠΗΓΗ BOX"
+
+msgid "LOGO SOURCE"
+msgstr "ΠΗΓΗ ΛΟΓΟΤΥΠΟΥ"
+
+msgid "WHEEL"
+msgstr ""
+
+msgid "MARQUEE"
+msgstr "ΛΟΓΟΤΥΠΟ"
+
+msgid "SCRAPE FOR"
+msgstr ""
+
+msgid "SHORT NAME"
+msgstr ""
+
+msgid "COMMUNITY RATING"
+msgstr ""
+
+msgid "VIDEO"
+msgstr ""
+
+msgid "FANART"
+msgstr ""
+
+msgid "BEZEL (16:9)"
+msgstr ""
+
+msgid "BOX BACKSIDE"
+msgstr ""
+
+msgid "MAP"
+msgstr ""
+
+msgid "MANUAL"
+msgstr ""
+
+msgid "PADTOKEY SETTINGS"
+msgstr ""
+
+msgid "FILE BROWSER"
+msgstr "ΠΕΡΙΗΓΗΤΗΣ ΑΡΧΕΙΩΝ"
+
+msgid "PARENT FOLDER"
+msgstr "ΓΟΝΙΚΟΣ ΦΑΚΕΛΟΣ"
+
+msgid "SCREENSHOTS FOLDER"
+msgstr "ΦΑΚΕΛΟΣ ΣΤΙΓΜΙΟΤΥΠΩΝ"
+
+msgid "INPUT MANUALLY"
+msgstr ""
+
+msgid "NO WI-FI NETWORKS FOUND"
+msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΑΣΥΡΜΑΤΑ ΔΙΚΤΥΑ"
+
+msgid "SEARCHING WI-FI NETWORKS"
+msgstr "ΑΝΑΖΗΤΗΣΗ ΑΣΥΡΜΑΤΩΝ ΔΙΚΤΥΩΝ"
+
+msgid "REMOVE ALL"
+msgstr "ΔΙΑΓΡΑΦΗ ΟΛΩΝ"
+
+msgid "NO BLUETOOTH DEVICES FOUND"
+msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΣΥΣΚΕΥΕΣ BLUETOOTH"
+
+msgid "BLUETOOTH DEVICES HAVE BEEN DELETED."
+msgstr "ΔΙΑΓΡΑΦΗΚΑΝ ΣΥΣΚΕΥΕΣ BLUETOOTH"
+
+#, c-format
+msgid "ARE YOU SURE YOU WANT TO REMOVE '%s' ?"
+msgstr ""
+
+msgid "NO MISSING BIOS FILES"
+msgstr ""
+
+msgid "NO MISSING BIOS"
+msgstr "ΔΕΝ ΛΕΙΠΟΥΝ BIOS ΑΡΧΕΙΑ"
 
 msgid "ZOOM OUT"
 msgstr ""
@@ -2510,10 +2055,228 @@ msgstr "METAKINHΣH"
 msgid "ZOOM"
 msgstr "ΜΕΓΕΘΥΝΣΗ"
 
-msgid "GAMES TO INDEX"
+msgid "SELECT CONTENT TO INSTALL/REMOVE"
 msgstr ""
 
-msgid "ONLY MISSING"
+msgid "UPDATE INSTALLED CONTENT"
+msgstr "ΕΝΗΜΕΡΩΣΗ ΕΓΚΑΤΕΣΤΗΜΕΝΟΥ ΠΕΡΙΕΧΟΜΕΝΟΥ"
+
+msgid "MISC"
+msgstr ""
+
+msgid "UNINSTALLATION ADDED TO QUEUE"
+msgstr ""
+
+msgid "FILTER GAMELIST BY"
+msgstr "ΦΙΛΙΤΡΑΡΙΣΜΑ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ ΑΠΟ"
+
+msgid "RESET ALL FILTERS"
+msgstr "ΕΠΑΝΑΦΟΡΑ ΟΛΩΝ ΤΩΝ ΦΙΛΤΡΩΝ"
+
+msgid "FIND GAMES"
+msgstr "ΕΥΡΕΣΗ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+msgid "SYSTEMS"
+msgstr "ΣΥΣΤΗΜΑΤΑ"
+
+msgid "COLLECTIONS TO DISPLAY"
+msgstr "ΣΥΛΛΟΓΕΣ ΠΡΟΣ ΕΜΦΑΝΙΣΗ"
+
+msgid "SYSTEMS DISPLAYED"
+msgstr "ΕΜΦΑΝΙΖΟΜΕΝΑ ΣΥΣΤΗΜΑΤΑ"
+
+msgid "GROUPED SYSTEMS"
+msgstr "ΟΜΑΔΟΠΟΙΗΜΕΝΑ ΣΥΣΤΗΜΑΤΑ"
+
+msgid "CREATE CUSTOM COLLECTION"
+msgstr "ΔΗΜΙΟΥΡΓΙΑ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗΣ ΣΥΛΛΟΓΗΣ"
+
+msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
+msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΕΞΑΤΟΜΙΚΕΥΜΕΝΗΣ ΣΥΛΛΟΓΗΣ ΑΠΟ ΤΟ ΘΕΜΑ"
+
+msgid "SELECT THEME FOLDER"
+msgstr "ΕΠΙΛΟΓΗ ΦΑΚΕΛΟΥ ΘΕΜΑΤΟΣ"
+
+msgid "CREATE NEW EDITABLE COLLECTION"
+msgstr "ΔΗΜΙΟΥΡΓΙΑ ΝΕΑΣ ΕΠΕΞΕΡΓΑΣΙΜΗΣ ΣΥΛΛΟΓΗΣ"
+
+msgid "SORT COLLECTIONS AND SYSTEMS"
+msgstr "ΤΑΞΙΝΟΜΗΣΗ ΣΥΛΛΟΓΩΝ ΚΑΙ ΣΥΣΤΗΜΑΤΩΝ"
+
+msgid "ALPHABETICALLY"
+msgstr "ΑΛΦΑΒΗΤΙΚΑ"
+
+msgid "BY MANUFACTURER"
+msgstr "ΚΑΤΑ ΚΑΤΑΣΚΕΥΑΣΤΗ"
+
+msgid "BY HARDWARE TYPE"
+msgstr "ΚΑΤΑ ΤΥΠΟ ΥΛΙΚΟΥ"
+
+msgid "BY MANUFACTURER AND TYPE"
+msgstr ""
+
+msgid "BY RELEASE YEAR"
+msgstr "ΚΑΤΑ ΕΤΟΣ ΚΥΚΛΟΦΟΡΙΑΣ"
+
+msgid "SORT SYSTEMS"
+msgstr "ΤΑΞΙΝΟΜΗΣΗ ΣΥΣΤΗΜΑΤΩΝ"
+
+msgid "START ON SYSTEM"
+msgstr "ΕΚΚΙΝΗΣΗ ΣΕ ΣΥΣΤΗΜΑ"
+
+msgid "RESTORE LAST SELECTED"
+msgstr "ΕΠΑΝΑΦΟΡΑ ΤΕΛΕΥΤΑΙΟΥ ΕΠΙΛΕΓΜΕΝΟΥ"
+
+msgid "START ON GAMELIST"
+msgstr "ΕΚΚΙΝΗΣΗ ΣΕ ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
+msgstr "ΟΜΑΔΟΠΟΙΗΣΗ ΠΡΟΣΩΠΙΚΩΝ ΣΥΛΛΟΓΩΝ ΧΩΡΙΣ ΘΕΜΑ"
+
+msgid "SHOW SYSTEM NAME IN COLLECTIONS"
+msgstr "ΕΜΦΑΝΙΣΗ ΟΝΟΜΑΤΩΝ ΣΥΣΤΗΜΑΤΟΣ ΣΤΙΣ ΣΥΛΛΟΓΕΣ"
+
+msgid "SHOW GAMES OF HIDDEN SYSTEMS IN COLLECTIONS"
+msgstr "ΕΜΦΑΝΙΣΗ ΠΑΙΧΝΙΔΩΝ ΚΡΥΜΜΕΝΩΝ ΣΥΣΤΗΜΑΤΩΝ ΣΤΙΣ ΣΥΛΛΟΓΕΣ"
+
+msgid "SHOW EMPTY SYSTEMS"
+msgstr ""
+
+msgid "SELECT COLLECTIONS"
+msgstr "ΕΠΙΛΟΓΗ ΣΥΛΛΟΓΩΝ"
+
+msgid "AUTOMATIC COLLECTIONS"
+msgstr "ΑΥΤΟΜΑΤΕΣ ΣΥΛΛΟΓΕΣ"
+
+msgid "PER GENRE"
+msgstr "ΑΝΑ ΕΙΔΟΣ"
+
+msgid "ARCADE SYSTEMS"
+msgstr "ARCADE ΣΥΣΤΗΜΑΤΑ"
+
+msgid "AUTOMATIC GAME COLLECTIONS"
+msgstr "ΑΥΤΟΜΑΤΕΣ ΣΥΛΛΟΓΕΣ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "EDITABLE COLLECTIONS"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΜΕΣ ΣΥΛΛΟΓΕΣ"
+
+msgid "DYNAMIC COLLECTIONS"
+msgstr "ΔΥΝΑΜΙΚΕΣ ΣΥΛΛΟΓΕΣ"
+
+msgid "CUSTOM GAME COLLECTIONS"
+msgstr "ΠΡΟΣΩΠΙΚΕΣ ΣΥΛΛΟΓΕΣ ΠΑΙΧΝΙΔΙΩΝ"
+
+msgid "PAIR A BLUETOOTH DEVICE"
+msgstr "ΖΕΥΞΗ ΣΥΣΚΕΥΗΣ BLUETOOTH"
+
+msgid "PAIR"
+msgstr ""
+
+#, c-format
+msgid "UPDATING %s"
+msgstr "ΑΝΑΒΑΘΜΙΣΗ %s"
+
+msgid "UPDATE IS READY"
+msgstr "Η ΑΝΑΒΑΘΜΙΣΗ ΕΙΝΑΙ ΕΤΟΙΜΗ"
+
+msgid "REBOOT TO APPLY"
+msgstr ""
+
+msgid "REALLY UPDATE?"
+msgstr "ΘΕΛΕΤΕ ΝΑ ΚΑΝΕΤΕ ΑΝΑΒΑΘΜΙΣΗ;"
+
+#, c-format
+msgid ""
+"YOU ARE CURRENTLY USING VERSION %s\n"
+"DO YOU WANT TO UPDATE TO VERSION %s?"
+msgstr ""
+
+#, c-format
+msgid ""
+"UNOFFICIAL SYSTEM MODIFICATIONS DETECTED.\n"
+"UPGRADING COULD BREAK YOUR SYSTEM.\n"
+"DO YOU WANT TO UPDATE TO VERSION %s?"
+msgstr ""
+
+msgid "NETWORK CONNECTION NEEDED"
+msgstr "ΑΠΑΙΤΕΙΤΑΙ ΣΥΝΔΕΣΗ ΣΤΟ ΔΙΑΔΙΚΤΥΟ"
+
+msgid "NO UPDATE AVAILABLE"
+msgstr "ΔΕΝ ΥΠΑΡΧΕΙ ΔΙΑΘΕΣΙΜΗ ΑΝΑΒΑΘΜΙΣΗ"
+
+msgid "THE EMULATOR EXITED UNEXPECTEDLY"
+msgstr ""
+
+msgid "BAD COMMAND LINE ARGUMENTS"
+msgstr ""
+
+msgid "INVALID CONFIGURATION"
+msgstr ""
+
+msgid "UNKNOWN EMULATOR"
+msgstr ""
+
+msgid "EMULATOR IS MISSING"
+msgstr ""
+
+msgid "CORE IS MISSING"
+msgstr ""
+
+msgid "UKNOWN ERROR"
+msgstr ""
+
+msgid "UPDATE AVAILABLE"
+msgstr "ΔΙΑΘΕΣΙΜΗ ΑΝΑΒΑΘΜΙΣΗ"
+
+msgid "SCRAPING"
+msgstr ""
+
+msgid "SCRAPE FAILED"
+msgstr "TO SCRAPE ΑΠΕΤΥΧΕ"
+
+msgid "SCRAPING FINISHED"
+msgstr "ΤΟ SCRAPING ΤΕΛΕΙΩΣΕ"
+
+msgid "GENRE"
+msgstr "ΕΙΔΟΣ"
+
+msgid "FAMILY"
+msgstr "ΟΙΚΟΓΕΝΕΙΑ"
+
+msgid "PLAYERS"
+msgstr "ΠΑΙΚΤΕΣ"
+
+msgid "PUBLISHER/DEVELOPER"
+msgstr ""
+
+msgid "RATING"
+msgstr "ΒΑΘΜΟΛΟΓΙΑ"
+
+msgid "YEAR"
+msgstr "ΕΤΟΣ"
+
+msgid "REGION"
+msgstr "ΠΕΡΙΟΧΗ"
+
+msgid "KIDGAME"
+msgstr "ΠΑΙΔΙΚΟ ΠΑΙΧΙΔΙ"
+
+msgid "ALREADY PLAYED"
+msgstr "ΕΧΕΙ ΠΑΙΧΤΕΙ ΗΔΗ"
+
+msgid "HAS ACHIEVEMENTS"
+msgstr "ΕΧΕΙ «ΚΑΤΟΡΘΩΜΑΤΑ»"
+
+msgid "VERTICAL"
+msgstr "ΚΑΘΕΤΟ"
+
+msgid "LIGHTGUN"
+msgstr ""
+
+msgid "HAS MEDIAS"
 msgstr ""
 
 msgid "SYSTEM INFO"
@@ -2567,6 +2330,64 @@ msgstr ""
 msgid "FILES"
 msgstr "ΑΡΧΕΙΑ"
 
+msgid "No Entries Found"
+msgstr "Δεν Βρέθηκαν Καταχωρήσεις"
+
+msgid "Games similar to"
+msgstr "Παιχνίδια παρόμοια με"
+
+msgid "SAVE STATES (HOLD)"
+msgstr ""
+
+msgid "GAME OPTIONS (HOLD)"
+msgstr ""
+
+msgid "GAME OPTIONS"
+msgstr "ΕΠΙΛΟΓΕΣ ΠΑΙΧΝΙΔΙΟΥ"
+
+msgid "FAVORITE"
+msgstr "ΑΓΑΠΗΜΕΝΟ"
+
+msgid "Rating"
+msgstr "Βαθμολογία"
+
+msgid "Released"
+msgstr "Κυκλοφόρησε"
+
+msgid "Developer"
+msgstr "Δημιουργός"
+
+msgid "Publisher"
+msgstr "Εκδότης"
+
+msgid "Genre"
+msgstr "Είδος"
+
+msgid "Players"
+msgstr "Παίκτες"
+
+msgid "Last played"
+msgstr "Παίχτηκε τελευταία φορά"
+
+msgid "Times played"
+msgstr "Φορές που παίχτηκε"
+
+msgid "Game time"
+msgstr "Χρόνος παιχνιδιού"
+
+msgid "Favorite"
+msgstr "Αγαπημένο"
+
+#, c-format
+msgid "This folder contains %i game, including :%s"
+msgid_plural "This folder contains %i games, including :%s"
+msgstr[0] "Αυτός ο φάκελος περιέχει %i παιχνίδι, συμπεριλαμβανομένου :%s"
+msgstr[1] "Αυτός ο φάκελος περιέχει %i παιχνίδια, συμπεριλαμβανομένων :%s"
+
+#. TRANSLATION: number of developpers / various developpers
+msgid "None"
+msgstr "Κανένας"
+
 msgid ""
 "WARNING: THE EMULATOR/CORE CURRENTLY SET DOES NOT SUPPORT THIS GAME'S FILE "
 "FORMAT.\n"
@@ -2603,43 +2424,6 @@ msgstr "Παιδικό"
 msgid "Basic"
 msgstr ""
 
-msgid "Released"
-msgstr "Κυκλοφόρησε"
-
-msgid "Times played"
-msgstr "Φορές που παίχτηκε"
-
-#, c-format
-msgid "This folder contains %i game, including :%s"
-msgid_plural "This folder contains %i games, including :%s"
-msgstr[0] "Αυτός ο φάκελος περιέχει %i παιχνίδι, συμπεριλαμβανομένου :%s"
-msgstr[1] "Αυτός ο φάκελος περιέχει %i παιχνίδια, συμπεριλαμβανομένων :%s"
-
-msgid "No Entries Found"
-msgstr "Δεν Βρέθηκαν Καταχωρήσεις"
-
-msgid "Games similar to"
-msgstr "Παιχνίδια παρόμοια με"
-
-msgid "SAVE STATES (HOLD)"
-msgstr ""
-
-msgid "GAME OPTIONS (HOLD)"
-msgstr ""
-
-msgid "GAME OPTIONS"
-msgstr "ΕΠΙΛΟΓΕΣ ΠΑΙΧΝΙΔΙΟΥ"
-
-msgid "FAVORITE"
-msgstr "ΑΓΑΠΗΜΕΝΟ"
-
-msgid ""
-"A valid account is required. Please register an account on https://"
-"retroachievements.org"
-msgstr ""
-"Απαιτείται ένας έγκυρος λογαριασμος. Παρακαλώ δημιουργείτε εναν λογαριασμό "
-"στο https://retroachievements.org"
-
 msgid "Searching"
 msgstr "Αναζήτηση"
 
@@ -2661,17 +2445,88 @@ msgstr ""
 msgid "ACCEPT RESULT"
 msgstr "ΑΠΟΔΟΧΗ ΑΠΟΤΕΛΕΣΜΑΤΟΣ"
 
+msgid "Collections"
+msgstr "Συλλογές"
+
+msgid "SCANNING BLUETOOTH"
+msgstr "ΑΝΙΧΝΕΥΣΗ BLUETOOTH"
+
+msgid "Searching for devices..."
+msgstr ""
+
+msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
+msgstr "Η ΑΝΙΧΝΕΥΣΗ BLUETOOTH ΓΙΝΕΤΑΙ ΗΔΗ"
+
+msgid "FORMATTING DEVICE"
+msgstr ""
+
+msgid "Formatting"
+msgstr ""
+
+msgid "A REBOOT IS REQUIRED TO COMPLETE THE OPERATION"
+msgstr "ΧΡΕΙΑΖΕΤΑΙ ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΟΥ ΣΥΣΤΗΜΑΤΟΣ ΓΙΑ ΝΑ ΟΛΟΚΛΗΡΩΘΕΙ Η ΛΕΙΤΟΥΡΓΙΑ"
+
+msgid "A DRIVE IS ALREADY BEING FORMATTED."
+msgstr ""
+
+msgid "all games"
+msgstr "Ολα τα παιχνίδια"
+
+msgid "last played"
+msgstr "Παίχτηκε τελευταία φορά"
+
+msgid "favorites"
+msgstr "Αγαπημένα"
+
+msgid "2 players"
+msgstr "2 παίκτες"
+
+msgid "4 players"
+msgstr "4 παίκτες"
+
+msgid "never played"
+msgstr "Δεν παίχτηκε ποτέ"
+
+msgid "retroachievements"
+msgstr ""
+
+msgid "arcade"
+msgstr ""
+
+msgid "vertical arcade"
+msgstr "κάθετα arcade"
+
+msgid "lightgun games"
+msgstr "lightgun παιχνίδια"
+
+msgid "collections"
+msgstr "συλλογές"
+
+#, c-format
+msgid "Added '%s' to '%s'"
+msgstr "Προστέθηκε '%s' σε '%s'"
+
+#, c-format
+msgid "Removed '%s' from '%s'"
+msgstr "Αφαιρέθηκε '%s' απο '%s'"
+
+msgid "This collection is empty."
+msgstr "Αυτή η συλλογή είναι άδεια"
+
+msgid "Various"
+msgstr "Διάφοροι"
+
+#, c-format
+msgid "This collection contains %i game:%s"
+msgid_plural "This collection contains %i games, including:%s"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Loading system config..."
 msgstr "Φόρτωση τροποποίησης συστήματος..."
 
-msgid "SAVING METADATAS. PLEASE WAIT..."
-msgstr "ΑΠΟΘΗΚΕΥΣΗ ΜΕΤΑΔΕΔΟΜΕΝΩΝ. ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ..."
-
-msgid "DO YOU WANT TO SWITCH THE SCREEN ?"
+msgid "SAVING METADATA. PLEASE WAIT..."
 msgstr ""
-
-msgid "Collections"
-msgstr "Συλλογές"
 
 msgid "FILENAME, ASCENDING"
 msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ, ΑΥΞΟΥΣΑ ΣΕΙΡΑ"
@@ -2760,102 +2615,240 @@ msgstr "ΕΤΟΣ ΚΥΚΛΟΦΟΡΙΑΣ, ΣΥΣΤΗΜΑ, ΦΘΙΝΟΥΣΑ ΣΕΙ
 msgid "A,AN,THE"
 msgstr "ΕΝΑ,ΕΝΑ,ΤΟ"
 
-msgid "Extracting"
-msgstr "Εξαγωγή"
+msgid "Name"
+msgstr "Όνομα"
 
-msgid "SEARCHING RETROACHIEVEMENTS"
-msgstr "ΑΝΑΖΗΤΗΣΗ RETROACHIEVEMENTS"
-
-msgid "SEARCHING NETPLAY GAMES"
-msgstr "ΑΝΑΖΗΤΗΣΗ ΠΑΙΧΝΙΔΙΩΝ NETPLAY"
-
-msgid "INDEXING COMPLETED"
-msgstr "Η ΕΥΡΕΤΗΡΙΑΣΗ ΟΛΟΚΛΗΡΩΘΗΚΕ"
-
-msgid "UPDATE GAMELISTS TO APPLY CHANGES."
+msgid "this game's name"
 msgstr ""
 
-msgid "THE EMULATOR EXITED UNEXPECTEDLY"
+msgid "Description"
+msgstr "Περιγραφή"
+
+msgid "this game's description"
 msgstr ""
 
-msgid "BAD COMMAND LINE ARGUMENTS"
+msgid "emulator"
+msgstr "εξομοιωτής"
+
+msgid "core"
+msgstr "πυρήνας"
+
+msgid "Image"
+msgstr "Εικόνα"
+
+msgid "enter path to image"
+msgstr "προσθήκη διαδρομής εικόνας"
+
+msgid "Video"
+msgstr "Βίντεο"
+
+msgid "enter path to video"
+msgstr "προσθήκη διαδρομής βίντεο"
+
+msgid "Logo"
+msgstr "Λογότυπο"
+
+msgid "enter path to logo"
+msgstr "προσθήκη διαδρομής λογότυπου"
+
+msgid "Box"
 msgstr ""
 
-msgid "INVALID CONFIGURATION"
+msgid "enter path to box"
+msgstr "προσθήκη διαδρομής box"
+
+msgid "Fan art"
 msgstr ""
 
-msgid "UNKNOWN EMULATOR"
+msgid "enter path to fanart"
 msgstr ""
 
-msgid "EMULATOR IS MISSING"
+msgid "Title shot"
 msgstr ""
 
-msgid "CORE IS MISSING"
+msgid "enter path to title shot"
 msgstr ""
 
-msgid "UKNOWN ERROR"
+msgid "Manual"
 msgstr ""
 
-msgid "GENRE"
-msgstr "ΕΙΔΟΣ"
-
-msgid "FAMILY"
-msgstr "ΟΙΚΟΓΕΝΕΙΑ"
-
-msgid "PLAYERS"
-msgstr "ΠΑΙΚΤΕΣ"
-
-msgid "PUBLISHER/DEVELOPER"
+msgid "enter path to manual"
 msgstr ""
 
-msgid "RATING"
-msgstr "ΒΑΘΜΟΛΟΓΙΑ"
+msgid "Magazine"
+msgstr "Περιοδικό"
 
-msgid "YEAR"
-msgstr "ΕΤΟΣ"
+msgid "enter path to magazine"
+msgstr "προσθήκη διαδρομής για περιοδικό"
 
-msgid "REGION"
-msgstr "ΠΕΡΙΟΧΗ"
+msgid "Map"
+msgstr "Χάρτης"
 
-msgid "KIDGAME"
-msgstr "ΠΑΙΔΙΚΟ ΠΑΙΧΙΔΙ"
+msgid "enter path to map"
+msgstr "προσθήκη διαδρομής χάρτη"
 
-msgid "ALREADY PLAYED"
-msgstr "ΕΧΕΙ ΠΑΙΧΤΕΙ ΗΔΗ"
-
-msgid "HAS ACHIEVEMENTS"
-msgstr "ΕΧΕΙ «ΚΑΤΟΡΘΩΜΑΤΑ»"
-
-msgid "VERTICAL"
-msgstr "ΚΑΘΕΤΟ"
-
-msgid "LIGHTGUN"
+msgid "Bezel (16:9)"
 msgstr ""
 
-msgid "HAS MEDIAS"
+msgid "enter path to bezel (16:9)"
 msgstr ""
 
-msgid "SCRAPING"
+msgid "Cartridge"
+msgstr "Κασέτα"
+
+msgid "enter path to cartridge"
+msgstr "προσθήκη διαδρομής cartridge"
+
+msgid "Alt BoxArt"
 msgstr ""
 
-msgid "SCRAPE FAILED"
-msgstr "TO SCRAPE ΑΠΕΤΥΧΕ"
+msgid "enter path to alt boxart"
+msgstr ""
 
-msgid "SCRAPING FINISHED"
-msgstr "ΤΟ SCRAPING ΤΕΛΕΙΩΣΕ"
+msgid "Box backside"
+msgstr ""
+
+msgid "enter path to box background"
+msgstr ""
+
+msgid "Wheel"
+msgstr ""
+
+msgid "enter path to wheel"
+msgstr ""
+
+msgid "Mix"
+msgstr ""
+
+msgid "enter path to mix"
+msgstr ""
+
+msgid "enter rating"
+msgstr "προσθήκη βαθμολογίας"
+
+msgid "Release date"
+msgstr "Ημερομηνία κυκλοφορίας"
+
+msgid "enter release date"
+msgstr "προσθήκη ημερομηνίας κυκλοφορίας"
+
+msgid "this game's developer"
+msgstr ""
+
+msgid "this game's publisher"
+msgstr ""
+
+msgid "enter game genre"
+msgstr "προσθήκη είδους παιχνιδιού"
+
+msgid "Game family"
+msgstr "Οικογένεια παιχνιδιού"
+
+msgid "this game's game family"
+msgstr ""
+
+msgid "Genres"
+msgstr "Είδη"
+
+msgid "enter game genres"
+msgstr "προσθήκη ειδών παιχνιδιών"
+
+msgid "Arcade system"
+msgstr "Arcade σύστημα"
+
+msgid "this game's arcade system"
+msgstr ""
+
+msgid "this game's number of players"
+msgstr ""
+
+msgid "enter favorite"
+msgstr "προσθήκη αγαπημένου"
+
+msgid "Hidden"
+msgstr "Κρυμμένο"
+
+msgid "enter hidden"
+msgstr "προσθήκη κρυμμένου"
+
+msgid "Kidgame"
+msgstr "Παιδικό παιχνίδι"
+
+msgid "enter kidgame"
+msgstr "προσθήκη παιδικού παιχνιδιού"
+
+msgid "Play count"
+msgstr "Φορές που παίχτηκε"
+
+msgid "enter number of times played"
+msgstr "προσθήκη αριθμού φορών που παίχτηκε"
+
+msgid "enter last played date"
+msgstr "προσθήκη τελευταίας φοράς παιχνιδιού"
+
+msgid "Crc32"
+msgstr ""
+
+msgid "Crc32 checksum"
+msgstr ""
+
+msgid "Md5"
+msgstr ""
+
+msgid "Md5 checksum"
+msgstr ""
+
+msgid "how long the game has been played in total (seconds)"
+msgstr "Πόσο παίχτηκε το παιχνίδι συνολικά (δευτερόλεπτα)"
+
+msgid "Languages"
+msgstr "Γλώσσες"
+
+msgid "this game's languages"
+msgstr ""
+
+msgid "Region"
+msgstr "Περιοχή"
+
+msgid "this game's region"
+msgstr ""
+
+msgid "Cheevos Hash"
+msgstr ""
+
+msgid "Cheevos checksum"
+msgstr ""
+
+msgid "Cheevos Game ID"
+msgstr ""
+
+msgid "Screenscraper Game ID"
+msgstr ""
+
+msgid "DOWNLOADING"
+msgstr "ΚΑΤΕΒΑΙΝΕΙ"
+
+msgid "THEME INSTALLED SUCCESSFULLY"
+msgstr "ΤΟ ΘΕΜΑ ΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
+
+msgid "BEZELS INSTALLED SUCCESSFULLY"
+msgstr "ΤΑ ΠΕΡΙΘΩΡΙΑ ΕΓΚΑΤΑΣΤΑΘΗΚΑΝ ΕΠΙΤΥΧΩΣ"
+
+msgid "PACKAGE INSTALLED SUCCESSFULLY"
+msgstr "ΤΟ ΠΑΚΕΤΟ ΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
+
+msgid "PACKAGE REMOVED SUCCESSFULLY"
+msgstr "ΤΟ ΠΑΚΕΤΟ ΑΠΕΓΚΑΤΑΣΤΑΘΗΚΕ ΕΠΙΤΥΧΩΣ"
 
 msgid ""
-"CALIBRATING GUN\n"
-"Fire on targets to calibrate"
+"A valid account is required. Please register an account on https://"
+"retroachievements.org"
 msgstr ""
+"Απαιτείται ένας έγκυρος λογαριασμος. Παρακαλώ δημιουργείτε εναν λογαριασμό "
+"στο https://retroachievements.org"
 
-#, c-format
-msgid "%s connected"
-msgstr "%s συνδέθηκε"
-
-#, c-format
-msgid "%s disconnected"
-msgstr "%s αποσυνθέθηκε"
+msgid "DO YOU WANT TO SWITCH THE SCREEN ?"
+msgstr ""
 
 msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
 msgstr "ΑΛΛΑΓΕΣ ΓΙΑ ΚΕΦΑΛΑΙΑ,ΜΙΚΡΑ, ΚΑΙ ΕΙΔΙΚΑ"
@@ -3011,6 +3004,9 @@ msgstr "ΠΑΤΗΣΤΕ Ο,ΤΙΔΗΠΟΤΕ"
 msgid "ALREADY TAKEN"
 msgstr "ΗΔΗ ΠΙΑΣΜΕΝΟ"
 
+msgid "DISCARD CHANGES"
+msgstr "ΑΚΥΡΩΣΗ ΑΛΛΑΓΩΝ"
+
 msgid "WELCOME"
 msgstr "ΚΑΛΩΣ ΗΡΘΑΤΕ"
 
@@ -3026,44 +3022,22 @@ msgstr "ΔΕΝ ΕΝΤΟΠΙΣΤΗΚΑΝ ΧΕΙΡΙΣΤΗΡΙΑ"
 msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
 msgstr "ΠΑΤΗΣΤΕ ΕΝΑ ΚΟΥΜΠΙ ΣΤΗΝ ΣΥΣΚΕΥΗ ΣΑΣ ΓΙΑ ΝΑ ΤΟ ΡΥΘΜΙΣΕΤΕ"
 
-msgid "DISCARD CHANGES"
-msgstr "ΑΚΥΡΩΣΗ ΑΛΛΑΓΩΝ"
+#, c-format
+msgid "%s connected"
+msgstr "%s συνδέθηκε"
+
+#, c-format
+msgid "%s disconnected"
+msgstr "%s αποσυνθέθηκε"
+
+msgid "ENABLED"
+msgstr "ΕΝΕΡΓΟΠΟΙΗΜΕΝΟ"
 
 msgid "up/down"
 msgstr "πάνω/κάτω"
 
-msgid "accept"
-msgstr "αποδοχή"
-
-msgid "SELECT ALL"
-msgstr "ΕΠΙΛΟΓΗ ΟΛΩΝ"
-
-msgid "select all"
-msgstr "επιλογή όλων"
-
-msgid "SELECT NONE"
-msgstr "ΚΑΜΙΑ ΕΠΙΛΟΓΗ"
-
-msgid "select none"
-msgstr "καμία επιλογή"
-
-#, c-format
-msgid "%i SELECTED"
-msgid_plural "%i SELECTED"
-msgstr[0] "%i ΕΠΙΛΕΓΜΕΝΟ"
-msgstr[1] "%i ΕΠΙΛΕΓΜΕΝΑ"
-
 msgid "CHANGE"
 msgstr "ΑΛΛΑΓΗ"
-
-msgid "MOVE CURSOR"
-msgstr "ΜΕΤΑΚΙΝΗΣΗ ΚΕΡΣΟΡΑ"
-
-msgid "EDIT"
-msgstr "ΕΠΕΞΕΡΓΑΣΙΑ"
-
-msgid "ENABLED"
-msgstr "ΕΝΕΡΓΟΠΟΙΗΜΕΝΟ"
 
 #, c-format
 msgid "%d day ago"
@@ -3089,8 +3063,41 @@ msgid_plural "%d seconds ago"
 msgstr[0] "%d δευτερόπλεπτο πριν"
 msgstr[1] "%d δευτερόλεπτα πριν"
 
+msgid "accept"
+msgstr "αποδοχή"
+
+msgid "SELECT ALL"
+msgstr "ΕΠΙΛΟΓΗ ΟΛΩΝ"
+
+msgid "select all"
+msgstr "επιλογή όλων"
+
+msgid "SELECT NONE"
+msgstr "ΚΑΜΙΑ ΕΠΙΛΟΓΗ"
+
+msgid "select none"
+msgstr "καμία επιλογή"
+
+#, c-format
+msgid "%i SELECTED"
+msgid_plural "%i SELECTED"
+msgstr[0] "%i ΕΠΙΛΕΓΜΕΝΟ"
+msgstr[1] "%i ΕΠΙΛΕΓΜΕΝΑ"
+
 msgid "WORKING..."
 msgstr "ΔΟΥΛΕΥΕΙ..."
+
+msgid "MOVE CURSOR"
+msgstr "ΜΕΤΑΚΙΝΗΣΗ ΚΕΡΣΟΡΑ"
+
+msgid "EDIT"
+msgstr "ΕΠΕΞΕΡΓΑΣΙΑ"
+
+msgid "SCREEN READER ENABLED"
+msgstr ""
+
+msgid "SCREEN READER DISABLED"
+msgstr ""
 
 #, c-format
 msgid "%d h"
@@ -3104,11 +3111,13 @@ msgstr ""
 msgid "%d sec"
 msgstr ""
 
-msgid "SCREEN READER ENABLED"
+msgid ""
+"CALIBRATING GUN\n"
+"Fire on targets to calibrate"
 msgstr ""
 
-msgid "SCREEN READER DISABLED"
-msgstr ""
+#~ msgid "SAVING METADATAS. PLEASE WAIT..."
+#~ msgstr "ΑΠΟΘΗΚΕΥΣΗ ΜΕΤΑΔΕΔΟΜΕΝΩΝ. ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ..."
 
 #~ msgid "SWITCH A & B BUTTONS IN EMULATIONSTATION"
 #~ msgstr "ΑΛΛΑΓΗ A/B ΚΟΥΜΠΙΩΝ ΣΤΟ EMULATIONSTATION"

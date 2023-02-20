@@ -26,7 +26,7 @@ public:
 
 private:
 	std::string mToken;
-	Utils::Time::DateTime mTokenDate;
+	Utils::DateTime mTokenDate;
 };
 
 class HfsDBRequest : public ScraperHttpRequest

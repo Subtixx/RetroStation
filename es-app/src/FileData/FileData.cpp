@@ -67,7 +67,7 @@ const std::string FileData::getPath() const
 	return mPath;
 }
 
-const std::string FileData::getBreadCrumbPath()
+std::string FileData::getBreadCrumbPath()
 {
 	std::vector<std::string> paths;
 
@@ -706,7 +706,7 @@ bool FileData::launchGame(Window* window, LaunchGameOptions options)
 			gameToUpdate->setMetadata(MetaDataId::GameTime, std::to_string(static_cast<long>(gameTime)));
 
 		//update last played time
-		gameToUpdate->setMetadata(MetaDataId::LastPlayed, std::string (Utils::Time::DateTime(Utils::Time::now())));
+		gameToUpdate->setMetadata(MetaDataId::LastPlayed, std::string (Utils::DateTime(Utils::Time::now())));
 		CollectionSystemManager::get()->refreshCollectionSystems(gameToUpdate);
 		saveToGamelistRecovery(gameToUpdate);
 	}
@@ -1243,7 +1243,8 @@ void FileData::setSelectedGame()
 
 std::string FileData::getProperty(const std::string& name)
 {
-	if (name == "name")
+
+    if(name == "name")
 		return getName();
 
 	if (name == "rom")

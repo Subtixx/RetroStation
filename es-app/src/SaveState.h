@@ -1,7 +1,8 @@
 #pragma once
 
-#include <string>
+#include "utils/DateTime.h"
 #include "utils/TimeUtil.h"
+#include <string>
 
 class FileData;
 
@@ -27,7 +28,7 @@ struct SaveState
 	void remove() const;
 	bool copyToSlot(int slot, bool move = false) const;
 
-	Utils::Time::DateTime creationDate;
+	Utils::DateTime creationDate;
 
 public:
 	virtual std::string makeStateFilename(int slot, bool fullPath = true) const;

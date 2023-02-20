@@ -172,7 +172,7 @@ void MetaDataList::loadFromXML(MetaDataListType type, pugi::xml_node& node, Syst
 				if (scraperId == KnowScrapersIds.cend())
 					continue;
 				
-				Utils::Time::DateTime dateTime(xelement.attribute("date").value());
+				Utils::DateTime dateTime(xelement.attribute("date").value());
 				if (!dateTime.isValid())
 					continue;
 								
@@ -547,11 +547,11 @@ void MetaDataList::setScrapeDate(const std::string& scraper)
 	if (it == KnowScrapersIds.cend())
 		return;
 
-	mScrapeDates[it->second] = Utils::Time::DateTime::now();
+	mScrapeDates[it->second] = Utils::DateTime::now();
 	mWasChanged = true;
 }
 
-Utils::Time::DateTime* MetaDataList::getScrapeDate(const std::string& scraper)
+Utils::DateTime* MetaDataList::getScrapeDate(const std::string& scraper)
 {
 	auto it = KnowScrapersIds.find(scraper);
 	if (it != KnowScrapersIds.cend())

@@ -19,7 +19,7 @@
 
 TEST(StringTest, StringCompare)
 {
-   std::string str1 = "Hello";
-   std::string str2 = "Hello";
-   EXPECT_EQ(str1, str2);
+    std::string str1 = "Hello";
+    std::string str2 = "Hello";
+    EXPECT_EQ(str1, str2);
 }

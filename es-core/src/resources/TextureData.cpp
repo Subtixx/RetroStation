@@ -256,7 +256,7 @@ bool TextureData::loadFromVideo()
 	if (Utils::FileSystem::exists(localFile))
 	{
 		auto date = Utils::FileSystem::getFileCreationDate(localFile);
-		auto duration = Utils::Time::DateTime::now().elapsedSecondsSince(date);
+		auto duration = Utils::DateTime::now().elapsedSecondsSince(date);
 		if (duration > 62 * 86400) // 2 months
 			Utils::FileSystem::removeFile(localFile);
 	}

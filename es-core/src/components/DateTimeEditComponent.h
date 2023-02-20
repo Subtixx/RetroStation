@@ -49,8 +49,8 @@ private:
 	
 	void updateTextCache();
 
-	Utils::Time::DateTime mTime;
-	Utils::Time::DateTime mTimeBeforeEdit;
+	Utils::DateTime mTime;
+	Utils::DateTime mTimeBeforeEdit;
 
 	bool mEditing;
 	int mEditIndex;

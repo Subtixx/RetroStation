@@ -118,3 +118,7 @@ SET(CPACK_PACKAGE_EXECUTABLES "emulationstation" "emulationstation")
 SET(CPACK_GENERATOR "TGZ;DEB")
 
 INCLUDE(CPack)
+
+if(FEATURE_TESTS)
+	add_subdirectory("./test")
+endif()

@@ -1,6 +1,7 @@
 #include "components/DateTimeEditComponent.h"
 
 #include "resources/Font.h"
+#include "utils/Duration.h"
 #include "utils/StringUtil.h"
 
 DateTimeEditComponent::DateTimeEditComponent(Window* window, DisplayMode dispMode) : GuiComponent(window), 
@@ -40,7 +41,7 @@ bool DateTimeEditComponent::input(InputConfig* config, Input input)
 			//initialize to now if unset
 			if(mTime.getTime() == 0)
 			{
-				mTime = Utils::Time::now();
+				mTime = Utils::DateTime::now();
 				updateTextCache();
 			}
 		}
@@ -102,7 +103,7 @@ bool DateTimeEditComponent::input(InputConfig* config, Input input)
 			if(new_tm.tm_mday > days_in_month)
 				new_tm.tm_mday = days_in_month;
 
-			mTime = new_tm;
+			mTime = Utils::DateTime(new_tm);
 			
 			updateTextCache();
 			return true;
@@ -177,7 +178,7 @@ void DateTimeEditComponent::render(const Transform4x4f& parentTrans)
 
 void DateTimeEditComponent::setValue(const std::string& val)
 {
-	mTime = val;
+	mTime = Utils::DateTime(val);
 	updateTextCache();
 }
 
@@ -217,8 +218,8 @@ std::string DateTimeEditComponent::getDisplayString(DisplayMode mode) const
 			if(mTime.getTime() == 0)
 				return "never";
 
-			Utils::Time::DateTime now(Utils::Time::now());
-			Utils::Time::Duration dur(now.getTime() - mTime.getTime());
+			Utils::DateTime now(Utils::Time::now());
+			Utils::Duration dur(now.getTime() - mTime.getTime());
 
 			char buf[64];
 

@@ -1900,7 +1900,7 @@ std::string SystemData::getProperty(const std::string &name) {
     }
 
     if (name == "lastPlayedDate") {
-        Utils::Time::DateTime dt = info->lastPlayedDate;
+        Utils::DateTime dt = Utils::DateTime(info->lastPlayedDate);
         if (dt.getTime() != 0) {
             time_t clockNow = dt.getTime();
             struct tm clockTstruct = *localtime(&clockNow);

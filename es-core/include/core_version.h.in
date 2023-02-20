@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) Subtixx (Dominic Hock) 2023.
+ * Copyright (c) 2014 Alec Lofquist
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ */
+
+#pragma once
+#include <hedley.h>
+
+#define ESCORE_VERSION_MAJOR @ESCORE_VERSION_MAJOR@
+#define ESCORE_VERSION_MINOR @ESCORE_VERSION_MINOR@
+#define ESCORE_VERSION_PATCH @ESCORE_VERSION_PATCH@
+#define ESCORE_VERSION_REVISION @ESCORE_VERSION_TWEAK@
+
+#define ESCORE_VERSION HEDLEY_VERSION_ENCODE(ESCORE_VERSION_MAJOR, ESCORE_VERSION_MINOR, ESCORE_VERSION_PATCH)
+
+#if !defined(ESCORE_TARGET_VERSION)
+#define ESCORE_TARGET_VERSION ESCORE_VERSION
+#endif
+
+#if ESCORE_TARGET_VERSION < HEDLEY_VERSION_ENCODE(1,1,0)
+#define ESCORE_AVAILABLE_SINCE_1_1 HEDLEY_UNAVAILABLE(1.1)
+#define ESCORE_DEPRECATED_SINCE_1_1
+#define ESCORE_DEPRECATED_SINCE_1_1_FOR(replacement)
+#else
+#define ESCORE_AVAILABLE_SINCE_1_1
+#define ESCORE_DEPRECATED_SINCE_1_1 HEDLEY_DEPRECATED(1.1)
+#define ESCORE_DEPRECATED_SINCE_1_1_FOR(replacement) HEDLEY_DEPRECATED_FOR(1.1, replacement)
+#endif
+
+#if ESCORE_TARGET_VERSION < HEDLEY_VERSION_ENCODE(1,2,0)
+#define ESCORE_AVAILABLE_SINCE_1_2 HEDLEY_UNAVAILABLE(1.2)
+#define ESCORE_DEPRECATED_SINCE_1_2
+#define ESCORE_DEPRECATED_SINCE_1_2_FOR(replacement)
+#else
+#define ESCORE_AVAILABLE_SINCE_1_2
+#define ESCORE_DEPRECATED_SINCE_1_2 HEDLEY_DEPRECATED(1.2)
+#define ESCORE_DEPRECATED_SINCE_1_2_FOR(replacement) HEDLEY_DEPRECATED_FOR(1.2, replacement)
+#endif

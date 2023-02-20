@@ -7,6 +7,7 @@
 #include <functional>
 #include <string>
 
+#include "utils/DateTime.h"
 #include "utils/TimeUtil.h"
 
 class SystemData;
@@ -172,10 +173,10 @@ public:
 	std::string getRelativeRootPath();
 
 	void setScrapeDate(const std::string& scraper);
-	Utils::Time::DateTime* getScrapeDate(const std::string& scraper);
+	Utils::DateTime* getScrapeDate(const std::string& scraper);
 
 private:
-	std::map<int, Utils::Time::DateTime> mScrapeDates;
+	std::map<int, Utils::DateTime> mScrapeDates;
 
 	std::string		mName;
 	MetaDataListType mType;

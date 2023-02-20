@@ -129,7 +129,7 @@ void processGame(const Value& game, std::vector<ScraperSearchResult>& results)
 		result.mdl.set(MetaDataId::Desc, getStringOrThrow(game, "history"));
 
 	if (game.HasMember("year") && game["year"].IsString())
-		result.mdl.set(MetaDataId::ReleaseDate, std::string (Utils::Time::DateTime(Utils::Time::stringToTime(getStringOrThrow(game, "year"), "%Y"))));
+		result.mdl.set(MetaDataId::ReleaseDate, std::string (Utils::DateTime(Utils::Time::stringToTime(getStringOrThrow(game, "year"), "%Y"))));
 
 	if (game.HasMember("manufacturer") && game["manufacturer"].IsString())
     {

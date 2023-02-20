@@ -160,7 +160,7 @@ const std::set<Scraper::ScraperMediaSource>& HfsDBScraper::getSupportedMedias()
 
 void HfsDBScraper::generateRequests(const ScraperSearchParams& params, std::queue<std::unique_ptr<ScraperRequest>>& requests, std::vector<ScraperSearchResult>& results)
 {
-	if (mToken.empty() || Utils::Time::DateTime::now().elapsedSecondsSince(mTokenDate) > 1800) // make Token expire after 30mn
+	if (mToken.empty() || Utils::DateTime::now().elapsedSecondsSince(mTokenDate) > 1800) // make Token expire after 30mn
 	{
 		mToken = "";
 
@@ -197,7 +197,7 @@ void HfsDBScraper::generateRequests(const ScraperSearchParams& params, std::queu
 	if (mToken.empty())
 		return;
 
-	mTokenDate = Utils::Time::DateTime::now();
+	mTokenDate = Utils::DateTime::now();
 
 	std::string path = "https://db.hfsplay.fr/api/v1/";
 
@@ -459,14 +459,14 @@ static void processGame(const Value& game, std::vector<ScraperSearchResult>& res
 	}
 
 
-	Utils::Time::DateTime releaseDate;	
+	Utils::DateTime releaseDate;
 
 	for (auto release : { "released_at_WORLD", "released_at_US", "released_at_PAL", "released_at_JPN" })
 	{
 		if (!game.HasMember(release) || !game[release].IsString())
 			continue;
 
-		Utils::Time::DateTime dt = Utils::Time::stringToTime(game[release].GetString(), "%Y-%m-%dT%H:%M:%S");
+		Utils::DateTime dt = Utils::Time::stringToTime(game[release].GetString(), "%Y-%m-%dT%H:%M:%S");
 		if (dt.isValid() && !releaseDate.isValid())
 		{
 			releaseDate = dt;

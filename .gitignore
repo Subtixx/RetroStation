@@ -623,3 +623,4 @@ Thumbs.db
 !datainit/**/*
 !external/**/*
 /VERSION
+/es-core/include/core_version.h

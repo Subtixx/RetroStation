@@ -13,9 +13,8 @@ tasks:
 
   # Execute the app or the tests
   run_template:
-    - cd build/my_exe/test && ctest -C {{.CMAKE_BUILD_TYPE}} --output-on-failure
-    - cd build/my_header_lib/test && ctest -C {{.CMAKE_BUILD_TYPE}} --output-on-failure
-    - cd build/my_lib/test && ctest -C {{.CMAKE_BUILD_TYPE}} --output-on-failure
+    - cd build/es-core/test && ctest -C {{.CMAKE_BUILD_TYPE}} --output-on-failure
+    - cd build/es-app/test && ctest -C {{.CMAKE_BUILD_TYPE}} --output-on-failure
 
   # Run with coverage analysis
   coverage_template:
@@ -115,7 +114,7 @@ tasks:
       vars:
         CMAKE_BUILD_TYPE: Debug
         FEATURE_DOCS: ON
-        BUILD_FLAGS: --target doxygen-docs
+        BUILD_FLAGS: --target doxygen
 
   lint:
     - |

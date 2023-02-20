@@ -14,6 +14,7 @@ FILE(
 		GLOB_RECURSE
 		CORE_HEADERS
 		src/*.h
+		${HEDLEY_INCLUDE_DIRS}
 )
 
 # Keep Directory structure in Visual Studio
@@ -28,10 +29,16 @@ if(MSVC)
 		string(REPLACE "/" "\\" source_path_msvc "${source_path}")
 		string(REPLACE "src" "" source_path_final "${source_path_msvc}")
 		source_group("${source_path_final}" FILES "${source}")
-	endforeach()  	
+	endforeach()
 endif()
 
-include_directories(${COMMON_INCLUDE_DIRS})
+set(ESCORE_VERSION_MAJOR 1)
+set(ESCORE_VERSION_MINOR 1)
+set(ESCORE_VERSION_PATCH 0)
+set(ESCORE_VERSION_TWEAK 0)
+configure_file(include/core_version.h.in ${CMAKE_CURRENT_SOURCE_DIR}/include/core_version.h @ONLY)
+
+include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/include)
 add_library(es-core STATIC ${CORE_SOURCES} ${CORE_HEADERS})
 target_link_libraries(es-core ${COMMON_LIBRARIES})
 

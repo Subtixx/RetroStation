@@ -1,9 +1,10 @@
 #include "components/DateTimeComponent.h"
 
+#include "LocaleES.h"
+#include "Settings.h"
+#include "utils/Duration.h"
 #include "utils/StringUtil.h"
 #include <loguru.hpp>
-#include "Settings.h"
-#include "LocaleES.h"
 
 DateTimeComponent::DateTimeComponent(Window* window) : TextComponent(window), mDisplayRelative(false)
 {
@@ -18,7 +19,7 @@ DateTimeComponent::DateTimeComponent(Window* window, const std::string& text, co
 
 void DateTimeComponent::setValue(const std::string& val)
 {
-	mTime = val;
+	mTime = Utils::DateTime(val);
 	onTextChanged();
 }
 
@@ -54,8 +55,8 @@ std::string DateTimeComponent::getDisplayString() const
 		if(mTime.getTime() == 0)
 			return _("never");
 
-		Utils::Time::DateTime now(Utils::Time::now());
-		Utils::Time::Duration dur(now.getTime() - mTime.getTime());
+		Utils::DateTime now(Utils::Time::now());
+		Utils::Duration dur(now.getTime() - mTime.getTime());
 
 		char buf[256];
 
